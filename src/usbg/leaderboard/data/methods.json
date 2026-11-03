@@ -1,0 +1,1894 @@
+{
+ "schema": "usbg-methods-1",
+ "counts_table2": {
+  "anatomy": 1,
+  "renderer": 2,
+  "texture": 4,
+  "mask": 7,
+  "ctrl": 8,
+  "reward": 5
+ },
+ "n_published": 27,
+ "published_methods": [
+  {
+   "name": "TotalSegmentator v2 labels of the same CTs, fast mode",
+   "cites": [
+    "totalseg"
+   ],
+   "adapter": "scripts/plug/totalseg_labels.py",
+   "rows": [
+    "anatomy/R1",
+    "anatomy/R2",
+    "anatomy/R3",
+    "anatomy/R4",
+    "anatomy/R5"
+   ],
+   "license_from": [
+    "totalseg"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "anatomy",
+   "license_notes": [
+    "TotalSegmentator: TotalSegmentator 2.18.0 under Apache-2.0, with the version 2 weights of its task total. Its README lists that task as available for any use under Apache-2.0."
+   ],
+   "references": [
+    {
+     "key": "totalseg",
+     "reference": "J. Wasserthal, H.-C. Breit, M.T. Meyer, M. Pradella, D. Hinck, A.W. Sauter, T. Heye, D.T. Boll, J. Cyriac, S. Yang, M. Bach, M. Segeroth, TotalSegmentator: robust segmentation of 104 anatomic structures in CT images, Radiol. Artif. Intell. 5 (2023) e230024. https://doi.org/10.1148/ryai.230024.",
+     "title": "TotalSegmentator: robust segmentation of 104 anatomic structures in CT images",
+     "year": 2023,
+     "doi": "10.1148/ryai.230024",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1148/ryai.230024",
+     "verified": {
+      "registry": "Crossref",
+      "title": "TotalSegmentator: Robust Segmentation of 104 Anatomic Structures in CT Images",
+      "issued_year": 2023,
+      "print_year": 2023,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "LOTUS forward model (original code with published default parameters; the authors' reimplementation)",
+   "cites": [
+    "velikova2023lotus",
+    "salehi2015"
+   ],
+   "adapter": "usbg.plug.renderers (lotus_orig, lotus_reimpl)",
+   "rows": [
+    "renderer/lotus_orig",
+    "renderer/lotus_reimpl"
+   ],
+   "license_from": [
+    "velikova2023lotus"
+   ],
+   "license": null,
+   "note": "the reimplementation (usbg.render_lotus) is the authors' code, adapted from the MIT-licensed LOTUS code (Copyright (c) 2023 Yordanka Velikova; notice in NOTICE)",
+   "slot": "renderer",
+   "license_notes": [
+    "LOTUS: the original code, under the MIT license."
+   ],
+   "references": [
+    {
+     "key": "velikova2023lotus",
+     "reference": "Y. Velikova, M.F. Azampour, W. Simson, V. Gonzalez Duque, N. Navab, LOTUS: learning to optimize task-based US representations, in: Medical Image Computing and Computer Assisted Intervention, MICCAI 2023, Lect. Notes Comput. Sci., vol. 14220, Springer, Cham, 2023, pp. 435-445. https://doi.org/10.1007/978-3-031-43907-0_42.",
+     "title": "LOTUS: learning to optimize task-based US representations",
+     "year": 2023,
+     "doi": "10.1007/978-3-031-43907-0_42",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1007/978-3-031-43907-0_42",
+     "verified": {
+      "registry": "Crossref",
+      "title": "LOTUS: Learning to Optimize Task-Based US Representations",
+      "issued_year": 2023,
+      "print_year": 2023,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "salehi2015",
+     "reference": "M. Salehi, S.-A. Ahmadi, R. Prevost, N. Navab, W. Wein, Patient-specific 3D ultrasound simulation based on convolutional ray-tracing and appearance optimization, in: Medical Image Computing and Computer-Assisted Intervention, MICCAI 2015, Lect. Notes Comput. Sci., vol. 9350, Springer, Cham, 2015, pp. 510-518. https://doi.org/10.1007/978-3-319-24571-3_61.",
+     "title": "Patient-specific 3D ultrasound simulation based on convolutional ray-tracing and appearance optimization",
+     "year": 2015,
+     "doi": "10.1007/978-3-319-24571-3_61",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1007/978-3-319-24571-3_61",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Patient-specific 3D Ultrasound Simulation Based on Convolutional Ray-tracing and Appearance Optimization",
+      "issued_year": 2015,
+      "print_year": 2015,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "SIMUS via PyMUST",
+   "cites": [
+    "garcia2022simus",
+    "cigier2022simus"
+   ],
+   "adapter": "usbg.plug.renderers (simus)",
+   "rows": [
+    "renderer/simus"
+   ],
+   "license_from": [
+    "garcia2022simus"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "renderer",
+   "license_notes": [
+    "SIMUS: PyMUST 0.1.9 under the GNU LGPL."
+   ],
+   "references": [
+    {
+     "key": "garcia2022simus",
+     "reference": "D. Garcia, SIMUS: an open-source simulator for medical ultrasound imaging. Part I: theory & examples, Comput. Methods Programs Biomed. 218 (2022) 106726. https://doi.org/10.1016/j.cmpb.2022.106726.",
+     "title": "SIMUS: an open-source simulator for medical ultrasound imaging. Part I: theory & examples",
+     "year": 2022,
+     "doi": "10.1016/j.cmpb.2022.106726",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1016/j.cmpb.2022.106726",
+     "verified": {
+      "registry": "Crossref",
+      "title": "SIMUS: An open-source simulator for medical ultrasound imaging. Part I: Theory & examples",
+      "issued_year": 2022,
+      "print_year": 2022,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "cigier2022simus",
+     "reference": "A. Cigier, F. Varray, D. Garcia, SIMUS: an open-source simulator for medical ultrasound imaging. Part II: comparison with four simulators, Comput. Methods Programs Biomed. 220 (2022) 106774. https://doi.org/10.1016/j.cmpb.2022.106774.",
+     "title": "SIMUS: an open-source simulator for medical ultrasound imaging. Part II: comparison with four simulators",
+     "year": 2022,
+     "doi": "10.1016/j.cmpb.2022.106774",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1016/j.cmpb.2022.106774",
+     "verified": {
+      "registry": "Crossref",
+      "title": "SIMUS: An open-source simulator for medical ultrasound imaging. Part II: Comparison with four simulators",
+      "issued_year": 2022,
+      "print_year": 2022,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "FastCUT",
+   "cites": [
+    "cut"
+   ],
+   "adapter": "usbg.plug_texture.FastCUT",
+   "rows": [
+    "texture/fastcut"
+   ],
+   "license_from": [],
+   "license": "the authors' reimplementation of the published method, in this repository (Apache-2.0); its weights are trained by the protocol and not distributed",
+   "note": null,
+   "slot": "texture",
+   "license_notes": [],
+   "references": [
+    {
+     "key": "cut",
+     "reference": "T. Park, A.A. Efros, R. Zhang, J.-Y. Zhu, Contrastive learning for unpaired image-to-image translation, in: Computer Vision, ECCV 2020, Lect. Notes Comput. Sci., vol. 12354, Springer, Cham, 2020, pp. 319-345. https://doi.org/10.1007/978-3-030-58545-7_19.",
+     "title": "Contrastive learning for unpaired image-to-image translation",
+     "year": 2020,
+     "doi": "10.1007/978-3-030-58545-7_19",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1007/978-3-030-58545-7_19",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Contrastive Learning for Unpaired Image-to-Image Translation",
+      "issued_year": 2020,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "DCLGAN",
+   "cites": [
+    "han2021dclgan"
+   ],
+   "adapter": "usbg.plug_texture.DCLGAN",
+   "rows": [
+    "texture/dclgan"
+   ],
+   "license_from": [],
+   "license": "the authors' reimplementation of the published method, in this repository (Apache-2.0); its weights are trained by the protocol and not distributed",
+   "note": null,
+   "slot": "texture",
+   "license_notes": [],
+   "references": [
+    {
+     "key": "han2021dclgan",
+     "reference": "J. Han, M. Shoeiby, L. Petersson, M.A. Armin, Dual contrastive learning for unsupervised image-to-image translation, in: Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit. Workshops (CVPRW), IEEE, 2021, pp. 746-755. https://doi.org/10.1109/CVPRW53098.2021.00084.",
+     "title": "Dual contrastive learning for unsupervised image-to-image translation",
+     "year": 2021,
+     "doi": "10.1109/CVPRW53098.2021.00084",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/CVPRW53098.2021.00084",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Dual Contrastive Learning for Unsupervised Image-to-Image Translation",
+      "issued_year": 2021,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "UNSB (neural Schrödinger bridge)",
+   "cites": [
+    "kim2024unsb"
+   ],
+   "adapter": "usbg.plug_texture.UNSB",
+   "rows": [
+    "texture/unsb"
+   ],
+   "license_from": [],
+   "license": "the authors' reimplementation of the published method, in this repository (Apache-2.0); its weights are trained by the protocol and not distributed",
+   "note": null,
+   "slot": "texture",
+   "license_notes": [],
+   "references": [
+    {
+     "key": "kim2024unsb",
+     "reference": "B. Kim, G. Kwon, K. Kim, J.C. Ye, Unpaired image-to-image translation via neural Schrödinger bridge, in: Int. Conf. Learn. Represent. (ICLR), 2024, pp. 19312-19331. https://arxiv.org/abs/2305.15086.",
+     "title": "Unpaired image-to-image translation via neural Schrödinger bridge",
+     "year": 2024,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://arxiv.org/abs/2305.15086",
+     "why": "the ICLR 2024 proceedings assign no DOI; the arXiv version has a DataCite DOI",
+     "arxiv_doi": "10.48550/arXiv.2305.15086",
+     "arxiv_doi_verified": {
+      "registry": "DataCite",
+      "title": "Unpaired Image-to-Image Translation via Neural Schrödinger Bridge",
+      "year": 2023,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "Global histogram matching",
+   "cites": [
+    "gonzalez2018"
+   ],
+   "adapter": "usbg.plug_texture.HistMatchTranslator",
+   "rows": [
+    "texture/histmatch"
+   ],
+   "license_from": [],
+   "license": "the authors' reimplementation of the published method, in this repository (Apache-2.0); its intensity map is fitted by the protocol on the training pool and not distributed",
+   "note": null,
+   "slot": "texture",
+   "license_notes": [],
+   "references": [
+    {
+     "key": "gonzalez2018",
+     "reference": "R.C. Gonzalez, R.E. Woods, Digital Image Processing, 4th ed., Pearson, 2018.",
+     "title": "Digital Image Processing",
+     "year": 2018,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "ISBN 9780133356724",
+     "why": "a book (4th edition, Pearson, 2018); the ISBN is the one the article's reference check recorded"
+    }
+   ]
+  },
+  {
+   "name": "LR-ASPP (MobileNetV3-L backbone)",
+   "cites": [
+    "howard2019mobilenetv3"
+   ],
+   "adapter": "usbg.plug.masks.TorchvisionMaskSource",
+   "rows": [
+    "mask/lraspp_mbv3",
+    "mask/lraspp_mbv3_imnet"
+   ],
+   "license_from": [
+    "torchvision"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "mask",
+   "license_notes": [
+    "torchvision 0.27.1, under BSD-3-Clause, supplies the ImageNet-1K backbones of the four pretrained torchvision segmenters. Its documentation notes that pretrained weights may carry terms from their training data."
+   ],
+   "references": [
+    {
+     "key": "howard2019mobilenetv3",
+     "reference": "A. Howard, M. Sandler, B. Chen, W. Wang, L.-C. Chen, M. Tan, G. Chu, V. Vasudevan, Y. Zhu, R. Pang, H. Adam, Q. Le, Searching for MobileNetV3, in: Proc. IEEE/CVF Int. Conf. Comput. Vis. (ICCV), IEEE, 2019, pp. 1314-1324. https://doi.org/10.1109/ICCV.2019.00140.",
+     "title": "Searching for MobileNetV3",
+     "year": 2019,
+     "doi": "10.1109/ICCV.2019.00140",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/ICCV.2019.00140",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Searching for MobileNetV3",
+      "issued_year": 2019,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "DeepLabV3 (MobileNetV3-L or ResNet-50 backbone)",
+   "cites": [
+    "chen2017deeplabv3",
+    "howard2019mobilenetv3",
+    "he2016resnet"
+   ],
+   "adapter": "usbg.plug.masks.TorchvisionMaskSource",
+   "rows": [
+    "mask/deeplabv3_mbv3",
+    "mask/deeplabv3_r50",
+    "mask/deeplabv3_mbv3_imnet",
+    "mask/deeplabv3_r50_imnet"
+   ],
+   "license_from": [
+    "torchvision"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "mask",
+   "license_notes": [
+    "torchvision 0.27.1, under BSD-3-Clause, supplies the ImageNet-1K backbones of the four pretrained torchvision segmenters. Its documentation notes that pretrained weights may carry terms from their training data."
+   ],
+   "references": [
+    {
+     "key": "chen2017deeplabv3",
+     "reference": "L.-C. Chen, G. Papandreou, F. Schroff, H. Adam, Rethinking atrous convolution for semantic image segmentation, arXiv preprint arXiv:1706.05587, 2017. https://arxiv.org/abs/1706.05587.",
+     "title": "Rethinking atrous convolution for semantic image segmentation",
+     "year": 2017,
+     "doi": "10.48550/arXiv.1706.05587",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.48550/arXiv.1706.05587",
+     "verified": {
+      "registry": "DataCite",
+      "title": "Rethinking Atrous Convolution for Semantic Image Segmentation",
+      "issued_year": 2017,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "howard2019mobilenetv3",
+     "reference": "A. Howard, M. Sandler, B. Chen, W. Wang, L.-C. Chen, M. Tan, G. Chu, V. Vasudevan, Y. Zhu, R. Pang, H. Adam, Q. Le, Searching for MobileNetV3, in: Proc. IEEE/CVF Int. Conf. Comput. Vis. (ICCV), IEEE, 2019, pp. 1314-1324. https://doi.org/10.1109/ICCV.2019.00140.",
+     "title": "Searching for MobileNetV3",
+     "year": 2019,
+     "doi": "10.1109/ICCV.2019.00140",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/ICCV.2019.00140",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Searching for MobileNetV3",
+      "issued_year": 2019,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "he2016resnet",
+     "reference": "K. He, X. Zhang, S. Ren, J. Sun, Deep residual learning for image recognition, in: Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), IEEE, 2016, pp. 770-778. https://doi.org/10.1109/CVPR.2016.90.",
+     "title": "Deep residual learning for image recognition",
+     "year": 2016,
+     "doi": "10.1109/CVPR.2016.90",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/CVPR.2016.90",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Deep Residual Learning for Image Recognition",
+      "issued_year": 2016,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "FCN (ResNet-50 backbone)",
+   "cites": [
+    "long2015fcn",
+    "he2016resnet"
+   ],
+   "adapter": "usbg.plug.masks.TorchvisionMaskSource",
+   "rows": [
+    "mask/fcn_r50",
+    "mask/fcn_r50_imnet"
+   ],
+   "license_from": [
+    "torchvision"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "mask",
+   "license_notes": [
+    "torchvision 0.27.1, under BSD-3-Clause, supplies the ImageNet-1K backbones of the four pretrained torchvision segmenters. Its documentation notes that pretrained weights may carry terms from their training data."
+   ],
+   "references": [
+    {
+     "key": "long2015fcn",
+     "reference": "J. Long, E. Shelhamer, T. Darrell, Fully convolutional networks for semantic segmentation, in: Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), IEEE, 2015, pp. 3431-3440. https://doi.org/10.1109/CVPR.2015.7298965.",
+     "title": "Fully convolutional networks for semantic segmentation",
+     "year": 2015,
+     "doi": "10.1109/CVPR.2015.7298965",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/CVPR.2015.7298965",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Fully convolutional networks for semantic segmentation",
+      "issued_year": 2015,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "he2016resnet",
+     "reference": "K. He, X. Zhang, S. Ren, J. Sun, Deep residual learning for image recognition, in: Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), IEEE, 2016, pp. 770-778. https://doi.org/10.1109/CVPR.2016.90.",
+     "title": "Deep residual learning for image recognition",
+     "year": 2016,
+     "doi": "10.1109/CVPR.2016.90",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/CVPR.2016.90",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Deep Residual Learning for Image Recognition",
+      "issued_year": 2016,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "nnU-Net 2D",
+   "cites": [
+    "isensee2021nnunet"
+   ],
+   "adapter": "usbg.plug.masks.NnUNetMaskSource",
+   "rows": [
+    "mask/nnunet2d",
+    "mask/nnunet2d_e20"
+   ],
+   "license_from": [
+    "isensee2021nnunet"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "mask",
+   "license_notes": [
+    "nnU-Net: nnunetv2 2.8.1 under Apache-2.0. The nnU-Net mask source is trained here and uses no downloaded weights."
+   ],
+   "references": [
+    {
+     "key": "isensee2021nnunet",
+     "reference": "F. Isensee, P.F. Jaeger, S.A.A. Kohl, J. Petersen, K.H. Maier-Hein, nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation, Nat. Methods 18 (2021) 203-211. https://doi.org/10.1038/s41592-020-01008-z.",
+     "title": "nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation",
+     "year": 2021,
+     "doi": "10.1038/s41592-020-01008-z",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1038/s41592-020-01008-z",
+     "verified": {
+      "registry": "Crossref",
+      "title": "nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation",
+      "issued_year": 2020,
+      "print_year": 2021,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "SAM with box prompts",
+   "cites": [
+    "kirillov2023sam"
+   ],
+   "adapter": "usbg.plug.masks.SamBoxMaskSource",
+   "rows": [
+    "mask/sam_unet",
+    "mask/sam_priv"
+   ],
+   "license_from": [
+    "kirillov2023sam"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "mask",
+   "license_notes": [
+    "SAM: the segment_anything code and the ViT-B weights, both under Apache-2.0."
+   ],
+   "references": [
+    {
+     "key": "kirillov2023sam",
+     "reference": "A. Kirillov, E. Mintun, N. Ravi, H. Mao, C. Rolland, L. Gustafson, T. Xiao, S. Whitehead, A.C. Berg, W.-Y. Lo, P. Dollár, R. Girshick, Segment anything, in: Proc. IEEE/CVF Int. Conf. Comput. Vis. (ICCV), IEEE, 2023, pp. 3992-4003. https://doi.org/10.1109/ICCV51070.2023.00371.",
+     "title": "Segment anything",
+     "year": 2023,
+     "doi": "10.1109/ICCV51070.2023.00371",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/ICCV51070.2023.00371",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Segment Anything",
+      "issued_year": 2023,
+      "print_year": 2023,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "MedSAM with box prompts",
+   "cites": [
+    "ma2024medsam"
+   ],
+   "adapter": "usbg.plug.masks.SamBoxMaskSource (variant medsam)",
+   "rows": [
+    "mask/medsam_unet",
+    "mask/medsam_priv"
+   ],
+   "license_from": [
+    "ma2024medsam"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "mask",
+   "license_notes": [
+    "MedSAM: the released ViT-B weights, run with the SAM code. Its repository is under Apache-2.0 and states no separate license for the weights."
+   ],
+   "references": [
+    {
+     "key": "ma2024medsam",
+     "reference": "J. Ma, Y. He, F. Li, L. Han, C. You, B. Wang, Segment anything in medical images, Nat. Commun. 15 (2024) 654. https://doi.org/10.1038/s41467-024-44824-z.",
+     "title": "Segment anything in medical images",
+     "year": 2024,
+     "doi": "10.1038/s41467-024-44824-z",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1038/s41467-024-44824-z",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Segment anything in medical images",
+      "issued_year": 2024,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "SAMUS with box prompts",
+   "cites": [
+    "lin2024samus"
+   ],
+   "adapter": "usbg.plug.samus_mask.SamusMaskSource",
+   "rows": [
+    "mask/samus_unet",
+    "mask/samus_unet@s0-2",
+    "mask/samus_priv",
+    "mask/samus_priv@s0-2"
+   ],
+   "license_from": [
+    "lin2024samus"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "mask",
+   "license_notes": [
+    "SAMUS: the official code and its released weights. Its repository is under the MIT license and states no separate license for the weights."
+   ],
+   "references": [
+    {
+     "key": "lin2024samus",
+     "reference": "X. Lin, Y. Xiang, L. Yu, Z. Yan, Beyond adapting SAM: towards end-to-end ultrasound image segmentation via auto prompting, in: Medical Image Computing and Computer Assisted Intervention, MICCAI 2024, Lect. Notes Comput. Sci., vol. 15008, Springer, Cham, 2024, pp. 24-34. https://doi.org/10.1007/978-3-031-72111-3_3. Its preprint, arXiv:2309.06824, names the method SAMUS.",
+     "title": "Beyond adapting SAM: towards end-to-end ultrasound image segmentation via auto prompting",
+     "year": 2024,
+     "doi": "10.1007/978-3-031-72111-3_3",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1007/978-3-031-72111-3_3",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Beyond Adapting SAM: Towards End-to-End Ultrasound Image Segmentation via Auto Prompting",
+      "issued_year": 2024,
+      "print_year": 2024,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "PPO (Stable-Baselines3)",
+   "cites": [
+    "schulman2017ppo",
+    "sb3"
+   ],
+   "adapter": "usbg.plug.controllers.SB3Controller (scripts/plug_train_sb3.py --algo ppo)",
+   "rows": [
+    "ctrl/ppo_res",
+    "ctrl/ppo_scratch"
+   ],
+   "license_from": [
+    "sb3"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "ctrl",
+   "license_notes": [
+    "Stable-Baselines3: version 2.6.0 under the MIT license. Every policy is trained here."
+   ],
+   "references": [
+    {
+     "key": "schulman2017ppo",
+     "reference": "J. Schulman, F. Wolski, P. Dhariwal, A. Radford, O. Klimov, Proximal policy optimization algorithms, arXiv preprint arXiv:1707.06347, 2017. https://arxiv.org/abs/1707.06347.",
+     "title": "Proximal policy optimization algorithms",
+     "year": 2017,
+     "doi": "10.48550/arXiv.1707.06347",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.48550/arXiv.1707.06347",
+     "verified": {
+      "registry": "DataCite",
+      "title": "Proximal Policy Optimization Algorithms",
+      "issued_year": 2017,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "sb3",
+     "reference": "A. Raffin, A. Hill, A. Gleave, A. Kanervisto, M. Ernestus, N. Dormann, Stable-Baselines3: reliable reinforcement learning implementations, J. Mach. Learn. Res. 22 (268) (2021) 1-8. https://jmlr.org/papers/v22/20-1364.html.",
+     "title": "Stable-Baselines3: reliable reinforcement learning implementations",
+     "year": 2021,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://jmlr.org/papers/v22/20-1364.html",
+     "why": "JMLR assigns no DOI"
+    }
+   ]
+  },
+  {
+   "name": "SAC (Stable-Baselines3)",
+   "cites": [
+    "haarnoja2018sac",
+    "sb3"
+   ],
+   "adapter": "usbg.plug.controllers.SB3Controller (--algo sac)",
+   "rows": [
+    "ctrl/sac_res"
+   ],
+   "license_from": [
+    "sb3"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "ctrl",
+   "license_notes": [
+    "Stable-Baselines3: version 2.6.0 under the MIT license. Every policy is trained here."
+   ],
+   "references": [
+    {
+     "key": "haarnoja2018sac",
+     "reference": "T. Haarnoja, A. Zhou, P. Abbeel, S. Levine, Soft actor-critic: off-policy maximum entropy deep reinforcement learning with a stochastic actor, in: Proc. Int. Conf. Mach. Learn. (ICML), Proc. Mach. Learn. Res., vol. 80, PMLR, 2018, pp. 1861-1870. https://proceedings.mlr.press/v80/haarnoja18b.html.",
+     "title": "Soft actor-critic: off-policy maximum entropy deep reinforcement learning with a stochastic actor",
+     "year": 2018,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://proceedings.mlr.press/v80/haarnoja18b.html",
+     "why": "PMLR assigns no DOI",
+     "arxiv_doi": "10.48550/arXiv.1801.01290",
+     "arxiv_doi_verified": {
+      "registry": "DataCite",
+      "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+      "year": 2018,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "sb3",
+     "reference": "A. Raffin, A. Hill, A. Gleave, A. Kanervisto, M. Ernestus, N. Dormann, Stable-Baselines3: reliable reinforcement learning implementations, J. Mach. Learn. Res. 22 (268) (2021) 1-8. https://jmlr.org/papers/v22/20-1364.html.",
+     "title": "Stable-Baselines3: reliable reinforcement learning implementations",
+     "year": 2021,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://jmlr.org/papers/v22/20-1364.html",
+     "why": "JMLR assigns no DOI"
+    }
+   ]
+  },
+  {
+   "name": "TD3 (Stable-Baselines3)",
+   "cites": [
+    "fujimoto2018td3",
+    "sb3"
+   ],
+   "adapter": "usbg.plug.controllers.SB3Controller (--algo td3)",
+   "rows": [
+    "ctrl/td3_res"
+   ],
+   "license_from": [
+    "sb3"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "ctrl",
+   "license_notes": [
+    "Stable-Baselines3: version 2.6.0 under the MIT license. Every policy is trained here."
+   ],
+   "references": [
+    {
+     "key": "fujimoto2018td3",
+     "reference": "S. Fujimoto, H. van Hoof, D. Meger, Addressing function approximation error in actor-critic methods, in: Proc. Int. Conf. Mach. Learn. (ICML), Proc. Mach. Learn. Res., vol. 80, PMLR, 2018, pp. 1587-1596. https://proceedings.mlr.press/v80/fujimoto18a.html.",
+     "title": "Addressing function approximation error in actor-critic methods",
+     "year": 2018,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://proceedings.mlr.press/v80/fujimoto18a.html",
+     "why": "PMLR assigns no DOI",
+     "arxiv_doi": "10.48550/arXiv.1802.09477",
+     "arxiv_doi_verified": {
+      "registry": "DataCite",
+      "title": "Addressing Function Approximation Error in Actor-Critic Methods",
+      "year": 2018,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "sb3",
+     "reference": "A. Raffin, A. Hill, A. Gleave, A. Kanervisto, M. Ernestus, N. Dormann, Stable-Baselines3: reliable reinforcement learning implementations, J. Mach. Learn. Res. 22 (268) (2021) 1-8. https://jmlr.org/papers/v22/20-1364.html.",
+     "title": "Stable-Baselines3: reliable reinforcement learning implementations",
+     "year": 2021,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://jmlr.org/papers/v22/20-1364.html",
+     "why": "JMLR assigns no DOI"
+    }
+   ]
+  },
+  {
+   "name": "A2C (Stable-Baselines3)",
+   "cites": [
+    "mnih2016a3c",
+    "sb3"
+   ],
+   "adapter": "usbg.plug.controllers.SB3Controller (--algo a2c)",
+   "rows": [
+    "ctrl/a2c_res"
+   ],
+   "license_from": [
+    "sb3"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "ctrl",
+   "license_notes": [
+    "Stable-Baselines3: version 2.6.0 under the MIT license. Every policy is trained here."
+   ],
+   "references": [
+    {
+     "key": "mnih2016a3c",
+     "reference": "V. Mnih, A.P. Badia, M. Mirza, A. Graves, T. Lillicrap, T. Harley, D. Silver, K. Kavukcuoglu, Asynchronous methods for deep reinforcement learning, in: Proc. Int. Conf. Mach. Learn. (ICML), Proc. Mach. Learn. Res., vol. 48, PMLR, 2016, pp. 1928-1937. https://proceedings.mlr.press/v48/mniha16.html.",
+     "title": "Asynchronous methods for deep reinforcement learning",
+     "year": 2016,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://proceedings.mlr.press/v48/mniha16.html",
+     "why": "PMLR assigns no DOI",
+     "arxiv_doi": "10.48550/arXiv.1602.01783",
+     "arxiv_doi_verified": {
+      "registry": "DataCite",
+      "title": "Asynchronous Methods for Deep Reinforcement Learning",
+      "year": 2016,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "sb3",
+     "reference": "A. Raffin, A. Hill, A. Gleave, A. Kanervisto, M. Ernestus, N. Dormann, Stable-Baselines3: reliable reinforcement learning implementations, J. Mach. Learn. Res. 22 (268) (2021) 1-8. https://jmlr.org/papers/v22/20-1364.html.",
+     "title": "Stable-Baselines3: reliable reinforcement learning implementations",
+     "year": 2021,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://jmlr.org/papers/v22/20-1364.html",
+     "why": "JMLR assigns no DOI"
+    }
+   ]
+  },
+  {
+   "name": "DQN with 13 discrete moves (Stable-Baselines3)",
+   "cites": [
+    "mnih2015dqn",
+    "sb3"
+   ],
+   "adapter": "usbg.plug.controllers.SB3Controller (--algo dqn)",
+   "rows": [
+    "ctrl/dqn_scratch"
+   ],
+   "license_from": [
+    "sb3"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "ctrl",
+   "license_notes": [
+    "Stable-Baselines3: version 2.6.0 under the MIT license. Every policy is trained here."
+   ],
+   "references": [
+    {
+     "key": "mnih2015dqn",
+     "reference": "V. Mnih, K. Kavukcuoglu, D. Silver, A.A. Rusu, J. Veness, M.G. Bellemare, A. Graves, M. Riedmiller, A.K. Fidjeland, G. Ostrovski, S. Petersen, C. Beattie, A. Sadik, I. Antonoglou, H. King, D. Kumaran, D. Wierstra, S. Legg, D. Hassabis, Human-level control through deep reinforcement learning, Nature 518 (2015) 529-533. https://doi.org/10.1038/nature14236.",
+     "title": "Human-level control through deep reinforcement learning",
+     "year": 2015,
+     "doi": "10.1038/nature14236",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1038/nature14236",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Human-level control through deep reinforcement learning",
+      "issued_year": 2015,
+      "print_year": 2015,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "sb3",
+     "reference": "A. Raffin, A. Hill, A. Gleave, A. Kanervisto, M. Ernestus, N. Dormann, Stable-Baselines3: reliable reinforcement learning implementations, J. Mach. Learn. Res. 22 (268) (2021) 1-8. https://jmlr.org/papers/v22/20-1364.html.",
+     "title": "Stable-Baselines3: reliable reinforcement learning implementations",
+     "year": 2021,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://jmlr.org/papers/v22/20-1364.html",
+     "why": "JMLR assigns no DOI"
+    }
+   ]
+  },
+  {
+   "name": "Behavior cloning (BC)",
+   "cites": [
+    "pomerleau1991"
+   ],
+   "adapter": "usbg.plug.controllers.GoalNetController (--algo bc)",
+   "rows": [
+    "ctrl/bc_res",
+    "ctrl/bc_scratch",
+    "ctrl/bc_res@bn_train",
+    "ctrl/bc_scratch@bn_train"
+   ],
+   "license_from": [],
+   "license": "the authors' reimplementation of the published method, in this repository (Apache-2.0); its weights are trained by the protocol and not distributed",
+   "note": null,
+   "slot": "ctrl",
+   "license_notes": [],
+   "references": [
+    {
+     "key": "pomerleau1991",
+     "reference": "D.A. Pomerleau, Efficient training of artificial neural networks for autonomous navigation, Neural Comput. 3 (1991) 88-97. https://doi.org/10.1162/neco.1991.3.1.88.",
+     "title": "Efficient training of artificial neural networks for autonomous navigation",
+     "year": 1991,
+     "doi": "10.1162/neco.1991.3.1.88",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1162/neco.1991.3.1.88",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Efficient Training of Artificial Neural Networks for Autonomous Navigation",
+      "issued_year": 1991,
+      "print_year": 1991,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "DAgger",
+   "cites": [
+    "ross2011dagger"
+   ],
+   "adapter": "usbg.plug.controllers.GoalNetController (--algo dagger)",
+   "rows": [
+    "ctrl/dagger_res",
+    "ctrl/dagger_scratch",
+    "ctrl/dagger_res@bn_train",
+    "ctrl/dagger_scratch@bn_train"
+   ],
+   "license_from": [],
+   "license": "the authors' reimplementation of the published method, in this repository (Apache-2.0); its weights are trained by the protocol and not distributed",
+   "note": null,
+   "slot": "ctrl",
+   "license_notes": [],
+   "references": [
+    {
+     "key": "ross2011dagger",
+     "reference": "S. Ross, G.J. Gordon, J.A. Bagnell, A reduction of imitation learning and structured prediction to no-regret online learning, in: Proc. Int. Conf. Artif. Intell. Stat. (AISTATS), Proc. Mach. Learn. Res., vol. 15, PMLR, 2011, pp. 627-635. https://proceedings.mlr.press/v15/ross11a.html.",
+     "title": "A reduction of imitation learning and structured prediction to no-regret online learning",
+     "year": 2011,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://proceedings.mlr.press/v15/ross11a.html",
+     "why": "PMLR assigns no DOI",
+     "arxiv_doi": "10.48550/arXiv.1011.0686",
+     "arxiv_doi_verified": {
+      "registry": "DataCite",
+      "title": "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning",
+      "year": 2010,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "Cross-entropy method (CEM) look-ahead",
+   "cites": [
+    "rubinstein1999cem"
+   ],
+   "adapter": "usbg.plug.controllers.CEMController",
+   "rows": [
+    "ctrl/cem"
+   ],
+   "license_from": [],
+   "license": "the authors' reimplementation of the published method, in this repository (Apache-2.0); no trained weights",
+   "note": null,
+   "slot": "ctrl",
+   "license_notes": [],
+   "references": [
+    {
+     "key": "rubinstein1999cem",
+     "reference": "R. Rubinstein, The cross-entropy method for combinatorial and continuous optimization, Methodol. Comput. Appl. Probab. 1 (1999) 127-190. https://doi.org/10.1023/A:1010091220143.",
+     "title": "The cross-entropy method for combinatorial and continuous optimization",
+     "year": 1999,
+     "doi": "10.1023/A:1010091220143",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1023/A:1010091220143",
+     "verified": {
+      "registry": "Crossref",
+      "title": "The Cross-Entropy Method for Combinatorial and Continuous Optimization",
+      "issued_year": 1999,
+      "print_year": 1999,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "SSIM appearance term",
+   "cites": [
+    "wang2004ssim"
+   ],
+   "adapter": "usbg.plug.rewards.RewardPlug('ssim')",
+   "rows": [
+    "reward/ssim"
+   ],
+   "license_from": [
+    "wang2004ssim"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "reward",
+   "license_notes": [
+    "SSIM: the structural_similarity function of scikit-image, under BSD-3-Clause."
+   ],
+   "references": [
+    {
+     "key": "wang2004ssim",
+     "reference": "Z. Wang, A.C. Bovik, H.R. Sheikh, E.P. Simoncelli, Image quality assessment: from error visibility to structural similarity, IEEE Trans. Image Process. 13 (2004) 600-612. https://doi.org/10.1109/TIP.2003.819861.",
+     "title": "Image quality assessment: from error visibility to structural similarity",
+     "year": 2004,
+     "doi": "10.1109/TIP.2003.819861",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/TIP.2003.819861",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Image quality assessment: from error visibility to structural similarity",
+      "issued_year": 2004,
+      "print_year": 2004,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "NMI appearance term",
+   "cites": [
+    "studholme1999nmi"
+   ],
+   "adapter": "usbg.plug.rewards.RewardPlug('nmi')",
+   "rows": [
+    "reward/nmi"
+   ],
+   "license_from": [],
+   "license": "the authors' reimplementation of the published method, in this repository (Apache-2.0); no trained weights",
+   "note": null,
+   "slot": "reward",
+   "license_notes": [],
+   "references": [
+    {
+     "key": "studholme1999nmi",
+     "reference": "C. Studholme, D.L.G. Hill, D.J. Hawkes, An overlap invariant entropy measure of 3D medical image alignment, Pattern Recognit. 32 (1999) 71-86. https://doi.org/10.1016/S0031-3203(98)00091-0.",
+     "title": "An overlap invariant entropy measure of 3D medical image alignment",
+     "year": 1999,
+     "doi": "10.1016/S0031-3203(98)00091-0",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1016/S0031-3203(98)00091-0",
+     "verified": {
+      "registry": "Crossref",
+      "title": "An overlap invariant entropy measure of 3D medical image alignment",
+      "issued_year": 1999,
+      "print_year": 1999,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "LPIPS appearance term",
+   "cites": [
+    "zhang2018lpips"
+   ],
+   "adapter": "usbg.plug.rewards.RewardPlug('lpips')",
+   "rows": [
+    "reward/lpips"
+   ],
+   "license_from": [
+    "zhang2018lpips"
+   ],
+   "license": null,
+   "note": null,
+   "slot": "reward",
+   "license_notes": [
+    "LPIPS: lpips 0.1.4, under BSD-2-Clause, with the AlexNet trunk weights of torchvision."
+   ],
+   "references": [
+    {
+     "key": "zhang2018lpips",
+     "reference": "R. Zhang, P. Isola, A.A. Efros, E. Shechtman, O. Wang, The unreasonable effectiveness of deep features as a perceptual metric, in: Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit. (CVPR), IEEE, 2018, pp. 586-595. https://doi.org/10.1109/CVPR.2018.00068.",
+     "title": "The unreasonable effectiveness of deep features as a perceptual metric",
+     "year": 2018,
+     "doi": "10.1109/CVPR.2018.00068",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/CVPR.2018.00068",
+     "verified": {
+      "registry": "Crossref",
+      "title": "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric",
+      "issued_year": 2018,
+      "print_year": 2018,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "Change in pose distance",
+   "cites": [
+    "sonogym",
+    "hase2020"
+   ],
+   "adapter": "usbg.plug.rewards.RewardPlug('pose')",
+   "rows": [
+    "reward/pose"
+   ],
+   "license_from": [],
+   "license": "the authors' reimplementation of the published method, in this repository (Apache-2.0); no trained weights",
+   "note": null,
+   "slot": "reward",
+   "license_notes": [],
+   "references": [
+    {
+     "key": "sonogym",
+     "reference": "Y. Ao, M. Moghani, M. Mittal, M. Prajapat, L. Wu, F. Giraud, F. Carrillo, A. Krause, P. Fürnstahl, SonoGym: high performance simulation for challenging surgical tasks with robotic ultrasound, in: Advances in Neural Information Processing Systems 38 (NeurIPS 2025), 2025, pp. 45013-45040. https://doi.org/10.52202/085713-1343.",
+     "title": "SonoGym: high performance simulation for challenging surgical tasks with robotic ultrasound",
+     "year": 2025,
+     "doi": "10.52202/085713-1343",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.52202/085713-1343",
+     "verified": {
+      "registry": "Crossref",
+      "title": "SonoGym: High Performance Simulation for Challenging Surgical Tasks with Robotic Ultrasound",
+      "issued_year": 2025,
+      "print_year": 2025,
+      "checked": "2026-11-03"
+     }
+    },
+    {
+     "key": "hase2020",
+     "reference": "H. Hase, M.F. Azampour, M. Tirindelli, M. Paschali, W. Simson, E. Fatemizadeh, N. Navab, Ultrasound-guided robotic navigation with deep reinforcement learning, in: Proc. IEEE/RSJ Int. Conf. Intell. Robots Syst. (IROS), IEEE, 2020, pp. 5534-5541. https://doi.org/10.1109/IROS45743.2020.9340913.",
+     "title": "Ultrasound-guided robotic navigation with deep reinforcement learning",
+     "year": 2020,
+     "doi": "10.1109/IROS45743.2020.9340913",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/IROS45743.2020.9340913",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Ultrasound-Guided Robotic Navigation with Deep Reinforcement Learning",
+      "issued_year": 2020,
+      "print_year": 2020,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pose distance plus organ area",
+   "cites": [
+    "bi2022vesnet"
+   ],
+   "adapter": "usbg.plug.rewards.RewardPlug('pose_area')",
+   "rows": [
+    "reward/pose_area"
+   ],
+   "license_from": [],
+   "license": "the authors' reimplementation of the published method, in this repository (Apache-2.0); no trained weights",
+   "note": null,
+   "slot": "reward",
+   "license_notes": [],
+   "references": [
+    {
+     "key": "bi2022vesnet",
+     "reference": "Y. Bi, Z. Jiang, Y. Gao, T. Wendler, A. Karlas, N. Navab, VesNet-RL: simulation-based reinforcement learning for real-world US probe navigation, IEEE Robot. Autom. Lett. 7 (2022) 6638-6645. https://doi.org/10.1109/LRA.2022.3176112.",
+     "title": "VesNet-RL: simulation-based reinforcement learning for real-world US probe navigation",
+     "year": 2022,
+     "doi": "10.1109/LRA.2022.3176112",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/LRA.2022.3176112",
+     "verified": {
+      "registry": "Crossref",
+      "title": "VesNet-RL: Simulation-Based Reinforcement Learning for Real-World US Probe Navigation",
+      "issued_year": 2022,
+      "print_year": 2022,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  }
+ ],
+ "reference_components": [
+  {
+   "slot": "anatomy",
+   "name": "TotalSegmentator dataset masks (13 training and 6 held-out CTs)",
+   "cites": [
+    "totalseg"
+   ],
+   "adapter": "usbg.volume, scripts/build_anat_cache.py",
+   "license": "dataset under CC BY 4.0",
+   "references": [
+    {
+     "key": "totalseg",
+     "reference": "J. Wasserthal, H.-C. Breit, M.T. Meyer, M. Pradella, D. Hinck, A.W. Sauter, T. Heye, D.T. Boll, J. Cyriac, S. Yang, M. Bach, M. Segeroth, TotalSegmentator: robust segmentation of 104 anatomic structures in CT images, Radiol. Artif. Intell. 5 (2023) e230024. https://doi.org/10.1148/ryai.230024.",
+     "title": "TotalSegmentator: robust segmentation of 104 anatomic structures in CT images",
+     "year": 2023,
+     "doi": "10.1148/ryai.230024",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1148/ryai.230024",
+     "verified": {
+      "registry": "Crossref",
+      "title": "TotalSegmentator: Robust Segmentation of 104 Anatomic Structures in CT Images",
+      "issued_year": 2023,
+      "print_year": 2023,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "slot": "renderer",
+   "name": "Physics renderer (authors')",
+   "cites": [],
+   "adapter": "usbg.render_lotus",
+   "license": "this repository (Apache-2.0)",
+   "reference": "USB Gym (this repository; CITATION.cff)",
+   "references": []
+  },
+  {
+   "slot": "texture",
+   "name": "SonoSPADE (authors')",
+   "cites": [
+    "sonospade"
+   ],
+   "adapter": "usbg.texture_gan",
+   "license": "code in this repository (Apache-2.0); the stage checkpoint is not released",
+   "references": [
+    {
+     "key": "sonospade",
+     "reference": "T. Intharah, Z. Gao, H. Dong, SonoSPADE: real-time, per-tissue ultrasound texture synthesis for closed-loop acquisition, in: Medical Image Computing and Computer Assisted Intervention, MICCAI 2026 Workshops and Challenges (SASHIMI), Lect. Notes Comput. Sci., vol. 17258, Springer Nature, Cham, 2026. Available at https://papers.miccai.org/miccai-2026-sat/SASHIMI_035.html.",
+     "title": "SonoSPADE: real-time, per-tissue ultrasound texture synthesis for closed-loop acquisition",
+     "year": 2026,
+     "doi": null,
+     "no_doi": true,
+     "identifier": "https://papers.miccai.org/miccai-2026-sat/SASHIMI_035.html",
+     "why": "DOI not yet assigned (Crossref bibliographic search on 2026-11-03 found no record)"
+    }
+   ]
+  },
+  {
+   "slot": "texture",
+   "name": "CUT (prior stage, secondary)",
+   "cites": [
+    "cut"
+   ],
+   "adapter": "usbg.texture_gan",
+   "license": "the authors' implementation in this repository (Apache-2.0)",
+   "references": [
+    {
+     "key": "cut",
+     "reference": "T. Park, A.A. Efros, R. Zhang, J.-Y. Zhu, Contrastive learning for unpaired image-to-image translation, in: Computer Vision, ECCV 2020, Lect. Notes Comput. Sci., vol. 12354, Springer, Cham, 2020, pp. 319-345. https://doi.org/10.1007/978-3-030-58545-7_19.",
+     "title": "Contrastive learning for unpaired image-to-image translation",
+     "year": 2020,
+     "doi": "10.1007/978-3-030-58545-7_19",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1007/978-3-030-58545-7_19",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Contrastive Learning for Unpaired Image-to-Image Translation",
+      "issued_year": 2020,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "slot": "texture",
+   "name": "CycleGAN (prior stage, secondary)",
+   "cites": [
+    "cyclegan"
+   ],
+   "adapter": "usbg.texture_gan",
+   "license": "the authors' implementation in this repository (Apache-2.0)",
+   "references": [
+    {
+     "key": "cyclegan",
+     "reference": "J.-Y. Zhu, T. Park, P. Isola, A.A. Efros, Unpaired image-to-image translation using cycle-consistent adversarial networks, in: Proc. IEEE Int. Conf. Comput. Vis. (ICCV), IEEE, 2017, pp. 2242-2251. https://doi.org/10.1109/ICCV.2017.244.",
+     "title": "Unpaired image-to-image translation using cycle-consistent adversarial networks",
+     "year": 2017,
+     "doi": "10.1109/ICCV.2017.244",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1109/ICCV.2017.244",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks",
+      "issued_year": 2017,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "slot": "mask",
+   "name": "U-Net of the same stage and seed (authors')",
+   "cites": [
+    "ronneberger2015unet"
+   ],
+   "adapter": "usbg.us_segmenter, segtrain/",
+   "license": "code in this repository (Apache-2.0); the checkpoints inherit the KidneyUS terms and are not released",
+   "references": [
+    {
+     "key": "ronneberger2015unet",
+     "reference": "O. Ronneberger, P. Fischer, T. Brox, U-Net: convolutional networks for biomedical image segmentation, in: Medical Image Computing and Computer-Assisted Intervention, MICCAI 2015, Lect. Notes Comput. Sci., vol. 9351, Springer, Cham, 2015, pp. 234-241. https://doi.org/10.1007/978-3-319-24574-4_28.",
+     "title": "U-Net: convolutional networks for biomedical image segmentation",
+     "year": 2015,
+     "doi": "10.1007/978-3-319-24574-4_28",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1007/978-3-319-24574-4_28",
+     "verified": {
+      "registry": "Crossref",
+      "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+      "issued_year": 2015,
+      "print_year": null,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "slot": "ctrl",
+   "name": "REINFORCE residual over the servo base, imitation start (authors')",
+   "cites": [
+    "reinforce"
+   ],
+   "adapter": "scripts/train_view_match_rl.py",
+   "license": "this repository (Apache-2.0)",
+   "references": [
+    {
+     "key": "reinforce",
+     "reference": "R.J. Williams, Simple statistical gradient-following algorithms for connectionist reinforcement learning, Mach. Learn. 8 (1992) 229-256. https://doi.org/10.1007/BF00992696.",
+     "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+     "year": 1992,
+     "doi": "10.1007/BF00992696",
+     "no_doi": false,
+     "doi_url": "https://doi.org/10.1007/BF00992696",
+     "verified": {
+      "registry": "Crossref",
+      "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+      "issued_year": 1992,
+      "print_year": 1992,
+      "checked": "2026-11-03"
+     }
+    }
+   ]
+  },
+  {
+   "slot": "reward",
+   "name": "Match score S (authors')",
+   "cites": [],
+   "adapter": "usbg.view_match",
+   "license": "this repository (Apache-2.0)",
+   "reference": "USB Gym (this repository; CITATION.cff)",
+   "references": []
+  }
+ ],
+ "works": {
+  "bi2022vesnet": {
+   "key": "bi2022vesnet",
+   "reference": "Y. Bi, Z. Jiang, Y. Gao, T. Wendler, A. Karlas, N. Navab, VesNet-RL: simulation-based reinforcement learning for real-world US probe navigation, IEEE Robot. Autom. Lett. 7 (2022) 6638-6645. https://doi.org/10.1109/LRA.2022.3176112.",
+   "title": "VesNet-RL: simulation-based reinforcement learning for real-world US probe navigation",
+   "year": 2022,
+   "doi": "10.1109/LRA.2022.3176112",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1109/LRA.2022.3176112",
+   "verified": {
+    "registry": "Crossref",
+    "title": "VesNet-RL: Simulation-Based Reinforcement Learning for Real-World US Probe Navigation",
+    "issued_year": 2022,
+    "print_year": 2022,
+    "checked": "2026-11-03"
+   }
+  },
+  "chen2017deeplabv3": {
+   "key": "chen2017deeplabv3",
+   "reference": "L.-C. Chen, G. Papandreou, F. Schroff, H. Adam, Rethinking atrous convolution for semantic image segmentation, arXiv preprint arXiv:1706.05587, 2017. https://arxiv.org/abs/1706.05587.",
+   "title": "Rethinking atrous convolution for semantic image segmentation",
+   "year": 2017,
+   "doi": "10.48550/arXiv.1706.05587",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.48550/arXiv.1706.05587",
+   "verified": {
+    "registry": "DataCite",
+    "title": "Rethinking Atrous Convolution for Semantic Image Segmentation",
+    "issued_year": 2017,
+    "print_year": null,
+    "checked": "2026-11-03"
+   }
+  },
+  "cigier2022simus": {
+   "key": "cigier2022simus",
+   "reference": "A. Cigier, F. Varray, D. Garcia, SIMUS: an open-source simulator for medical ultrasound imaging. Part II: comparison with four simulators, Comput. Methods Programs Biomed. 220 (2022) 106774. https://doi.org/10.1016/j.cmpb.2022.106774.",
+   "title": "SIMUS: an open-source simulator for medical ultrasound imaging. Part II: comparison with four simulators",
+   "year": 2022,
+   "doi": "10.1016/j.cmpb.2022.106774",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1016/j.cmpb.2022.106774",
+   "verified": {
+    "registry": "Crossref",
+    "title": "SIMUS: An open-source simulator for medical ultrasound imaging. Part II: Comparison with four simulators",
+    "issued_year": 2022,
+    "print_year": 2022,
+    "checked": "2026-11-03"
+   }
+  },
+  "cut": {
+   "key": "cut",
+   "reference": "T. Park, A.A. Efros, R. Zhang, J.-Y. Zhu, Contrastive learning for unpaired image-to-image translation, in: Computer Vision, ECCV 2020, Lect. Notes Comput. Sci., vol. 12354, Springer, Cham, 2020, pp. 319-345. https://doi.org/10.1007/978-3-030-58545-7_19.",
+   "title": "Contrastive learning for unpaired image-to-image translation",
+   "year": 2020,
+   "doi": "10.1007/978-3-030-58545-7_19",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1007/978-3-030-58545-7_19",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Contrastive Learning for Unpaired Image-to-Image Translation",
+    "issued_year": 2020,
+    "print_year": null,
+    "checked": "2026-11-03"
+   }
+  },
+  "cyclegan": {
+   "key": "cyclegan",
+   "reference": "J.-Y. Zhu, T. Park, P. Isola, A.A. Efros, Unpaired image-to-image translation using cycle-consistent adversarial networks, in: Proc. IEEE Int. Conf. Comput. Vis. (ICCV), IEEE, 2017, pp. 2242-2251. https://doi.org/10.1109/ICCV.2017.244.",
+   "title": "Unpaired image-to-image translation using cycle-consistent adversarial networks",
+   "year": 2017,
+   "doi": "10.1109/ICCV.2017.244",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1109/ICCV.2017.244",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks",
+    "issued_year": 2017,
+    "print_year": null,
+    "checked": "2026-11-03"
+   }
+  },
+  "fujimoto2018td3": {
+   "key": "fujimoto2018td3",
+   "reference": "S. Fujimoto, H. van Hoof, D. Meger, Addressing function approximation error in actor-critic methods, in: Proc. Int. Conf. Mach. Learn. (ICML), Proc. Mach. Learn. Res., vol. 80, PMLR, 2018, pp. 1587-1596. https://proceedings.mlr.press/v80/fujimoto18a.html.",
+   "title": "Addressing function approximation error in actor-critic methods",
+   "year": 2018,
+   "doi": null,
+   "no_doi": true,
+   "identifier": "https://proceedings.mlr.press/v80/fujimoto18a.html",
+   "why": "PMLR assigns no DOI",
+   "arxiv_doi": "10.48550/arXiv.1802.09477",
+   "arxiv_doi_verified": {
+    "registry": "DataCite",
+    "title": "Addressing Function Approximation Error in Actor-Critic Methods",
+    "year": 2018,
+    "checked": "2026-11-03"
+   }
+  },
+  "garcia2022simus": {
+   "key": "garcia2022simus",
+   "reference": "D. Garcia, SIMUS: an open-source simulator for medical ultrasound imaging. Part I: theory & examples, Comput. Methods Programs Biomed. 218 (2022) 106726. https://doi.org/10.1016/j.cmpb.2022.106726.",
+   "title": "SIMUS: an open-source simulator for medical ultrasound imaging. Part I: theory & examples",
+   "year": 2022,
+   "doi": "10.1016/j.cmpb.2022.106726",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1016/j.cmpb.2022.106726",
+   "verified": {
+    "registry": "Crossref",
+    "title": "SIMUS: An open-source simulator for medical ultrasound imaging. Part I: Theory & examples",
+    "issued_year": 2022,
+    "print_year": 2022,
+    "checked": "2026-11-03"
+   }
+  },
+  "gonzalez2018": {
+   "key": "gonzalez2018",
+   "reference": "R.C. Gonzalez, R.E. Woods, Digital Image Processing, 4th ed., Pearson, 2018.",
+   "title": "Digital Image Processing",
+   "year": 2018,
+   "doi": null,
+   "no_doi": true,
+   "identifier": "ISBN 9780133356724",
+   "why": "a book (4th edition, Pearson, 2018); the ISBN is the one the article's reference check recorded"
+  },
+  "haarnoja2018sac": {
+   "key": "haarnoja2018sac",
+   "reference": "T. Haarnoja, A. Zhou, P. Abbeel, S. Levine, Soft actor-critic: off-policy maximum entropy deep reinforcement learning with a stochastic actor, in: Proc. Int. Conf. Mach. Learn. (ICML), Proc. Mach. Learn. Res., vol. 80, PMLR, 2018, pp. 1861-1870. https://proceedings.mlr.press/v80/haarnoja18b.html.",
+   "title": "Soft actor-critic: off-policy maximum entropy deep reinforcement learning with a stochastic actor",
+   "year": 2018,
+   "doi": null,
+   "no_doi": true,
+   "identifier": "https://proceedings.mlr.press/v80/haarnoja18b.html",
+   "why": "PMLR assigns no DOI",
+   "arxiv_doi": "10.48550/arXiv.1801.01290",
+   "arxiv_doi_verified": {
+    "registry": "DataCite",
+    "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+    "year": 2018,
+    "checked": "2026-11-03"
+   }
+  },
+  "han2021dclgan": {
+   "key": "han2021dclgan",
+   "reference": "J. Han, M. Shoeiby, L. Petersson, M.A. Armin, Dual contrastive learning for unsupervised image-to-image translation, in: Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit. Workshops (CVPRW), IEEE, 2021, pp. 746-755. https://doi.org/10.1109/CVPRW53098.2021.00084.",
+   "title": "Dual contrastive learning for unsupervised image-to-image translation",
+   "year": 2021,
+   "doi": "10.1109/CVPRW53098.2021.00084",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1109/CVPRW53098.2021.00084",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Dual Contrastive Learning for Unsupervised Image-to-Image Translation",
+    "issued_year": 2021,
+    "print_year": null,
+    "checked": "2026-11-03"
+   }
+  },
+  "hase2020": {
+   "key": "hase2020",
+   "reference": "H. Hase, M.F. Azampour, M. Tirindelli, M. Paschali, W. Simson, E. Fatemizadeh, N. Navab, Ultrasound-guided robotic navigation with deep reinforcement learning, in: Proc. IEEE/RSJ Int. Conf. Intell. Robots Syst. (IROS), IEEE, 2020, pp. 5534-5541. https://doi.org/10.1109/IROS45743.2020.9340913.",
+   "title": "Ultrasound-guided robotic navigation with deep reinforcement learning",
+   "year": 2020,
+   "doi": "10.1109/IROS45743.2020.9340913",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1109/IROS45743.2020.9340913",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Ultrasound-Guided Robotic Navigation with Deep Reinforcement Learning",
+    "issued_year": 2020,
+    "print_year": 2020,
+    "checked": "2026-11-03"
+   }
+  },
+  "he2016resnet": {
+   "key": "he2016resnet",
+   "reference": "K. He, X. Zhang, S. Ren, J. Sun, Deep residual learning for image recognition, in: Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), IEEE, 2016, pp. 770-778. https://doi.org/10.1109/CVPR.2016.90.",
+   "title": "Deep residual learning for image recognition",
+   "year": 2016,
+   "doi": "10.1109/CVPR.2016.90",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1109/CVPR.2016.90",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Deep Residual Learning for Image Recognition",
+    "issued_year": 2016,
+    "print_year": null,
+    "checked": "2026-11-03"
+   }
+  },
+  "howard2019mobilenetv3": {
+   "key": "howard2019mobilenetv3",
+   "reference": "A. Howard, M. Sandler, B. Chen, W. Wang, L.-C. Chen, M. Tan, G. Chu, V. Vasudevan, Y. Zhu, R. Pang, H. Adam, Q. Le, Searching for MobileNetV3, in: Proc. IEEE/CVF Int. Conf. Comput. Vis. (ICCV), IEEE, 2019, pp. 1314-1324. https://doi.org/10.1109/ICCV.2019.00140.",
+   "title": "Searching for MobileNetV3",
+   "year": 2019,
+   "doi": "10.1109/ICCV.2019.00140",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1109/ICCV.2019.00140",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Searching for MobileNetV3",
+    "issued_year": 2019,
+    "print_year": null,
+    "checked": "2026-11-03"
+   }
+  },
+  "isensee2021nnunet": {
+   "key": "isensee2021nnunet",
+   "reference": "F. Isensee, P.F. Jaeger, S.A.A. Kohl, J. Petersen, K.H. Maier-Hein, nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation, Nat. Methods 18 (2021) 203-211. https://doi.org/10.1038/s41592-020-01008-z.",
+   "title": "nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation",
+   "year": 2021,
+   "doi": "10.1038/s41592-020-01008-z",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1038/s41592-020-01008-z",
+   "verified": {
+    "registry": "Crossref",
+    "title": "nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation",
+    "issued_year": 2020,
+    "print_year": 2021,
+    "checked": "2026-11-03"
+   }
+  },
+  "kim2024unsb": {
+   "key": "kim2024unsb",
+   "reference": "B. Kim, G. Kwon, K. Kim, J.C. Ye, Unpaired image-to-image translation via neural Schrödinger bridge, in: Int. Conf. Learn. Represent. (ICLR), 2024, pp. 19312-19331. https://arxiv.org/abs/2305.15086.",
+   "title": "Unpaired image-to-image translation via neural Schrödinger bridge",
+   "year": 2024,
+   "doi": null,
+   "no_doi": true,
+   "identifier": "https://arxiv.org/abs/2305.15086",
+   "why": "the ICLR 2024 proceedings assign no DOI; the arXiv version has a DataCite DOI",
+   "arxiv_doi": "10.48550/arXiv.2305.15086",
+   "arxiv_doi_verified": {
+    "registry": "DataCite",
+    "title": "Unpaired Image-to-Image Translation via Neural Schrödinger Bridge",
+    "year": 2023,
+    "checked": "2026-11-03"
+   }
+  },
+  "kirillov2023sam": {
+   "key": "kirillov2023sam",
+   "reference": "A. Kirillov, E. Mintun, N. Ravi, H. Mao, C. Rolland, L. Gustafson, T. Xiao, S. Whitehead, A.C. Berg, W.-Y. Lo, P. Dollár, R. Girshick, Segment anything, in: Proc. IEEE/CVF Int. Conf. Comput. Vis. (ICCV), IEEE, 2023, pp. 3992-4003. https://doi.org/10.1109/ICCV51070.2023.00371.",
+   "title": "Segment anything",
+   "year": 2023,
+   "doi": "10.1109/ICCV51070.2023.00371",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1109/ICCV51070.2023.00371",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Segment Anything",
+    "issued_year": 2023,
+    "print_year": 2023,
+    "checked": "2026-11-03"
+   }
+  },
+  "lin2024samus": {
+   "key": "lin2024samus",
+   "reference": "X. Lin, Y. Xiang, L. Yu, Z. Yan, Beyond adapting SAM: towards end-to-end ultrasound image segmentation via auto prompting, in: Medical Image Computing and Computer Assisted Intervention, MICCAI 2024, Lect. Notes Comput. Sci., vol. 15008, Springer, Cham, 2024, pp. 24-34. https://doi.org/10.1007/978-3-031-72111-3_3. Its preprint, arXiv:2309.06824, names the method SAMUS.",
+   "title": "Beyond adapting SAM: towards end-to-end ultrasound image segmentation via auto prompting",
+   "year": 2024,
+   "doi": "10.1007/978-3-031-72111-3_3",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1007/978-3-031-72111-3_3",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Beyond Adapting SAM: Towards End-to-End Ultrasound Image Segmentation via Auto Prompting",
+    "issued_year": 2024,
+    "print_year": 2024,
+    "checked": "2026-11-03"
+   }
+  },
+  "long2015fcn": {
+   "key": "long2015fcn",
+   "reference": "J. Long, E. Shelhamer, T. Darrell, Fully convolutional networks for semantic segmentation, in: Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), IEEE, 2015, pp. 3431-3440. https://doi.org/10.1109/CVPR.2015.7298965.",
+   "title": "Fully convolutional networks for semantic segmentation",
+   "year": 2015,
+   "doi": "10.1109/CVPR.2015.7298965",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1109/CVPR.2015.7298965",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Fully convolutional networks for semantic segmentation",
+    "issued_year": 2015,
+    "print_year": null,
+    "checked": "2026-11-03"
+   }
+  },
+  "ma2024medsam": {
+   "key": "ma2024medsam",
+   "reference": "J. Ma, Y. He, F. Li, L. Han, C. You, B. Wang, Segment anything in medical images, Nat. Commun. 15 (2024) 654. https://doi.org/10.1038/s41467-024-44824-z.",
+   "title": "Segment anything in medical images",
+   "year": 2024,
+   "doi": "10.1038/s41467-024-44824-z",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1038/s41467-024-44824-z",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Segment anything in medical images",
+    "issued_year": 2024,
+    "print_year": null,
+    "checked": "2026-11-03"
+   }
+  },
+  "mnih2015dqn": {
+   "key": "mnih2015dqn",
+   "reference": "V. Mnih, K. Kavukcuoglu, D. Silver, A.A. Rusu, J. Veness, M.G. Bellemare, A. Graves, M. Riedmiller, A.K. Fidjeland, G. Ostrovski, S. Petersen, C. Beattie, A. Sadik, I. Antonoglou, H. King, D. Kumaran, D. Wierstra, S. Legg, D. Hassabis, Human-level control through deep reinforcement learning, Nature 518 (2015) 529-533. https://doi.org/10.1038/nature14236.",
+   "title": "Human-level control through deep reinforcement learning",
+   "year": 2015,
+   "doi": "10.1038/nature14236",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1038/nature14236",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Human-level control through deep reinforcement learning",
+    "issued_year": 2015,
+    "print_year": 2015,
+    "checked": "2026-11-03"
+   }
+  },
+  "mnih2016a3c": {
+   "key": "mnih2016a3c",
+   "reference": "V. Mnih, A.P. Badia, M. Mirza, A. Graves, T. Lillicrap, T. Harley, D. Silver, K. Kavukcuoglu, Asynchronous methods for deep reinforcement learning, in: Proc. Int. Conf. Mach. Learn. (ICML), Proc. Mach. Learn. Res., vol. 48, PMLR, 2016, pp. 1928-1937. https://proceedings.mlr.press/v48/mniha16.html.",
+   "title": "Asynchronous methods for deep reinforcement learning",
+   "year": 2016,
+   "doi": null,
+   "no_doi": true,
+   "identifier": "https://proceedings.mlr.press/v48/mniha16.html",
+   "why": "PMLR assigns no DOI",
+   "arxiv_doi": "10.48550/arXiv.1602.01783",
+   "arxiv_doi_verified": {
+    "registry": "DataCite",
+    "title": "Asynchronous Methods for Deep Reinforcement Learning",
+    "year": 2016,
+    "checked": "2026-11-03"
+   }
+  },
+  "pomerleau1991": {
+   "key": "pomerleau1991",
+   "reference": "D.A. Pomerleau, Efficient training of artificial neural networks for autonomous navigation, Neural Comput. 3 (1991) 88-97. https://doi.org/10.1162/neco.1991.3.1.88.",
+   "title": "Efficient training of artificial neural networks for autonomous navigation",
+   "year": 1991,
+   "doi": "10.1162/neco.1991.3.1.88",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1162/neco.1991.3.1.88",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Efficient Training of Artificial Neural Networks for Autonomous Navigation",
+    "issued_year": 1991,
+    "print_year": 1991,
+    "checked": "2026-11-03"
+   }
+  },
+  "reinforce": {
+   "key": "reinforce",
+   "reference": "R.J. Williams, Simple statistical gradient-following algorithms for connectionist reinforcement learning, Mach. Learn. 8 (1992) 229-256. https://doi.org/10.1007/BF00992696.",
+   "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+   "year": 1992,
+   "doi": "10.1007/BF00992696",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1007/BF00992696",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+    "issued_year": 1992,
+    "print_year": 1992,
+    "checked": "2026-11-03"
+   }
+  },
+  "ronneberger2015unet": {
+   "key": "ronneberger2015unet",
+   "reference": "O. Ronneberger, P. Fischer, T. Brox, U-Net: convolutional networks for biomedical image segmentation, in: Medical Image Computing and Computer-Assisted Intervention, MICCAI 2015, Lect. Notes Comput. Sci., vol. 9351, Springer, Cham, 2015, pp. 234-241. https://doi.org/10.1007/978-3-319-24574-4_28.",
+   "title": "U-Net: convolutional networks for biomedical image segmentation",
+   "year": 2015,
+   "doi": "10.1007/978-3-319-24574-4_28",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1007/978-3-319-24574-4_28",
+   "verified": {
+    "registry": "Crossref",
+    "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+    "issued_year": 2015,
+    "print_year": null,
+    "checked": "2026-11-03"
+   }
+  },
+  "ross2011dagger": {
+   "key": "ross2011dagger",
+   "reference": "S. Ross, G.J. Gordon, J.A. Bagnell, A reduction of imitation learning and structured prediction to no-regret online learning, in: Proc. Int. Conf. Artif. Intell. Stat. (AISTATS), Proc. Mach. Learn. Res., vol. 15, PMLR, 2011, pp. 627-635. https://proceedings.mlr.press/v15/ross11a.html.",
+   "title": "A reduction of imitation learning and structured prediction to no-regret online learning",
+   "year": 2011,
+   "doi": null,
+   "no_doi": true,
+   "identifier": "https://proceedings.mlr.press/v15/ross11a.html",
+   "why": "PMLR assigns no DOI",
+   "arxiv_doi": "10.48550/arXiv.1011.0686",
+   "arxiv_doi_verified": {
+    "registry": "DataCite",
+    "title": "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning",
+    "year": 2010,
+    "checked": "2026-11-03"
+   }
+  },
+  "rubinstein1999cem": {
+   "key": "rubinstein1999cem",
+   "reference": "R. Rubinstein, The cross-entropy method for combinatorial and continuous optimization, Methodol. Comput. Appl. Probab. 1 (1999) 127-190. https://doi.org/10.1023/A:1010091220143.",
+   "title": "The cross-entropy method for combinatorial and continuous optimization",
+   "year": 1999,
+   "doi": "10.1023/A:1010091220143",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1023/A:1010091220143",
+   "verified": {
+    "registry": "Crossref",
+    "title": "The Cross-Entropy Method for Combinatorial and Continuous Optimization",
+    "issued_year": 1999,
+    "print_year": 1999,
+    "checked": "2026-11-03"
+   }
+  },
+  "salehi2015": {
+   "key": "salehi2015",
+   "reference": "M. Salehi, S.-A. Ahmadi, R. Prevost, N. Navab, W. Wein, Patient-specific 3D ultrasound simulation based on convolutional ray-tracing and appearance optimization, in: Medical Image Computing and Computer-Assisted Intervention, MICCAI 2015, Lect. Notes Comput. Sci., vol. 9350, Springer, Cham, 2015, pp. 510-518. https://doi.org/10.1007/978-3-319-24571-3_61.",
+   "title": "Patient-specific 3D ultrasound simulation based on convolutional ray-tracing and appearance optimization",
+   "year": 2015,
+   "doi": "10.1007/978-3-319-24571-3_61",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1007/978-3-319-24571-3_61",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Patient-specific 3D Ultrasound Simulation Based on Convolutional Ray-tracing and Appearance Optimization",
+    "issued_year": 2015,
+    "print_year": 2015,
+    "checked": "2026-11-03"
+   }
+  },
+  "sb3": {
+   "key": "sb3",
+   "reference": "A. Raffin, A. Hill, A. Gleave, A. Kanervisto, M. Ernestus, N. Dormann, Stable-Baselines3: reliable reinforcement learning implementations, J. Mach. Learn. Res. 22 (268) (2021) 1-8. https://jmlr.org/papers/v22/20-1364.html.",
+   "title": "Stable-Baselines3: reliable reinforcement learning implementations",
+   "year": 2021,
+   "doi": null,
+   "no_doi": true,
+   "identifier": "https://jmlr.org/papers/v22/20-1364.html",
+   "why": "JMLR assigns no DOI"
+  },
+  "schulman2017ppo": {
+   "key": "schulman2017ppo",
+   "reference": "J. Schulman, F. Wolski, P. Dhariwal, A. Radford, O. Klimov, Proximal policy optimization algorithms, arXiv preprint arXiv:1707.06347, 2017. https://arxiv.org/abs/1707.06347.",
+   "title": "Proximal policy optimization algorithms",
+   "year": 2017,
+   "doi": "10.48550/arXiv.1707.06347",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.48550/arXiv.1707.06347",
+   "verified": {
+    "registry": "DataCite",
+    "title": "Proximal Policy Optimization Algorithms",
+    "issued_year": 2017,
+    "print_year": null,
+    "checked": "2026-11-03"
+   }
+  },
+  "sonogym": {
+   "key": "sonogym",
+   "reference": "Y. Ao, M. Moghani, M. Mittal, M. Prajapat, L. Wu, F. Giraud, F. Carrillo, A. Krause, P. Fürnstahl, SonoGym: high performance simulation for challenging surgical tasks with robotic ultrasound, in: Advances in Neural Information Processing Systems 38 (NeurIPS 2025), 2025, pp. 45013-45040. https://doi.org/10.52202/085713-1343.",
+   "title": "SonoGym: high performance simulation for challenging surgical tasks with robotic ultrasound",
+   "year": 2025,
+   "doi": "10.52202/085713-1343",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.52202/085713-1343",
+   "verified": {
+    "registry": "Crossref",
+    "title": "SonoGym: High Performance Simulation for Challenging Surgical Tasks with Robotic Ultrasound",
+    "issued_year": 2025,
+    "print_year": 2025,
+    "checked": "2026-11-03"
+   }
+  },
+  "sonospade": {
+   "key": "sonospade",
+   "reference": "T. Intharah, Z. Gao, H. Dong, SonoSPADE: real-time, per-tissue ultrasound texture synthesis for closed-loop acquisition, in: Medical Image Computing and Computer Assisted Intervention, MICCAI 2026 Workshops and Challenges (SASHIMI), Lect. Notes Comput. Sci., vol. 17258, Springer Nature, Cham, 2026. Available at https://papers.miccai.org/miccai-2026-sat/SASHIMI_035.html.",
+   "title": "SonoSPADE: real-time, per-tissue ultrasound texture synthesis for closed-loop acquisition",
+   "year": 2026,
+   "doi": null,
+   "no_doi": true,
+   "identifier": "https://papers.miccai.org/miccai-2026-sat/SASHIMI_035.html",
+   "why": "DOI not yet assigned (Crossref bibliographic search on 2026-11-03 found no record)"
+  },
+  "studholme1999nmi": {
+   "key": "studholme1999nmi",
+   "reference": "C. Studholme, D.L.G. Hill, D.J. Hawkes, An overlap invariant entropy measure of 3D medical image alignment, Pattern Recognit. 32 (1999) 71-86. https://doi.org/10.1016/S0031-3203(98)00091-0.",
+   "title": "An overlap invariant entropy measure of 3D medical image alignment",
+   "year": 1999,
+   "doi": "10.1016/S0031-3203(98)00091-0",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1016/S0031-3203(98)00091-0",
+   "verified": {
+    "registry": "Crossref",
+    "title": "An overlap invariant entropy measure of 3D medical image alignment",
+    "issued_year": 1999,
+    "print_year": 1999,
+    "checked": "2026-11-03"
+   }
+  },
+  "totalseg": {
+   "key": "totalseg",
+   "reference": "J. Wasserthal, H.-C. Breit, M.T. Meyer, M. Pradella, D. Hinck, A.W. Sauter, T. Heye, D.T. Boll, J. Cyriac, S. Yang, M. Bach, M. Segeroth, TotalSegmentator: robust segmentation of 104 anatomic structures in CT images, Radiol. Artif. Intell. 5 (2023) e230024. https://doi.org/10.1148/ryai.230024.",
+   "title": "TotalSegmentator: robust segmentation of 104 anatomic structures in CT images",
+   "year": 2023,
+   "doi": "10.1148/ryai.230024",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1148/ryai.230024",
+   "verified": {
+    "registry": "Crossref",
+    "title": "TotalSegmentator: Robust Segmentation of 104 Anatomic Structures in CT Images",
+    "issued_year": 2023,
+    "print_year": 2023,
+    "checked": "2026-11-03"
+   }
+  },
+  "velikova2023lotus": {
+   "key": "velikova2023lotus",
+   "reference": "Y. Velikova, M.F. Azampour, W. Simson, V. Gonzalez Duque, N. Navab, LOTUS: learning to optimize task-based US representations, in: Medical Image Computing and Computer Assisted Intervention, MICCAI 2023, Lect. Notes Comput. Sci., vol. 14220, Springer, Cham, 2023, pp. 435-445. https://doi.org/10.1007/978-3-031-43907-0_42.",
+   "title": "LOTUS: learning to optimize task-based US representations",
+   "year": 2023,
+   "doi": "10.1007/978-3-031-43907-0_42",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1007/978-3-031-43907-0_42",
+   "verified": {
+    "registry": "Crossref",
+    "title": "LOTUS: Learning to Optimize Task-Based US Representations",
+    "issued_year": 2023,
+    "print_year": 2023,
+    "checked": "2026-11-03"
+   }
+  },
+  "wang2004ssim": {
+   "key": "wang2004ssim",
+   "reference": "Z. Wang, A.C. Bovik, H.R. Sheikh, E.P. Simoncelli, Image quality assessment: from error visibility to structural similarity, IEEE Trans. Image Process. 13 (2004) 600-612. https://doi.org/10.1109/TIP.2003.819861.",
+   "title": "Image quality assessment: from error visibility to structural similarity",
+   "year": 2004,
+   "doi": "10.1109/TIP.2003.819861",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1109/TIP.2003.819861",
+   "verified": {
+    "registry": "Crossref",
+    "title": "Image quality assessment: from error visibility to structural similarity",
+    "issued_year": 2004,
+    "print_year": 2004,
+    "checked": "2026-11-03"
+   }
+  },
+  "zhang2018lpips": {
+   "key": "zhang2018lpips",
+   "reference": "R. Zhang, P. Isola, A.A. Efros, E. Shechtman, O. Wang, The unreasonable effectiveness of deep features as a perceptual metric, in: Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit. (CVPR), IEEE, 2018, pp. 586-595. https://doi.org/10.1109/CVPR.2018.00068.",
+   "title": "The unreasonable effectiveness of deep features as a perceptual metric",
+   "year": 2018,
+   "doi": "10.1109/CVPR.2018.00068",
+   "no_doi": false,
+   "doi_url": "https://doi.org/10.1109/CVPR.2018.00068",
+   "verified": {
+    "registry": "Crossref",
+    "title": "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric",
+    "issued_year": 2018,
+    "print_year": 2018,
+    "checked": "2026-11-03"
+   }
+  }
+ },
+ "submitted_methods": []
+}

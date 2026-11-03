@@ -1,0 +1,36 @@
+
+\begin{table}[tp]
+\caption{Offline registration against real target frames (no probe, phantom or robot). Each real target is paired with 3 held-out CTs. Each learned-mask servo (3 seeds) takes its masks of the real frame and of the simulated view, for control and reward, from its own segmenter. Score: organ-restricted IoU between the CT label of the simulated view and the annotated organ of the real frame, at the keep-best step (chosen by that reward, without ground truth) minus at the static start. Mean over targets (each averaged over 9 runs), with a 95\% bootstrap CI over targets. Rule met: yes only if the CI lies above 0 (pre-specified rule). AUL and KidneyUS frames are resized screenshots outside the convex-sector geometry of the renders.}
+\label{tab:registration}
+\centering
+\renewcommand{\baselinestretch}{1}\small
+\begin{tabular}{@{}lccl@{}}
+\toprule
+Stage & Keep-best minus static IoU & 95\% CI & Rule met \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Vitale holdout~\cite{vitale}, liver, $n = 12$ targets}} \\
+\quad Physics & $+0.028$ & $[+0.007, +0.051]$ & yes \\
+\quad CUT & $+0.020$ & $[+0.008, +0.033]$ & yes \\
+\quad CycleGAN & $+0.030$ & $[+0.014, +0.048]$ & yes \\
+\quad SonoSPADE & $+0.062$ & $[+0.029, +0.098]$ & yes \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Vitale holdout~\cite{vitale}, kidney, $n = 4$ targets}} \\
+\quad Physics & $+0.037$ & $[+0.000, +0.093]$ & no \\
+\quad CUT & $+0.017$ & $[+0.000, +0.052]$ & no \\
+\quad CycleGAN & $+0.022$ & $[+0.000, +0.064]$ & no \\
+\quad SonoSPADE & $+0.044$ & $[+0.000, +0.108]$ & no \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{AUL~\cite{aul}, liver, $n = 60$ targets}} \\
+\quad Physics & $0.000$ & $[-0.009, +0.010]$ & no \\
+\quad CUT & $+0.013$ & $[+0.004, +0.022]$ & yes \\
+\quad CycleGAN & $+0.004$ & $[-0.005, +0.013]$ & no \\
+\quad SonoSPADE & $+0.018$ & $[+0.002, +0.034]$ & yes \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{KidneyUS holdout~\cite{kidneyus}, kidney, $n = 56$ targets}} \\
+\quad Physics & $-0.014$ & $[-0.026, -0.001]$ & no (CI below 0) \\
+\quad CUT & $-0.010$ & $[-0.024, +0.004]$ & no \\
+\quad CycleGAN & $-0.002$ & $[-0.018, +0.013]$ & no \\
+\quad SonoSPADE & $+0.028$ & $[+0.013, +0.044]$ & yes \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,8 @@
+# pip constraints of the tests workflow: the package stack of the last CI run that passed before this
+# release (2026-10-28). With numpy 2.5.4, torch 2.15.0 and pillow 13.0.0, tests/test_vendor_regression.py
+# failed on Linux and Windows alike (ep_poses max |diff| 1.21e-05 against atol 1e-05; texture_frame mean
+# |diff| 0.00177 against 0.001). Raise a pin only with that test passing.
+numpy==2.5.2
+torch==2.14.1
+torchvision==0.29.1
+pillow==12.3.0

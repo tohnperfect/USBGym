@@ -1,0 +1,67 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{AMOS external cohort on 30 CTs (exploratory, pre-specified rule; external replication in simulation only). Top: the decisions. Families AMOS-P ($m = 3$) and AMOS-S ($m = 2$), two-sided Monte Carlo sign-flip test (1,000,000 sign vectors, seed 0), Holm within each family; the CT is the unit. C1 and C2 replicate when they hold with the sign of the original six. Middle: AMOS beside the 20 replication-cohort CTs and the original six (estimation only; no $p$, no decision; 95\% $t$ CIs). An interval that covers 0 does not show that a value is unchanged, and one that excludes 0 is not a difference that holds. Bottom: the relabeling control on the 20 cohort CTs (estimation only), the paired change and the AMOS difference side by side, never added.}
+\label{tab:amos-results}
+\centering
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l c c c >{\raggedright\arraybackslash}p{0.1\textwidth} l l r@{}}
+\toprule
+Contrast & Estimate (mm), 95\% $t$ CI & $k$/$n$ & Sign-flip $p$ & Holm $p$ & Decision & Case bootstrap & Case-by-seed bootstrap & Six \\
+\midrule
+\quad C1: learned minus CT masks, physics, final policy & $+4.01$ $[+3.40, +4.62]$ & 29/30 & $1.0 \times 10^{-6}$ & $3.0 \times 10^{-6}$ & replicates & $[+3.42, +4.56]$ & $[+3.29, +4.68]$ & $+4.92$ \\
+\quad C2: SonoSPADE minus physics, learned-mask servo base & $-2.73$ $[-3.43, -2.03]$ & 27/30 & $1.0 \times 10^{-6}$ & $3.0 \times 10^{-6}$ & replicates & $[-3.39, -2.06]$ & $[-3.50, -1.97]$ & $-4.06$ \\
+\quad Gap: CT-mask servo base minus pose oracle & $+10.68$ $[+9.99, +11.37]$ & 30/30 & $1.0 \times 10^{-6}$ & $2.0 \times 10^{-6}$ & holds higher & $[+10.05, +11.33]$ & $[+9.99, +11.40]$ & $+10.12$ \\
+\quad Bound: privileged look-ahead (seed 0) minus CT-mask servo base & $-4.51$ $[-5.29, -3.74]$ & 30/30 & $1.0 \times 10^{-6}$ & $2.0 \times 10^{-6}$ & holds lower & $[-5.24, -3.80]$ & $[-5.31, -3.74]$ & $-3.52$ \\
+\quad C3: RL change within $\pm 1$~mm in all 8 policy arms (intersection-union TOST) & & & $0.009$ & $0.009$ & equivalence within $\pm 1$~mm shown in every arm & & & \\
+\quad\quad Largest per-arm TOST $p$: learned masks, CUT & $+0.52$, 90\% $[+0.20, +0.84]$ & 20/30 & $0.009$ (TOST) & & & & & \\
+\quad Ordering of the rungs and stages & $\tau_b$ 0.79 $[0.70, 0.91]$ & 40/40 & & & recurs & & & \\
+\bottomrule
+\end{tabularx}
+
+\medskip
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l l r l l@{}}
+\toprule
+Contrast & AMOS (mm), 95\% $t$ CI & 20-CT cohort (mm), 95\% $t$ CI & Six & AMOS minus cohort, Welch 95\% CI & Two-sample bootstrap 95\% CI \\
+\midrule
+\quad C1: learned minus CT masks, physics, final policy & $+4.01$ $[+3.40, +4.62]$ & $+2.57$ $[+1.66, +3.47]$ & $+4.92$ & $+1.44$ $[+0.38, +2.51]$ & $[+0.43, +2.44]$ \\
+\quad C2: SonoSPADE minus physics, learned-mask servo base & $-2.73$ $[-3.43, -2.03]$ & $-2.04$ $[-2.75, -1.33]$ & $-4.06$ & $-0.68$ $[-1.65, +0.29]$ & $[-1.58, +0.25]$ \\
+\quad RL change, CT masks, physics & $+0.18$ $[+0.07, +0.28]$ & $+0.15$ $[+0.00, +0.30]$ & $+0.04$ & $+0.02$ $[-0.16, +0.21]$ & $[-0.15, +0.19]$ \\
+\quad RL change, CT masks, CUT & $+0.01$ $[-0.10, +0.11]$ & $+0.02$ $[-0.13, +0.16]$ & $-0.08$ & $-0.01$ $[-0.19, +0.16]$ & $[-0.18, +0.15]$ \\
+\quad RL change, CT masks, CycleGAN & $+0.05$ $[-0.03, +0.14]$ & $-0.04$ $[-0.17, +0.10]$ & $+0.00$ & $+0.09$ $[-0.06, +0.24]$ & $[-0.06, +0.23]$ \\
+\quad RL change, CT masks, SonoSPADE & $+0.06$ $[-0.07, +0.18]$ & $-0.02$ $[-0.18, +0.14]$ & $-0.06$ & $+0.08$ $[-0.12, +0.27]$ & $[-0.12, +0.26]$ \\
+\quad RL change, learned masks, physics & $+0.13$ $[-0.08, +0.34]$ & $-0.27$ $[-0.54, +0.00]$ & $-0.29$ & $+0.40$ $[+0.07, +0.73]$ & $[+0.09, +0.72]$ \\
+\quad RL change, learned masks, CUT & $+0.52$ $[+0.14, +0.91]$ & $+0.18$ $[-0.14, +0.50]$ & $+0.47$ & $+0.34$ $[-0.15, +0.83]$ & $[-0.12, +0.80]$ \\
+\quad RL change, learned masks, CycleGAN & $+0.22$ $[+0.02, +0.43]$ & $+0.05$ $[-0.19, +0.28]$ & $+0.08$ & $+0.17$ $[-0.13, +0.48]$ & $[-0.11, +0.46]$ \\
+\quad RL change, learned masks, SonoSPADE & $+0.22$ $[+0.07, +0.37]$ & $+0.27$ $[+0.11, +0.44]$ & $+0.05$ & $-0.05$ $[-0.27, +0.16]$ & $[-0.26, +0.15]$ \\
+\quad Gap: CT-mask servo base minus pose oracle & $+10.68$ $[+9.99, +11.37]$ & $+11.17$ $[+10.32, +12.03]$ & $+10.12$ & $-0.49$ $[-1.56, +0.57]$ & $[-1.50, +0.52]$ \\
+\quad Bound: privileged look-ahead (seed 0) minus CT-mask servo base & $-4.51$ $[-5.29, -3.74]$ & $-4.96$ $[-6.23, -3.68]$ & $-3.52$ & $+0.44$ $[-1.01, +1.90]$ & $[-0.98, +1.80]$ \\
+\quad Kendall $\tau_b$ between the cohorts' 12 cell means & & & & 0.82 $[0.55, 0.91]$ & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\ContinuedFloat
+\caption[]{Continued.}
+\centering
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l c l@{}}
+\toprule
+Contrast (relabeling control on 20 cohort CTs) & Relabeled minus cohort, paired 95\% $t$ CI & $k$/$n$ & AMOS minus relabeled cohort, Welch 95\% CI \\
+\midrule
+\quad C1: learned minus CT masks, physics, final policy & $+0.84$ $[-0.03, +1.70]$ & 13/20 & $+0.61$ $[-0.71, +1.92]$ \\
+\quad C2: SonoSPADE minus physics, learned-mask servo base & $-0.61$ $[-1.43, +0.20]$ & 11/20 & $-0.07$ $[-1.17, +1.03]$ \\
+\quad Gap: CT-mask servo base minus pose oracle & $-0.54$ $[-1.21, +0.12]$ & 15/20 & $+0.05$ $[-1.10, +1.20]$ \\
+\quad Bound: privileged look-ahead (seed 0) minus CT-mask servo base & $-0.38$ $[-1.39, +0.63]$ & 11/20 & $+0.82$ $[-0.69, +2.34]$ \\
+\quad RL change, CT masks, physics & $+0.04$ $[-0.12, +0.19]$ & 11/20 & $-0.01$ $[-0.19, +0.16]$ \\
+\quad RL change, CT masks, CUT & $+0.04$ $[-0.08, +0.16]$ & 10/20 & $-0.05$ $[-0.22, +0.11]$ \\
+\quad RL change, CT masks, CycleGAN & $+0.07$ $[-0.06, +0.20]$ & 11/20 & $+0.02$ $[-0.13, +0.17]$ \\
+\quad RL change, CT masks, SonoSPADE & $+0.07$ $[-0.04, +0.19]$ & 12/20 & $+0.00$ $[-0.20, +0.20]$ \\
+\quad RL change, learned masks, physics & $+0.39$ $[+0.17, +0.62]$ & 17/20 & $+0.01$ $[-0.30, +0.32]$ \\
+\quad RL change, learned masks, CUT & $+0.11$ $[-0.19, +0.40]$ & 11/20 & $+0.23$ $[-0.29, +0.76]$ \\
+\quad RL change, learned masks, CycleGAN & $+0.02$ $[-0.22, +0.25]$ & 9/20 & $+0.16$ $[-0.15, +0.47]$ \\
+\quad RL change, learned masks, SonoSPADE & $-0.13$ $[-0.34, +0.07]$ & 13/20 & $+0.08$ $[-0.14, +0.30]$ \\
+\bottomrule
+\end{tabularx}
+\end{table}

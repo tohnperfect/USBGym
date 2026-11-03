@@ -1,0 +1,96 @@
+{
+ "bins_mm": [
+  [
+   0,
+   5
+  ],
+  [
+   5,
+   10
+  ],
+  [
+   10,
+   20
+  ],
+  [
+   20,
+   35
+  ],
+  [
+   35,
+   60
+  ]
+ ],
+ "cases": [
+  "s0358",
+  "s0513",
+  "s0519",
+  "s0591",
+  "s0649",
+  "s0762"
+ ],
+ "checked_against": "outputs/v2/RESULTS.json cue_ablation.none",
+ "data": {
+  "cut": {
+   "app_by_bin": [
+    0.9037675478182505,
+    0.8507085206616287,
+    0.7705386791109478,
+    0.7252593369392811,
+    0.7271853078561067
+   ],
+   "corr_mean": 0.5441901188242652,
+   "corr_sd": 0.1435834274388604,
+   "n_views": 60
+  },
+  "cyclegan": {
+   "app_by_bin": [
+    0.9009684635301864,
+    0.8489638509695484,
+    0.7694563663241627,
+    0.7236235289604935,
+    0.7258831770574189
+   ],
+   "corr_mean": 0.5484490306441526,
+   "corr_sd": 0.14113184828562553,
+   "n_views": 60
+  },
+  "physics": {
+   "app_by_bin": [
+    0.8844849454588765,
+    0.8265322508605504,
+    0.7544129050786746,
+    0.706980416764896,
+    0.6988051444257392
+   ],
+   "corr_mean": 0.5419574734208881,
+   "corr_sd": 0.14684825480880037,
+   "n_views": 60
+  },
+  "sonospade": {
+   "app_by_bin": [
+    0.8949948541462162,
+    0.8421723787260005,
+    0.7634769205018814,
+    0.7072455146122125,
+    0.6900010862526424
+   ],
+   "corr_mean": 0.6134803001876175,
+   "corr_sd": 0.13292817239542587,
+   "n_views": 60
+  }
+ },
+ "dr_arm": "off",
+ "n_target_views": 60,
+ "organs": [
+  "liver",
+  "kidney"
+ ],
+ "printed_width_in": 5.18057285180573,
+ "samples_per_target": 40,
+ "sd": "population SD over target views (numpy std), as in the source JSON",
+ "seat_mode": "anatomical",
+ "source_json": "outputs/v2/view_match/landscape_heldout.json",
+ "source_md5": "see MANIFEST.tsv",
+ "targets_per_case_per_organ": 5
+}

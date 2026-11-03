@@ -1,0 +1,73 @@
+[build-system]
+# >= 77 for the SPDX `license` expression and `license-files` (PEP 639) below
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usbg"
+version = "2.2.0"
+description = "USB Gym: a Gymnasium testbed for closed-loop ultrasound view matching (CT-based B-mode rendering, MuJoCo probe-skin contact, screened acoustic windows, oracle ladder, plug slots)."
+readme = "README.md"
+authors = [
+    { name = "Thanapong Intharah" },
+    { name = "Zhichao Gao" },
+    { name = "Yiliang Liu" },
+    { name = "Hao Dong" },
+]
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.12"           # the version CI tests (.github/workflows/tests.yml)
+# Self-contained: the SE(3) math, the contract and the scan geometry are vendored in usbg._par, so no
+# sibling package is installed. The run provenance of the reported v2 numbers records Python 3.13.13,
+# numpy 2.1.3, torch 2.12.1 and mujoco 3.3.7 (macOS arm64, MPS); on any other stack
+# tests/test_vendor_regression.py checks the pipeline within a stated float tolerance.
+# Only the retired v1 modules (usbg.demonstrator, usbg.autolabel, usbg.eval.recognizer_agreement) import
+# packages that are not listed here, lazily.
+# PyTorch: any build works (CPU, MPS or CUDA); for a CPU-only install, install torch and torchvision
+# from https://download.pytorch.org/whl/cpu first (README, "Install").
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.13",
+    "torch>=2.2",
+    "torchvision>=0.17",         # scripts/eval_fid_kid.py (Inception-v3 features for FID / KID)
+    "mujoco>=3.2,<3.4",          # probe-skin contact; v2 numbers from 3.3.7
+    "nibabel>=5.2",              # CT and TotalSegmentator NIfTI masks (usbg.volume, usbg.windows)
+    "pillow>=10.0",              # resizing in usbg.eval, usbg.view_match, usbg.segmenter, usbg.texture_gan
+    "matplotlib>=3.8",
+    "imageio[ffmpeg]>=2.34",
+    "pyyaml>=6.0",
+    "gymnasium>=1.0",            # usbg.gym_env (the Gymnasium adapter and its registered environment)
+]
+
+[project.urls]
+Homepage = "https://github.com/tohnperfect/USBGym"
+Repository = "https://github.com/tohnperfect/USBGym"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "scikit-image>=0.22"]
+# The plug adapters that import an extra package installed with the repository's own dependencies: the SSIM
+# appearance term of the reward slot (usbg.plug.rewards, README "Plugging in a component"). The other published
+# plug-in methods need their own packages (README, Install, Notes).
+plug = ["scikit-image>=0.22"]
+# Patient-level statistics of the landscape tables (scripts/agg_table3.py).
+analysis = ["pandas>=2.0"]
+# Body-surface contact meshes (usbg.body_surface): marching-cubes skin extraction, mesh IO /
+# smoothing / surface sampling, and quadric decimation. Imported lazily, so only needed to build
+# CT-derived body surfaces.
+body = ["scikit-image>=0.22", "trimesh>=4.0", "fast-simplification>=0.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["usbg", "usbg.*"]
+
+[tool.setuptools.package-data]
+# the screened-windows file of the reported runs (derived from the public TotalSegmentator CTs) and the leaderboard
+# data (the rows of Table 5 with their per-episode values, the methods list and the release-asset manifest)
+usbg = ["data/*.json", "leaderboard/data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "slow: integration tests that need local data, trained checkpoints or long runs",
+]

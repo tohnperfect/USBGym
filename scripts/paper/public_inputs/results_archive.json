@@ -1,0 +1,6 @@
+{
+ "about": "The results archive that public_inputs/expected was checked against: its DOI and the sha256 and number of rows of its MANIFEST.tsv. reproduce.py reports whether ROOT holds this MANIFEST.tsv before it compares (exit code 3 when it does not).",
+ "doi": "10.5281/zenodo.23913142",
+ "manifest_sha256": "978694412a51b661486b869ffcb3586dff669defc1b38058309956454de1b51f",
+ "manifest_rows": 720
+}

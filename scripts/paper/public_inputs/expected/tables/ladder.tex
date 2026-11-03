@@ -1,0 +1,48 @@
+
+\begin{table*}[tp]
+\caption{Oracle ladder: final translation error (mm), 6 held-out patients, contact on, evaluation domain randomization off; policy rows average 3 seeds, each meeting the same 60 crossed episodes. Pre-specified results, primary; the last block is post hoc. Errors: mean of per-patient means. Gaps: mean per-patient paired difference, patients of 6 sharing its sign, and 95\% patient-cluster bootstrap CI (10,000 resamples); $^{\ast}$a difference under the pre-specified CI-and-sign rule. Every contrast is conditional on the trained artifacts (texture networks, segmenters, bases and policies). Seeds index artifacts; the patient is the sampling unit. The servo base accounts for nearly all of the improvement; imitation and REINFORCE each change the final translation error by less than 0.5~mm. $^{\mathrm{L}}$Reads the CT label slice. $^{\dagger}$Privileged: simulator state that no rig provides.}
+\label{tab:ladder}
+\centering
+\renewcommand{\baselinestretch}{1}\footnotesize
+\begin{tabular}{@{}l cccc@{}}
+\toprule
+ & Physics & CUT & CycleGAN & SonoSPADE$^{\mathrm{L}}$ \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Final translation error (mm)}} \\
+Static start (no commanded motion) & \multicolumn{4}{c}{16.03} \\
+Scripted sweep (no feedback) & \multicolumn{4}{c}{15.52} \\
+Analytic pose oracle$^{\dagger}$ & \multicolumn{4}{c}{1.53} \\
+\addlinespace
+\multicolumn{5}{@{}l}{CT mask$^{\dagger}$} \\
+\quad Servo base & 11.65 & 11.65 & 11.65 & 11.65 \\
+\quad After imitation & 11.78 & 11.72 & 11.70 & 11.74 \\
+\quad Final & 11.81 & 11.64 & 11.69 & 11.69 \\
+\addlinespace
+\multicolumn{5}{@{}l}{Learned mask (texture-matched segmenter)} \\
+\quad Servo base & 17.20 & 16.84 & 16.85 & 13.13 \\
+\quad After imitation & 17.02 & 16.42 & 16.42 & 13.07 \\
+\quad Final & 16.73 & 16.90 & 16.50 & 13.11 \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Gaps (mm): patient-level mean, k/6 patients, 95\% CI}} \\
+Oracle-to-CT-mask gap & \begin{tabular}[c]{@{}c@{}}$+10.28$$^{\ast}$, 6/6\\$[+9.21, +11.39]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$+10.11$$^{\ast}$, 6/6\\$[+8.96, +11.27]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$+10.17$$^{\ast}$, 6/6\\$[+9.06, +11.36]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$+10.16$$^{\ast}$, 6/6\\$[+9.10, +11.27]$\end{tabular} \\[2pt]
+CT-to-learned-mask gap & \begin{tabular}[c]{@{}c@{}}$+4.92$$^{\ast}$, 5/6\\$[+2.46, +6.79]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$+5.26$$^{\ast}$, 6/6\\$[+3.07, +6.95]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$+4.80$$^{\ast}$, 5/6\\$[+2.15, +6.42]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$+1.43$$^{\ast}$, 6/6\\$[+0.86, +2.11]$\end{tabular} \\[2pt]
+RL contribution, CT mask & \begin{tabular}[c]{@{}c@{}}$+0.04$, 3/6\\$[-0.10, +0.17]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$-0.08$, 4/6\\$[-0.29, +0.10]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$0.00$, 3/6\\$[-0.23, +0.21]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$-0.06$, 3/6\\$[-0.33, +0.22]$\end{tabular} \\[2pt]
+RL contribution, learned mask & \begin{tabular}[c]{@{}c@{}}$-0.29$, 3/6\\$[-0.80, +0.17]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$+0.47$, 4/6\\$[+0.06, +0.90]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$+0.08$, 3/6\\$[-0.37, +0.53]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$+0.05$, 3/6\\$[-0.24, +0.33]$\end{tabular} \\[2pt]
+SonoSPADE minus stage, learned-mask final & \begin{tabular}[c]{@{}c@{}}$-3.62$$^{\ast}$, 5/6\\$[-5.03, -1.67]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$-3.78$$^{\ast}$, 5/6\\$[-5.14, -2.05]$\end{tabular} & \begin{tabular}[c]{@{}c@{}}$-3.38$$^{\ast}$, 5/6\\$[-4.94, -1.19]$\end{tabular} & n/a \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Post hoc block}} \\
+Final rotation error (deg) & \multicolumn{4}{l}{static 13.70, scripted 5.63, pose oracle$^{\dagger}$ 1.02} \\
+\quad CT mask$^{\dagger}$, final & 7.60 & 7.79 & 7.35 & 6.91 \\
+\quad Learned mask, final & 7.93 & 8.29 & 7.10 & 8.26 \\
+Success, 5~mm and 5$^{\circ}$ (\%) & \multicolumn{4}{l}{static 0.0, scripted 3.3, pose oracle$^{\dagger}$ 100.0} \\
+\quad CT mask$^{\dagger}$, final & 8.3 & 8.9 & 9.4 & 10.0 \\
+\quad Learned mask, final & 1.1 & 3.9 & 2.2 & 5.6 \\
+Success, 10~mm and 10$^{\circ}$ (\%) & \multicolumn{4}{l}{static 3.3, scripted 16.7, pose oracle$^{\dagger}$ 100.0} \\
+\quad CT mask$^{\dagger}$, final & 32.8 & 33.9 & 38.3 & 36.7 \\
+\quad Learned mask, final & 21.1 & 14.4 & 18.9 & 30.6 \\
+Final match score $S$ & \multicolumn{4}{l}{static 0.462, scripted 0.515, pose oracle$^{\dagger}$ 0.872} \\
+\quad CT mask$^{\dagger}$, final & 0.610 & 0.616 & 0.612 & 0.624 \\
+\quad Learned mask, final & 0.472 & 0.472 & 0.483 & 0.555 \\
+\bottomrule
+\end{tabular}
+\end{table*}

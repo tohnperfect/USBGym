@@ -1,0 +1,58 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Earlier learned-mask controller runs, seeds 0 to 2 (exploratory, no pre-specified rule; run before the learned-mask controller arm was specified). None of these rows enters a decision, and none is read as a separation of two methods. Error: final translation error over the 60 held-out episodes, mean over seeds of patient means. Difference: learner minus the servo base of the same condition, paired by patient, 95\% $t$ CI, with the patients of 6 sharing its sign. Reference rows print their error only. The rerun rows re-evaluate the primary REINFORCE weights in the same evaluation as these learners, so they need not equal the cells of Table~\ref{tab:ladder}.}
+\label{tab:earlier-ctrl}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X c r l@{}}
+\toprule
+Row & Seeds & Error (mm) & Minus servo base (mm), 95\% $t$ CI, $k$/6 \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Learned masks, physics frames}} \\
+\quad PPO, residual & 3 & 17.43 & $+0.24$ $[-0.28, +0.75]$, 3/6 \\
+\quad SAC, residual & 3 & 17.10 & $-0.09$ $[-0.82, +0.63]$, 2/6 \\
+\quad BC, residual & 3 & 14.22 & $-2.98$ $[-5.13, -0.83]$, 5/6 \\
+\quad DAgger, residual & 3 & 14.69 & $-2.51$ $[-4.26, -0.76]$, 5/6 \\
+\quad DQN, 13 discrete moves & 3 & 16.74 & $-0.46$ $[-2.12, +1.21]$, 5/6 \\
+\quad Static start & 1 & 16.03 &  \\
+\quad Random actions & 3 & 17.45 &  \\
+\quad Pose oracle (privileged) & 1 & 1.53 &  \\
+\quad REINFORCE residual of the primary results, final weights, rerun & 3 & 16.65 &  \\
+\quad REINFORCE residual of the primary results, after imitation, rerun & 3 & 16.86 &  \\
+\quad Servo base alone & 3 & 17.20 &  \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Learned masks, SonoSPADE frames}} \\
+\quad PPO, residual & 3 & 12.89 & $-0.24$ $[-0.49, +0.01]$, 5/6 \\
+\quad SAC, residual & 3 & 14.02 & $+0.89$ $[-0.35, +2.12]$, 4/6 \\
+\quad BC, residual & 3 & 11.44 & $-1.70$ $[-3.23, -0.16]$, 5/6 \\
+\quad DAgger, residual & 3 & 12.46 & $-0.67$ $[-2.64, +1.30]$, 5/6 \\
+\quad DQN, 13 discrete moves & 3 & 17.04 & $+3.91$ $[+1.01, +6.81]$, 6/6 \\
+\quad Static start & 1 & 16.03 &  \\
+\quad Random actions & 3 & 17.45 &  \\
+\quad Pose oracle (privileged) & 1 & 1.53 &  \\
+\quad REINFORCE residual of the primary results, final weights, rerun & 3 & 13.05 &  \\
+\quad REINFORCE residual of the primary results, after imitation, rerun & 3 & 13.11 &  \\
+\quad Servo base alone & 3 & 13.13 &  \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{CT masks, physics frames}} \\
+\quad PPO, residual & 3 & 11.81 & $+0.16$ $[-0.02, +0.34]$, 5/6 \\
+\quad SAC, residual & 3 & 12.01 & $+0.36$ $[-0.55, +1.27]$, 4/6 \\
+\quad A2C, residual & 3 & 23.03 & $+11.37$ $[+8.34, +14.41]$, 6/6 \\
+\quad PPO, full twist & 3 & 15.25 & $+3.60$ $[+0.42, +6.77]$, 5/6 \\
+\quad DQN, 13 discrete moves & 3 & 17.08 & $+5.43$ $[+2.99, +7.88]$, 6/6 \\
+\quad BC, residual & 3 & 11.07 & $-0.58$ $[-1.48, +0.33]$, 5/6 \\
+\quad DAgger, residual & 3 & 11.50 & $-0.15$ $[-1.65, +1.35]$, 3/6 \\
+\quad TD3, residual & 3 & 20.04 & $+8.39$ $[+6.73, +10.05]$, 6/6 \\
+\quad BC, full twist & 3 & 16.30 & $+4.65$ $[+2.52, +6.78]$, 6/6 \\
+\quad DAgger, full twist & 3 & 17.57 & $+5.92$ $[+2.43, +9.41]$, 6/6 \\
+\quad Static start & 1 & 16.03 &  \\
+\quad Random actions & 3 & 17.45 &  \\
+\quad Pose oracle (privileged) & 1 & 1.53 &  \\
+\quad CEM look-ahead (privileged simulator rollouts, CT masks) & 1 & 8.13 &  \\
+\quad REINFORCE residual of the primary results, final weights, rerun & 3 & 11.83 &  \\
+\quad REINFORCE residual of the primary results, after imitation, rerun & 3 & 11.84 &  \\
+\quad Servo base alone & 3 & 11.65 &  \\
+\bottomrule
+\end{tabularx}
+\end{table}

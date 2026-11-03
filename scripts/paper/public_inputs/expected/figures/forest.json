@@ -1,0 +1,743 @@
+{
+ "blinded_amendment2": false,
+ "ci_check": "every row's ci95_t and ci90_t equal diff_mm -/+ t * sd_mm / sqrt(6) (max deviation 0 mm); tost_within_1mm equals (90% CI inside +/- margin)",
+ "cta": {
+  "blinded": false
+ },
+ "figure": "fig:forest (Fig. 4): per-row 95% and 90% paired t CIs against each slot's reference; filled marker = post hoc TOST at +/- 1 mm passes",
+ "mdd_not_drawn": "the post hoc slot MDDs (plug_rows.json slots[*].mdd) are printed in the Table 5 slot headers",
+ "min_font_pt": 7.0,
+ "n_patients": 6,
+ "posthoc_rule": "mdd from reference contrasts, k_seeds, TOST at +/- 1 mm, patient-by-seed and crossed bootstrap CIs (post hoc)",
+ "printed_size_in": [
+  6.475716064757161,
+  4.19
+ ],
+ "provisional": true,
+ "rows": [
+  {
+   "ci90_t": [
+    0.8357342056150618,
+    5.157394252688745
+   ],
+   "ci95_t": [
+    0.24000985462156077,
+    5.753118603682246
+   ],
+   "decision": "higher",
+   "diff_mm": 2.9965642291519035,
+   "err_mm": 16.130023094007658,
+   "id": "fastcut",
+   "k": 5,
+   "label": "FastCUT",
+   "p_holm": 0.038245631636050256,
+   "p_tost_1mm": 0.9391605935197935,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "texture",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    1.8852574628050667,
+    5.721138499458328
+   ],
+   "ci95_t": [
+    1.3564958952227517,
+    6.249900067040643
+   ],
+   "decision": "higher",
+   "diff_mm": 3.803197981131697,
+   "err_mm": 16.936656845987446,
+   "id": "dclgan",
+   "k": 5,
+   "label": "DCLGAN",
+   "p_holm": 0.020733962845704106,
+   "p_tost_1mm": 0.9839671563197198,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "texture",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    2.6388008545281334,
+    6.3770773066854645
+   ],
+   "ci95_t": [
+    2.12349370657149,
+    6.892384454642108
+   ],
+   "decision": "higher",
+   "diff_mm": 4.507939080606799,
+   "err_mm": 17.641397945462554,
+   "id": "unsb",
+   "k": 6,
+   "label": "UNSB (Schr\u00f6dinger bridge)",
+   "p_holm": 0.013901375006973218,
+   "p_tost_1mm": 0.9935668018045165,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "texture",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    2.411095111362246,
+    5.230361142151148
+   ],
+   "ci95_t": [
+    2.022470044102043,
+    5.618986209411351
+   ],
+   "decision": "higher",
+   "diff_mm": 3.820728126756697,
+   "err_mm": 16.95418699161245,
+   "id": "histmatch",
+   "k": 6,
+   "label": "Histogram matching",
+   "p_holm": 0.011198568085435253,
+   "p_tost_1mm": 0.9950002163680325,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "texture",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    -1.6575795528190558,
+    0.901893554001308
+   ],
+   "ci95_t": [
+    -2.0103931565818796,
+    1.2547071577641318
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": -0.37784299940887384,
+   "err_mm": 12.75561586544688,
+   "id": "lraspp_mbv3",
+   "k": 4,
+   "label": "LR-ASPP, MobileNetV3-L",
+   "p_holm": 1.0,
+   "p_tost_1mm": 0.18612786374947313,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "mask",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    0.42281799987050006,
+    2.394440194529087
+   ],
+   "ci95_t": [
+    0.1510374017846592,
+    2.6662207926149275
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 1.4086290971997935,
+   "err_mm": 14.542087962055547,
+   "id": "deeplabv3_mbv3",
+   "k": 6,
+   "label": "DeepLabV3, MobileNetV3-L",
+   "p_holm": 0.24231178870611333,
+   "p_tost_1mm": 0.7791784398784826,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "mask",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    -1.17024123296536,
+    1.299902921193526
+   ],
+   "ci95_t": [
+    -1.510741181380577,
+    1.640402869608743
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 0.06483084411408295,
+   "err_mm": 13.198289708969833,
+   "id": "deeplabv3_r50",
+   "k": 3,
+   "label": "DeepLabV3, ResNet-50",
+   "p_holm": 1.0,
+   "p_tost_1mm": 0.09379634312773123,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "mask",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    -1.3045102179959116,
+    0.6625297525878708
+   ],
+   "ci95_t": [
+    -1.5756591739735497,
+    0.9336787085655089
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": -0.32099023270402033,
+   "err_mm": 12.812468632151733,
+   "id": "fcn_r50",
+   "k": 4,
+   "label": "FCN, ResNet-50",
+   "p_holm": 1.0,
+   "p_tost_1mm": 0.11145217299199299,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "mask",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    0.21999137246380096,
+    3.269182180287811
+   ],
+   "ci95_t": [
+    -0.20032794818158273,
+    3.689501500933195
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 1.744586776375806,
+   "err_mm": 14.878045641231559,
+   "id": "nnunet2d",
+   "k": 4,
+   "label": "nnU-Net 2D, 2 epochs",
+   "p_holm": 0.4156104395750731,
+   "p_tost_1mm": 0.8148740592406724,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "mask",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    -0.2944852982731574,
+    2.282612216134984
+   ],
+   "ci95_t": [
+    -0.6497283593874412,
+    2.637855277249268
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 0.9940634589309134,
+   "err_mm": 14.3197167476927,
+   "id": "sam_unet",
+   "k": 5,
+   "label": "SAM, boxes from the U-Net mask",
+   "p_holm": 0.903877591924819,
+   "p_tost_1mm": 0.4964759304739142,
+   "provisional": true,
+   "seeds": [
+    0
+   ],
+   "slot": "mask",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    -2.2464342065108327,
+    1.2979505998649774
+   ],
+   "ci95_t": [
+    -2.735014130764522,
+    1.7865305241186664
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": -0.4742418033229277,
+   "err_mm": 12.851411485438858,
+   "id": "medsam_unet",
+   "k": 5,
+   "label": "MedSAM, boxes from the U-Net mask",
+   "p_holm": 1.0,
+   "p_tost_1mm": 0.2880065379625843,
+   "provisional": true,
+   "seeds": [
+    0
+   ],
+   "slot": "mask",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    -0.4547655717386141,
+    0.08233170509008425
+   ],
+   "ci95_t": [
+    -0.5288023824025645,
+    0.1563685157540346
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": -0.18621693332426492,
+   "err_mm": 11.500289557166985,
+   "id": "ppo_res",
+   "k": 4,
+   "label": "PPO, residual",
+   "p_holm": 0.8846894069260258,
+   "p_tost_1mm": 0.0008532424972300302,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "ctrl",
+   "tost_within_1mm": true
+  },
+  {
+   "ci90_t": [
+    -0.5952310155230471,
+    1.3435351301259748
+   ],
+   "ci95_t": [
+    -0.8624825325938998,
+    1.6107866471968275
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 0.3741520573014639,
+   "err_mm": 12.060658547792713,
+   "id": "sac_res",
+   "k": 4,
+   "label": "SAC, residual",
+   "p_holm": 0.9249640197897462,
+   "p_tost_1mm": 0.12500066890177433,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "ctrl",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    7.332376873743606,
+    9.7444934399193
+   ],
+   "ci95_t": [
+    6.999875806965184,
+    10.076994506697721
+   ],
+   "decision": "higher",
+   "diff_mm": 8.538435156831452,
+   "err_mm": 20.2249416473227,
+   "id": "td3_res",
+   "k": 6,
+   "label": "TD3, residual",
+   "p_holm": 0.0003049509154974193,
+   "p_tost_1mm": 0.9999719851787267,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "ctrl",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    5.7007495580183605,
+    7.786313423803973
+   ],
+   "ci95_t": [
+    5.413262535238327,
+    8.073800446584006
+   ],
+   "decision": "higher",
+   "diff_mm": 6.743531490911167,
+   "err_mm": 18.430037981402418,
+   "id": "a2c_res",
+   "k": 6,
+   "label": "A2C, residual",
+   "p_holm": 0.000427199108477275,
+   "p_tost_1mm": 0.9999482551743659,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "ctrl",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    0.26764886390817333,
+    5.0423958838934
+   ],
+   "ci95_t": [
+    -0.39053179784121594,
+    5.7005765456427895
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 2.6550223739007865,
+   "err_mm": 14.341528864392034,
+   "id": "ppo_scratch",
+   "k": 5,
+   "label": "PPO, full twist",
+   "p_holm": 0.375622367203029,
+   "p_tost_1mm": 0.8893626124357863,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "ctrl",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    2.303148076207973,
+    7.141977007847959
+   ],
+   "ci95_t": [
+    1.6361339674000157,
+    7.808991116655918
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 4.722562542027966,
+   "err_mm": 16.409069032519216,
+   "id": "dqn_scratch",
+   "k": 6,
+   "label": "DQN, 13 discrete moves",
+   "p_holm": 0.07723900095544307,
+   "p_tost_1mm": 0.9865794359875345,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "ctrl",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    -1.2099974452096451,
+    0.3386672062160638
+   ],
+   "ci95_t": [
+    -1.4234749594814724,
+    0.5521447204878909
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": -0.4356651194967907,
+   "err_mm": 11.250841370994458,
+   "id": "bc_res",
+   "k": 4,
+   "label": "BC, residual",
+   "p_holm": 0.9249640197897462,
+   "p_tost_1mm": 0.10094241505964753,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "ctrl",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    -2.8603050920625006,
+    1.1852339015815123
+   ],
+   "ci95_t": [
+    -3.4179672092018105,
+    1.7428960187208222
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": -0.8375355952404941,
+   "err_mm": 10.848970895250753,
+   "id": "dagger_res",
+   "k": 4,
+   "label": "DAgger, residual",
+   "p_holm": 0.9249640197897462,
+   "p_tost_1mm": 0.43888267669163306,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "ctrl",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    5.709849149224374,
+    10.12425517711015
+   ],
+   "ci95_t": [
+    5.101340118588162,
+    10.732764207746364
+   ],
+   "decision": "higher",
+   "diff_mm": 7.917052163167263,
+   "err_mm": 19.60355865365851,
+   "id": "bc_scratch",
+   "k": 6,
+   "label": "BC, full twist",
+   "p_holm": 0.006326656981085805,
+   "p_tost_1mm": 0.9992666437975233,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "ctrl",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    1.7093252741235458,
+    10.246082564037813
+   ],
+   "ci95_t": [
+    0.532565848178697,
+    11.422841989982661
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 5.977703919080679,
+   "err_mm": 17.664210409571925,
+   "id": "dagger_scratch",
+   "k": 5,
+   "label": "DAgger, full twist",
+   "p_holm": 0.22212847545865744,
+   "p_tost_1mm": 0.9672163425363182,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "ctrl",
+   "tost_within_1mm": false
+  },
+  {
+   "ci90_t": [
+    -0.07649398763161842,
+    -0.017138267460096526
+   ],
+   "ci95_t": [
+    -0.08467594722394563,
+    -0.008956307867769325
+   ],
+   "decision": "lower",
+   "diff_mm": -0.046816127545857476,
+   "err_mm": 11.923857868172655,
+   "id": "ssim",
+   "k": 5,
+   "label": "SSIM appearance term",
+   "p_holm": 0.04914846064232998,
+   "p_tost_1mm": 8.337112828566375e-09,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "reward",
+   "tost_within_1mm": true
+  },
+  {
+   "ci90_t": [
+    -0.03178421755057768,
+    0.04303963748503372
+   ],
+   "ci95_t": [
+    -0.042098400525266755,
+    0.0533538204597228
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 0.005627709967228019,
+   "err_mm": 11.97630170568574,
+   "id": "nmi",
+   "k": 4,
+   "label": "NMI appearance term",
+   "p_holm": 0.7740087402012445,
+   "p_tost_1mm": 2.1455123930004763e-08,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "reward",
+   "tost_within_1mm": true
+  },
+  {
+   "ci90_t": [
+    -0.018168653465146917,
+    0.07959919668613535
+   ],
+   "ci95_t": [
+    -0.03164557863857426,
+    0.09307612185956268
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 0.030715271610494217,
+   "err_mm": 11.844485428938427,
+   "id": "lotus_orig",
+   "k": 4,
+   "label": "LOTUS, original code, published default parameters",
+   "p_holm": 0.5225080731093917,
+   "p_tost_1mm": 9.257838738999804e-08,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "renderer",
+   "tost_within_1mm": true
+  },
+  {
+   "ci90_t": [
+    -0.032691346390300226,
+    0.12780467694135594
+   ],
+   "ci95_t": [
+    -0.05481511093791424,
+    0.14992844148896994
+   ],
+   "decision": "no detectable difference, equivalence not tested",
+   "diff_mm": 0.047556665275527855,
+   "err_mm": 11.86132682260346,
+   "id": "lotus_reimpl",
+   "k": 4,
+   "label": "LOTUS, in-repository reimplementation",
+   "p_holm": 0.5225080731093917,
+   "p_tost_1mm": 1.1904775508799842e-06,
+   "provisional": true,
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "slot": "renderer",
+   "tost_within_1mm": true
+  }
+ ],
+ "slots": [
+  {
+   "groups_pending": [],
+   "m": 4,
+   "pending": [],
+   "reference": {
+    "err_mm": 13.133458864855752,
+    "id": "sonospade",
+    "label": "SonoSPADE (authors')",
+    "provisional": false
+   },
+   "slot": "texture",
+   "title": "Texture stage"
+  },
+  {
+   "groups_pending": [],
+   "m": 7,
+   "pending": [],
+   "reference": {
+    "err_mm": 13.133458864855752,
+    "id": "unet",
+    "label": "U-Net, stage-matched (authors')",
+    "provisional": false
+   },
+   "slot": "mask",
+   "title": "Mask source"
+  },
+  {
+   "groups_pending": [],
+   "m": 10,
+   "pending": [],
+   "reference": {
+    "err_mm": 11.686506490491249,
+    "id": "reinforce",
+    "label": "REINFORCE residual, imitation start (authors')",
+    "provisional": false
+   },
+   "slot": "ctrl",
+   "title": "Controller"
+  },
+  {
+   "groups_pending": [],
+   "m": 2,
+   "pending": [],
+   "reference": {
+    "err_mm": 11.970673995718515,
+    "id": "paper",
+    "label": "Paper score $S$ (authors')",
+    "provisional": true
+   },
+   "slot": "reward",
+   "title": "Reward"
+  },
+  {
+   "groups_pending": [],
+   "m": 2,
+   "pending": [],
+   "reference": {
+    "err_mm": 11.813770157327932,
+    "id": "physics",
+    "label": "Physics renderer (authors')",
+    "provisional": false
+   },
+   "slot": "renderer",
+   "title": "Renderer"
+  }
+ ],
+ "source": "figures/plug_rows.json",
+ "status": "exploratory, v2.1 pluggability",
+ "t90": 2.015048373333023,
+ "t95": 2.5705818356363146,
+ "t_df": 5,
+ "tost_margin_mm": 1.0,
+ "tost_margin_src": "the +/- 1 mm margin of the pre-specified RL, label-control and CT-anatomy tests",
+ "x_range_mm": [
+  -4.0,
+  12.0
+ ]
+}

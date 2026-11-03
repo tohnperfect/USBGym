@@ -1,0 +1,108 @@
+
+\begin{table*}[htp]
+\renewcommand{\baselinestretch}{1}\scriptsize\setlength{\fboxsep}{0.6pt}
+\caption{Leaderboard of the methods plugged into each slot (exploratory). Each row is the row of Table~\ref{tab:pluggability} for the same method, run in its slot's condition (slot headers, as in Table~\ref{tab:pluggability}), with 12 steps, the 60 held-out episodes of Table~\ref{tab:ladder} and contact on. In each slot the reference comes first, then the rows whose difference is taken from it, by mean error, lowest first, with the privileged rows last. Rows run at seed 0 only follow the reference's seed-0 line in the same order, since their differences are taken from that line and their error is that of one seed. The order is by mean error only and is not a ranking: each row was tested against its slot's reference, not against the other rows, and where the decision is no detectable difference, the methods are not distinguished from the reference or from each other. The CT-anatomy rows keep the order of Table~\ref{tab:pluggability}, since each is scored against its own reference level. Role: the row's group in Table~\ref{tab:pluggability}; second family: the second mask-source family or the LPIPS reward family; privileged: its group of privileged rows, which are secondary. Error, difference with its 95\% paired $t$ CI and $k$/6, and decision, with the marks L, $\dagger$, $\ddagger$, a and e, as in Table~\ref{tab:pluggability}. The pretrained-backbone differences of Table~\ref{tab:pluggability}, which have no error of their own, are left out.}
+\label{tab:leaderboard}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hangindent=3em\hangafter=1}X l r l >{\raggedright\arraybackslash}p{0.2\textwidth}@{}}
+\toprule
+Slot and method & Role & \begin{tabular}[b]{@{}r@{}}Error\\(mm)\end{tabular} & Difference (mm), 95\% $t$ CI, $k$/6 & Decision \\
+\midrule
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{0.985\textwidth}@{}}{\textbf{Texture stage}. Condition: frames from the plugged stage; mask from that stage's own matched U-Net; servo base, residual off; seeds 0 to 2. Reference: SonoSPADE, 13.13~mm.} \\
+\quad SonoSPADE (authors')~\cite{sonospade}$^{\mathrm{L}}$ & reference & 13.13 &  &  \\
+\quad Label-painted physics stage (authors', not learned)$^{\mathrm{L}}$ & secondary & 14.22 & $+1.09$ $[-1.98, +4.16]$, 3/6 & secondary \\
+\quad FastCUT~\cite{cut} & family & 16.13 & $+3.00$ $[+0.24, +5.75]$, 5/6 & higher \\
+\quad CUT (prior)~\cite{cut} & secondary & 16.84 & $+3.70$ $[+1.33, +6.07]$, 5/6 & secondary \\
+\quad CycleGAN (prior)~\cite{cyclegan} & secondary & 16.85 & $+3.72$ $[+1.18, +6.26]$, 5/6 & secondary \\
+\quad DCLGAN~\cite{han2021dclgan} & family & 16.94 & $+3.80$ $[+1.36, +6.25]$, 5/6 & higher \\
+\quad Histogram matching~\cite{gonzalez2018} & family & 16.95 & $+3.82$ $[+2.02, +5.62]$, 6/6 & higher \\
+\quad None, physics frame (authors') & secondary & 17.20 & $+4.06$ $[+1.68, +6.44]$, 5/6 & secondary \\
+\quad UNSB (Schr\"{o}dinger bridge)~\cite{kim2024unsb} & family & 17.64 & $+4.51$ $[+2.12, +6.89]$, 6/6 & higher \\
+\addlinespace[4pt]
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{0.985\textwidth}@{}}{\textbf{Mask source}. Condition: SonoSPADE frames; mask from the plugged source; servo base fitted under that mask, residual off; seeds 0 to 2, and seed 0 for the SAM-type rows, paired with seed 0. Reference: the stage-matched U-Net, 13.13~mm.} \\
+\quad U-Net, stage-matched (authors')~\cite{ronneberger2015unet} & reference & 13.13 &  &  \\
+\quad DeepLabV3, ResNet-50, ImageNet backbone~\cite{chen2017deeplabv3,he2016resnet} & second family & 12.62 & $-0.52$ $[-1.92, +0.89]$, 4/6 & no detectable difference \\
+\quad DeepLabV3, MobileNetV3-L, ImageNet backbone~\cite{chen2017deeplabv3,howard2019mobilenetv3} & second family & 12.66 & $-0.47$ $[-2.04, +1.09]$, 3/6 & no detectable difference \\
+\quad LR-ASPP, MobileNetV3-L~\cite{howard2019mobilenetv3} & family & 12.76 & $-0.38$ $[-2.01, +1.25]$, 4/6 & no detectable difference \\
+\quad FCN, ResNet-50, ImageNet backbone~\cite{long2015fcn,he2016resnet} & second family & 12.77 & $-0.36$ $[-1.16, +0.44]$, 4/6 & no detectable difference \\
+\quad FCN, ResNet-50~\cite{long2015fcn,he2016resnet} & family & 12.81 & $-0.32$ $[-1.58, +0.93]$, 4/6 & no detectable difference \\
+\quad DeepLabV3, ResNet-50~\cite{chen2017deeplabv3,he2016resnet} & family & 13.20 & $+0.06$ $[-1.51, +1.64]$, 3/6 & no detectable difference \\
+\quad LR-ASPP, MobileNetV3-L, ImageNet backbone~\cite{howard2019mobilenetv3} & second family & 13.25 & $+0.11$ $[-1.22, +1.45]$, 4/6 & no detectable difference \\
+\quad SAMUS, boxes from the U-Net mask~\cite{lin2024samus}, seeds 0 to 2 against U-Net seeds 0 to 2 & secondary & 13.98 & $+0.85$ $[-0.04, +1.74]$, 4/6 & secondary \\
+\quad DeepLabV3, MobileNetV3-L~\cite{chen2017deeplabv3,howard2019mobilenetv3} & family & 14.54 & $+1.41$ $[+0.15, +2.67]$, 6/6 & no detectable difference$^{\mathrm{a}}$ \\
+\quad nnU-Net 2D, 2 epochs~\cite{isensee2021nnunet} & family & 14.88 & $+1.74$ $[-0.20, +3.69]$, 4/6 & no detectable difference \\
+\quad CT label (authors')$^{\dagger}$ & privileged & 11.65 & $-1.48$ $[-2.11, -0.86]$, 6/6 & secondary \\
+\quad SAMUS, boxes from the CT label~\cite{lin2024samus}, seeds 0 to 2 against U-Net seeds 0 to 2$^{\dagger}$ & privileged & 13.48 & $+0.35$ $[-0.37, +1.07]$, 3/6 & secondary \\
+\quad\quad Seed 0 only, for the seed-0 rows & reference & 13.33 &  &  \\
+\quad\quad nnU-Net 2D, 20 epochs~\cite{isensee2021nnunet}$^{\ddagger}$ & secondary & 12.76 &  & secondary \\
+\quad\quad MedSAM, boxes from the U-Net mask~\cite{ma2024medsam} & family & 12.85 & $-0.47$ $[-2.74, +1.79]$, 5/6 & no detectable difference \\
+\quad\quad SAMUS, boxes from the U-Net mask~\cite{lin2024samus} & second family & 14.29 & $+0.96$ $[-0.37, +2.30]$, 5/6 & no detectable difference \\
+\quad\quad SAM, boxes from the U-Net mask~\cite{kirillov2023sam} & family & 14.32 & $+0.99$ $[-0.65, +2.64]$, 5/6 & no detectable difference \\
+\quad\quad MedSAM, boxes from the CT label~\cite{ma2024medsam}$^{\dagger}$ & privileged & 12.12 & $-1.21$ $[-3.76, +1.35]$, 4/6 & secondary \\
+\quad\quad SAM, boxes from the CT label~\cite{kirillov2023sam}$^{\dagger}$ & privileged & 12.60 & $-0.73$ $[-3.36, +1.91]$, 3/6 & secondary \\
+\quad\quad SAMUS, boxes from the CT label~\cite{lin2024samus}$^{\dagger}$ & privileged & 13.52 & $+0.20$ $[-1.81, +2.20]$, 3/6 & secondary \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize\setlength{\fboxsep}{0.6pt}
+\ContinuedFloat
+\caption[]{Continued.}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hangindent=3em\hangafter=1}X l r l >{\raggedright\arraybackslash}p{0.2\textwidth}@{}}
+\toprule
+Slot and method & Role & \begin{tabular}[b]{@{}r@{}}Error\\(mm)\end{tabular} & Difference (mm), 95\% $t$ CI, $k$/6 & Decision \\
+\midrule
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{0.985\textwidth}@{}}{\textbf{Controller}. Condition: SonoSPADE frames; CT mask$^{\dagger}$; the plugged controller, residual or full twist as named; seeds 0 to 2, and seed 0 for CEM. Reference: the REINFORCE residual from the imitation start, 11.69~mm.} \\
+\quad REINFORCE residual, imitation start (authors')~\cite{reinforce} & reference & 11.69 &  &  \\
+\quad DAgger, residual~\cite{ross2011dagger} & family & 10.85 & $-0.84$ $[-3.42, +1.74]$, 4/6 & no detectable difference \\
+\quad BC, residual~\cite{pomerleau1991} & family & 11.25 & $-0.44$ $[-1.42, +0.55]$, 4/6 & no detectable difference \\
+\quad PPO, residual~\cite{schulman2017ppo,sb3} & family & 11.50 & $-0.19$ $[-0.53, +0.16]$, 4/6 & no detectable difference \\
+\quad Servo base alone (authors') & secondary & 11.65 & $-0.04$ $[-0.36, +0.29]$, 3/6 & secondary \\
+\quad REINFORCE residual, BatchNorm in eval mode (authors') & secondary & 11.70 & $+0.01$ $[-0.28, +0.30]$, 3/6 & secondary \\
+\quad SAC, residual~\cite{haarnoja2018sac,sb3} & family & 12.06 & $+0.37$ $[-0.86, +1.61]$, 4/6 & no detectable difference \\
+\quad BC, residual~\cite{pomerleau1991}, BatchNorm in train mode & secondary & 12.67 & $+0.98$ $[-0.02, +1.99]$, 5/6 & secondary \\
+\quad DAgger, residual~\cite{ross2011dagger}, BatchNorm in train mode & secondary & 12.89 & $+1.20$ $[+0.57, +1.83]$, 6/6 & secondary \\
+\quad PPO, full twist~\cite{schulman2017ppo,sb3} & family & 14.34 & $+2.66$ $[-0.39, +5.70]$, 5/6 & no detectable difference \\
+\quad DAgger, full twist~\cite{ross2011dagger}, BatchNorm in train mode & secondary & 15.15 & $+3.47$ $[+0.83, +6.10]$, 5/6 & secondary \\
+\quad BC, full twist~\cite{pomerleau1991}, BatchNorm in train mode & secondary & 15.75 & $+4.07$ $[+0.94, +7.19]$, 5/6 & secondary \\
+\quad DQN, 13 discrete moves~\cite{mnih2015dqn,sb3} & family & 16.41 & $+4.72$ $[+1.64, +7.81]$, 6/6 & no detectable difference$^{\mathrm{a}}$ \\
+\quad DAgger, full twist~\cite{ross2011dagger} & family & 17.66 & $+5.98$ $[+0.53, +11.42]$, 5/6 & no detectable difference$^{\mathrm{a}}$ \\
+\quad A2C, residual~\cite{mnih2016a3c,sb3} & family & 18.43 & $+6.74$ $[+5.41, +8.07]$, 6/6 & higher \\
+\quad BC, full twist~\cite{pomerleau1991} & family & 19.60 & $+7.92$ $[+5.10, +10.73]$, 6/6 & higher \\
+\quad TD3, residual~\cite{fujimoto2018td3,sb3} & family & 20.22 & $+8.54$ $[+7.00, +10.08]$, 6/6 & higher \\
+\quad\quad Seed 0 only, for the seed-0 rows & reference & 11.79 &  &  \\
+\quad\quad CEM look-ahead~\cite{rubinstein1999cem}$^{\dagger}$ & privileged & 6.98 & $-4.81$ $[-9.02, -0.60]$, 5/6 & secondary \\
+\addlinespace[4pt]
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{0.985\textwidth}@{}}{\textbf{Reward}. Condition: SonoSPADE frames; CT mask$^{\dagger}$; the REINFORCE residual from the imitation start, trained with the plugged potential; seeds 0 to 2. Reference: the match score $S$, retrained$^{\mathrm{b}}$, 11.97~mm.} \\
+\quad Match score $S$ (authors') & reference & 11.97 &  &  \\
+\quad LPIPS appearance term~\cite{zhang2018lpips} & second family & 11.90 & $-0.066$ $[-0.122, -0.011]$, 5/6 & lower \\
+\quad Organ overlap only (authors') & secondary & 11.91 & $-0.065$ $[-0.128, -0.003]$, 5/6 & secondary \\
+\quad SSIM appearance term~\cite{wang2004ssim} & family & 11.92 & $-0.047$ $[-0.085, -0.009]$, 5/6 & lower \\
+\quad NMI appearance term~\cite{studholme1999nmi} & family & 11.98 & $+0.006$ $[-0.042, +0.053]$, 4/6 & no detectable difference \\
+\quad NCC over the whole sector (authors') & secondary & 11.99 & $+0.023$ $[-0.004, +0.050]$, 5/6 & secondary \\
+\quad Appearance NCC only (authors') & secondary & 12.06 & $+0.094$ $[-0.004, +0.191]$, 5/6 & secondary \\
+\quad Pose distance plus organ area~\cite{bi2022vesnet}$^{\dagger}$ & privileged & 11.90 & $-0.070$ $[-0.158, +0.018]$, 5/6 & secondary \\
+\quad Change in pose distance~\cite{sonogym,hase2020}$^{\dagger}$ & privileged & 11.92 & $-0.049$ $[-0.180, +0.082]$, 4/6 & secondary \\
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{0.985\textwidth}@{}}{\quad (b) The reference is the match score $S$, retrained in the same way as the plugged rewards. It ends 0.28~mm above its 11.69~mm in Table~\ref{tab:ladder}, more than the 0.17~mm spread across texture stages under CT masks.} \\
+\addlinespace[4pt]
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{0.985\textwidth}@{}}{\textbf{Renderer}. Condition: frames from the plugged renderer, no texture stage; CT mask$^{\dagger}$; the physics-trained policy, residual on; seeds 0 to 2, and seed 0 for SIMUS. Reference: the physics renderer, 11.81~mm.} \\
+\quad Physics renderer (authors') & reference & 11.81 &  &  \\
+\quad LOTUS, original code, published default parameters~\cite{velikova2023lotus,salehi2015} & family & 11.84 & $+0.03$ $[-0.03, +0.09]$, 4/6 & no detectable difference \\
+\quad LOTUS, authors' reimplementation~\cite{velikova2023lotus} & family & 11.86 & $+0.05$ $[-0.05, +0.15]$, 4/6 & no detectable difference \\
+\quad\quad Seed 0 only, for the seed-0 rows & reference & 11.91 &  &  \\
+\quad\quad SIMUS via PyMUST~\cite{garcia2022simus,cigier2022simus} & secondary & 12.40 & $+0.49$ $[+0.21, +0.78]$, 6/6 & secondary \\
+\addlinespace[4pt]
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{0.985\textwidth}@{}}{\textbf{CT anatomy} (label volume). Condition: five reference levels of the oracle ladder, each in its Table~\ref{tab:ladder} condition with seeds 0 to 2. TotalSegmentator~v2 labels~\cite{totalseg} (fast mode, 3.0~mm) replace the reference labels on the same episodes and classes. Reference: each level rerun on the reference labels. The trained artifacts never saw the new labels, so a change mixes label noise with the shift between training and evaluation labels.} \\
+\quad CT-mask servo base, physics$^{\dagger}$ & family & 11.73 & $+0.08$ $[-0.27, +0.42]$, 3/6 & equivalent within $\pm 1$~mm \\
+\quad Learned-mask servo base, physics & family & 16.58 & $-0.62$ $[-1.67, +0.43]$, 5/6 & no detectable change$^{\mathrm{e}}$ \\
+\quad Learned-mask servo base, SonoSPADE & family & 12.62 & $-0.51$ $[-1.29, +0.26]$, 5/6 & no detectable change$^{\mathrm{e}}$ \\
+\quad CT-mask policy, physics, final weights$^{\dagger}$ & family & 11.70 & $-0.11$ $[-0.81, +0.59]$, 5/6 & equivalent within $\pm 1$~mm \\
+\quad CT-mask policy, SonoSPADE, final weights$^{\dagger}$ & family & 11.62 & $-0.07$ $[-0.82, +0.68]$, 4/6 & equivalent within $\pm 1$~mm \\
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{0.985\textwidth}@{}}{\quad\textit{All 19 CTs are in TotalSegmentator's own training data, so these labels are in-sample predictions: the rows are a label-noise sensitivity check, not a test of an independent CT segmenter.}} \\
+\bottomrule
+\end{tabularx}
+\end{table*}

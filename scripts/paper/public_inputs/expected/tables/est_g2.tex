@@ -1,0 +1,19 @@
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Tissue-anchored speckle: the look-ahead bound$^{\dagger}$ against the grid-fixed bound$^{\dagger}$, the CT-mask servo base$^{\dagger}$ and the pose oracle$^{\dagger}$, six held-out patients (exploratory; estimation only): 5 contrasts; none adjusted. Every result under the anchored mode is conditional on this renderer with tissue-anchored speckle: no elevational beam width, rigid tissue. $^{\dagger}$Privileged.}
+\label{tab:est-g2-contrasts}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hsize=1.9355\hsize}X >{\raggedright\arraybackslash\hsize=0.5645\hsize}X >{\raggedright\arraybackslash\hsize=0.8065\hsize}X >{\raggedright\arraybackslash\hsize=0.4839\hsize}X >{\raggedright\arraybackslash\hsize=0.7258\hsize}X >{\raggedright\arraybackslash\hsize=0.8065\hsize}X >{\raggedright\arraybackslash\hsize=1.6129\hsize}X >{\raggedright\arraybackslash\hsize=0.8065\hsize}X >{\raggedright\arraybackslash\hsize=0.8065\hsize}X >{\raggedright\arraybackslash\hsize=1.4514\hsize}X @{}}
+\toprule
+Contrast & Mean (mm) & 95\% $t$ CI (mm) & $k/n$ & Sign-flip $p$ (unadjusted; descriptive) & Bootstrap CI over units (mm) & Per seed (mm) & Bootstrap CI over units and seeds (mm) & Bootstrap CI over units and seeds, servo seed mean held (mm) & Note \\
+\midrule
+independent speckle fields: look-ahead bound$^{\dagger}$ minus grid-fixed bound$^{\dagger}$ & $-0.30$ & $[-1.17$, $+0.57]$ & 2/6 & $0.500$ & $[-0.93$, $+0.27]$ & s0 $-0.34$, s1 $-0.52$, s2 $-0.04$ & $[-1.04$, $+0.38]$ & n/a &  \\
+one speckle field: look-ahead bound$^{\dagger}$ minus CT-mask servo base$^{\dagger}$ & $-2.88$ & $[-5.82$, $+0.05]$ & 6/6 & $0.031$ & $[-5.06$, $-1.00]$ & s0 $-3.14$, s1 $-2.54$, s2 $-2.97$ & n/a & $[-5.18$, $-0.99]$ &  \\
+one speckle field: look-ahead bound$^{\dagger}$ minus pose oracle$^{\dagger}$ & $+7.24$ & $[+4.74$, $+9.73]$ & 6/6 & $0.031$ & $[+5.49$, $+8.97]$ & s0 $+6.98$, s1 $+7.58$, s2 $+7.15$ & n/a & n/a & the pose oracle has one seed-free cell; per seed: bound seed s minus it \\
+independent speckle fields: look-ahead bound$^{\dagger}$ minus CT-mask servo base$^{\dagger}$ & $-3.40$ & $[-5.85$, $-0.94]$ & 6/6 & $0.031$ & $[-5.26$, $-1.88]$ & s0 $-3.86$, s1 $-2.88$, s2 $-3.45$ & n/a & $[-5.35$, $-1.80]$ &  \\
+independent speckle fields: look-ahead bound$^{\dagger}$ minus pose oracle$^{\dagger}$ & $+6.73$ & $[+4.90$, $+8.55]$ & 6/6 & $0.031$ & $[+5.47$, $+7.95]$ & s0 $+6.26$, s1 $+7.24$, s2 $+6.67$ & n/a & n/a & the pose oracle has one seed-free cell; per seed: bound seed s minus it \\
+\bottomrule
+\end{tabularx}
+\end{table*}

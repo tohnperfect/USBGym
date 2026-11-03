@@ -1,0 +1,242 @@
+{
+ "about": "Pre-specified constants, plan digests and record digests that the public build of the article's tables and figures needs (plan_inputs.py reads this file in public mode). Written by the development repository from its v2.1 plan and amendments; each value is what the development build reads there.",
+ "amendment 2 appendix": {
+  "description": "the Appendix block of amendment 2 as the build asserts it (decision constants, families, file patterns and seeds)",
+  "value": {
+   "alpha": 0.05,
+   "amendment": "v2.1 amendment 2",
+   "bootstrap": {
+    "resamples": 10000,
+    "seed": 0
+   },
+   "cta": {
+    "block": {
+     "contact": "on",
+     "eval_randomize": "off",
+     "policy_weights": "final"
+    },
+    "cohort": "not run",
+    "invariance_check": {
+     "equals": "R1",
+     "file": "ladder/ibvs_base_sonospade_ct_s{seed}.json",
+     "tol_mm": 1e-06
+    },
+    "label_mode": "fast",
+    "metric": "final_pos",
+    "new_root": "outputs/v2_1/plug/ctanat/fast",
+    "pose_tol": 1e-06,
+    "reference_root": "outputs/v2_1/s21_rerun",
+    "resolution_mm": 3.0,
+    "rows": {
+     "R1": "ladder/ibvs_base_physics_ct_s{seed}.json",
+     "R2": "ladder/ibvs_base_physics_matched_s{seed}.json",
+     "R3": "ladder/ibvs_base_sonospade_matched_s{seed}.json",
+     "R4": "contact/ctmask_physics_s{seed}.json",
+     "R5": "contact/ctmask_sonospade_s{seed}.json"
+    },
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "setup_tol": 1e-09,
+    "tost_ci_printed": 0.9,
+    "tost_margin_mm": 1.0,
+    "tost_min_sign_agree": null
+   },
+   "families": {
+    "CTA-D": 5,
+    "CTA-E": 5,
+    "IMN-T": 4,
+    "LPIPS-R": 1,
+    "MASK-P": 5
+   },
+   "imnet": {
+    "archs": [
+     "lraspp_mbv3_imnet",
+     "deeplabv3_mbv3_imnet",
+     "deeplabv3_r50_imnet",
+     "fcn_r50_imnet"
+    ],
+    "backbone_weights": "IMAGENET1K_V1",
+    "batch": 8,
+    "families": [
+     "MASK-P",
+     "IMN-T"
+    ],
+    "file": "outputs/v2_1/plug/seg/ladder/ibvs_base_sonospade_{arch}_s{seed}.json",
+    "iters": 4000,
+    "reference": "outputs/v2/table4/ladder/ibvs_base_sonospade_matched_s{seed}.json",
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "twin": "outputs/v2_1/plug/seg/ladder/ibvs_base_sonospade_{arch}_s{seed}.json"
+   },
+   "lpips": {
+    "block": "final",
+    "env_steps": 57600,
+    "file": "outputs/v2_1/plug/reward/train/lpips/sonospade_s{seed}.json",
+    "reference": "outputs/v2_1/plug/reward/train/paper/sonospade_s{seed}.json",
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "w_app": 0.4,
+    "w_seg": 0.6
+   },
+   "missing_member_p": 1.0,
+   "n6_decision": {
+    "df": 5,
+    "holm": true,
+    "min_sign_agree": 5,
+    "sides": "two",
+    "test": "paired_t"
+   },
+   "samus": {
+    "box_min_px": 20,
+    "family": "MASK-P",
+    "file": "outputs/v2_1/plug/seg/ladder/ibvs_base_sonospade_samus_unet_s0.json",
+    "max_boxes_per_organ": 5,
+    "real_frame_dice": "withheld",
+    "reference": "outputs/v2/table4/ladder/ibvs_base_sonospade_matched_s0.json"
+   },
+   "status": "exploratory, v2.1 pluggability"
+  }
+ },
+ "amendment 3": {
+  "description": "constants of the Appendix of amendment 3 that the tables print",
+  "value": {
+   "alpha": 0.05
+  }
+ },
+ "amendment 4": {
+  "description": "constants of the Appendix of amendment 4 that the tables print: the AMOS label gate",
+  "value": {
+   "amos.gate.absent_kidney_ml_max": 5.0,
+   "amos.gate.kidney_dice_min": 0.7,
+   "amos.gate.liver_dice_min": 0.85
+  }
+ },
+ "amendment 5": {
+  "description": "constants of the Appendix of amendment 5 that the tables print",
+  "value": {
+   "alpha": 0.05
+  }
+ },
+ "ledger": {
+  "description": "the records ledger committed with the analyses, for the three records above: every sha256 listed for each (the result files are checked against the deposit's MANIFEST.tsv instead)",
+  "value": {
+   "mixed-model fit list": [
+    "90c45729f2a20be09ca7b7bfb81d44310194bd998f1d18abd044ee84f746428e"
+   ],
+   "q8g1 gate record": [
+    "668fb9896cff727d87a60a64bf057c21ca8499b19cdd897e07f7de678f53f633"
+   ],
+   "q8g1 reading record": [
+    "b7e61d04913a6ee5b4c31c83064858d0913b8d395c7fa093da0392069184afae"
+   ]
+  }
+ },
+ "plan digests": {
+  "description": "sha256 of the v2.1 plan (with its sha12 and the recorded hashing time) and of amendments 2 to 6, as the digest file of each records them",
+  "value": {
+   "amendment 2": "8daa46d2071952d845b2282684f4645bf660143a6382f2f296f3c8ca6fe5900d",
+   "amendment 3": "562f1c4f6fbbf6a6f21faa6260911ad9070aee6a880024fa39d663830bed1c8a",
+   "amendment 4": "8873db6e96776ca0b6872435d4d1620f71edb58ac007cacd48be431d1e58d5c0",
+   "amendment 5": "5fac5dc72a1f1814596dce064fd6a8ea9292770df2a9678f73ca6a71b7ddc16a",
+   "amendment 6": "b451b69131a90af41fbab56e1fbb461d6a0b4a15f65da5ee3fbd6313829a4785",
+   "v2.1 plan": {
+    "recorded": "2026-10-15T11:34:05Z",
+    "sha12": "d62fdb75aff4",
+    "sha256": "d62fdb75aff42aecf39c52131f5a323f8aee6f5452bd8e04ffd3d5504a92c1f0"
+   }
+  }
+ },
+ "printed software versions": {
+  "description": "the gymnasium and stable-baselines3 versions that the compute table prints",
+  "value": {
+   "gymnasium": "1.0.0",
+   "stable-baselines3": "2.6.0"
+  }
+ },
+ "record digests": {
+  "description": "sha256 of the three records the build checks (the Q8-G1 reading and gate records and the fit list of the mixed model)",
+  "value": {
+   "mixed-model fit list": "90c45729f2a20be09ca7b7bfb81d44310194bd998f1d18abd044ee84f746428e",
+   "q8g1 gate record": "668fb9896cff727d87a60a64bf057c21ca8499b19cdd897e07f7de678f53f633",
+   "q8g1 reading record": "b7e61d04913a6ee5b4c31c83064858d0913b8d395c7fa093da0392069184afae"
+  }
+ },
+ "v2.1 plan Q14 tolerance": {
+  "description": "Q14 tolerance row (i) of the v2.1 plan: the band (mm) and the archived mean and seed means (mm) after imitation and final",
+  "value": {
+   "band_mm": 1.0,
+   "final": [
+    11.81,
+    [
+     11.91,
+     11.51,
+     12.02
+    ]
+   ],
+   "imit": [
+    11.78,
+    [
+     11.51,
+     11.55,
+     12.28
+    ]
+   ]
+  }
+ },
+ "v2.1 plan constants": {
+  "description": "decision constants of the v2.1 plan that the statistics layer reads: alpha, the decision rules at n = 6 and on the cohort, the family sizes and the bootstrap",
+  "value": {
+   "alpha": 0.05,
+   "bootstrap": {
+    "resamples": 10000,
+    "seed": 0
+   },
+   "cohort_decision": {
+    "enumerate_max_n": 22,
+    "holm": true,
+    "mc_draws": 1000000,
+    "mc_seed": 0,
+    "min_n_decision": 15,
+    "test": "exact_signflip"
+   },
+   "families": {
+    "Q10-CL": 3,
+    "Q10-L": 3,
+    "Q10-P": 1,
+    "Q11-P": 3,
+    "Q12a": 8,
+    "Q12b": 8,
+    "Q13-P": 3,
+    "Q13-S": 3,
+    "Q2R-P": 3,
+    "Q2R-S": 2,
+    "Q8-P": 1,
+    "Q8-S": 3,
+    "Q9-A": 2
+   },
+   "n6_decision": {
+    "df": 5,
+    "holm": true,
+    "min_sign_agree": 5,
+    "sides": "two unless stated",
+    "test": "paired_t"
+   }
+  }
+ },
+ "withheld": {
+  "description": "result files the build checks for existence only and the deposit withholds (the real-frame Dice of SAMUS, seed 0)",
+  "value": [
+   "segmenter/outputs/v2_1/plug/seg/samus_priv/eval_sonospade_s0.json",
+   "segmenter/outputs/v2_1/plug/seg/samus_unet/eval_sonospade_s0.json"
+  ]
+ }
+}

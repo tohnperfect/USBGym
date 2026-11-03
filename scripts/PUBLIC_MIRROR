@@ -1,0 +1,2 @@
+This tree is the public mirror of the code. Its table and figure scripts run in public mode only
+(--public --results ROOT --out DIR); script_dirs.py checks that this file exists.

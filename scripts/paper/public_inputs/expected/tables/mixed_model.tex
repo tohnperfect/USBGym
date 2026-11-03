@@ -1,0 +1,157 @@
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Mixed-model estimates of the final translation error (secondary; never overriding a pre-specified rule; the fits of the primary results are post hoc). Final translation error by arm, with a random intercept for patient and variance components for window and seed within patient. Each model is fitted per question and mask source by restricted maximum likelihood (statsmodels 0.15.0 MixedLM; Nelder-Mead, then Powell in 4 fits). All 16 fits converged. Wald 95\% CIs use the normal quantile, since statsmodels provides no Satterthwaite or Kenward-Roger degrees of freedom. The estimand is conditional on the trained artifacts, with seeds indexing artifacts and the patient as the sampling unit; these intervals do not rest on the patient alone. The model has no arm-by-patient term and one residual variance for all arms of a model, reference rows included. In a contrast of two arms with the same seeds, the patient, window and seed effects cancel. Its interval then rests on that pooled episode-level residual variance and does not carry the between-patient spread of the contrast that the paired $t$ interval carries. In a contrast of an arm with seeds against an arm without seeds or with fewer seeds, the seed variance component enters the interval, which then treats the seeds as sampled. Contrasts between the two mask sources are not modeled, since each model holds one mask source. The planted lateral-bias rows apply the contrasts of the REINFORCE control to the final translation error. The control's rule reads the lateral displacement, which no model here holds, so these rows need not agree with Table~\ref{tab:checks-summary}. Each header gives the fit's variance components as SDs in mm; a component at the boundary was estimated at 0 (the patient component in 14 of 16 fits). $^{\ddagger}$Includes runs that began before their decision rules were fixed. $^{\dagger}$Privileged.}
+\label{tab:mixed-model}
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r l@{}}
+\toprule
+Contrast & Estimate (mm) & Wald 95\% CI (mm) \\
+\midrule
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Primary ladder contrasts, CT masks (post hoc)}. SD (mm): patient 0.00, window 5.09, seed 1.08, residual 3.87; at the boundary: patient} \\
+\quad CT-mask final$^{\dagger}$ minus pose oracle$^{\dagger}$, physics & $+10.28$ & $[+8.77, +11.80]$ \\
+\quad CT-mask final$^{\dagger}$ minus pose oracle$^{\dagger}$, CUT & $+10.11$ & $[+8.60, +11.62]$ \\
+\quad CT-mask final$^{\dagger}$ minus pose oracle$^{\dagger}$, CycleGAN & $+10.17$ & $[+8.66, +11.68]$ \\
+\quad CT-mask final$^{\dagger}$ minus pose oracle$^{\dagger}$, SonoSPADE & $+10.16$ & $[+8.65, +11.67]$ \\
+\quad RL contribution, CT mask$^{\dagger}$, physics: final minus after imitation & $+0.04$ & $[-0.76, +0.83]$ \\
+\quad RL contribution, CT mask$^{\dagger}$, CUT: final minus after imitation & $-0.08$ & $[-0.88, +0.72]$ \\
+\quad RL contribution, CT mask$^{\dagger}$, CycleGAN: final minus after imitation & $+0.00$ & $[-0.80, +0.80]$ \\
+\quad RL contribution, CT mask$^{\dagger}$, SonoSPADE: final minus after imitation & $-0.06$ & $[-0.85, +0.74]$ \\
+\quad CT-mask final$^{\dagger}$, physics minus CUT & $+0.17$ & $[-0.63, +0.97]$ \\
+\quad CT-mask final$^{\dagger}$, physics minus CycleGAN & $+0.12$ & $[-0.68, +0.92]$ \\
+\quad CT-mask final$^{\dagger}$, physics minus SonoSPADE & $+0.13$ & $[-0.67, +0.93]$ \\
+\quad CT-mask final$^{\dagger}$, CUT minus CycleGAN & $-0.05$ & $[-0.85, +0.74]$ \\
+\quad CT-mask final$^{\dagger}$, CUT minus SonoSPADE & $-0.05$ & $[-0.84, +0.75]$ \\
+\quad CT-mask final$^{\dagger}$, CycleGAN minus SonoSPADE & $+0.01$ & $[-0.79, +0.81]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Primary ladder contrasts, learned masks (post hoc)}. SD (mm): patient 0.00, window 5.11, seed 0.43, residual 6.19; at the boundary: patient} \\
+\quad RL contribution, learned mask, physics: final minus after imitation & $-0.29$ & $[-1.57, +0.99]$ \\
+\quad RL contribution, learned mask, CUT: final minus after imitation & $+0.47$ & $[-0.80, +1.75]$ \\
+\quad RL contribution, learned mask, CycleGAN: final minus after imitation & $+0.08$ & $[-1.20, +1.35]$ \\
+\quad RL contribution, learned mask, SonoSPADE: final minus after imitation & $+0.05$ & $[-1.23, +1.33]$ \\
+\quad Learned-mask final, SonoSPADE minus physics & $-3.62$ & $[-4.90, -2.34]$ \\
+\quad Learned-mask final, SonoSPADE minus CUT & $-3.78$ & $[-5.06, -2.51]$ \\
+\quad Learned-mask final, SonoSPADE minus CycleGAN & $-3.38$ & $[-4.66, -2.10]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Domain-randomization policy arms, CT masks (post hoc)}. SD (mm): patient 0.00, window 5.34, seed 1.10, residual 4.00; at the boundary: patient} \\
+\quad Evaluation DR only minus neither & $+0.04$ & $[-0.79, +0.87]$ \\
+\quad Training DR only minus neither & $+0.10$ & $[-0.72, +0.93]$ \\
+\quad Training and evaluation DR minus neither & $+0.15$ & $[-0.68, +0.97]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Contact off minus on, reference rungs and CT masks (post hoc)}. SD (mm): patient 0.00, window 4.58, seed 1.42, residual 4.66; at the boundary: patient} \\
+\quad Static start: contact off minus on & $+0.00$ & $[-1.67, +1.67]$ \\
+\quad Scripted sweep: contact off minus on & $+0.26$ & $[-1.41, +1.93]$ \\
+\quad Pose oracle$^{\dagger}$: contact off minus on & $-0.17$ & $[-1.84, +1.50]$ \\
+\quad CT-mask servo base$^{\dagger}$: contact off minus on & $+2.98$ & $[+2.02, +3.94]$ \\
+\quad CT-mask policy$^{\dagger}$, physics, final: contact off minus on & $+2.96$ & $[+2.00, +3.92]$ \\
+\quad CT-mask policy$^{\dagger}$, CUT, final: contact off minus on & $+2.87$ & $[+1.90, +3.83]$ \\
+\quad CT-mask policy$^{\dagger}$, CycleGAN, final: contact off minus on & $+2.72$ & $[+1.76, +3.69]$ \\
+\quad CT-mask policy$^{\dagger}$, SonoSPADE, final: contact off minus on & $+2.92$ & $[+1.96, +3.88]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Contact off minus on, learned masks (post hoc)}. SD (mm): patient 0.00, window 4.94, seed 0.63, residual 6.38; at the boundary: patient} \\
+\quad Learned-mask servo base, physics: contact off minus on & $+0.88$ & $[-0.44, +2.19]$ \\
+\quad Learned-mask servo base, CUT: contact off minus on & $+1.26$ & $[-0.06, +2.57]$ \\
+\quad Learned-mask servo base, CycleGAN: contact off minus on & $+0.83$ & $[-0.49, +2.15]$ \\
+\quad Learned-mask servo base, SonoSPADE: contact off minus on & $+1.86$ & $[+0.54, +3.18]$ \\
+\quad Learned-mask policy, physics, final: contact off minus on & $+0.82$ & $[-0.50, +2.14]$ \\
+\quad Learned-mask policy, CUT, final: contact off minus on & $+1.04$ & $[-0.28, +2.35]$ \\
+\quad Learned-mask policy, CycleGAN, final: contact off minus on & $+0.92$ & $[-0.40, +2.24]$ \\
+\quad Learned-mask policy, SonoSPADE, final: contact off minus on & $+1.97$ & $[+0.66, +3.29]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Cause of the oracle-to-CT-mask gap: privileged look-ahead, CT masks}$^{\ddagger}$. SD (mm): patient 0.00, window 5.34, seed 0.00, residual 9.96; at the boundary: patient, seed; GLS standard errors differ from the model's by up to 7.7\%; Hessian not positive definite at the estimate} \\
+\quad Look-ahead bound$^{\dagger}$ minus CT-mask servo base$^{\dagger}$, 12 steps$^{\ddagger}$ & $-3.10$ & $[-5.15, -1.04]$ \\
+\quad Look-ahead bound$^{\dagger}$ minus pose oracle$^{\dagger}$, 12 steps$^{\ddagger}$ & $+7.03$ & $[+4.11, +9.94]$ \\
+\quad Look-ahead bound$^{\dagger}$ with SonoSPADE appearance minus CT-mask servo base$^{\dagger}$, 12 steps$^{\ddagger}$ & $-4.67$ & $[-7.36, -1.98]$ \\
+\quad Look-ahead bound$^{\dagger}$ minus CT-mask servo base$^{\dagger}$, 36 steps$^{\ddagger}$ & $-13.36$ & $[-16.05, -10.67]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\ContinuedFloat
+\caption[]{Continued.}
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r l@{}}
+\toprule
+Contrast & Estimate (mm) & Wald 95\% CI (mm) \\
+\midrule
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Hill-climb on the match score, CT masks}. SD (mm): patient 0.71, window 3.91, seed 0.00, residual 5.17; at the boundary: seed} \\
+\quad Hill-climb minus CT-mask servo base$^{\dagger}$ & $+4.03$ & $[+2.96, +5.10]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Hill-climb on the match score, learned masks}. SD (mm): patient 1.07, window 5.24, seed 0.45, residual 5.10} \\
+\quad Hill-climb minus learned-mask servo base & $-1.17$ & $[-2.22, -0.11]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Label-information controls, learned masks}. SD (mm): patient 0.00, window 4.73, seed 0.89, residual 7.46; at the boundary: patient; Hessian not positive definite at the estimate} \\
+\quad Label-painted minus physics, learned-mask servo base & $-2.97$ & $[-4.51, -1.43]$ \\
+\quad Permuted organ identities minus none, closed loop & $+8.56$ & $[+7.02, +10.10]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Texture budget and texture seeds, learned masks}$^{\ddagger}$. SD (mm): patient 0.00, window 4.59, seed 0.43, residual 6.40; at the boundary: patient} \\
+\quad SonoSPADE minus budget-matched CUT, learned-mask servo base$^{\ddagger}$ & $-4.29$ & $[-5.61, -2.96]$ \\
+\quad SonoSPADE minus budget-matched CycleGAN, learned-mask servo base$^{\ddagger}$ & $-4.01$ & $[-5.33, -2.68]$ \\
+\quad SonoSPADE minus physics, learned-mask servo base$^{\ddagger}$ & $-4.28$ & $[-5.60, -2.96]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Planted-deficit control of REINFORCE, CT masks}$^{\ddagger}$. SD (mm): patient 0.00, window 5.01, seed 0.99, residual 3.87; at the boundary: patient} \\
+\quad Planted lateral-bias deficit before training, deficit minus none, on the final translation error$^{\ddagger}$ & $+0.22$ & $[-0.58, +1.02]$ \\
+\quad Recovery contrast on the final translation error, planted lateral-bias deficit, default settings$^{\ddagger}$ & $+0.46$ & $[-0.43, +1.36]$ \\
+\quad Recovery contrast on the final translation error, planted lateral-bias deficit, learned exploration$^{\ddagger}$ & $+0.46$ & $[-0.43, +1.36]$ \\
+\quad Recovery contrast on the final translation error, planted lateral-bias deficit, pose shaping$^{\dagger}$$^{\ddagger}$ & $+0.48$ & $[-0.42, +1.37]$ \\
+\quad Secondary gain deficit before training, deficit minus none$^{\ddagger}$ & $+1.46$ & $[+0.66, +2.26]$ \\
+\quad Recovery statistic, secondary gain deficit, default settings$^{\ddagger}$ & $-0.58$ & $[-1.48, +0.31]$ \\
+\quad Recovery statistic, secondary gain deficit, learned exploration$^{\ddagger}$ & $-0.61$ & $[-1.50, +0.29]$ \\
+\quad Recovery statistic, secondary gain deficit, pose shaping$^{\dagger}$$^{\ddagger}$ & $-0.51$ & $[-1.41, +0.38]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Replication cohort of 20 CTs, CT masks}. SD (mm): patient 0.00, window 5.59, seed 1.60, residual 4.33; at the boundary: patient} \\
+\quad Oracle-to-CT-mask gap on the cohort: servo base minus pose oracle$^{\dagger}$ & $+11.17$ & $[+10.11, +12.24]$ \\
+\quad Look-ahead bound$^{\dagger}$ minus CT-mask servo base$^{\dagger}$ on the cohort & $-4.68$ & $[-5.39, -3.97]$ \\
+\quad RL change on the cohort, CT mask$^{\dagger}$, physics: final minus after imitation & $+0.15$ & $[-0.34, +0.64]$ \\
+\quad RL change on the cohort, CT mask$^{\dagger}$, CUT: final minus after imitation & $+0.02$ & $[-0.47, +0.51]$ \\
+\quad RL change on the cohort, CT mask$^{\dagger}$, CycleGAN: final minus after imitation & $-0.04$ & $[-0.53, +0.45]$ \\
+\quad RL change on the cohort, CT mask$^{\dagger}$, SonoSPADE: final minus after imitation & $-0.02$ & $[-0.51, +0.47]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{Replication cohort of 20 CTs, learned masks}. SD (mm): patient 0.00, window 5.37, seed 0.97, residual 5.92; at the boundary: patient} \\
+\quad SonoSPADE minus physics at the learned-mask servo base on the cohort & $-2.04$ & $[-2.71, -1.37]$ \\
+\quad RL change on the cohort, learned mask, physics: final minus after imitation & $-0.27$ & $[-0.94, +0.40]$ \\
+\quad RL change on the cohort, learned mask, CUT: final minus after imitation & $+0.18$ & $[-0.49, +0.85]$ \\
+\quad RL change on the cohort, learned mask, CycleGAN: final minus after imitation & $+0.05$ & $[-0.62, +0.72]$ \\
+\quad RL change on the cohort, learned mask, SonoSPADE: final minus after imitation & $+0.27$ & $[-0.39, +0.94]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{BatchNorm in evaluation minus train mode, CT masks}. SD (mm): patient 0.00, window 5.33, seed 1.19, residual 3.80; at the boundary: patient} \\
+\quad CT-mask policy$^{\dagger}$, physics, after imitation & $+0.06$ & $[-0.72, +0.84]$ \\
+\quad CT-mask policy$^{\dagger}$, physics, final & $+0.01$ & $[-0.77, +0.80]$ \\
+\quad CT-mask policy$^{\dagger}$, CUT, after imitation & $+0.00$ & $[-0.78, +0.79]$ \\
+\quad CT-mask policy$^{\dagger}$, CUT, final & $+0.22$ & $[-0.56, +1.00]$ \\
+\quad CT-mask policy$^{\dagger}$, CycleGAN, after imitation & $+0.15$ & $[-0.64, +0.93]$ \\
+\quad CT-mask policy$^{\dagger}$, CycleGAN, final & $+0.11$ & $[-0.67, +0.90]$ \\
+\quad CT-mask policy$^{\dagger}$, SonoSPADE, after imitation & $-0.03$ & $[-0.81, +0.76]$ \\
+\quad CT-mask policy$^{\dagger}$, SonoSPADE, final & $+0.01$ & $[-0.77, +0.80]$ \\
+\quad DR-trained CT-mask policy$^{\dagger}$, SonoSPADE, after imitation & $+0.16$ & $[-0.62, +0.95]$ \\
+\quad DR-trained CT-mask policy$^{\dagger}$, SonoSPADE, final & $+0.14$ & $[-0.64, +0.93]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\ContinuedFloat
+\caption[]{Continued.}
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r l@{}}
+\toprule
+Contrast & Estimate (mm) & Wald 95\% CI (mm) \\
+\midrule
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{BatchNorm in evaluation minus train mode, learned masks}. SD (mm): patient 0.00, window 5.10, seed 0.62, residual 6.12; at the boundary: patient} \\
+\quad Learned-mask policy, physics, after imitation & $-0.16$ & $[-1.42, +1.10]$ \\
+\quad Learned-mask policy, physics, final & $-0.08$ & $[-1.35, +1.18]$ \\
+\quad Learned-mask policy, CUT, after imitation & $-0.31$ & $[-1.57, +0.96]$ \\
+\quad Learned-mask policy, CUT, final & $-0.20$ & $[-1.47, +1.06]$ \\
+\quad Learned-mask policy, CycleGAN, after imitation & $-0.34$ & $[-1.60, +0.92]$ \\
+\quad Learned-mask policy, CycleGAN, final & $-0.07$ & $[-1.33, +1.20]$ \\
+\quad Learned-mask policy, SonoSPADE, after imitation & $+0.04$ & $[-1.22, +1.30]$ \\
+\quad Learned-mask policy, SonoSPADE, final & $-0.07$ & $[-1.33, +1.20]$ \\
+\addlinespace
+\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textit{36 against 12 steps, CT masks}. SD (mm): patient 0.00, window 8.39, seed 0.00, residual 11.59; at the boundary: patient, seed; Hessian not positive definite at the estimate} \\
+\quad CT-mask servo base$^{\dagger}$, 36 minus 12 steps & $+6.69$ & $[+4.30, +9.09]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}

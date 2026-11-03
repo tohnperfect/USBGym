@@ -1,0 +1,83 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Combination chosen by the pre-specified rule (exploratory): the authors' original pipeline with the SSIM appearance term in the REINFORCE reward, the only slot the rule changed. Primary: the 20 replication-cohort CTs, exact sign-flip test, Holm within families CMB-D ($m = 4$, difference), CMB-E ($m = 4$, equivalence within $\pm 1$~mm, TOST) and CMB-G ($m = 2$, gap to the pose oracle, conditional on this renderer: grid-fixed speckle, no elevational beam width, rigid tissue). Each D difference compares three trained policies per arm and is conditional on those six RL runs. Other pipelines measured on these CTs print as measured and none is ranked against the combination. MDD from the observed SDs, at $\alpha = 0.05$ and at Holm's first step. The continuation prints the six held-out patients (selection-biased; estimation only), the same-procedure retraining of the match score $S$ (estimation only) and AMOS (secondary; estimation only).}
+\label{tab:combination}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l l c c c >{\raggedright\arraybackslash}p{0.11\textwidth} l l@{}}
+\toprule
+Contrast & Family & Difference or 90\% CI (mm) & $k$/20 & Sign-flip $p$ & Holm $p$ & Decision & Crossed 95\% CI & MDD (mm) \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Pipelines on the 20 cohort CTs, final translation error (mm), as measured and unranked}} \\
+\quad Static start 15.97; pose oracle (privileged) 1.47 & & & & & & & & \\
+\quad With physics frames: authors' original pipeline 15.36; its learned-mask servo base 15.75; the combination 15.62 & & & & & & & & \\
+\quad With SonoSPADE frames: authors' original pipeline 13.96; its learned-mask servo base 13.71; the combination 13.70 & & & & & & & & \\
+\quad Scripted sweep 15.38; CUT frames: learned-mask servo base 16.31, REINFORCE final 15.99; CycleGAN frames: base 16.14, final 15.89 & & & & & & & & \\
+\addlinespace
+\multicolumn{9}{@{}l}{\textit{Families on the cohort CTs}} \\
+\quad D-P: Combination minus authors' original pipeline, physics frames & CMB-D & $+0.25$ $[+0.11, +0.40]$ & 15 & $0.002$ & $0.007$ & holds higher & $[+0.00, +0.54]$ & 0.21, 0.26 \\
+\quad\quad Equivalence within $\pm 1$~mm & CMB-E & 90\% $[+0.13, +0.38]$ & & $9.5 \times 10^{-7}$ (TOST) & $3.8 \times 10^{-6}$ & equivalent within $\pm 1$~mm & & \\
+\quad D-S: Combination minus authors' original pipeline, SonoSPADE frames & CMB-D & $-0.26$ $[-0.39, -0.12]$ & 16 & $5.6 \times 10^{-4}$ & $0.002$ & holds lower & $[-0.63, +0.02]$ & 0.20, 0.24 \\
+\quad\quad Equivalence within $\pm 1$~mm & CMB-E & 90\% $[-0.37, -0.14]$ & & $9.5 \times 10^{-7}$ (TOST) & $3.8 \times 10^{-6}$ & equivalent within $\pm 1$~mm & & \\
+\quad B-P: Combination minus its learned-mask servo base, physics frames & CMB-D & $-0.14$ $[-0.44, +0.17]$ & 11 & $0.352$ & $0.704$ & no difference detected & $[-0.48, +0.24]$ & 0.43, 0.53 \\
+\quad\quad Equivalence within $\pm 1$~mm & CMB-E & 90\% $[-0.39, +0.11]$ & & $1.0 \times 10^{-5}$ (TOST) & $1.0 \times 10^{-5}$ & equivalent within $\pm 1$~mm & & \\
+\quad B-S: Combination minus its learned-mask servo base, SonoSPADE frames & CMB-D & $-0.01$ $[-0.10, +0.09]$ & 10 & $0.904$ & $0.904$ & no difference detected & $[-0.15, +0.14]$ & 0.13, 0.17 \\
+\quad\quad Equivalence within $\pm 1$~mm & CMB-E & 90\% $[-0.08, +0.07]$ & & $9.5 \times 10^{-7}$ (TOST) & $3.8 \times 10^{-6}$ & equivalent within $\pm 1$~mm & & \\
+\quad G-P: Combination minus pose oracle, physics frames & CMB-G & $+14.15$ $[+13.32, +14.98]$ & 20 & $1.9 \times 10^{-6}$ & $3.8 \times 10^{-6}$ & holds higher; conditional on this renderer & & 1.18, 1.32 \\
+\quad G-S: Combination minus pose oracle, SonoSPADE frames & CMB-G & $+12.24$ $[+11.22, +13.26]$ & 20 & $1.9 \times 10^{-6}$ & $3.8 \times 10^{-6}$ & holds higher; conditional on this renderer & & 1.44, 1.61 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\ContinuedFloat
+\caption[]{Continued.}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l c c l@{}}
+\toprule
+Row & Estimate (mm), 95\% $t$ CI & $k$/$n$ & Sign-flip $p$ & Interval (sensitivity) \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Secondary, cohort CTs (no family, no decision)}} \\
+\quad Combination, physics frames: mean final error & 15.62 $[14.76, 16.48]$ & & & \\
+\quad\quad minus the static start & $-0.35$ $[-1.20, +0.49]$ & 13/20 & & \\
+\quad\quad share of the static-to-oracle distance closed & 0.024 $[-0.031, 0.076]$ (case bootstrap) & & & \\
+\quad Combination, SonoSPADE frames: mean final error & 13.70 $[12.68, 14.73]$ & & & \\
+\quad\quad minus the static start & $-2.27$ $[-3.31, -1.22]$ & 18/20 & & \\
+\quad\quad share of the static-to-oracle distance closed & 0.156 $[0.090, 0.217]$ (case bootstrap) & & & \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Six held-out patients (selection-biased; estimation only)}} \\
+\quad With physics frames: authors' original pipeline 16.73, servo base 17.20, combination 16.62 & & & & \\
+\quad With SonoSPADE frames: authors' original pipeline 13.11, servo base 13.13, combination 13.10 & & & & \\
+\quad D-P: Combination minus authors' original pipeline, physics frames & $-0.11$ $[-0.59, +0.37]$ & 3/6 & $0.563$ & $[-0.51, +0.36]$ (patient by seed) \\
+\quad D-S: Combination minus authors' original pipeline, SonoSPADE frames & $-0.01$ $[-0.40, +0.37]$ & 3/6 & $0.969$ & $[-0.36, +0.30]$ (patient by seed) \\
+\quad B-P: Combination minus its learned-mask servo base, physics frames & $-0.57$ $[-1.10, -0.05]$ & 6/6 & $0.031$ & $[-1.01, -0.21]$ (patient by seed) \\
+\quad B-S: Combination minus its learned-mask servo base, SonoSPADE frames & $-0.03$ $[-0.42, +0.35]$ & 5/6 & $0.906$ & $[-0.32, +0.33]$ (patient by seed) \\
+\quad G-P: Combination minus pose oracle, physics frames & $+15.09$ $[+12.91, +17.28]$ & 6/6 & $0.031$ & $[+13.23, +16.56]$ (patient by seed) \\
+\quad G-S: Combination minus pose oracle, SonoSPADE frames & $+11.57$ $[+10.42, +12.72]$ & 6/6 & $0.031$ & $[+10.47, +12.73]$ (patient by seed) \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Same-procedure retraining of the match score $S$ (estimation only): the two differences side by side, never added}} \\
+\quad physics frames, 20 cohort CTs: combination minus rerun & $+0.09$ $[-0.02, +0.21]$ & 12/20 & & \\
+\quad\quad rerun minus the authors' original pipeline & $+0.16$ $[+0.04, +0.28]$ & 17/20 & & \\
+\quad physics frames, six held-out patients: combination minus rerun & $+0.11$ $[-0.36, +0.57]$ & 3/6 & & \\
+\quad\quad rerun minus the authors' original pipeline & $-0.22$ $[-0.35, -0.09]$ & 6/6 & & \\
+\quad SonoSPADE frames, 20 cohort CTs: combination minus rerun & $+0.04$ $[-0.04, +0.11]$ & 10/20 & & \\
+\quad\quad rerun minus the authors' original pipeline & $-0.29$ $[-0.43, -0.16]$ & 18/20 & & \\
+\quad SonoSPADE frames, six held-out patients: combination minus rerun & $-0.04$ $[-0.22, +0.15]$ & 3/6 & & \\
+\quad\quad rerun minus the authors' original pipeline & $+0.02$ $[-0.39, +0.44]$ & 2/6 & & \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{30 AMOS CTs (secondary; estimation only; no Holm, no decision)}} \\
+\quad Static start 16.05; pose oracle (privileged) 1.50 & & & & \\
+\quad With physics frames: authors' original pipeline 16.37, servo base 16.63, combination 16.37 & & & & \\
+\quad With SonoSPADE frames: authors' original pipeline 14.13, servo base 13.91, combination 13.99 & & & & \\
+\quad D-P: Combination minus authors' original pipeline, physics frames & $+0.00$ $[-0.13, +0.12]$ & 14/30 & $0.990$$^{\mathrm{MC}}$ & $[-0.15, +0.18]$ (crossed) \\
+\quad D-S: Combination minus authors' original pipeline, SonoSPADE frames & $-0.15$ $[-0.28, -0.02]$ & 19/30 & $0.025$$^{\mathrm{MC}}$ & $[-0.34, +0.02]$ (crossed) \\
+\quad B-P: Combination minus its learned-mask servo base, physics frames & $-0.26$ $[-0.49, -0.03]$ & 20/30 & $0.028$$^{\mathrm{MC}}$ & $[-0.56, +0.01]$ (crossed) \\
+\quad B-S: Combination minus its learned-mask servo base, SonoSPADE frames & $+0.08$ $[-0.10, +0.26]$ & 14/30 & $0.364$$^{\mathrm{MC}}$ & $[-0.11, +0.34]$ (crossed) \\
+\quad G-P: Combination minus pose oracle, physics frames & $+14.88$ $[+14.22, +15.53]$ & 30/30 & $1.0 \times 10^{-6}$$^{\mathrm{MC}}$ & $[+14.17, +15.60]$ (crossed) \\
+\quad G-S: Combination minus pose oracle, SonoSPADE frames & $+12.49$ $[+11.75, +13.23]$ & 30/30 & $1.0 \times 10^{-6}$$^{\mathrm{MC}}$ & $[+11.65, +13.31]$ (crossed) \\
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{0.98\textwidth}@{}}{\quad $^{\mathrm{MC}}$Monte Carlo sign-flip $p$ (1,000,000 sign vectors, seed 0).} \\
+\bottomrule
+\end{tabularx}
+\end{table}

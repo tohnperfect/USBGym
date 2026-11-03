@@ -1,0 +1,79 @@
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{CT-mask policies$^{\dagger}$ evaluated at 36 steps minus the 36-step CT-mask servo base$^{\dagger}$, six held-out patients (descriptive, out of distribution; exploratory; estimation only): 4 contrasts; none adjusted. $^{\dagger}$Privileged.}
+\label{tab:est-c30-c}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hsize=1.0559\hsize}X >{\raggedright\arraybackslash\hsize=0.7039\hsize}X >{\raggedright\arraybackslash\hsize=0.7039\hsize}X >{\raggedright\arraybackslash\hsize=1.0056\hsize}X >{\raggedright\arraybackslash\hsize=0.6034\hsize}X >{\raggedright\arraybackslash\hsize=0.9050\hsize}X >{\raggedright\arraybackslash\hsize=1.0056\hsize}X >{\raggedright\arraybackslash\hsize=2.0112\hsize}X >{\raggedright\arraybackslash\hsize=1.0055\hsize}X @{}}
+\toprule
+Stage & Final error (mm) & Mean (mm) & 95\% $t$ CI (mm) & $k/n$ & Sign-flip $p$ (unadjusted; descriptive) & Bootstrap CI over units (mm) & Per seed (mm) & Bootstrap CI over units and seeds (mm) \\
+\midrule
+physics & 19.25 & $+0.91$ & $[-0.13$, $+1.95]$ & 5/6 & $0.094$ & $[+0.19$, $+1.64]$ & s0 $+0.22$, s1 $+2.70$, s2 $-0.20$ & $[-0.16$, $+2.15]$ \\
+CUT & 19.88 & $+1.53$ & $[-0.10$, $+3.17]$ & 5/6 & $0.094$ & $[+0.36$, $+2.67]$ & s0 $+0.89$, s1 $+2.87$, s2 $+0.85$ & $[-0.16$, $+3.10]$ \\
+CycleGAN & 18.70 & $+0.35$ & $[-1.00$, $+1.71]$ & 3/6 & $0.531$ & $[-0.55$, $+1.33]$ & s0 $-0.67$, s1 $+0.60$, s2 $+1.14$ & $[-1.01$, $+1.88]$ \\
+SonoSPADE & 18.16 & $-0.19$ & $[-1.69$, $+1.31]$ & 4/6 & $0.844$ & $[-1.18$, $+0.90]$ & s0 $-0.49$, s1 $+0.58$, s2 $-0.65$ & $[-1.69$, $+1.20]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Contact off minus contact on, per rung, 20 new CTs (exploratory; estimation only): 25 contrasts; none adjusted. $^{\dagger}$Privileged.}
+\label{tab:est-c30-d}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hsize=1.3793\hsize}X >{\raggedright\arraybackslash\hsize=0.6437\hsize}X >{\raggedright\arraybackslash\hsize=0.9195\hsize}X >{\raggedright\arraybackslash\hsize=0.5517\hsize}X >{\raggedright\arraybackslash\hsize=0.8276\hsize}X >{\raggedright\arraybackslash\hsize=0.9195\hsize}X >{\raggedright\arraybackslash\hsize=1.8391\hsize}X >{\raggedright\arraybackslash\hsize=0.9196\hsize}X @{}}
+\toprule
+Rung & Mean (mm) & 95\% $t$ CI (mm) & $k/n$ & Sign-flip $p$ (unadjusted; descriptive) & Bootstrap CI over units (mm) & Per seed (mm) & Bootstrap CI over units and seeds (mm) \\
+\midrule
+static & $+0.00$ & $[+0.00$, $+0.00]$ & 1/20 & $1.000$ & $[+0.00$, $+0.00]$ & n/a & n/a \\
+scripted & $+0.25$ & $[+0.21$, $+0.30]$ & 20/20 & $1.9 \times 10^{-6}$ & $[+0.21$, $+0.30]$ & n/a & n/a \\
+pose oracle$^{\dagger}$ & $-0.19$ & $[-0.34$, $-0.04]$ & 13/20 & $0.011$ & $[-0.33$, $-0.06]$ & n/a & n/a \\
+CT-mask servo base$^{\dagger}$, physics & $+2.14$ & $[+1.68$, $+2.60]$ & 20/20 & $1.9 \times 10^{-6}$ & $[+1.71$, $+2.56]$ & s0 $+2.45$, s1 $+1.77$, s2 $+2.21$ & $[+1.64$, $+2.64]$ \\
+CT-mask servo base$^{\dagger}$, SonoSPADE, seed 0 & $+2.45$ & $[+1.69$, $+3.20]$ & 19/20 & $7.6 \times 10^{-6}$ & $[+1.76$, $+3.14]$ & n/a & n/a \\
+learned-mask servo base, physics & $+0.78$ & $[+0.46$, $+1.09]$ & 18/20 & $5.1 \times 10^{-5}$ & $[+0.49$, $+1.08]$ & s0 $+0.84$, s1 $+0.67$, s2 $+0.82$ & $[+0.38$, $+1.17]$ \\
+CT-mask policy$^{\dagger}$, physics, imitation start & $+1.98$ & $[+1.59$, $+2.37]$ & 20/20 & $1.9 \times 10^{-6}$ & $[+1.61$, $+2.32]$ & s0 $+2.12$, s1 $+1.55$, s2 $+2.26$ & $[+1.53$, $+2.42]$ \\
+CT-mask policy$^{\dagger}$, physics, final weights & $+2.13$ & $[+1.69$, $+2.58]$ & 19/20 & $3.8 \times 10^{-6}$ & $[+1.72$, $+2.52]$ & s0 $+2.27$, s1 $+1.92$, s2 $+2.21$ & $[+1.66$, $+2.60]$ \\
+learned-mask policy, physics, imitation start & $+0.88$ & $[+0.60$, $+1.17]$ & 20/20 & $1.9 \times 10^{-6}$ & $[+0.63$, $+1.15]$ & s0 $+0.94$, s1 $+0.95$, s2 $+0.76$ & $[+0.54$, $+1.24]$ \\
+learned-mask policy, physics, final weights & $+1.12$ & $[+0.86$, $+1.39]$ & 20/20 & $1.9 \times 10^{-6}$ & $[+0.88$, $+1.37]$ & s0 $+1.14$, s1 $+0.98$, s2 $+1.25$ & $[+0.73$, $+1.52]$ \\
+learned-mask servo base, CUT & $+0.69$ & $[+0.34$, $+1.04]$ & 16/20 & $9.5 \times 10^{-4}$ & $[+0.36$, $+1.00]$ & s0 $+0.15$, s1 $+1.22$, s2 $+0.71$ & $[+0.28$, $+1.08]$ \\
+CT-mask policy$^{\dagger}$, CUT, imitation start & $+1.94$ & $[+1.55$, $+2.33]$ & 19/20 & $3.8 \times 10^{-6}$ & $[+1.57$, $+2.28]$ & s0 $+2.15$, s1 $+1.51$, s2 $+2.16$ & $[+1.50$, $+2.38]$ \\
+CT-mask policy$^{\dagger}$, CUT, final weights & $+2.07$ & $[+1.69$, $+2.46]$ & 20/20 & $1.9 \times 10^{-6}$ & $[+1.71$, $+2.43]$ & s0 $+2.24$, s1 $+1.91$, s2 $+2.07$ & $[+1.66$, $+2.50]$ \\
+learned-mask policy, CUT, imitation start & $+0.88$ & $[+0.54$, $+1.22]$ & 18/20 & $4.4 \times 10^{-5}$ & $[+0.57$, $+1.19]$ & s0 $+0.85$, s1 $+0.90$, s2 $+0.89$ & $[+0.51$, $+1.24]$ \\
+learned-mask policy, CUT, final weights & $+1.02$ & $[+0.69$, $+1.35]$ & 19/20 & $5.9 \times 10^{-5}$ & $[+0.69$, $+1.28]$ & s0 $+0.76$, s1 $+1.35$, s2 $+0.96$ & $[+0.57$, $+1.39]$ \\
+learned-mask servo base, CycleGAN & $+0.38$ & $[+0.02$, $+0.74]$ & 12/20 & $0.038$ & $[+0.07$, $+0.72]$ & s0 $+0.30$, s1 $+0.31$, s2 $+0.53$ & $[-0.01$, $+0.79]$ \\
+CT-mask policy$^{\dagger}$, CycleGAN, imitation start & $+1.90$ & $[+1.50$, $+2.29]$ & 19/20 & $3.8 \times 10^{-6}$ & $[+1.52$, $+2.24]$ & s0 $+2.11$, s1 $+1.48$, s2 $+2.10$ & $[+1.45$, $+2.33]$ \\
+CT-mask policy$^{\dagger}$, CycleGAN, final weights & $+2.02$ & $[+1.54$, $+2.50]$ & 19/20 & $5.7 \times 10^{-6}$ & $[+1.57$, $+2.44]$ & s0 $+2.31$, s1 $+1.74$, s2 $+2.00$ & $[+1.51$, $+2.52]$ \\
+learned-mask policy, CycleGAN, imitation start & $+0.55$ & $[+0.16$, $+0.94]$ & 14/20 & $0.008$ & $[+0.20$, $+0.91]$ & s0 $+0.57$, s1 $+0.46$, s2 $+0.63$ & $[+0.13$, $+0.98]$ \\
+learned-mask policy, CycleGAN, final weights & $+0.69$ & $[+0.28$, $+1.09]$ & 17/20 & $0.002$ & $[+0.33$, $+1.07]$ & s0 $+0.78$, s1 $+0.73$, s2 $+0.56$ & $[+0.28$, $+1.14]$ \\
+learned-mask servo base, SonoSPADE & $+1.80$ & $[+1.42$, $+2.19]$ & 20/20 & $1.9 \times 10^{-6}$ & $[+1.46$, $+2.17]$ & s0 $+1.99$, s1 $+1.39$, s2 $+2.03$ & $[+1.40$, $+2.22]$ \\
+CT-mask policy$^{\dagger}$, SonoSPADE, imitation start & $+1.95$ & $[+1.54$, $+2.35]$ & 20/20 & $1.9 \times 10^{-6}$ & $[+1.58$, $+2.30]$ & s0 $+2.19$, s1 $+1.52$, s2 $+2.13$ & $[+1.50$, $+2.40]$ \\
+CT-mask policy$^{\dagger}$, SonoSPADE, final weights & $+2.07$ & $[+1.61$, $+2.53]$ & 19/20 & $3.8 \times 10^{-6}$ & $[+1.63$, $+2.47]$ & s0 $+2.31$, s1 $+1.78$, s2 $+2.11$ & $[+1.57$, $+2.56]$ \\
+learned-mask policy, SonoSPADE, imitation start & $+1.83$ & $[+1.46$, $+2.20]$ & 20/20 & $1.9 \times 10^{-6}$ & $[+1.48$, $+2.17]$ & s0 $+1.95$, s1 $+1.48$, s2 $+2.05$ & $[+1.44$, $+2.22]$ \\
+learned-mask policy, SonoSPADE, final weights & $+1.79$ & $[+1.38$, $+2.21]$ & 20/20 & $1.9 \times 10^{-6}$ & $[+1.41$, $+2.18]$ & s0 $+1.85$, s1 $+1.69$, s2 $+1.84$ & $[+1.36$, $+2.22]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Angiography CTs (a descriptive pool, never combined with the cohort): learned minus CT$^{\dagger}$ masks, SonoSPADE minus physics and the change under REINFORCE per policy arm (exploratory; estimation only): 10 contrasts; none adjusted. $^{\dagger}$Privileged.}
+\label{tab:est-c30-e}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hsize=2.0000\hsize}X >{\raggedright\arraybackslash\hsize=0.5833\hsize}X >{\raggedright\arraybackslash\hsize=0.8333\hsize}X >{\raggedright\arraybackslash\hsize=0.5000\hsize}X >{\raggedright\arraybackslash\hsize=0.7500\hsize}X >{\raggedright\arraybackslash\hsize=0.8333\hsize}X >{\raggedright\arraybackslash\hsize=1.6667\hsize}X >{\raggedright\arraybackslash\hsize=0.8334\hsize}X @{}}
+\toprule
+Contrast & Mean (mm) & 95\% $t$ CI (mm) & $k/n$ & Sign-flip $p$ (unadjusted; descriptive) & Bootstrap CI over units (mm) & Per seed (mm) & Bootstrap CI over units and seeds (mm) \\
+\midrule
+learned minus CT$^{\dagger}$ masks, physics & $+3.63$ & $[+2.51$, $+4.74]$ & 17/17 & $1.5 \times 10^{-5}$ & $[+2.65$, $+4.62]$ & s0 $+3.76$, s1 $+3.26$, s2 $+3.86$ & $[+2.52$, $+4.74]$ \\
+SonoSPADE minus physics, learned-mask servo base & $-3.04$ & $[-3.89$, $-2.19]$ & 16/17 & $3.1 \times 10^{-5}$ & $[-3.81$, $-2.27]$ & s0 $-3.13$, s1 $-2.88$, s2 $-3.10$ & $[-4.01$, $-2.06]$ \\
+REINFORCE change, CT-mask policy$^{\dagger}$, physics & $+0.12$ & $[-0.04$, $+0.28]$ & 12/17 & $0.129$ & $[-0.02$, $+0.27]$ & s0 $+0.27$, s1 $+0.05$, s2 $+0.04$ & $[-0.06$, $+0.32]$ \\
+REINFORCE change, CT-mask policy$^{\dagger}$, CUT & $+0.21$ & $[+0.05$, $+0.37]$ & 13/17 & $0.016$ & $[+0.06$, $+0.35]$ & s0 $+0.16$, s1 $+0.02$, s2 $+0.43$ & $[+0.02$, $+0.41]$ \\
+REINFORCE change, CT-mask policy$^{\dagger}$, CycleGAN & $+0.12$ & $[-0.02$, $+0.27]$ & 12/17 & $0.089$ & $[+0.00$, $+0.26]$ & s0 $+0.12$, s1 $-0.13$, s2 $+0.38$ & $[-0.09$, $+0.34]$ \\
+REINFORCE change, CT-mask policy$^{\dagger}$, SonoSPADE & $+0.11$ & $[-0.08$, $+0.30]$ & 11/17 & $0.244$ & $[-0.05$, $+0.29]$ & s0 $+0.30$, s1 $-0.13$, s2 $+0.16$ & $[-0.11$, $+0.35]$ \\
+REINFORCE change, learned-mask policy, physics & $-0.03$ & $[-0.30$, $+0.23]$ & 10/17 & $0.796$ & $[-0.27$, $+0.21]$ & s0 $+0.06$, s1 $+0.05$, s2 $-0.21$ & $[-0.32$, $+0.25]$ \\
+REINFORCE change, learned-mask policy, CUT & $+0.24$ & $[-0.29$, $+0.76]$ & 10/17 & $0.353$ & $[-0.24$, $+0.71]$ & s0 $-0.03$, s1 $+0.40$, s2 $+0.34$ & $[-0.28$, $+0.76]$ \\
+REINFORCE change, learned-mask policy, CycleGAN & $+0.12$ & $[-0.13$, $+0.36]$ & 8/17 & $0.322$ & $[-0.10$, $+0.34]$ & s0 $+0.51$, s1 $-0.04$, s2 $-0.12$ & $[-0.17$, $+0.39]$ \\
+REINFORCE change, learned-mask policy, SonoSPADE & $+0.29$ & $[+0.04$, $+0.54]$ & 13/17 & $0.028$ & $[+0.06$, $+0.51]$ & s0 $+0.18$, s1 $+0.31$, s2 $+0.38$ & $[+0.01$, $+0.56]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}

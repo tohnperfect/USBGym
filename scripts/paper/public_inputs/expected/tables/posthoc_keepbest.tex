@@ -1,0 +1,77 @@
+
+\begin{table}[tbp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Keep-best error against final error, contact on (post hoc). Keep-best is the translation error at the step of highest match score $S$, a selection that reads no pose. The 12-step rows are the episodes of Table~\ref{tab:ladder}, seeds pooled; four-stage rows average the four stages. The 36-step rows are exploratory. Plug rows use the episodes and seeds of Table~\ref{tab:pluggability}. $^{\dagger}$Privileged.}
+\label{tab:posthoc-keepbest}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l rr@{}}
+\toprule
+Row & Final (mm) & Keep-best (mm) \\
+\midrule
+\multicolumn{3}{@{}l}{\textit{Reference ladder, 12 steps}} \\
+Static start & 16.03 & 16.03 \\
+Scripted sweep & 15.52 & 15.57 \\
+Pose oracle$^{\dagger}$ & 1.53 & 1.49 \\
+CT-mask servo base$^{\dagger}$, four stages & 11.65 & 11.25 \\
+CT mask$^{\dagger}$, after imitation, four stages & 11.74 & 11.40 \\
+CT mask$^{\dagger}$, final, four stages & 11.71 & 11.39 \\
+Learned mask, servo base, physics & 17.20 & 15.36 \\
+Learned mask, final, physics & 16.73 & 15.25 \\
+Learned mask, servo base, CUT & 16.84 & 15.63 \\
+Learned mask, final, CUT & 16.90 & 15.87 \\
+Learned mask, servo base, CycleGAN & 16.85 & 15.55 \\
+Learned mask, final, CycleGAN & 16.50 & 15.30 \\
+Learned mask, servo base, SonoSPADE & 13.13 & 12.44 \\
+Learned mask, final, SonoSPADE & 13.11 & 12.52 \\
+\multicolumn{3}{@{}l}{\textit{36 steps (exploratory)}} \\
+CT-mask servo base$^{\dagger}$ & 18.34 & 10.30 \\
+Pose oracle$^{\dagger}$ & 0.14 & 0.14 \\
+Scripted sweep & 15.84 & 15.44 \\
+Learned mask, servo base, physics & 32.67 & 17.71 \\
+Learned mask, servo base, CUT & 29.09 & 17.08 \\
+Learned mask, servo base, CycleGAN & 27.56 & 16.96 \\
+Learned mask, servo base, SonoSPADE & 21.32 & 12.24 \\
+\multicolumn{3}{@{}l}{\textit{Plug rows, 12 steps}} \\
+Texture: SonoSPADE (reference) & 13.13 & 12.44 \\
+Texture: none, physics frame & 17.20 & 15.36 \\
+Texture: CUT & 16.84 & 15.63 \\
+Texture: CycleGAN & 16.85 & 15.55 \\
+Texture: FastCUT & 16.13 & 14.62 \\
+Mask: U-Net (reference) & 13.13 & 12.44 \\
+Mask: CT label$^{\dagger}$ & 11.65 & 11.19 \\
+Mask: LR-ASPP, MobileNetV3-L & 12.76 & 11.95 \\
+Mask: DeepLabV3, MobileNetV3-L & 14.54 & 13.43 \\
+Mask: DeepLabV3, ResNet-50 & 13.20 & 12.24 \\
+Mask: nnU-Net 2D, 2 epochs & 14.88 & 13.99 \\
+Mask: SAM, U-Net boxes & 14.32 & 13.12 \\
+Mask: MedSAM, U-Net boxes & 12.85 & 12.52 \\
+Mask: SAM, CT boxes$^{\dagger}$ & 12.60 & 11.89 \\
+Mask: MedSAM, CT boxes$^{\dagger}$ & 12.12 & 11.65 \\
+Controller: REINFORCE residual (reference) & 11.69 & 11.37 \\
+Controller: servo base alone & 11.65 & 11.19 \\
+Controller: REINFORCE, BatchNorm eval & 11.70 & 11.39 \\
+Controller: PPO, residual & 11.50 & 11.32 \\
+Controller: SAC, residual & 12.06 & 10.90 \\
+Controller: A2C, residual & 18.43 & 13.66 \\
+Controller: PPO, full twist & 14.34 & 14.32 \\
+Controller: DQN, 13 moves & 16.41 & 14.95 \\
+Controller: BC, residual & 11.25 & 10.18 \\
+Controller: DAgger, residual & 10.85 & 9.53 \\
+Controller: BC, residual, BatchNorm train & 12.67 & 12.31 \\
+Controller: DAgger, residual, BatchNorm train & 12.89 & 12.44 \\
+Controller: CEM look-ahead$^{\dagger}$ & 6.98 & 7.05 \\
+Reward: paper $S$ (reference) & 11.97 & 11.67 \\
+Reward: organ overlap only & 11.91 & 11.88 \\
+Reward: appearance NCC only & 12.06 & 11.70 \\
+Reward: NCC over the sector & 11.99 & 11.68 \\
+Reward: SSIM term & 11.92 & 11.69 \\
+Reward: NMI term & 11.98 & 11.71 \\
+Reward: change in pose distance$^{\dagger}$ & 11.92 & 11.61 \\
+Reward: pose distance plus area$^{\dagger}$ & 11.90 & 11.62 \\
+Renderer: physics (reference) & 11.81 & 11.41 \\
+Renderer: LOTUS, authors' reimplementation & 11.86 & 11.50 \\
+Renderer: SIMUS & 12.40 & 11.74 \\
+\bottomrule
+\end{tabular}
+\end{table}

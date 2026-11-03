@@ -1,0 +1,35 @@
+
+\begin{table}[t]
+\caption{Frame, step and training times on the laptop of Table~\ref{tab:compute} of the article. Median [25th, 75th percentile] in ms, batch 1, one process, 5 threads. Physics frame: slice, render, resize and sector warp timed as one block. Closed-loop step: each stage's seed-0 learned-mask policy, 240 steps after 24 warm-up steps; the CPU rows run without the Apple GPU, the MPS rows on it through PyTorch. Texture stage: the stage's generator alone on 200 rendered sector frames after 15 warm-up frames; physics has no texture stage. Training: wall hours per trainer run on the laptop's GPU, median over 3 seeds, with three runs sharing the machine, so upper bounds.}
+\label{tab:compute-supp}
+\centering
+\renewcommand{\baselinestretch}{1}\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l cccc@{}}
+\toprule
+ & Physics & CUT & CycleGAN & SonoSPADE \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Physics frame, ms (every stage)}} \\
+\quad CPU & \multicolumn{4}{c}{13.5 [13.3, 13.8]} \\
+\quad MPS & \multicolumn{4}{c}{10.6 [10.4, 10.8]} \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{One closed-loop step, ms}} \\
+\quad CPU & 41.5 [41.2, 42.2] & 59.4 [59.0, 60.0] & 61.0 [60.4, 61.6] & 103.4 [102.3, 104.6] \\
+\quad MPS & 16.8 [16.6, 17.2] & 19.8 [19.5, 20.3] & 20.1 [19.7, 20.5] & 28.8 [28.5, 29.1] \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Closed-loop steps per second, from the median step}} \\
+\quad CPU & 24.1 & 16.8 & 16.4 & 9.7 \\
+\quad MPS & 59.4 & 50.4 & 49.7 & 34.8 \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Texture stage alone, ms per frame}} \\
+\quad CPU & none & 17.3 [17.2, 17.6] & 17.8 [17.5, 18.0] & 60.0 [59.4, 61.2] \\
+\quad MPS & none & 2.56 [2.49, 2.62] & 2.59 [2.53, 2.69] & 11.4 [11.2, 11.6] \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Training, wall hours per trainer run}} \\
+\quad All 27 trainer runs & \multicolumn{4}{c}{median 1.02, range 0.61 to 2.97} \\
+\quad CT mask & 0.62 & 0.78 & 0.79 & 1.27 \\
+\quad Learned mask & 0.87 & 0.99 & 1.02 & 1.72 \\
+\quad CT mask, DR on & n/a & n/a & n/a & 1.32 \\
+\bottomrule
+\end{tabular}
+\end{table}

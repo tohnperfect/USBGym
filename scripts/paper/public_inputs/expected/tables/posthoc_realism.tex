@@ -1,0 +1,28 @@
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Uncertainty of the distances to real frames of Table~\ref{tab:realism} (post hoc). Point values are those of Table~\ref{tab:realism}. W1 and KID: 95\% percentile intervals of a bootstrap over frames (10,000 resamples; simulated and real frames resampled independently). Resampling biases W1 upward where it is small, so a point value can lie near the lower end of its interval. Null: the classifier two-sample test with the domain labels permuted, 200 permutations per stage. Each permutation is one five-fold run, so its spread is that of a five-fold mean and $p$ is expected to be conservative. $p = (1 + \#\{\text{null} \geq \text{observed}\})/201$, so $1/201$ is the smallest attainable. n/r: no null run. The established-simulator rows of Table~\ref{tab:realism} have no intervals.}
+\label{tab:posthoc-realism}
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l l l c c c@{}}
+\toprule
+Variant & W1 [95\% CI] & KID [95\% CI] & C2ST AUC & Null AUC, mean (SD) & $p$ \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Baseline renderers}} \\
+\quad LOTUS, authors' reimplementation & 0.1272 $[0.1117, 0.1434]$ & 0.2288 $[0.2169, 0.2433]$ & 0.982 & n/r & n/r \\
+\quad NumPy renderer & 0.1882 $[0.1693, 0.2069]$ & 0.3291 $[0.3193, 0.3444]$ & 1.000 & n/r & n/r \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{USB Gym stages, default render}} \\
+\quad Physics (no network) & 0.0727 $[0.0622, 0.0869]$ & 0.2199 $[0.2064, 0.2350]$ & 0.936 & 0.500 (0.072) & $1/201$ \\
+\quad Physics + CUT & 0.0277 $[0.0196, 0.0486]$ & 0.0740 $[0.0681, 0.0842]$ & 0.701 & 0.503 (0.071) & $1/201$ \\
+\quad Physics + CycleGAN & 0.0293 $[0.0254, 0.0399]$ & 0.0485 $[0.0439, 0.0576]$ & 0.753 & 0.500 (0.072) & $1/201$ \\
+\quad Physics + SonoSPADE & 0.0528 $[0.0494, 0.0645]$ & 0.1509 $[0.1419, 0.1645]$ & 0.979 & 0.502 (0.066) & $1/201$ \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{USB Gym stages, one full DR draw per view}} \\
+\quad Physics & 0.0154 $[0.0125, 0.0370]$ & 0.1989 $[0.1882, 0.2143]$ & 0.969 & n/r & n/r \\
+\quad Physics + CUT & 0.0437 $[0.0245, 0.0635]$ & 0.0566 $[0.0518, 0.0645]$ & 0.731 & n/r & n/r \\
+\quad Physics + CycleGAN & 0.0149 $[0.0126, 0.0284]$ & 0.0323 $[0.0293, 0.0386]$ & 0.734 & n/r & n/r \\
+\quad Physics + SonoSPADE & 0.0630 $[0.0568, 0.0728]$ & 0.1539 $[0.1447, 0.1668]$ & 0.984 & n/r & n/r \\
+\bottomrule
+\end{tabular}
+\end{table*}

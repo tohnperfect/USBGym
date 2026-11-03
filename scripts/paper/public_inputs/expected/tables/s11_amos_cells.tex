@@ -1,0 +1,27 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{The 13 rung and stage cells of the AMOS ordering criterion: final translation error (mm), mean over seeds of case means, on the original six held-out patients, the 30 AMOS CTs and the 20 replication-cohort CTs (descriptive; the three sets are printed side by side and never pooled).}
+\label{tab:s11-amos-cells}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r r r@{}}
+\toprule
+Cell & Original six & AMOS & 20-CT cohort \\
+\midrule
+\quad Static & 16.03 & 16.05 & 15.97 \\
+\quad Scripted & 15.52 & 15.47 & 15.38 \\
+\quad Pose oracle & 1.53 & 1.50 & 1.47 \\
+\quad CT-mask base & 11.65 & 12.18 & 12.64 \\
+\quad CT-mask final, mean of 4 stages & 11.71 & 12.25 & 12.70 \\
+\quad Learned base, physics & 17.20 & 16.63 & 15.75 \\
+\quad Learned final, physics & 16.73 & 16.37 & 15.36 \\
+\quad Learned base, CUT & 16.84 & 16.77 & 16.31 \\
+\quad Learned final, CUT & 16.90 & 16.88 & 15.99 \\
+\quad Learned base, CycleGAN & 16.85 & 16.93 & 16.14 \\
+\quad Learned final, CycleGAN & 16.50 & 16.74 & 15.89 \\
+\quad Learned base, per-tissue & 13.13 & 13.91 & 13.71 \\
+\quad Learned final, per-tissue & 13.11 & 14.13 & 13.96 \\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -1,0 +1,119 @@
+# USB Gym fast test suite on Linux, Windows and macOS with CPU-only PyTorch.
+#
+# Each job installs usbg into a clean Python with no local data, imports every usbg module and the main
+# entry-point scripts, prints the contract, and runs the fast suite (pytest -m "not slow"). data/ and
+# outputs/ are git-ignored, so tests that need the CT caches, the screened-windows file or trained
+# checkpoints skip with a reason (listed by -rs); tests/test_vendor_regression.py checks the data-free
+# pipeline against its stored reference within the float tolerance it states. When the release carries the
+# table and figure build of the article (scripts/paper, scripts/analysis), its tests run too, on small
+# synthetic inputs; the rebuild from the results archive needs that archive (USBG_TEST_RESULTS_ROOT) and skips
+# without it.
+#
+# The repository is public, so runner minutes are free: all three operating systems run for every push,
+# every pull request and every version tag.
+name: tests
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fast-tests:
+    name: fast tests (${{ matrix.os }}, Python ${{ matrix.python }}, CPU)
+    if: github.repository == 'tohnperfect/USBGym'     # the public repository only, never a private copy of this file
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
+        python: ["3.12"]
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONUTF8: "1"                    # UTF-8 text I/O on Windows (several sources and JSON files are not ASCII)
+      MPLBACKEND: Agg
+      PYTORCH_ENABLE_MPS_FALLBACK: "1"
+      MSYS: winsymlinks:nativestrict     # Windows: `ln -s` (private-data guard self-test) makes a real symlink
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: true               # third_party/lotus: the original LOTUS code, read by the lotus_orig renderer tests
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install CPU-only PyTorch
+        run: |
+          python -m pip install --upgrade pip
+          if [ "$RUNNER_OS" = "macOS" ]; then
+            python -m pip install torch torchvision -c .github/ci-constraints.txt   # no CUDA; no MPS on hosted runners
+          else
+            python -m pip install torch torchvision -c .github/ci-constraints.txt --index-url https://download.pytorch.org/whl/cpu
+          fi
+
+      - name: Install usbg
+        run: python -m pip install -e ".[dev]" -c .github/ci-constraints.txt   # the pinned stack (file header)
+
+      - name: Versions
+        run: |
+          python -c "import sys, platform, numpy, scipy, torch, mujoco, PIL, gymnasium; print(sys.version); print(platform.platform()); print('numpy', numpy.__version__, '| scipy', scipy.__version__, '| torch', torch.__version__, '| cuda', torch.cuda.is_available(), '| mujoco', mujoco.__version__, '| pillow', PIL.__version__, '| gymnasium', gymnasium.__version__)"
+
+      - name: Import every usbg module and the main scripts
+        run: |
+          python - <<'EOF'
+          import importlib
+          import importlib.util
+          import pkgutil
+          import sys
+
+          for name in ("par", "us_rl_sim", "stable_baselines3"):
+              try:
+                  found = importlib.util.find_spec(name) is not None
+              except ModuleNotFoundError:
+                  found = False
+              if found:
+                  raise SystemExit(f"{name} is importable; this job must run without the sibling packages")
+          import usbg
+
+          mods = sorted(m.name for m in pkgutil.iter_modules(usbg.__path__))
+          for m in mods:
+              importlib.import_module(f"usbg.{m}")
+          sys.path.insert(0, "scripts")
+          v2_scripts = ("train_view_match_rl", "eval_view_ladder", "run_table4_v2", "agg_table4_v2",
+                        "eval_real_registration", "eval_realism", "eval_fid_kid",
+                        "build_windows", "build_anat_cache", "build_ct_volume", "train_segmenter",
+                        "train_texture_gan", "make_dataset", "bench_render", "bench_latency",
+                        "bench_closed_loop", "check_leakage", "plug_texture", "plug_texture_exec",
+                        "plug_reward_train", "plug_render_run", "plug_ctrl_jobs", "plug_reward_jobs",
+                        "plug_render_jobs")
+          for s in v2_scripts:
+              importlib.import_module(s)
+          print(f"imported {len(mods)} usbg modules and {len(v2_scripts)} scripts; usbg {usbg.__version__}")
+          EOF
+
+      - name: Contract and geometry parity
+        run: python -m usbg.contracts_bridge
+
+      - name: Fast test suite (the testbed, and the table and figure build when the release carries it)
+        run: |
+          dirs="tests"
+          for d in scripts/paper scripts/analysis; do
+            if [ -d "$d" ]; then dirs="$dirs $d"; fi
+          done
+          echo "test folders: $dirs"
+          python -m pytest -m "not slow" -q -o addopts="" -rs $dirs

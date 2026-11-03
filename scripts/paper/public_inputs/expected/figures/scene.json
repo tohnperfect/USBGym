@@ -1,0 +1,185 @@
+{
+ "T0_world_from_probe": [
+  [
+   1.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   -1.0,
+   -1.2246467991473532e-16,
+   0.0
+  ],
+  [
+   0.0,
+   1.2246467991473532e-16,
+   -1.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "cache": {
+  "md5": "see MANIFEST.tsv",
+  "path": "data/cache_anat/s0011.npz"
+ },
+ "case": "s0011",
+ "closeup_window": {
+  "T_vp": [
+   [
+    -0.4240302938,
+    -0.7888777933,
+    -0.4448259628,
+    0.0893305385
+   ],
+   [
+    0.2701773305,
+    0.3586144455,
+    -0.8935322543,
+    0.2959804264
+   ],
+   [
+    0.864408769,
+    -0.4990666355,
+    0.0610735076,
+    0.2780320719
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "azimuth_deg": 37.5,
+  "beam": "to_target",
+  "face_m": [
+   0.08933053847746213,
+   0.29598042643635236,
+   0.27803207188099627
+  ],
+  "index": 0,
+  "normal": [
+   0.5498027205467224,
+   0.8328279852867126,
+   0.06414376199245453
+  ],
+  "organ": "liver",
+  "organ_frac": {
+   "1": 0.6337,
+   "2": 0.0101,
+   "3": 0.0222,
+   "4": 0.0,
+   "7": 0.0
+  },
+  "phi_deg": -150.0,
+  "target_depth_mm": 29.354207436399214,
+  "tilt_deg": 10.000030284460108,
+  "window_id": 0
+ },
+ "contact_plane": "MuJoCo box top z = 0 of src/usbg/mujoco_env.py _mjcf, drawn as a 92 mm square",
+ "gel_coupling": true,
+ "label_slice_px": {
+  "fat": 917,
+  "gallbladder": 74,
+  "liver": 4420,
+  "soft_tissue": 400,
+  "vessel": 196
+ },
+ "mesh_recipe": "skin: usbg.body_surface.body_mask + axial binary_fill_holes, marching cubes step 3, body_surface._postprocess Taubin 12, quadric decimation; organs: binary closing, marching cubes step 2, Taubin 10, quadric decimation; panel (a) clipped to z in [60.0, 500.0] mm",
+ "meshes": {
+  "kidney": {
+   "n_faces": 1600,
+   "n_verts": 804
+  },
+  "liver": {
+   "n_faces": 3000,
+   "n_verts": 1498
+  },
+  "skin": {
+   "n_faces": 9000,
+   "n_verts": 4534
+  }
+ },
+ "n_windows": {
+  "kidney": 63,
+  "kidney_left": 22,
+  "kidney_right": 41,
+  "liver": 50
+ },
+ "printed_size_in": [
+  6.475716064757161,
+  2.75
+ ],
+ "probe_housing_mm": [
+  16.0,
+  16.0,
+  24.0
+ ],
+ "raster_dpi": 600,
+ "render": {
+  "RenderConfig_seed": 0,
+  "device": "cpu",
+  "domain_randomization": false,
+  "renderer": "physics",
+  "sector": {
+   "apex_x": 68.0,
+   "apex_y": -28.0,
+   "half_angle_deg": 23.0,
+   "r_max": 128.0,
+   "r_min": 36.0
+  },
+  "size_px": 128,
+  "texture_stage": "physics (none)"
+ },
+ "rule": "first TRAIN patient (usbg.benchmark.TRAIN_PATIENTS order) with screened windows for the liver and for both kidney flanks; close-up = liver window 0 at its seated pose (seat_volume_under_probe, the view-matching target pose of that window)",
+ "seat_mode": "anatomical",
+ "split": "TRAIN",
+ "views": {
+  "a": {
+   "azim": 58.0,
+   "elev": 10.0
+  },
+  "b": {
+   "azim": -60.0,
+   "elev": 22.0
+  }
+ },
+ "windows": {
+  "md5": "see MANIFEST.tsv",
+  "path": "data/cache/windows/usbg-windows-v1.json",
+  "version": "usbg-windows-v1"
+ },
+ "world_from_volume": [
+  [
+   -0.42403029383571345,
+   0.2701773305640114,
+   0.8644087690777943,
+   -0.28242170805052014
+  ],
+  [
+   0.7888777933125167,
+   -0.35861444558108363,
+   0.499066635517249,
+   -0.10308455226003294
+  ],
+  [
+   0.444825962737152,
+   0.8935322543467908,
+   -0.061073507603160986,
+   -0.28722420657669995
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ]
+}

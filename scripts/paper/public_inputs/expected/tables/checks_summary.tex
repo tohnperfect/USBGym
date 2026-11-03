@@ -1,0 +1,31 @@
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize\setlength{\fboxsep}{0.6pt}
+\caption{Controls, sensitivity analyses and replication: the question each answers and its outcome, absolute values first (exploratory). Supplementary Table~S4.2 gives each criterion. Every contrast is conditional on the trained artifacts (texture networks, segmenters, bases and policies). Seeds index artifacts; the patient or CT is the sampling unit. Intervals: 95\% paired $t$ with the patients sharing the sign. Criterion met: yes or no, inconclusive, descriptive, or, for a family of changes, how many differ.}
+\label{tab:checks-summary}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.13\textwidth} >{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.085\textwidth}@{}}
+\toprule
+Analysis & Question & Outcome & Criterion met \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Controls}} \\
+Independent target speckle & Are appearance scores insensitive to shared speckle? & Largest: learned-mask servo base, physics, seed~0, 16.39 against 17.03~mm, $-0.63$ $[-2.04, +0.78]$, 5/6; 4 conditions: $-0.63$ to $+0.05$~mm & yes \\[1pt]
+Positive control, SB3 learner & Can the RL training loop learn a correction? & 2.40 to 2.58~mm in 3 of 3 seeds; bound 4.43, pose oracle 1.43, static start 15.45~mm & yes \\[1pt]
+Positive control, REINFORCE & Can REINFORCE remove a planted deficit? & Planted lateral deficit 3.84~mm; 0.32 to 0.38 of it removed, positive in 0 of 6 patients for every setting; the planted bias did not meet the reward-visibility rule & inconclusive \\[1pt]
+Label-channel controls & Does the SonoSPADE lead come from label access rather than texture? & Label-painted stage 14.22~mm against physics 17.20 and SonoSPADE 13.13~mm: $-2.97$ $[-5.50, -0.45]$, 6/6 from physics, 0.73 [0.33, 1.34] of the lead; equivalence with SonoSPADE not shown. Rendered masks follow offset and permuted labels, 6/6 each. Permuted organ identities 21.69~mm, $+8.56$ $[+4.46, +12.65]$, 6/6 & inconclusive \\[1pt]
+Texture-budget test & Does the SonoSPADE lead persist with equal budgets and three texture seeds? & SonoSPADE, three texture seeds, 12.92~mm against budget-matched CUT 17.20, CycleGAN 16.93 and physics 17.20~mm: $-4.29$ $[-6.57, -2.00]$, 6/6; $-4.01$ $[-6.74, -1.27]$, 6/6; $-4.28$ $[-6.76, -1.80]$, 6/6~mm & yes \\[1pt]
+Skin-tangent contact & Do the results depend on the target-anchored contact plane? & No level of the oracle ladder changes detectably ($+0.36$ to $+3.53$~mm, Holm $p$ $0.093$ to $0.620$); equivalence within $\pm 1$~mm is not shown. The CT-mask and learned-mask servo-base differences are $+3.53$ and $+3.00$~mm, 6/6 each. The plane lies near the target window (median angle 10.96$^\circ$). MDD 1.71~mm at the median SD; pose-oracle success at 5~mm and 5$^{\circ}$, $-62$ points (secondary) & 0 of 5 differ \\[1pt]
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Sensitivity}} \\
+BatchNorm in eval mode & Are the results unchanged with eval-mode BatchNorm? & $-0.34$ to $+0.22$~mm over 18 policies; the outcomes of the 0.5~mm bound on imitation and REINFORCE and of the CT-mask stage-pair test change & no \\[1pt]
+36-step horizon & Is the servo's error a horizon limit? & Servo base 18.34~mm at 36 steps against 11.65~mm at 12, $+6.69$ $[+4.96, +8.43]$, 6/6; pose oracle 0.14~mm & no \\[1pt]
+Phantom bands & Do the renderers' properties lie in their designed ranges? & Bands met: physics renderer 5 of 8, original LOTUS code 2 of 4, SIMUS 5 of 8 (2, 2 and 1 not scorable). Outside: the disc CNR over the speckle SNR, 0.67 and 0.80 (band at least 0.90); the SIMUS shadow below the bone slab, 0.00~mm (band at least 10~mm). Output speckle SNR 3.57, 4.71 and 1.55, in that order (Rayleigh 1.91). Several bands are design checks & descriptive \\[1pt]
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Replication}} \\
+20-CT cohort & Do the main contrasts recur beyond the six held-out patients? & Physics servo: CT mask 12.80, learned mask 15.36~mm; gap $+2.57$ $[+1.66, +3.47]$, 19/20, against $+4.92$, 5/6, on the six. SonoSPADE minus physics, learned-mask servo base: $-2.04$ $[-2.75, -1.33]$, 17/20, against $-4.06$, 5/6. RL change within 1~mm in all 8 configurations; the ordering recurs & yes \\[1pt]
+Plugged methods on the cohort & Do plugged-method orderings recur on the cohort? & Orderings kept: controller 63 of 66, reward 25 of 28, renderer 3 of 3, mask source 16 of 21, texture 17 of 28; Kendall $\tau_b$ 0.21 [0.00, 0.64] to 1.00 [0.33, 1.00] & descriptive \\[1pt]
+30 external CTs & Do the main contrasts recur on a second public CT dataset? & Learned minus CT masks, physics: $+4.01$ $[+3.40, +4.62]$, 29/30, against $+4.92$ on the six. SonoSPADE minus physics, learned-mask servo base: $-2.73$ $[-3.43, -2.03]$, 27/30, against $-4.06$. RL change within 1~mm in all 8 configurations; the ordering recurs. Simulation only & yes \\[1pt]
+\bottomrule
+\end{tabularx}
+\end{table*}

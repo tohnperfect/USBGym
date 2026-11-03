@@ -1,0 +1,39 @@
+
+\begin{table*}[tbp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{The servo base at 12 and 36 steps, contact on (post hoc; the 36-step arms are exploratory). Errors are patient-level mean absolute SE(3)-log components; Out and In are the out-of-plane and in-plane tilts. The base rows pool seeds 0 to 2. The change row is the 36-step minus the 12-step value of the CT-mask base, paired by patient, with its 95\% $t$ CI and $k$/6. Bound rows give the executed twist as a fraction of its bound, averaged over the 12 steps, for the CT-mask base. $^{\dagger}$Privileged.}
+\label{tab:posthoc-horizon}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l c rrr rrr r@{}}
+\toprule
+ & & \multicolumn{3}{c}{Translation (mm)} & \multicolumn{3}{c}{Rotation ($^{\circ}$)} & \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Arm & Step & Lat. & Elev. & Axial & Out & In & Roll & Error (mm) \\
+\midrule
+CT-mask servo base$^{\dagger}$ & 0 & 11.05 & 9.54 & 3.64 & 9.44 & 8.30 & 1.89 & 16.03 \\
+ & 12 & 6.78 & 8.08 & 0.94 & 3.10 & 3.28 & 4.14 & 11.65 \\
+ & 36 & 9.20 & 13.75 & 2.17 & 6.73 & 5.30 & 10.68 & 18.34 \\
+ & 36 minus 12 & $+2.42$ & $+5.67$ & $+1.23$ & $+3.63$ & $+2.02$ & $+6.54$ & $+6.69$ \\
+ & 95\% $t$ CI & $[+1.0, +3.8]$ & $[+3.4, +7.9]$ & $[+0.6, +1.9]$ & $[+2.3, +5.0]$ & $[+0.5, +3.5]$ & $[+3.8, +9.3]$ & $[+5.0, +8.4]$ \\
+ & $k$/6 & 6/6 & 6/6 & 6/6 & 6/6 & 6/6 & 6/6 & 6/6 \\
+\addlinespace[2pt]
+Learned mask, physics & 0 & 11.05 & 9.54 & 3.64 & 9.44 & 8.30 & 1.89 & 16.03 \\
+ & 12 & 10.42 & 11.29 & 0.98 & 3.79 & 3.51 & 4.33 & 17.20 \\
+ & 36 & 19.44 & 21.48 & 3.11 & 8.00 & 6.84 & 10.57 & 32.67 \\
+\addlinespace[2pt]
+Learned mask, SonoSPADE & 0 & 11.05 & 9.54 & 3.64 & 9.44 & 8.30 & 1.89 & 16.03 \\
+ & 12 & 7.73 & 9.11 & 0.88 & 3.04 & 3.33 & 4.24 & 13.13 \\
+ & 36 & 11.76 & 15.07 & 2.17 & 5.88 & 5.04 & 11.43 & 21.32 \\
+\addlinespace[2pt]
+Pose oracle$^{\dagger}$ & 0 & 11.05 & 9.54 & 3.64 & 9.44 & 8.30 & 1.89 & 16.03 \\
+ & 12 & 1.08 & 0.87 & 0.10 & 0.13 & 0.17 & 0.93 & 1.53 \\
+ & 36 & 0.08 & 0.09 & 0.01 & 0.02 & 0.02 & 0.24 & 0.14 \\
+\addlinespace[2pt]
+\midrule
+Bound, signed mean & 1--12 & $+0.02$ & $0.00$ & $+0.75$ & $+0.08$ & $+0.04$ & $-0.02$ & \\
+Bound, mean absolute & 1--12 & 0.25 & 0.21 & 0.75 & 0.28 & 0.31 & 0.13 & \\
+Bound, share of steps at it & 1--12 & 0.01 & 0.00 & 0.03 & 0.03 & 0.03 & 0.00 & \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,20 @@
+
+\begin{table}[t]
+\caption{Post hoc: Dice of each stage's texture-matched segmenter on held-out simulated frames (renders of the 6 evaluation CTs, never seen in training, each with its own domain-randomization draw, not the default evaluation render) and on real holdout frames, seeds 0 / 1 / 2. Vitale-holdout and KidneyUS frames come from datasets whose training splits the segmenters saw; AUL frames come from a dataset that no segmenter saw. Compare with the learned-mask rows of Table~\ref{tab:ladder}.}
+\label{tab:seg-sim-real}
+\centering
+\renewcommand{\baselinestretch}{1}\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+ & \multicolumn{3}{c}{Simulated, held-out CTs} & \multicolumn{3}{c}{Real holdout frames} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+Stage & Mean over organs & Liver & Kidney & Vitale, liver & AUL, liver & KidneyUS, kidney \\
+\midrule
+Physics & 0.33 / 0.37 / 0.31 & 0.53 / 0.50 / 0.51 & 0.17 / 0.42 / 0.19 & 0.69 / 0.66 / 0.58 & 0.69 / 0.60 / 0.59 & 0.35 / 0.35 / 0.35 \\
+CUT & 0.32 / 0.29 / 0.29 & 0.49 / 0.41 / 0.49 & 0.25 / 0.27 / 0.26 & 0.58 / 0.54 / 0.59 & 0.49 / 0.57 / 0.58 & 0.36 / 0.34 / 0.40 \\
+CycleGAN & 0.31 / 0.30 / 0.29 & 0.52 / 0.46 / 0.48 & 0.16 / 0.29 / 0.30 & 0.59 / 0.56 / 0.54 & 0.58 / 0.59 / 0.53 & 0.30 / 0.34 / 0.40 \\
+SonoSPADE & 0.75 / 0.76 / 0.75 & 0.83 / 0.85 / 0.80 & 0.82 / 0.86 / 0.84 & 0.40 / 0.58 / 0.48 & 0.43 / 0.52 / 0.42 & 0.37 / 0.37 / 0.35 \\
+\bottomrule
+\end{tabular}
+\end{table}

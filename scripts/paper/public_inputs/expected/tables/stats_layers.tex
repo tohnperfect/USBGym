@@ -1,0 +1,53 @@
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Post hoc statistics layer of Table~\ref{tab:stats-sensitivity} for the learnability, realism, domain-randomization policy and contact contrasts of the primary analysis (6 held-out patients). Columns as in Table~\ref{tab:stats-sensitivity}; Holm within each block. Learnability: difference of the per-patient mean Fisher $z$ of the per-view Spearman correlation. Realism: difference of the per-patient in-sector W1. The four CT-mask servo-base rows of the contact block hold identical episodes by construction and count once; the static start, whose differences are all 0, enters at $p = 1$. Patient $\times$ seed: n/a where a row has no seed factor. $^{\dagger}$Privileged.}
+\label{tab:stats-layers}
+\centering
+\setlength{\tabcolsep}{2.2pt}
+\begin{tabular}{@{}l r c c c c c c c c c@{}}
+\toprule
+Contrast & Mean & Bootstrap CI & $t$ CI & Patient $\times$ seed CI & $k$/6 & Exact $p$ & Holm & $t$ $p$ & Holm & Rule \\
+\midrule
+\multicolumn{11}{@{}l}{\textit{Learnability, pooled organs: SonoSPADE minus stage, per-patient mean Fisher $z$, $m = 3$}} \\
+\quad Physics & $+0.107$ & $[+0.075, +0.138]$ & $[+0.062, +0.152]$ & n/a & 6/6 & $2/64$ & $0.094$ & $0.002$ & $0.005$ & yes \\
+\quad CUT & $+0.105$ & $[+0.074, +0.144]$ & $[+0.054, +0.156]$ & n/a & 6/6 & $2/64$ & $0.094$ & $0.003$ & $0.005$ & yes \\
+\quad CycleGAN & $+0.098$ & $[+0.065, +0.127]$ & $[+0.053, +0.144]$ & n/a & 6/6 & $2/64$ & $0.094$ & $0.003$ & $0.005$ & yes \\
+\addlinespace
+\multicolumn{11}{@{}l}{\textit{Learnability, liver views, $m = 3$}} \\
+\quad Physics & $+0.127$ & $[+0.080, +0.170]$ & $[+0.059, +0.195]$ & n/a & 6/6 & $2/64$ & $0.094$ & $0.005$ & $0.014$ & yes \\
+\quad CUT & $+0.110$ & $[+0.067, +0.150]$ & $[+0.050, +0.170]$ & n/a & 6/6 & $2/64$ & $0.094$ & $0.005$ & $0.014$ & yes \\
+\quad CycleGAN & $+0.108$ & $[+0.051, +0.160]$ & $[+0.029, +0.188]$ & n/a & 5/6 & $4/64$ & $0.094$ & $0.017$ & $0.017$ & yes \\
+\addlinespace
+\multicolumn{11}{@{}l}{\textit{Learnability, kidney views, $m = 3$}} \\
+\quad Physics & $+0.088$ & $[+0.062, +0.117]$ & $[+0.048, +0.128]$ & n/a & 6/6 & $2/64$ & $0.094$ & $0.002$ & $0.005$ & yes \\
+\quad CUT & $+0.099$ & $[+0.052, +0.156]$ & $[+0.024, +0.175]$ & n/a & 6/6 & $2/64$ & $0.094$ & $0.020$ & $0.020$ & yes \\
+\quad CycleGAN & $+0.088$ & $[+0.065, +0.113]$ & $[+0.055, +0.122]$ & n/a & 6/6 & $2/64$ & $0.094$ & $0.001$ & $0.003$ & yes \\
+\addlinespace
+\multicolumn{11}{@{}l}{\textit{Realism: physics minus the authors' reimplementation of LOTUS, W1 per patient, $m = 1$}} \\
+\quad Physics minus LOTUS, authors' reimplementation & $-0.048$ & $[-0.057, -0.039]$ & $[-0.061, -0.035]$ & n/a & 6/6 & $2/64$ & $0.031$ & $<0.001$ & $<0.001$ & yes \\
+\addlinespace
+\multicolumn{11}{@{}l}{\textit{Domain-randomization policy arms minus the CT-mask arm without DR (SonoSPADE), mm, $m = 3$}} \\
+\quad Evaluation DR only & $+0.04$ & $[-0.01, +0.12]$ & $[-0.06, +0.14]$ & $[-0.06, +0.15]$ & 3/6 & $28/64$ & $0.844$ & $0.351$ & $0.928$ & no \\
+\quad Training DR only & $+0.10$ & $[-0.06, +0.29]$ & $[-0.16, +0.36]$ & $[-0.12, +0.40]$ & 5/6 & $18/64$ & $0.844$ & $0.351$ & $0.928$ & no \\
+\quad Training and evaluation DR & $+0.15$ & $[-0.07, +0.37]$ & $[-0.19, +0.48]$ & $[-0.12, +0.45]$ & 4/6 & $22/64$ & $0.844$ & $0.309$ & $0.928$ & no \\
+\addlinespace
+\multicolumn{11}{@{}l}{\textit{Contact off minus on, final translation error, mm, $m = 16$}} \\
+\quad CT-mask final$^{\dagger}$, Physics & $+2.96$ & $[+2.55, +3.38]$ & $[+2.37, +3.55]$ & $[+2.23, +3.66]$ & 6/6 & $2/64$ & $0.500$ & $<0.001$ & $<0.001$ & yes \\
+\quad CT-mask final$^{\dagger}$, CUT & $+2.87$ & $[+2.44, +3.25]$ & $[+2.28, +3.45]$ & $[+2.06, +3.75]$ & 6/6 & $2/64$ & $0.500$ & $<0.001$ & $<0.001$ & yes \\
+\quad CT-mask final$^{\dagger}$, CycleGAN & $+2.72$ & $[+2.16, +3.28]$ & $[+1.91, +3.53]$ & $[+1.94, +3.53]$ & 6/6 & $2/64$ & $0.500$ & $<0.001$ & $0.004$ & yes \\
+\quad CT-mask final$^{\dagger}$, SonoSPADE & $+2.92$ & $[+2.39, +3.42]$ & $[+2.20, +3.64]$ & $[+2.14, +3.71]$ & 6/6 & $2/64$ & $0.500$ & $<0.001$ & $0.002$ & yes \\
+\quad Learned-mask final, Physics & $+0.82$ & $[+0.08, +1.56]$ & $[-0.27, +1.91]$ & $[-0.25, +1.78]$ & 4/6 & $8/64$ & $0.500$ & $0.110$ & $0.220$ & no \\
+\quad Learned-mask final, CUT & $+1.04$ & $[+0.65, +1.56]$ & $[+0.37, +1.70]$ & $[+0.08, +1.84]$ & 6/6 & $2/64$ & $0.500$ & $0.010$ & $0.072$ & yes \\
+\quad Learned-mask final, CycleGAN & $+0.92$ & $[+0.32, +1.68]$ & $[-0.08, +1.92]$ & $[+0.24, +1.81]$ & 6/6 & $2/64$ & $0.500$ & $0.064$ & $0.191$ & yes \\
+\quad Learned-mask final, SonoSPADE & $+1.97$ & $[+1.50, +2.42]$ & $[+1.30, +2.65]$ & $[+0.89, +2.96]$ & 6/6 & $2/64$ & $0.500$ & $<0.001$ & $0.007$ & yes \\
+\quad Static start & $0.00$ & $[+0.00, +0.00]$ & $[+0.00, +0.00]$ & n/a & n/a & $64/64$ & $1.000$ & $1.000$ & $1.000$ & no \\
+\quad Scripted sweep & $+0.26$ & $[+0.19, +0.33]$ & $[+0.16, +0.36]$ & n/a & 6/6 & $2/64$ & $0.500$ & $0.001$ & $0.011$ & yes \\
+\quad Pose oracle$^{\dagger}$ & $-0.17$ & $[-0.25, -0.08]$ & $[-0.29, -0.05]$ & n/a & 5/6 & $4/64$ & $0.500$ & $0.017$ & $0.100$ & yes \\
+\quad CT-mask servo base$^{\dagger}$, four stages & $+2.98$ & $[+2.63, +3.29]$ & $[+2.51, +3.45]$ & $[+2.23, +3.66]$ & 6/6 & $2/64$ & $0.500$ & $<0.001$ & $<0.001$ & yes \\
+\quad Learned-mask servo base, Physics & $+0.88$ & $[+0.22, +1.35]$ & $[+0.04, +1.71]$ & $[-0.06, +1.78]$ & 5/6 & $4/64$ & $0.500$ & $0.043$ & $0.176$ & yes \\
+\quad Learned-mask servo base, CUT & $+1.26$ & $[+0.75, +1.70]$ & $[+0.57, +1.94]$ & $[+0.62, +2.02]$ & 6/6 & $2/64$ & $0.500$ & $0.005$ & $0.043$ & yes \\
+\quad Learned-mask servo base, CycleGAN & $+0.83$ & $[+0.33, +1.36]$ & $[+0.09, +1.57]$ & $[+0.15, +1.56]$ & 6/6 & $2/64$ & $0.500$ & $0.035$ & $0.176$ & yes \\
+\quad Learned-mask servo base, SonoSPADE & $+1.86$ & $[+1.64, +2.07]$ & $[+1.54, +2.18]$ & $[+1.10, +2.65]$ & 6/6 & $2/64$ & $0.500$ & $<0.001$ & $<0.001$ & yes \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,124 @@
+{
+ "case": "s0513",
+ "reward_organs_per_patient": {
+  "s0358": {
+   "kidney": [
+    "liver",
+    "kidney"
+   ],
+   "liver": [
+    "liver",
+    "gallbladder",
+    "vessel"
+   ]
+  },
+  "s0513": {
+   "kidney": [
+    "liver",
+    "gallbladder",
+    "vessel",
+    "kidney"
+   ],
+   "liver": [
+    "liver",
+    "gallbladder",
+    "vessel"
+   ]
+  },
+  "s0519": {
+   "kidney": [
+    "liver",
+    "gallbladder",
+    "kidney"
+   ],
+   "liver": [
+    "liver",
+    "gallbladder",
+    "kidney"
+   ]
+  },
+  "s0591": {
+   "kidney": [
+    "liver",
+    "gallbladder",
+    "kidney"
+   ],
+   "liver": [
+    "liver",
+    "gallbladder",
+    "vessel"
+   ]
+  },
+  "s0649": {
+   "kidney": [
+    "liver",
+    "kidney"
+   ],
+   "liver": [
+    "liver",
+    "gallbladder",
+    "vessel"
+   ]
+  },
+  "s0762": {
+   "kidney": [
+    "liver",
+    "gallbladder",
+    "kidney"
+   ],
+   "liver": [
+    "liver",
+    "gallbladder",
+    "vessel"
+   ]
+  }
+ },
+ "rule": "held-out patient whose window-0 liver and kidney CT-label sectors contain the most reward organs (>= 20 px each, summed), ties by TEST_PATIENTS order; screened window 0 of each target organ; probe at the window's seated target pose; physics DR off, RenderConfig(seed=0), CPU; every stage applied to the same physics sector frame",
+ "seat_mode": "anatomical",
+ "texture": {
+  "cut": {
+   "ckpt": "data/dataset/v2/cut_curvi.pt",
+   "md5": "see EXCLUDED.tsv"
+  },
+  "cyclegan": {
+   "ckpt": "data/dataset/v2/cyclegan_curvi.pt",
+   "md5": "see EXCLUDED.tsv"
+  },
+  "physics": {
+   "ckpt": null,
+   "md5": null
+  },
+  "sonospade": {
+   "ckpt": "data/dataset/v2/sonospade_curvi.pt",
+   "md5": "see EXCLUDED.tsv"
+  }
+ },
+ "views": [
+  {
+   "n_windows": 10,
+   "organ": "liver",
+   "organ_px": {
+    "gallbladder": 86,
+    "liver": 3793,
+    "vessel": 459
+   },
+   "window": 0
+  },
+  {
+   "n_windows": 47,
+   "organ": "kidney",
+   "organ_px": {
+    "gallbladder": 96,
+    "kidney": 1069,
+    "liver": 219,
+    "vessel": 27
+   },
+   "window": 0
+  }
+ ],
+ "windows": {
+  "md5": "see MANIFEST.tsv",
+  "path": "data/cache/windows/usbg-windows-v1.json",
+  "version": "usbg-windows-v1"
+ }
+}

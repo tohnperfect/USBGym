@@ -1,0 +1,37 @@
+
+\begin{table}[t]
+\caption{Screened acoustic windows per case. Each window passes the screens of Section~\ref{app:testbed}; liver windows must also show a landmark organ. Kidney targets use flank windows of either side. A case and target enter training or evaluation only with at least 2 windows (kidney counts both sides), so the kidney targets of s0058, s0522 and s0727 are skipped ($^{\dagger}$). Train: 13 cases; held out: 6 cases, used only for evaluation.}
+\label{tab:windows}
+\centering
+\renewcommand{\baselinestretch}{1}\small
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Case & Split & Liver & Kidney, right & Kidney, left \\
+\midrule
+s0011 & train & 50 & 41 & 22 \\
+s0058$^{\dagger}$ & train & 41 & 0 & 1 \\
+s0344 & train & 33 & 17 & 23 \\
+s0461 & train & 38 & 31 & 16 \\
+s0477 & train & 30 & 20 & 9 \\
+s0511 & train & 26 & 18 & 21 \\
+s0522$^{\dagger}$ & train & 13 & 0 & 1 \\
+s0703 & train & 40 & 25 & 11 \\
+s0720 & train & 32 & 11 & 12 \\
+s0727$^{\dagger}$ & train & 9 & 0 & 0 \\
+s0777 & train & 51 & 40 & 20 \\
+s1086 & train & 59 & 33 & 20 \\
+s1373 & train & 16 & 18 & 13 \\
+\midrule
+s0358 & held out & 13 & 15 & 9 \\
+s0513 & held out & 10 & 37 & 10 \\
+s0519 & held out & 41 & 40 & 27 \\
+s0591 & held out & 5 & 15 & 6 \\
+s0649 & held out & 37 & 5 & 6 \\
+s0762 & held out & 29 & 19 & 18 \\
+\midrule
+\multicolumn{2}{@{}l}{Total, train (13)} & 438 & 254 & 169 \\
+\multicolumn{2}{@{}l}{Total, held out (6)} & 135 & 131 & 76 \\
+\multicolumn{2}{@{}l}{Total, all (19)} & 573 & 385 & 245 \\
+\bottomrule
+\end{tabular}
+\end{table}

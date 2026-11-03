@@ -1,0 +1,32 @@
+
+\begin{table}[tp]
+\caption{Distance to real B-mode frames in matched sector geometry. Simulated side: 50 views per held-out patient (6 patients, 300 views) jittered around screened acoustic windows, warped to the real sector. Real side: the 60 annotated Vitale frames~\cite{vitale}, which no texture stage trained on. All scores use in-sector pixels only (sector mask eroded by 3~px). W1: intensity Wasserstein-1 distance. KID and FID: kernel and Fr\'echet Inception distances. C2ST AUC: area under the ROC curve of a CNN classifier two-sample test, mean $\pm$ std over 5 repeats $\times$ 5 grouped folds (0.5 means the classifier cannot separate the domains). KID: mean $\pm$ std over 100 random subsets of 50 frames per domain. Lower W1, KID and FID mean a smaller distance to the real frames. FID from 60 real frames is biased upward and is printed for completeness; KID is the unbiased kernel distance. NumPy renderer: the five-tissue appearance model of the authors' earlier simulator (Supplementary Table~S1.3). A post hoc label-permutation null with 200 permutations per stage gives a mean AUC of 0.50 (SD 0.07) for every stage and never reaches the observed AUC of any stage ($p = 1/201$ each). Physics W1 is below the authors' reimplementation of LOTUS in 6/6 held-out patients and is below it pooled. In a post hoc comparison with the original LOTUS code, physics W1 is lower in 5/6 patients and lower pooled. Supplementary Table~S2.16 gives the null per stage and post hoc frame-bootstrap intervals for W1 and KID. The established-simulator rows run the same protocol with the renderer swapped (exploratory). The original LOTUS code runs with its published default parameters.}
+\label{tab:realism}
+\centering
+\renewcommand{\baselinestretch}{1}\small\setlength{\fboxsep}{0.6pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Variant & W1 $\downarrow$ & KID $\downarrow$ & FID $\downarrow$ & C2ST AUC \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Baseline renderers}} \\
+\quad LOTUS, authors' reimplementation & 0.1272 & $0.2288 \pm 0.0066$ & 193.5 & $0.982 \pm 0.037$ \\
+\quad NumPy renderer & 0.1882 & $0.3291 \pm 0.0093$ & 256.8 & $1.000 \pm 0.002$ \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{USB Gym stages, default render}} \\
+\quad Physics (no network) & 0.0727 & $0.2199 \pm 0.0088$ & 198.7 & $0.936 \pm 0.102$ \\
+\quad Physics + CUT & 0.0277 & $0.0740 \pm 0.0045$ & 94.0 & $0.701 \pm 0.140$ \\
+\quad Physics + CycleGAN & 0.0293 & $0.0485 \pm 0.0037$ & 72.1 & $0.753 \pm 0.173$ \\
+\quad Physics + SonoSPADE & 0.0528 & $0.1509 \pm 0.0066$ & 154.5 & $0.979 \pm 0.037$ \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{USB Gym stages, one full DR draw per view}} \\
+\quad Physics & 0.0154 & $0.1989 \pm 0.0073$ & 187.2 & $0.969 \pm 0.071$ \\
+\quad Physics + CUT & 0.0437 & $0.0566 \pm 0.0032$ & 77.3 & $0.731 \pm 0.134$ \\
+\quad Physics + CycleGAN & 0.0149 & $0.0323 \pm 0.0025$ & 56.1 & $0.734 \pm 0.146$ \\
+\quad Physics + SonoSPADE & 0.0630 & $0.1539 \pm 0.0062$ & 155.8 & $0.984 \pm 0.036$ \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Established simulator code (exploratory)}} \\
+\quad Original LOTUS code, default parameters & 0.0875 & $0.2212 \pm 0.0069$ & 193.8 & $1.000 \pm 0.000$ \\
+\quad SIMUS via PyMUST & 0.2038 & $0.2444 \pm 0.0108$ & 197.4 & $0.955 \pm 0.069$ \\
+\bottomrule
+\end{tabular}
+\end{table}

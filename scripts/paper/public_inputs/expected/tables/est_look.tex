@@ -1,0 +1,16 @@
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Look-ahead sampling seeds 0 to 2 averaged: the look-ahead bound$^{\dagger}$ minus the mean of the CT-mask servo base$^{\dagger}$ over its calibration seeds, on both cohorts (exploratory; estimation only): 2 contrasts; none adjusted. $^{\mathrm{MC}}$Monte Carlo sign-flip $p$ (1,000,000 sign vectors, seed 0). Both rows are conditional on this renderer: grid-fixed speckle, no elevational beam width, rigid tissue. $^{\dagger}$Privileged.}
+\label{tab:est-look-contrasts}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hsize=1.1429\hsize}X >{\raggedright\arraybackslash\hsize=0.6667\hsize}X >{\raggedright\arraybackslash\hsize=0.9524\hsize}X >{\raggedright\arraybackslash\hsize=0.5714\hsize}X >{\raggedright\arraybackslash\hsize=0.8571\hsize}X >{\raggedright\arraybackslash\hsize=0.9524\hsize}X >{\raggedright\arraybackslash\hsize=1.9048\hsize}X >{\raggedright\arraybackslash\hsize=0.9523\hsize}X @{}}
+\toprule
+CTs & Mean (mm) & 95\% $t$ CI (mm) & $k/n$ & Sign-flip $p$ (unadjusted; descriptive) & Bootstrap CI over units (mm) & Per seed (mm) & Bootstrap CI over units and seeds, servo seed mean held (mm) \\
+\midrule
+replication cohort & $-5.13$ & $[-6.39$, $-3.87]$ & 20/20 & $1.9 \times 10^{-6}$ & $[-6.28$, $-3.99]$ & s0 $-4.96$, s1 $-5.26$, s2 $-5.17$ & $[-6.29$, $-3.97]$ \\
+AMOS & $-4.77$ & $[-5.49$, $-4.05]$ & 29/30 & $1.0 \times 10^{-6}$$^{\mathrm{MC}}$ & $[-5.45$, $-4.10]$ & s0 $-4.51$, s1 $-4.73$, s2 $-5.08$ & $[-5.47$, $-4.10]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}

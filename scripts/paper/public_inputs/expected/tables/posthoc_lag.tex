@@ -1,0 +1,31 @@
+
+\begin{table}[tbp]
+\renewcommand{\baselinestretch}{1}\small
+\caption{Actuation as a lagged position servo (post hoc). Each control step integrates the commanded twist open loop into a target pose and then simulates a short physics interval of a probe welded to that pose. Lag is the distance between the commanded and the actual probe position after each step, pooled over steps, episodes and seeds. Step is the mean commanded translation per step. $^{\dagger}$Privileged.}
+\label{tab:posthoc-lag}
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l c rrr r@{}}
+\toprule
+Rung & Contact & Lag mean & p95 & Max & Step \\
+ & & (mm) & (mm) & (mm) & (mm) \\
+\midrule
+Scripted sweep & on & 1.67 & 2.70 & 3.28 & 0.67 \\
+ & off & 0.80 & 1.75 & 1.75 & 0.67 \\
+Pose oracle$^{\dagger}$ & on & 4.60 & 7.74 & 9.19 & 3.10 \\
+ & off & 3.74 & 6.54 & 7.80 & 3.07 \\
+CT-mask servo base$^{\dagger}$ & on & 3.40 & 5.32 & 8.00 & 2.56 \\
+ & off & 2.09 & 4.14 & 5.77 & 2.56 \\
+CT mask$^{\dagger}$, final, four stages & on & 3.37 & 5.39 & 8.55 & 2.57 \\
+ & off & 2.11 & 4.19 & 5.79 & 2.58 \\
+Learned-mask base, SonoSPADE & on & 3.39 & 5.20 & 8.02 & 2.64 \\
+ & off & 2.04 & 4.09 & 6.46 & 2.64 \\
+Learned-mask base, physics & on & 3.30 & 5.36 & 8.92 & 2.62 \\
+ & off & 2.04 & 3.79 & 5.40 & 2.61 \\
+CT-mask servo base$^{\dagger}$, 36 steps & on & 3.01 & 5.31 & 9.01 & \\
+\midrule
+\multicolumn{6}{@{}l}{Control step 0.1~s; physics per step 10 $\times$ 2~ms = 20~ms; weld time constant 0.02~s.} \\
+\multicolumn{6}{@{}l}{Pose oracle$^{\dagger}$, step 1, contact on: commands 4.7~mm, closes 1.1~mm, lags 3.6~mm.} \\
+\bottomrule
+\end{tabular}
+\end{table}

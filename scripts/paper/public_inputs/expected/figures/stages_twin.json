@@ -1,0 +1,95 @@
+{
+ "case": "s0513",
+ "case_rule": "the held-out patient of Fig. 2 (figures/stages.json case)",
+ "columns": [
+  "physics",
+  "lotus_reimpl",
+  "lotus_orig",
+  "simus"
+ ],
+ "crop_rows_cols": [
+  [
+   4,
+   103
+  ],
+  [
+   17,
+   120
+  ]
+ ],
+ "crop_rule": "union over the shown panels of pixels > 4/255, padded by 2 px",
+ "figure": "fig:stages-twin (supplement)",
+ "frames": {
+  "simus": {
+   "md5": "see MANIFEST.tsv",
+   "path": "outputs/v2_1/plug/renderer/realism/simus_frames.npz"
+  },
+  "torch": {
+   "md5": "see MANIFEST.tsv",
+   "path": "outputs/v2_1/plug/renderer/realism/torch_frames.npz"
+  }
+ },
+ "image_dpi": 600,
+ "min_font_pt": 7.0,
+ "not_drawn": {
+  "label_painted_stage": "no painted frame is stored on disk (only the checkpoint)",
+  "learned_mask_overlay": "no stored learned-mask prediction of a simulated frame",
+  "real_frame": "no real ultrasound frame in any figure"
+ },
+ "physics_identical_across_files": true,
+ "printed_size_in": [
+  5.18057285180573,
+  2.695906370527996
+ ],
+ "realism_json": {
+  "simus": {
+   "citations": {
+    "physics": "in-house physics renderer (usbg.render_lotus.render_bmode_physics)",
+    "simus": "Garcia, SIMUS: an open-source simulator for medical ultrasound imaging. Part I: theory & examples, Comput. Methods Programs Biomed. 218 (2022) 106726, doi:10.1016/j.cmpb.2022.106726; Cigier, Varray, Garcia, Part II, Comput. Methods Programs Biomed. 220 (2022) 106774, doi:10.1016/j.cmpb.2022.106774; PyMUST 0.1.9 (LGPL-3.0)"
+   },
+   "frames_npz": "outputs/v2_1/plug/renderer/realism/simus_frames.npz",
+   "jitter": {
+    "press_max_mm": 5.0,
+    "roll": 10.0,
+    "slide": 0.02,
+    "tilt": 15.0
+   },
+   "path": "outputs/v2_1/plug/renderer/realism/simus.json",
+   "protocol": "sector v2 (Table II) with the renderer swapped: anatomical windows, in-sector eroded mask on both domains, the 60 annotated public Vitale TEST frames as the reference",
+   "render_device": "cpu",
+   "seat_mode": "anatomical"
+  },
+  "torch": {
+   "citations": {
+    "lotus_orig": "Velikova et al., LOTUS, MICCAI 2023, LNCS 14220, 435-445, doi:10.1007/978-3-031-43907-0_42; original code github.com/danivelikova/lotus (MIT), commit 3d20ebb; convolutional ray tracing after Salehi et al., MICCAI 2015, doi:10.1007/978-3-319-24571-3_61",
+    "lotus_reimpl": "LOTUS (Velikova et al., MICCAI 2023, doi:10.1007/978-3-031-43907-0_42) (in-repo reimplementation)",
+    "physics": "in-house physics renderer (usbg.render_lotus.render_bmode_physics)"
+   },
+   "frames_npz": "outputs/v2_1/plug/renderer/realism/torch_frames.npz",
+   "jitter": {
+    "press_max_mm": 5.0,
+    "roll": 10.0,
+    "slide": 0.02,
+    "tilt": 15.0
+   },
+   "path": "outputs/v2_1/plug/renderer/realism/torch.json",
+   "protocol": "sector v2 (Table II) with the renderer swapped: anatomical windows, in-sector eroded mask on both domains, the 60 annotated public Vitale TEST frames as the reference",
+   "render_device": "cpu",
+   "seat_mode": "anatomical"
+  }
+ },
+ "status": "exploratory, v2.1 pluggability",
+ "view_rule": "first liver view and first kidney view of that patient in the files' view order",
+ "views": [
+  {
+   "group": "s0513:liver/w0",
+   "index": 50,
+   "organ": "liver"
+  },
+  {
+   "group": "s0513:kidney_right/w0",
+   "index": 51,
+   "organ": "kidney"
+  }
+ ]
+}

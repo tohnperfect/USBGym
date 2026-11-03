@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use USB Gym, please cite it as below."
+type: software
+title: "USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching"
+version: 2.2.0
+date-released: 2026-11-03
+license: Apache-2.0
+repository-code: "https://github.com/tohnperfect/USBGym"
+url: "https://github.com/tohnperfect/USBGym"
+abstract: >-
+  USB Gym is a CT-based Gymnasium testbed for closed-loop ultrasound probe view matching. For any
+  probe pose over a patient's labeled CT it renders a B-mode frame and resolves probe-skin contact in
+  MuJoCo; an agent moves the probe to reproduce a target view of the same patient. Renderer, texture
+  stage, mask source, controller, reward and anatomy source are plug slots with small interfaces, and
+  an oracle ladder of privileged and image-only controllers locates the remaining pose error.
+keywords:
+  - ultrasound
+  - simulation
+  - reinforcement learning
+  - gymnasium
+  - view matching
+  - robotic ultrasound
+  - medical imaging
+authors:
+  - family-names: Intharah
+    given-names: Thanapong
+    affiliation: "Visual Intelligence Laboratory, Department of Statistics, Faculty of Science, Khon Kaen University, Khon Kaen 40002, Thailand"
+  - family-names: Gao
+    given-names: Zhichao
+    affiliation: "School of Computer Science, Peking University, Beijing 100871, China"
+  - family-names: Liu
+    given-names: Yiliang
+    affiliation: "School of Computer Science, Peking University, Beijing 100871, China"
+  - family-names: Dong
+    given-names: Hao
+    affiliation: "School of Computer Science, Peking University, Beijing 100871, China"

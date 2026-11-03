@@ -1,0 +1,39 @@
+
+\begin{table*}[tbp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Leave-one-patient-out check of the 25 contrasts listed, each printed with 5 of 6 patients sharing its sign (post hoc); other contrasts with 5 of 6 are not checked. Each patient is left out in turn and the mean of the other five is recomputed. Where: where the contrast prints. The sign column says whether all six such means keep the sign of the full mean. Contrasts of the primary results come from the reference evaluation; the others are exploratory.}
+\label{tab:posthoc-lopo}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l r r l l@{}}
+\toprule
+Contrast (mm) & Where & Mean & $k$/6 & Leave-one-out range & Sign kept; opposing \\
+\midrule
+CT-to-learned-mask gap, CycleGAN & Section~\ref{sec:ladder-gap} & $+4.80$ & 5/6 & $+4.34$ to $+6.08$ & yes; s0513 \\
+CT-to-learned-mask gap, physics & Section~\ref{sec:ladder-gap} & $+4.92$ & 5/6 & $+4.39$ to $+5.99$ & yes; s0513 \\
+CT-mask final minus static, CUT & Section~\ref{supp:static} & $-4.39$ & 5/6 & $-5.31$ to $-3.57$ & yes; s0513 \\
+CT-mask final minus static, CycleGAN & Section~\ref{supp:static} & $-4.33$ & 5/6 & $-5.32$ to $-3.67$ & yes; s0513 \\
+CT-mask final minus static, physics & Section~\ref{supp:static} & $-4.21$ & 5/6 & $-5.16$ to $-3.53$ & yes; s0513 \\
+CT-mask final minus static, SonoSPADE & Section~\ref{supp:static} & $-4.34$ & 5/6 & $-5.31$ to $-3.66$ & yes; s0513 \\
+Hill-climb minus servo base, CT mask & Section~\ref{sec:gap-cause} & $+4.03$ & 5/6 & $+3.42$ to $+4.85$ & yes; s0513 \\
+Independent minus shared target speckle, learned-mask base & Table~\ref{tab:checks-summary} & $-0.63$ & 5/6 & $-0.87$ to $-0.10$ & yes; s0591 \\
+Learned-mask final minus static, SonoSPADE & Section~\ref{sec:ladder-absolute} & $-2.92$ & 5/6 & $-3.67$ to $-2.26$ & yes; s0513 \\
+SonoSPADE minus CUT, learned-mask final & Section~\ref{sec:ladder-gap} & $-3.78$ & 5/6 & $-4.59$ to $-3.35$ & yes; s0513 \\
+SonoSPADE minus CycleGAN, learned-mask final & Section~\ref{sec:ladder-gap} & $-3.38$ & 5/6 & $-4.42$ to $-2.94$ & yes; s0513 \\
+SonoSPADE minus physics, learned-mask servo base & Section~\ref{sec:checks-cohort} & $-4.06$ & 5/6 & $-4.92$ to $-3.70$ & yes; s0513 \\
+SonoSPADE minus physics, learned-mask final & Section~\ref{sec:ladder-gap} & $-3.62$ & 5/6 & $-4.50$ to $-3.28$ & yes; s0513 \\
+Controller: BC, residual, BatchNorm train, minus its reference & Table~\ref{tab:pluggability} & $+0.98$ & 5/6 & $+0.67$ to $+1.21$ & yes; s0358 \\
+Controller: CEM look-ahead$^{\dagger}$, minus its reference & Table~\ref{tab:pluggability} & $-4.81$ & 5/6 & $-6.04$ to $-3.63$ & yes; s0649 \\
+Mask: MedSAM, U-Net boxes, minus its reference & Table~\ref{tab:pluggability} & $-0.47$ & 5/6 & $-1.30$ to $-0.02$ & yes; s0649 \\
+Mask: SAM, U-Net boxes, minus its reference & Table~\ref{tab:pluggability} & $+0.99$ & 5/6 & $+0.37$ to $+1.22$ & yes; s0762 \\
+Reward: appearance NCC only, minus its reference & Table~\ref{tab:pluggability} & $+0.094$ & 5/6 & $+0.061$ to $+0.115$ & yes; s0513 \\
+Reward: NCC over the sector, minus its reference & Table~\ref{tab:pluggability} & $+0.023$ & 5/6 & $+0.018$ to $+0.031$ & yes; s0762 \\
+Reward: organ overlap only, minus its reference & Table~\ref{tab:pluggability} & $-0.065$ & 5/6 & $-0.082$ to $-0.048$ & yes; s0591 \\
+Reward: SSIM term, minus its reference & Table~\ref{tab:pluggability} & $-0.047$ & 5/6 & $-0.060$ to $-0.040$ & yes; s0591 \\
+Texture: CUT, minus its reference & Table~\ref{tab:pluggability} & $+3.70$ & 5/6 & $+3.19$ to $+4.52$ & yes; s0513 \\
+Texture: CycleGAN, minus its reference & Table~\ref{tab:pluggability} & $+3.72$ & 5/6 & $+3.23$ to $+4.64$ & yes; s0513 \\
+Texture: FastCUT, minus its reference & Table~\ref{tab:pluggability} & $+3.00$ & 5/6 & $+2.29$ to $+3.89$ & yes; s0513 \\
+Texture: none, physics frame, minus its reference & Table~\ref{tab:pluggability} & $+4.06$ & 5/6 & $+3.70$ to $+4.92$ & yes; s0513 \\
+\bottomrule
+\end{tabularx}
+\end{table*}

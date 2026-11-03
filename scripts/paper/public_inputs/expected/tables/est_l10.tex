@@ -1,0 +1,19 @@
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Learned-mask final policy of the per-tissue stage: label controls in the closed loop, six held-out patients (secondary; exploratory; estimation only): 5 contrasts; none adjusted.}
+\label{tab:est-l10-contrasts}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hsize=2.0000\hsize}X >{\raggedright\arraybackslash\hsize=0.5833\hsize}X >{\raggedright\arraybackslash\hsize=0.8333\hsize}X >{\raggedright\arraybackslash\hsize=0.5000\hsize}X >{\raggedright\arraybackslash\hsize=0.7500\hsize}X >{\raggedright\arraybackslash\hsize=0.8333\hsize}X >{\raggedright\arraybackslash\hsize=1.6667\hsize}X >{\raggedright\arraybackslash\hsize=0.8334\hsize}X @{}}
+\toprule
+Contrast & Mean (mm) & 95\% $t$ CI (mm) & $k/n$ & Sign-flip $p$ (unadjusted; descriptive) & Bootstrap CI over units (mm) & Per seed (mm) & Bootstrap CI over units and seeds (mm) \\
+\midrule
+final policy, 3 mm label offset: shift $\Delta y$ & $-0.43$ & $[-0.92$, $+0.07]$ & 5/6 & $0.063$ & $[-0.82$, $-0.13]$ & s0 $-0.03$, s1 $-0.60$, s2 $-0.65$ & $[-0.91$, $-0.01]$ \\
+final policy, 3 mm label offset: $x_p$ & $-1.07$ & $[-1.57$, $-0.58]$ & 6/6 & $0.031$ & $[-1.37$, $-0.68]$ & s0 $-1.47$, s1 $-0.90$, s2 $-0.85$ & $[-1.49$, $-0.59]$ \\
+final policy, 6 mm label offset: shift $\Delta y$ & $-0.79$ & $[-1.49$, $-0.09]$ & 5/6 & $0.063$ & $[-1.28$, $-0.32]$ & s0 $-0.11$, s1 $-1.23$, s2 $-1.04$ & $[-1.49$, $-0.14]$ \\
+final policy, 6 mm label offset: $x_p$ & $-2.21$ & $[-2.91$, $-1.51]$ & 6/6 & $0.031$ & $[-2.68$, $-1.72]$ & s0 $-2.89$, s1 $-1.77$, s2 $-1.96$ & $[-2.86$, $-1.51]$ \\
+final policy, organ identities permuted: total error change & $+8.46$ & $[+4.66$, $+12.26]$ & 6/6 & $0.031$ & $[+6.26$, $+11.43]$ & s0 $+8.08$, s1 $+6.61$, s2 $+10.69$ & $[+5.87$, $+11.66]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}

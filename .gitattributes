@@ -1,0 +1,4 @@
+# Keep LF line endings on every platform, including Windows checkouts (core.autocrlf). usbg._par.contracts
+# checks the vendored se3.py against a fixed sha256 (python -m usbg.contracts_bridge); a CRLF checkout
+# changes that hash.
+* text=auto eol=lf

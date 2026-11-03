@@ -1,0 +1,6713 @@
+{
+ "schema": "usbg-leaderboard-1",
+ "protocol": "usbg-plug-protocol-1",
+ "source": {
+  "table": "Table 5 of the USB Gym article (both parts)",
+  "check": "built from the record that writes the table and compared with the printed table: every row, cell and slot header equal (0 mismatches)"
+ },
+ "patients": [
+  "s0358",
+  "s0513",
+  "s0519",
+  "s0591",
+  "s0649",
+  "s0762"
+ ],
+ "episodes": [
+  {
+   "ep": 0,
+   "patient": "s0358",
+   "target": "liver",
+   "window": 0,
+   "start_pos": 17.45904,
+   "start_ang": 15.40728
+  },
+  {
+   "ep": 1,
+   "patient": "s0358",
+   "target": "kidney",
+   "window": 0,
+   "start_pos": 4.549322,
+   "start_ang": 10.991415
+  },
+  {
+   "ep": 2,
+   "patient": "s0513",
+   "target": "liver",
+   "window": 0,
+   "start_pos": 20.872346,
+   "start_ang": 19.880745
+  },
+  {
+   "ep": 3,
+   "patient": "s0513",
+   "target": "kidney",
+   "window": 0,
+   "start_pos": 7.565501,
+   "start_ang": 7.085537
+  },
+  {
+   "ep": 4,
+   "patient": "s0519",
+   "target": "liver",
+   "window": 0,
+   "start_pos": 15.969659,
+   "start_ang": 10.832869
+  },
+  {
+   "ep": 5,
+   "patient": "s0519",
+   "target": "kidney",
+   "window": 0,
+   "start_pos": 25.894128,
+   "start_ang": 6.742929
+  },
+  {
+   "ep": 6,
+   "patient": "s0591",
+   "target": "liver",
+   "window": 0,
+   "start_pos": 24.420108,
+   "start_ang": 13.436269
+  },
+  {
+   "ep": 7,
+   "patient": "s0591",
+   "target": "kidney",
+   "window": 0,
+   "start_pos": 8.676434,
+   "start_ang": 14.312036
+  },
+  {
+   "ep": 8,
+   "patient": "s0649",
+   "target": "liver",
+   "window": 0,
+   "start_pos": 21.405131,
+   "start_ang": 11.89088
+  },
+  {
+   "ep": 9,
+   "patient": "s0649",
+   "target": "kidney",
+   "window": 0,
+   "start_pos": 19.273879,
+   "start_ang": 24.422458
+  },
+  {
+   "ep": 10,
+   "patient": "s0762",
+   "target": "liver",
+   "window": 0,
+   "start_pos": 21.116787,
+   "start_ang": 14.19579
+  },
+  {
+   "ep": 11,
+   "patient": "s0762",
+   "target": "kidney",
+   "window": 0,
+   "start_pos": 16.810262,
+   "start_ang": 21.289972
+  },
+  {
+   "ep": 12,
+   "patient": "s0358",
+   "target": "liver",
+   "window": 1,
+   "start_pos": 10.722551,
+   "start_ang": 20.818698
+  },
+  {
+   "ep": 13,
+   "patient": "s0358",
+   "target": "kidney",
+   "window": 1,
+   "start_pos": 14.62978,
+   "start_ang": 13.045802
+  },
+  {
+   "ep": 14,
+   "patient": "s0513",
+   "target": "liver",
+   "window": 1,
+   "start_pos": 20.598212,
+   "start_ang": 8.104237
+  },
+  {
+   "ep": 15,
+   "patient": "s0513",
+   "target": "kidney",
+   "window": 1,
+   "start_pos": 4.978179,
+   "start_ang": 17.872358
+  },
+  {
+   "ep": 16,
+   "patient": "s0519",
+   "target": "liver",
+   "window": 1,
+   "start_pos": 8.293646,
+   "start_ang": 22.781401
+  },
+  {
+   "ep": 17,
+   "patient": "s0519",
+   "target": "kidney",
+   "window": 1,
+   "start_pos": 11.50004,
+   "start_ang": 4.195326
+  },
+  {
+   "ep": 18,
+   "patient": "s0591",
+   "target": "liver",
+   "window": 1,
+   "start_pos": 21.319874,
+   "start_ang": 15.929593
+  },
+  {
+   "ep": 19,
+   "patient": "s0591",
+   "target": "kidney",
+   "window": 1,
+   "start_pos": 4.509617,
+   "start_ang": 11.438112
+  },
+  {
+   "ep": 20,
+   "patient": "s0649",
+   "target": "liver",
+   "window": 1,
+   "start_pos": 12.472801,
+   "start_ang": 15.91102
+  },
+  {
+   "ep": 21,
+   "patient": "s0649",
+   "target": "kidney",
+   "window": 1,
+   "start_pos": 12.543413,
+   "start_ang": 16.541859
+  },
+  {
+   "ep": 22,
+   "patient": "s0762",
+   "target": "liver",
+   "window": 1,
+   "start_pos": 17.877718,
+   "start_ang": 18.259302
+  },
+  {
+   "ep": 23,
+   "patient": "s0762",
+   "target": "kidney",
+   "window": 1,
+   "start_pos": 26.081213,
+   "start_ang": 5.619785
+  },
+  {
+   "ep": 24,
+   "patient": "s0358",
+   "target": "liver",
+   "window": 2,
+   "start_pos": 17.732007,
+   "start_ang": 14.867076
+  },
+  {
+   "ep": 25,
+   "patient": "s0358",
+   "target": "kidney",
+   "window": 2,
+   "start_pos": 12.290504,
+   "start_ang": 15.139097
+  },
+  {
+   "ep": 26,
+   "patient": "s0513",
+   "target": "liver",
+   "window": 2,
+   "start_pos": 15.411623,
+   "start_ang": 12.04859
+  },
+  {
+   "ep": 27,
+   "patient": "s0513",
+   "target": "kidney",
+   "window": 2,
+   "start_pos": 15.019,
+   "start_ang": 16.906602
+  },
+  {
+   "ep": 28,
+   "patient": "s0519",
+   "target": "liver",
+   "window": 2,
+   "start_pos": 19.595292,
+   "start_ang": 23.535781
+  },
+  {
+   "ep": 29,
+   "patient": "s0519",
+   "target": "kidney",
+   "window": 2,
+   "start_pos": 13.840032,
+   "start_ang": 16.694312
+  },
+  {
+   "ep": 30,
+   "patient": "s0591",
+   "target": "liver",
+   "window": 2,
+   "start_pos": 20.740471,
+   "start_ang": 12.320872
+  },
+  {
+   "ep": 31,
+   "patient": "s0591",
+   "target": "kidney",
+   "window": 2,
+   "start_pos": 21.904105,
+   "start_ang": 17.903896
+  },
+  {
+   "ep": 32,
+   "patient": "s0649",
+   "target": "liver",
+   "window": 2,
+   "start_pos": 19.768263,
+   "start_ang": 12.795013
+  },
+  {
+   "ep": 33,
+   "patient": "s0649",
+   "target": "kidney",
+   "window": 2,
+   "start_pos": 18.544287,
+   "start_ang": 8.611056
+  },
+  {
+   "ep": 34,
+   "patient": "s0762",
+   "target": "liver",
+   "window": 2,
+   "start_pos": 19.895997,
+   "start_ang": 5.785255
+  },
+  {
+   "ep": 35,
+   "patient": "s0762",
+   "target": "kidney",
+   "window": 2,
+   "start_pos": 25.095527,
+   "start_ang": 19.978294
+  },
+  {
+   "ep": 36,
+   "patient": "s0358",
+   "target": "liver",
+   "window": 3,
+   "start_pos": 8.970002,
+   "start_ang": 16.485815
+  },
+  {
+   "ep": 37,
+   "patient": "s0358",
+   "target": "kidney",
+   "window": 3,
+   "start_pos": 15.041471,
+   "start_ang": 18.559807
+  },
+  {
+   "ep": 38,
+   "patient": "s0513",
+   "target": "liver",
+   "window": 3,
+   "start_pos": 10.45319,
+   "start_ang": 3.894806
+  },
+  {
+   "ep": 39,
+   "patient": "s0513",
+   "target": "kidney",
+   "window": 3,
+   "start_pos": 17.624373,
+   "start_ang": 4.830958
+  },
+  {
+   "ep": 40,
+   "patient": "s0519",
+   "target": "liver",
+   "window": 3,
+   "start_pos": 14.984913,
+   "start_ang": 12.073197
+  },
+  {
+   "ep": 41,
+   "patient": "s0519",
+   "target": "kidney",
+   "window": 3,
+   "start_pos": 17.558695,
+   "start_ang": 12.811597
+  },
+  {
+   "ep": 42,
+   "patient": "s0591",
+   "target": "liver",
+   "window": 3,
+   "start_pos": 16.575914,
+   "start_ang": 6.231451
+  },
+  {
+   "ep": 43,
+   "patient": "s0591",
+   "target": "kidney",
+   "window": 3,
+   "start_pos": 8.172318,
+   "start_ang": 14.471783
+  },
+  {
+   "ep": 44,
+   "patient": "s0649",
+   "target": "liver",
+   "window": 3,
+   "start_pos": 21.14149,
+   "start_ang": 18.47307
+  },
+  {
+   "ep": 45,
+   "patient": "s0649",
+   "target": "kidney",
+   "window": 3,
+   "start_pos": 26.052923,
+   "start_ang": 18.254973
+  },
+  {
+   "ep": 46,
+   "patient": "s0762",
+   "target": "liver",
+   "window": 3,
+   "start_pos": 16.117504,
+   "start_ang": 9.408771
+  },
+  {
+   "ep": 47,
+   "patient": "s0762",
+   "target": "kidney",
+   "window": 3,
+   "start_pos": 20.745302,
+   "start_ang": 6.885273
+  },
+  {
+   "ep": 48,
+   "patient": "s0358",
+   "target": "liver",
+   "window": 4,
+   "start_pos": 5.027888,
+   "start_ang": 10.725154
+  },
+  {
+   "ep": 49,
+   "patient": "s0358",
+   "target": "kidney",
+   "window": 4,
+   "start_pos": 17.964089,
+   "start_ang": 13.022974
+  },
+  {
+   "ep": 50,
+   "patient": "s0513",
+   "target": "liver",
+   "window": 4,
+   "start_pos": 9.971983,
+   "start_ang": 8.705329
+  },
+  {
+   "ep": 51,
+   "patient": "s0513",
+   "target": "kidney",
+   "window": 4,
+   "start_pos": 8.675949,
+   "start_ang": 16.689142
+  },
+  {
+   "ep": 52,
+   "patient": "s0519",
+   "target": "liver",
+   "window": 4,
+   "start_pos": 17.32584,
+   "start_ang": 13.63757
+  },
+  {
+   "ep": 53,
+   "patient": "s0519",
+   "target": "kidney",
+   "window": 4,
+   "start_pos": 9.683165,
+   "start_ang": 21.442779
+  },
+  {
+   "ep": 54,
+   "patient": "s0591",
+   "target": "liver",
+   "window": 4,
+   "start_pos": 16.178126,
+   "start_ang": 16.86385
+  },
+  {
+   "ep": 55,
+   "patient": "s0591",
+   "target": "kidney",
+   "window": 4,
+   "start_pos": 22.608413,
+   "start_ang": 9.447529
+  },
+  {
+   "ep": 56,
+   "patient": "s0649",
+   "target": "liver",
+   "window": 4,
+   "start_pos": 20.521699,
+   "start_ang": 18.384784
+  },
+  {
+   "ep": 57,
+   "patient": "s0649",
+   "target": "kidney",
+   "window": 4,
+   "start_pos": 22.720749,
+   "start_ang": 9.581392
+  },
+  {
+   "ep": 58,
+   "patient": "s0762",
+   "target": "liver",
+   "window": 4,
+   "start_pos": 5.341027,
+   "start_ang": 12.649621
+  },
+  {
+   "ep": 59,
+   "patient": "s0762",
+   "target": "kidney",
+   "window": 4,
+   "start_pos": 22.868506,
+   "start_ang": 10.915941
+  }
+ ],
+ "slots": [
+  {
+   "key": "texture",
+   "title": "Texture stage",
+   "reference": "texture/sonospade",
+   "reference_err_mm": 13.133458864855752,
+   "decimals": 2,
+   "families": [
+    {
+     "key": "family",
+     "name": "texture stage",
+     "m": 4,
+     "test": "paired t, Holm",
+     "members": [
+      "texture/fastcut",
+      "texture/dclgan",
+      "texture/unsb",
+      "texture/histmatch"
+     ]
+    }
+   ],
+   "mdd": {
+    "mdd_mm": 3.2374047634707472,
+    "mdd_holm_mm": 4.387080713897584,
+    "alpha_holm": 0.0125,
+    "sd_mm": 2.2721215893445783,
+    "rows": [
+     "texture/physics",
+     "texture/cut",
+     "texture/cyclegan",
+     "texture/fastcut",
+     "texture/dclgan",
+     "texture/unsb",
+     "texture/histmatch"
+    ]
+   },
+   "rows": [
+    {
+     "id": "texture/sonospade",
+     "slot": "texture",
+     "kind": "row",
+     "group": "Reference",
+     "method": "SonoSPADE (authors')",
+     "cites": [
+      "sonospade"
+     ],
+     "role": "ref",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": true,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "texture/sonospade",
+     "minuend": "texture/sonospade",
+     "against": null,
+     "err_mm": 13.133458864855752,
+     "diff": null,
+     "holm_p": null,
+     "decision": "",
+     "decision_full": "",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "13.13",
+      "difference": "",
+      "seeds": "",
+      "holm_p": "",
+      "tost": "",
+      "decision": "",
+      "notes": []
+     }
+    },
+    {
+     "id": "texture/fastcut",
+     "slot": "texture",
+     "kind": "row",
+     "group": "Family (m = 4)",
+     "method": "FastCUT",
+     "cites": [
+      "cut"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "texture stage",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "texture/fastcut",
+     "minuend": "texture/fastcut",
+     "against": "texture/sonospade",
+     "err_mm": 16.130023094007658,
+     "diff": {
+      "mean": 2.9965642291519035,
+      "ci": [
+       0.24000985462156077,
+       5.753118603682246
+      ],
+      "p_t": 0.038245631636050256,
+      "sd": 2.6267016954022644,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       3.2316945122796255,
+       3.6805099281453137,
+       2.0774882470307676
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       0.8357342056150618,
+       5.157394252688745
+      ],
+      "tost_p": 0.9391605935197935,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 3.158267951770357,
+       "s0513": -1.4690443519185727,
+       "s0519": 3.5341599475142846,
+       "s0591": 3.999800731966957,
+       "s0649": 2.2081670172983667,
+       "s0762": 6.548034078280027
+      },
+      "ps_ci": [
+       0.8141440578562307,
+       5.000753912066492
+      ]
+     },
+     "holm_p": 0.038245631636050256,
+     "decision": "higher",
+     "decision_full": "higher",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "16.13",
+      "difference": "+3.00 [+0.24, +5.75], 5/6",
+      "seeds": "3/3",
+      "holm_p": "0.038",
+      "tost": "no",
+      "decision": "higher",
+      "notes": []
+     }
+    },
+    {
+     "id": "texture/dclgan",
+     "slot": "texture",
+     "kind": "row",
+     "group": "Family (m = 4)",
+     "method": "DCLGAN",
+     "cites": [
+      "han2021dclgan"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "texture stage",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "texture/dclgan",
+     "minuend": "texture/dclgan",
+     "against": "texture/sonospade",
+     "err_mm": 16.936656845987446,
+     "diff": {
+      "mean": 3.803197981131697,
+      "ci": [
+       1.3564958952227517,
+       6.249900067040643
+      ],
+      "p_t": 0.010366981422852053,
+      "sd": 2.3314455816951787,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       5.022475762479313,
+       2.59205836728361,
+       3.795059813632166
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       1.8852574628050667,
+       5.721138499458328
+      ],
+      "tost_p": 0.9839671563197198,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 4.264997333742004,
+       "s0513": -0.6793810260429254,
+       "s0519": 4.184318472813814,
+       "s0591": 4.437809835829636,
+       "s0649": 4.354858972459107,
+       "s0762": 6.256584297988544
+      },
+      "ps_ci": [
+       1.714905679400373,
+       5.631262160482073
+      ]
+     },
+     "holm_p": 0.020733962845704106,
+     "decision": "higher",
+     "decision_full": "higher",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "16.94",
+      "difference": "+3.80 [+1.36, +6.25], 5/6",
+      "seeds": "3/3",
+      "holm_p": "0.021",
+      "tost": "no",
+      "decision": "higher",
+      "notes": []
+     }
+    },
+    {
+     "id": "texture/unsb",
+     "slot": "texture",
+     "kind": "row",
+     "group": "Family (m = 4)",
+     "method": "UNSB (Schrödinger bridge)",
+     "cites": [
+      "kim2024unsb"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "texture stage",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "texture/unsb",
+     "minuend": "texture/unsb",
+     "against": "texture/sonospade",
+     "err_mm": 17.641397945462554,
+     "diff": {
+      "mean": 4.507939080606799,
+      "ci": [
+       2.12349370657149,
+       6.892384454642108
+      ],
+      "p_t": 0.0046337916689910726,
+      "sd": 2.2721215893445783,
+      "sign": 6,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       4.858454242192774,
+       4.5603137988564155,
+       4.105049200771205
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       2.6388008545281334,
+       6.3770773066854645
+      ],
+      "tost_p": 0.9935668018045165,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 4.1472767868778835,
+       "s0513": 1.5802180391357492,
+       "s0519": 6.91969699923737,
+       "s0591": 3.612997428651802,
+       "s0649": 3.281338530544213,
+       "s0762": 7.506106699193774
+      },
+      "ps_ci": [
+       2.6821463375188093,
+       6.379866610173255
+      ]
+     },
+     "holm_p": 0.013901375006973218,
+     "decision": "higher",
+     "decision_full": "higher",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "17.64",
+      "difference": "+4.51 [+2.12, +6.89], 6/6",
+      "seeds": "3/3",
+      "holm_p": "0.014",
+      "tost": "no",
+      "decision": "higher",
+      "notes": []
+     }
+    },
+    {
+     "id": "texture/histmatch",
+     "slot": "texture",
+     "kind": "row",
+     "group": "Family (m = 4)",
+     "method": "Histogram matching",
+     "cites": [
+      "gonzalez2018"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "texture stage",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "texture/histmatch",
+     "minuend": "texture/histmatch",
+     "against": "texture/sonospade",
+     "err_mm": 16.95418699161245,
+     "diff": {
+      "mean": 3.820728126756697,
+      "ci": [
+       2.022470044102043,
+       5.618986209411351
+      ],
+      "p_t": 0.0027996420213588133,
+      "sd": 1.7135477529931131,
+      "sign": 6,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       3.3787175011848785,
+       4.2693472655543045,
+       3.8141196135309077
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       2.411095111362246,
+       5.230361142151148
+      ],
+      "tost_p": 0.9950002163680325,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 1.8610797201783313,
+       "s0513": 1.8670977855087436,
+       "s0519": 4.749801349686717,
+       "s0591": 5.70797025742694,
+       "s0649": 3.3697570076220824,
+       "s0762": 5.368662640117373
+      },
+      "ps_ci": [
+       2.146916799978976,
+       5.493135847134106
+      ]
+     },
+     "holm_p": 0.011198568085435253,
+     "decision": "higher",
+     "decision_full": "higher",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "16.95",
+      "difference": "+3.82 [+2.02, +5.62], 6/6",
+      "seeds": "3/3",
+      "holm_p": "0.011",
+      "tost": "no",
+      "decision": "higher",
+      "notes": []
+     }
+    },
+    {
+     "id": "texture/physics",
+     "slot": "texture",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "None, physics frame (authors')",
+     "cites": [],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "texture/physics",
+     "minuend": "texture/physics",
+     "against": "texture/sonospade",
+     "err_mm": 17.1965860773182,
+     "diff": {
+      "mean": 4.063127212462452,
+      "ci": [
+       1.6848175049442933,
+       6.44143691998061
+      ],
+      "p_t": 0.007077223992465992,
+      "sd": 2.266274954940435,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       3.700673902002268,
+       3.892198873769729,
+       4.596508861615356
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       2.1987986620234796,
+       5.927455762901424
+      ],
+      "tost_p": 0.989388690703586,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 4.283100933982203,
+       "s0513": -0.200964971291814,
+       "s0519": 5.8621164187987596,
+       "s0591": 5.370145422873708,
+       "s0649": 3.516196678819229,
+       "s0762": 5.548168791592625
+      },
+      "ps_ci": [
+       2.0867598776550813,
+       5.700310898592505
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "17.20",
+      "difference": "+4.06 [+1.68, +6.44], 5/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "texture/cut",
+     "slot": "texture",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "CUT (prior)",
+     "cites": [
+      "cut"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "texture/cut",
+     "minuend": "texture/cut",
+     "against": "texture/sonospade",
+     "err_mm": 16.835036740402852,
+     "diff": {
+      "mean": 3.7015778755471,
+      "ci": [
+       1.3298451096050363,
+       6.073310641489163
+      ],
+      "p_t": 0.010202064955509045,
+      "sd": 2.260007832569075,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       3.4417229126452233,
+       4.406454318613068,
+       3.2565563953830114
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       1.8424049109917164,
+       5.560750840102484
+      ],
+      "tost_p": 0.9836472697740923,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 3.13426896516936,
+       "s0513": -0.38627832680632146,
+       "s0519": 4.906249345592986,
+       "s0591": 3.88339145242632,
+       "s0649": 4.419581433219699,
+       "s0762": 6.252254383680556
+      },
+      "ps_ci": [
+       1.5116888276949554,
+       5.733084097288271
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "16.84",
+      "difference": "+3.70 [+1.33, +6.07], 5/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "texture/cyclegan",
+     "slot": "texture",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "CycleGAN (prior)",
+     "cites": [
+      "cyclegan"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "texture/cyclegan",
+     "minuend": "texture/cyclegan",
+     "against": "texture/sonospade",
+     "err_mm": 16.853046296797103,
+     "diff": {
+      "mean": 3.719587431941354,
+      "ci": [
+       1.1772474217730577,
+       6.26192744210965
+      ],
+      "p_t": 0.013145252459364393,
+      "sd": 2.422578301629133,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       3.283309051361362,
+       4.524723387635359,
+       3.350729856827336
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       1.726677488002157,
+       5.712497375880551
+      ],
+      "tost_p": 0.9798400588565117,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 3.943211749073315,
+       "s0513": -0.8670313274490002,
+       "s0519": 4.74732099271591,
+       "s0591": 3.5277646076006874,
+       "s0649": 4.796049720104913,
+       "s0762": 6.170208849602295
+      },
+      "ps_ci": [
+       1.4439606487580914,
+       5.599598905733201
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "16.85",
+      "difference": "+3.72 [+1.18, +6.26], 5/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "texture/label_painted",
+     "slot": "texture",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "Label-painted physics stage (authors', not learned)",
+     "cites": [],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": true,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "texture/label_painted",
+     "minuend": "texture/label_painted",
+     "against": "texture/sonospade",
+     "err_mm": 14.223105882670348,
+     "diff": {
+      "mean": 1.0896470178145945,
+      "ci": [
+       -1.9780264661225075,
+       4.1573205017516965
+      ],
+      "p_t": 0.4030810830206757,
+      "sd": 2.923164953918619,
+      "sign": 3,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       1.6558010646432682,
+       2.1057902117637814,
+       -0.4926502229632688
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.3150655566030767,
+       3.4943595922322657
+      ],
+      "tost_p": 0.5284840829214572,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 2.01410836494005,
+       "s0513": -1.8026169720658096,
+       "s0519": 5.599830080316256,
+       "s0591": -1.9344332048391806,
+       "s0649": -0.0662523726986457,
+       "s0762": 2.727246211234897
+      },
+      "ps_ci": [
+       -1.2746971996121788,
+       3.462690298523498
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "14.22",
+      "difference": "+1.09 [-1.98, +4.16], 3/6",
+      "seeds": "2/3",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    }
+   ],
+   "printed_condition": "frames from the plugged stage; mask from that stage's own matched U-Net; servo base, residual off; seeds 0 to 2",
+   "printed_header": "Reference: SonoSPADE, 13.13 mm. Family: m = 4. Post hoc MDD: 3.24 mm, 4.39 mm at alpha = 0.05/4."
+  },
+  {
+   "key": "mask",
+   "title": "Mask source",
+   "reference": "mask/unet",
+   "reference_err_mm": 13.133458864855752,
+   "decimals": 2,
+   "families": [
+    {
+     "key": "family",
+     "name": "mask source",
+     "m": 7,
+     "test": "paired t, Holm",
+     "members": [
+      "mask/lraspp_mbv3",
+      "mask/deeplabv3_mbv3",
+      "mask/deeplabv3_r50",
+      "mask/fcn_r50",
+      "mask/nnunet2d",
+      "mask/sam_unet",
+      "mask/medsam_unet"
+     ]
+    },
+    {
+     "key": "MASK-P",
+     "name": "second mask source",
+     "m": 5,
+     "test": "paired t, Holm",
+     "members": [
+      "mask/samus_unet",
+      "mask/lraspp_mbv3_imnet",
+      "mask/deeplabv3_mbv3_imnet",
+      "mask/deeplabv3_r50_imnet",
+      "mask/fcn_r50_imnet"
+     ]
+    },
+    {
+     "key": "IMN-T",
+     "name": "pretrained backbone",
+     "m": 4,
+     "test": "paired t, Holm",
+     "members": [
+      "mask/lraspp_mbv3_imnet@IMN-T",
+      "mask/deeplabv3_mbv3_imnet@IMN-T",
+      "mask/deeplabv3_r50_imnet@IMN-T",
+      "mask/fcn_r50_imnet@IMN-T"
+     ]
+    }
+   ],
+   "mdd": {
+    "mdd_mm": 2.1391827366107377,
+    "mdd_holm_mm": 3.249293498611796,
+    "alpha_holm": 0.0071428571428571435,
+    "sd_mm": 1.501351741447264,
+    "rows": [
+     "mask/lraspp_mbv3",
+     "mask/deeplabv3_mbv3",
+     "mask/deeplabv3_r50",
+     "mask/fcn_r50",
+     "mask/nnunet2d"
+    ]
+   },
+   "rows": [
+    {
+     "id": "mask/unet",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Reference",
+     "method": "U-Net, stage-matched (authors')",
+     "cites": [
+      "ronneberger2015unet"
+     ],
+     "role": "ref",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/unet",
+     "minuend": "mask/unet",
+     "against": null,
+     "err_mm": 13.133458864855752,
+     "diff": null,
+     "holm_p": null,
+     "decision": "",
+     "decision_full": "",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "13.13",
+      "difference": "",
+      "seeds": "",
+      "holm_p": "",
+      "tost": "",
+      "decision": "",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/unet@seed0",
+     "slot": "mask",
+     "kind": "ref_seed0",
+     "group": "Reference",
+     "method": "Seed 0 only, for the seed-0 rows",
+     "cites": [],
+     "role": "ref",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "mask/unet",
+     "minuend": null,
+     "against": null,
+     "err_mm": 13.325653288761785,
+     "diff": null,
+     "holm_p": null,
+     "decision": "",
+     "decision_full": "",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "13.33",
+      "difference": "",
+      "seeds": "",
+      "holm_p": "",
+      "tost": "",
+      "decision": "",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/lraspp_mbv3",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Family (m = 7)",
+     "method": "LR-ASPP, MobileNetV3-L",
+     "cites": [
+      "howard2019mobilenetv3"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/lraspp_mbv3",
+     "minuend": "mask/lraspp_mbv3",
+     "against": "mask/unet",
+     "err_mm": 12.75561586544688,
+     "diff": {
+      "mean": -0.37784299940887384,
+      "ci": [
+       -2.0103931565818796,
+       1.2547071577641318
+      ],
+      "p_t": 0.5777813299276262,
+      "sd": 1.5556458110521356,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.6049868181947607,
+       -0.2708588994578755,
+       -1.4676569169635076
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.6575795528190558,
+       0.901893554001308
+      ],
+      "tost_p": 0.18612786374947313,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -0.3787908841677208,
+       "s0513": -2.443292113663766,
+       "s0519": -0.26138009025965836,
+       "s0591": 1.5226354253333696,
+       "s0649": -1.8035433315001317,
+       "s0762": 1.0973129978046643
+      },
+      "ps_ci": [
+       -1.7804817590791524,
+       1.0849901038727825
+      ]
+     },
+     "holm_p": 1.0,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.76",
+      "difference": "-0.38 [-2.01, +1.25], 4/6",
+      "seeds": "2/3",
+      "holm_p": "1.000",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/deeplabv3_mbv3",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Family (m = 7)",
+     "method": "DeepLabV3, MobileNetV3-L",
+     "cites": [
+      "chen2017deeplabv3",
+      "howard2019mobilenetv3"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/deeplabv3_mbv3",
+     "minuend": "mask/deeplabv3_mbv3",
+     "against": "mask/unet",
+     "err_mm": 14.542087962055547,
+     "diff": {
+      "mean": 1.4086290971997935,
+      "ci": [
+       0.1510374017846592,
+       2.6662207926149275
+      ],
+      "p_t": 0.03461596981515905,
+      "sd": 1.1983504729644796,
+      "sign": 6,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       1.5945075608277433,
+       0.38411758999104845,
+       2.2472621407805873
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       0.42281799987050006,
+       2.394440194529087
+      ],
+      "tost_p": 0.7791784398784826,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 2.5250523179727793,
+       "s0513": 0.3974815114710104,
+       "s0519": 0.4660075239415402,
+       "s0591": 2.551942239004987,
+       "s0649": 0.10046354072529162,
+       "s0762": 2.4108274500831524
+      },
+      "ps_ci": [
+       -0.07506848184978804,
+       2.705856189358545
+      ]
+     },
+     "holm_p": 0.24231178870611333,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [
+      "a"
+     ],
+     "source": "Table 5",
+     "printed": {
+      "error": "14.54",
+      "difference": "+1.41 [+0.15, +2.67], 6/6",
+      "seeds": "3/3",
+      "holm_p": "0.242",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": [
+       "a"
+      ]
+     }
+    },
+    {
+     "id": "mask/deeplabv3_r50",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Family (m = 7)",
+     "method": "DeepLabV3, ResNet-50",
+     "cites": [
+      "chen2017deeplabv3",
+      "he2016resnet"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/deeplabv3_r50",
+     "minuend": "mask/deeplabv3_r50",
+     "against": "mask/unet",
+     "err_mm": 13.198289708969833,
+     "diff": {
+      "mean": 0.06483084411408295,
+      "ci": [
+       -1.510741181380577,
+       1.640402869608743
+      ],
+      "p_t": 0.9198749246970906,
+      "sd": 1.501351741447264,
+      "sign": 3,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.34878716191047765,
+       0.06533930818933313,
+       -0.21963393775756343
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.17024123296536,
+       1.299902921193526
+      ],
+      "tost_p": 0.09379634312773123,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -1.1539312560226112,
+       "s0513": 1.5081537651625183,
+       "s0519": -1.1487010228123165,
+       "s0591": 1.4773843354755751,
+       "s0649": 1.2924917992801817,
+       "s0762": -1.5864125563988498
+      },
+      "ps_ci": [
+       -1.3470425750347688,
+       1.5865570590514966
+      ]
+     },
+     "holm_p": 1.0,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "13.20",
+      "difference": "+0.06 [-1.51, +1.64], 3/6",
+      "seeds": "2/3",
+      "holm_p": "1.000",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/fcn_r50",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Family (m = 7)",
+     "method": "FCN, ResNet-50",
+     "cites": [
+      "long2015fcn",
+      "he2016resnet"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/fcn_r50",
+     "minuend": "mask/fcn_r50",
+     "against": "mask/unet",
+     "err_mm": 12.812468632151733,
+     "diff": {
+      "mean": -0.32099023270402033,
+      "ci": [
+       -1.5756591739735497,
+       0.9336787085655089
+      ],
+      "p_t": 0.5398296456854877,
+      "sd": 1.1955654006508551,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.3004214740586428,
+       0.007023515628342025,
+       -1.2704156877990478
+      ],
+      "k_seed": 1,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.3045102179959116,
+       0.6625297525878708
+      ],
+      "tost_p": 0.11145217299199299,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -1.1837740150044063,
+       "s0513": -0.3744824257332766,
+       "s0519": -1.5097262766386361,
+       "s0591": 0.7590605437343516,
+       "s0649": -1.0920106884175276,
+       "s0762": 1.474991465835373
+      },
+      "ps_ci": [
+       -1.374622711556584,
+       0.8357326225660959
+      ]
+     },
+     "holm_p": 1.0,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.81",
+      "difference": "-0.32 [-1.58, +0.93], 4/6",
+      "seeds": "1/3",
+      "holm_p": "1.000",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/nnunet2d",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Family (m = 7)",
+     "method": "nnU-Net 2D, 2 epochs",
+     "cites": [
+      "isensee2021nnunet"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/nnunet2d",
+     "minuend": "mask/nnunet2d",
+     "against": "mask/unet",
+     "err_mm": 14.878045641231559,
+     "diff": {
+      "mean": 1.744586776375806,
+      "ci": [
+       -0.20032794818158273,
+       3.689501500933195
+      ],
+      "p_t": 0.06926840659584552,
+      "sd": 1.8532958579052647,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       2.253030426236658,
+       1.8795781929386584,
+       1.1011517099520969
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       0.21999137246380096,
+       3.269182180287811
+      ],
+      "tost_p": 0.8148740592406724,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -0.22139931073704133,
+       "s0513": -0.4664633910729634,
+       "s0519": 1.9455326877222348,
+       "s0591": 4.186367243745597,
+       "s0649": 1.724353932048329,
+       "s0762": 3.29912949654868
+      },
+      "ps_ci": [
+       0.15142936861751002,
+       3.464544030234751
+      ]
+     },
+     "holm_p": 0.4156104395750731,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "14.88",
+      "difference": "+1.74 [-0.20, +3.69], 4/6",
+      "seeds": "3/3",
+      "holm_p": "0.416",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/sam_unet",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Family (m = 7)",
+     "method": "SAM, boxes from the U-Net mask",
+     "cites": [
+      "kirillov2023sam"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": false,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "mask/sam_unet",
+     "minuend": "mask/sam_unet",
+     "against": "mask/unet",
+     "err_mm": 14.3197167476927,
+     "diff": {
+      "mean": 0.9940634589309134,
+      "ci": [
+       -0.6497283593874412,
+       2.637855277249268
+      ],
+      "p_t": 0.1807755183849638,
+      "sd": 1.5663579126027016,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0
+      ],
+      "per_seed": [
+       0.9940634589309134
+      ],
+      "k_seed": 1,
+      "n_seed": 1,
+      "tost_ci90": [
+       -0.2944852982731574,
+       2.282612216134984
+      ],
+      "tost_p": 0.4964759304739142,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 1.016282746357291,
+       "s0513": 0.31553669600640255,
+       "s0519": 0.20694530337360995,
+       "s0591": 0.44679506910845745,
+       "s0649": 4.099624233830776,
+       "s0762": -0.12080329509105603
+      }
+     },
+     "holm_p": 0.903877591924819,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "14.32",
+      "difference": "+0.99 [-0.65, +2.64], 5/6",
+      "seeds": "n/a",
+      "holm_p": "0.904",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/medsam_unet",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Family (m = 7)",
+     "method": "MedSAM, boxes from the U-Net mask",
+     "cites": [
+      "ma2024medsam"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": false,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "mask/medsam_unet",
+     "minuend": "mask/medsam_unet",
+     "against": "mask/unet",
+     "err_mm": 12.851411485438858,
+     "diff": {
+      "mean": -0.4742418033229277,
+      "ci": [
+       -2.735014130764522,
+       1.7865305241186664
+      ],
+      "p_t": 0.612862976941407,
+      "sd": 2.1542743942502964,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0
+      ],
+      "per_seed": [
+       -0.4742418033229277
+      ],
+      "k_seed": 1,
+      "n_seed": 1,
+      "tost_ci90": [
+       -2.2464342065108327,
+       1.2979505998649774
+      ],
+      "tost_p": 0.2880065379625843,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -0.8582919382121972,
+       "s0513": -0.858221094227483,
+       "s0519": -1.185827935049975,
+       "s0591": -2.7491360495369577,
+       "s0649": 3.6591032606574725,
+       "s0762": -0.8530770635684259
+      }
+     },
+     "holm_p": 1.0,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.85",
+      "difference": "-0.47 [-2.74, +1.79], 5/6",
+      "seeds": "n/a",
+      "holm_p": "1.000",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/samus_unet",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Second mask-source family (m = 5)",
+     "method": "SAMUS, boxes from the U-Net mask",
+     "cites": [
+      "lin2024samus"
+     ],
+     "role": "a2",
+     "family": "MASK-P",
+     "family_name": "second mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": false,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "mask/samus_unet",
+     "minuend": "mask/samus_unet",
+     "against": "mask/unet",
+     "err_mm": 14.289115856910376,
+     "diff": {
+      "mean": 0.9634625681485897,
+      "ci": [
+       -0.37086980623926047,
+       2.2977949425364397
+      ],
+      "p_t": 0.12258310944056675,
+      "sd": 1.2714761378983692,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0
+      ],
+      "per_seed": [
+       0.9634625681485897
+      ],
+      "k_seed": 1,
+      "n_seed": 1,
+      "tost_ci90": [
+       -0.08250463010256548,
+       2.009429766399745
+      ],
+      "tost_p": 0.47330627194080116,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 0.7579832330409157,
+       "s0513": -1.2808810567572184,
+       "s0519": 0.9164289943341828,
+       "s0591": 1.4645207401283322,
+       "s0649": 2.577430244883729,
+       "s0762": 1.3452932532615964
+      }
+     },
+     "holm_p": 0.6129155472028337,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "14.29",
+      "difference": "+0.96 [-0.37, +2.30], 5/6",
+      "seeds": "n/a",
+      "holm_p": "0.613",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/lraspp_mbv3_imnet",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Second mask-source family (m = 5)",
+     "method": "LR-ASPP, MobileNetV3-L, ImageNet backbone",
+     "cites": [
+      "howard2019mobilenetv3"
+     ],
+     "role": "a2",
+     "family": "MASK-P",
+     "family_name": "second mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/lraspp_mbv3_imnet",
+     "minuend": "mask/lraspp_mbv3_imnet",
+     "against": "mask/unet",
+     "err_mm": 13.247933201981835,
+     "diff": {
+      "mean": 0.11447433712608242,
+      "ci": [
+       -1.217708160709672,
+       1.4466568349618367
+      ],
+      "p_t": 0.8339150130105286,
+      "sd": 1.2694275353253628,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.6464774583368816,
+       0.43928031783475,
+       -0.7423347647933859
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.9298075985945785,
+       1.1587562728467433
+      ],
+      "tost_p": 0.07410147156837256,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -2.2226800396645796,
+       "s0513": 1.3441887453935841,
+       "s0519": 0.49708352749895823,
+       "s0591": 0.637172333730156,
+       "s0649": 0.7824231722644992,
+       "s0762": -0.35134171646612344
+      },
+      "ps_ci": [
+       -1.1839977304082108,
+       1.2332753309281417
+      ]
+     },
+     "holm_p": 1.0,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "13.25",
+      "difference": "+0.11 [-1.22, +1.45], 4/6",
+      "seeds": "2/3",
+      "holm_p": "1.000",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/deeplabv3_mbv3_imnet",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Second mask-source family (m = 5)",
+     "method": "DeepLabV3, MobileNetV3-L, ImageNet backbone",
+     "cites": [
+      "chen2017deeplabv3",
+      "howard2019mobilenetv3"
+     ],
+     "role": "a2",
+     "family": "MASK-P",
+     "family_name": "second mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/deeplabv3_mbv3_imnet",
+     "minuend": "mask/deeplabv3_mbv3_imnet",
+     "against": "mask/unet",
+     "err_mm": 12.658889404320837,
+     "diff": {
+      "mean": -0.4745694605349143,
+      "ci": [
+       -2.040970275872124,
+       1.0918313548022955
+      ],
+      "p_t": 0.47132715161630984,
+      "sd": 1.4926125583961154,
+      "sign": 3,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.39959781306830305,
+       -1.072988484219214,
+       -0.7503177104538338
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.7024523356006076,
+       0.7533134145307792
+      ],
+      "tost_p": 0.21397415035942452,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -2.5360055473447733,
+       "s0513": 1.4956623680656929,
+       "s0519": -1.088941497797931,
+       "s0591": -1.4689157559479966,
+       "s0649": 0.6893051080442554,
+       "s0762": 0.06147856177126698
+      },
+      "ps_ci": [
+       -1.9142213605169711,
+       1.2409345800924458
+      ]
+     },
+     "holm_p": 1.0,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.66",
+      "difference": "-0.47 [-2.04, +1.09], 3/6",
+      "seeds": "2/3",
+      "holm_p": "1.000",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/deeplabv3_r50_imnet",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Second mask-source family (m = 5)",
+     "method": "DeepLabV3, ResNet-50, ImageNet backbone",
+     "cites": [
+      "chen2017deeplabv3",
+      "he2016resnet"
+     ],
+     "role": "a2",
+     "family": "MASK-P",
+     "family_name": "second mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/deeplabv3_r50_imnet",
+     "minuend": "mask/deeplabv3_r50_imnet",
+     "against": "mask/unet",
+     "err_mm": 12.61567727790694,
+     "diff": {
+      "mean": -0.5177815869488098,
+      "ci": [
+       -1.92283790903487,
+       0.8872747351372503
+      ],
+      "p_t": 0.3869884110530756,
+      "sd": 1.3388685010024275,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.12092160126674785,
+       -0.750283281852305,
+       -0.9239830802608756
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.6191884423971423,
+       0.5836252684995227
+      ],
+      "tost_p": 0.20902064560503353,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 0.6243418485237253,
+       "s0513": 1.6293716557918412,
+       "s0519": -1.4392210759488346,
+       "s0591": -1.3136423848953616,
+       "s0649": -0.8974870631190459,
+       "s0762": -1.7100525020451833
+      },
+      "ps_ci": [
+       -1.638509708202891,
+       0.7244413752194057
+      ]
+     },
+     "holm_p": 1.0,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.62",
+      "difference": "-0.52 [-1.92, +0.89], 4/6",
+      "seeds": "2/3",
+      "holm_p": "1.000",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/fcn_r50_imnet",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Second mask-source family (m = 5)",
+     "method": "FCN, ResNet-50, ImageNet backbone",
+     "cites": [
+      "long2015fcn",
+      "he2016resnet"
+     ],
+     "role": "a2",
+     "family": "MASK-P",
+     "family_name": "second mask source",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/fcn_r50_imnet",
+     "minuend": "mask/fcn_r50_imnet",
+     "against": "mask/unet",
+     "err_mm": 12.771459060418527,
+     "diff": {
+      "mean": -0.3619998044372273,
+      "ci": [
+       -1.1618172127905884,
+       0.43781760391613384
+      ],
+      "p_t": 0.29714415700443647,
+      "sd": 0.7621405048075512,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -1.0461950016784778,
+       -0.38879423048812445,
+       0.34898981885492003
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.9889671101744228,
+       0.2649675012999682
+      ],
+      "tost_p": 0.047790527564018956,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": -1.1482956541505445,
+       "s0513": 0.8784919080977218,
+       "s0519": -0.7093205103421578,
+       "s0591": -1.0182541587756493,
+       "s0649": 0.06268928023768794,
+       "s0762": -0.23730969169042204
+      },
+      "ps_ci": [
+       -1.2456824706434373,
+       0.76112289919802
+      ]
+     },
+     "holm_p": 1.0,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.77",
+      "difference": "-0.36 [-1.16, +0.44], 4/6",
+      "seeds": "2/3",
+      "holm_p": "1.000",
+      "tost": "yes",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/lraspp_mbv3_imnet@IMN-T",
+     "slot": "mask",
+     "kind": "imnt",
+     "group": "Pretrained-backbone family, minus the same network from scratch (m = 4)",
+     "method": "LR-ASPP, MobileNetV3-L, ImageNet backbone, minus the same network trained from scratch",
+     "cites": [
+      "howard2019mobilenetv3"
+     ],
+     "role": "a2",
+     "family": "IMN-T",
+     "family_name": "pretrained backbone",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": null,
+     "values_of": null,
+     "minuend": "mask/lraspp_mbv3_imnet",
+     "against": "mask/lraspp_mbv3",
+     "err_mm": null,
+     "diff": {
+      "mean": 0.49231733653495624,
+      "ci": [
+       -1.9207373433223411,
+       2.9053720163922536
+      ],
+      "p_t": 0.6223726352290785,
+      "sd": 2.2993831999992578,
+      "sign": 3,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.04149064014212082,
+       0.7101392172926255,
+       0.7253221521701217
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.3992473823943112,
+       2.3838820554642237
+      ],
+      "tost_p": 0.3059209236829463,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -1.8438891554968588,
+       "s0513": 3.78748085905735,
+       "s0519": 0.7584636177586166,
+       "s0591": -0.8854630916032136,
+       "s0649": 2.585966503764631,
+       "s0762": -1.4486547142707877
+      },
+      "ps_ci": [
+       -1.3088910957651831,
+       2.432337337450752
+      ]
+     },
+     "holm_p": 1.0,
+     "decision": "does not detectably change",
+     "decision_full": "does not detectably change; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "",
+      "difference": "+0.49 [-1.92, +2.91], 3/6",
+      "seeds": "3/3",
+      "holm_p": "1.000",
+      "tost": "no",
+      "decision": "does not detectably change",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/deeplabv3_mbv3_imnet@IMN-T",
+     "slot": "mask",
+     "kind": "imnt",
+     "group": "Pretrained-backbone family, minus the same network from scratch (m = 4)",
+     "method": "DeepLabV3, MobileNetV3-L, ImageNet backbone, minus the same network trained from scratch",
+     "cites": [
+      "chen2017deeplabv3",
+      "howard2019mobilenetv3"
+     ],
+     "role": "a2",
+     "family": "IMN-T",
+     "family_name": "pretrained backbone",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": null,
+     "values_of": null,
+     "minuend": "mask/deeplabv3_mbv3_imnet",
+     "against": "mask/deeplabv3_mbv3",
+     "err_mm": null,
+     "diff": {
+      "mean": -1.8831985577347077,
+      "ci": [
+       -4.4534816370828105,
+       0.687084521613395
+      ],
+      "p_t": 0.11835611780587105,
+      "sd": 2.4492050599719084,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -1.1949097477594401,
+       -1.4571060742102624,
+       -2.997579851234421
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       -3.8980127395846047,
+       0.13161562411518912
+      ],
+      "tost_p": 0.7912428502404965,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -5.061057865317553,
+       "s0513": 1.0981808565946825,
+       "s0519": -1.5549490217394712,
+       "s0591": -4.0208579949529835,
+       "s0649": 0.5888415673189638,
+       "s0762": -2.3493488883118854
+      },
+      "ps_ci": [
+       -3.937965345413684,
+       0.1768677197813914
+      ]
+     },
+     "holm_p": 0.4734244712234842,
+     "decision": "does not detectably change",
+     "decision_full": "does not detectably change; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "",
+      "difference": "-1.88 [-4.45, +0.69], 4/6",
+      "seeds": "3/3",
+      "holm_p": "0.473",
+      "tost": "no",
+      "decision": "does not detectably change",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/deeplabv3_r50_imnet@IMN-T",
+     "slot": "mask",
+     "kind": "imnt",
+     "group": "Pretrained-backbone family, minus the same network from scratch (m = 4)",
+     "method": "DeepLabV3, ResNet-50, ImageNet backbone, minus the same network trained from scratch",
+     "cites": [
+      "chen2017deeplabv3",
+      "he2016resnet"
+     ],
+     "role": "a2",
+     "family": "IMN-T",
+     "family_name": "pretrained backbone",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": null,
+     "values_of": null,
+     "minuend": "mask/deeplabv3_r50_imnet",
+     "against": "mask/deeplabv3_r50",
+     "err_mm": null,
+     "diff": {
+      "mean": -0.5826124310628927,
+      "ci": [
+       -2.3276981180959986,
+       1.162473255970213
+      ],
+      "p_t": 0.42998534787132947,
+      "sd": 1.6628801430891667,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.2278655606437298,
+       -0.8156225900416381,
+       -0.7043491425033123
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.9505642411294075,
+       0.7853393790036219
+      ],
+      "tost_p": 0.282783628418538,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 1.7782731045463365,
+       "s0513": 0.12121789062932287,
+       "s0519": -0.2905200531365182,
+       "s0591": -2.7910267203709367,
+       "s0649": -2.1899788623992276,
+       "s0762": -0.12363994564633352
+      },
+      "ps_ci": [
+       -1.9308650885231142,
+       0.727978263203444
+      ]
+     },
+     "holm_p": 1.0,
+     "decision": "does not detectably change",
+     "decision_full": "does not detectably change; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "",
+      "difference": "-0.58 [-2.33, +1.16], 4/6",
+      "seeds": "3/3",
+      "holm_p": "1.000",
+      "tost": "no",
+      "decision": "does not detectably change",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/fcn_r50_imnet@IMN-T",
+     "slot": "mask",
+     "kind": "imnt",
+     "group": "Pretrained-backbone family, minus the same network from scratch (m = 4)",
+     "method": "FCN, ResNet-50, ImageNet backbone, minus the same network trained from scratch",
+     "cites": [
+      "long2015fcn",
+      "he2016resnet"
+     ],
+     "role": "a2",
+     "family": "IMN-T",
+     "family_name": "pretrained backbone",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": null,
+     "values_of": null,
+     "minuend": "mask/fcn_r50_imnet",
+     "against": "mask/fcn_r50",
+     "err_mm": null,
+     "diff": {
+      "mean": -0.041009571733207,
+      "ci": [
+       -1.497111781913487,
+       1.4150926384470728
+      ],
+      "p_t": 0.9450922396535488,
+      "sd": 1.387509776516264,
+      "sign": 2,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -1.3466164757371206,
+       -0.3958177461164665,
+       1.6194055066539679
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.1824306886781533,
+       1.1004115452117391
+      ],
+      "tost_p": 0.0756188998134904,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 0.0354783608538618,
+       "s0513": 1.2529743338309984,
+       "s0519": 0.8004057662964783,
+       "s0591": -1.777314702510001,
+       "s0649": 1.1546999686552155,
+       "s0762": -1.7123011575257951
+      },
+      "ps_ci": [
+       -1.338517525887712,
+       1.2454652076702681
+      ]
+     },
+     "holm_p": 1.0,
+     "decision": "does not detectably change",
+     "decision_full": "does not detectably change; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "",
+      "difference": "-0.04 [-1.50, +1.42], 2/6",
+      "seeds": "2/3",
+      "holm_p": "1.000",
+      "tost": "no",
+      "decision": "does not detectably change",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/nnunet2d_e20",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "nnU-Net 2D, 20 epochs",
+     "cites": [
+      "isensee2021nnunet"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": true,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "mask/nnunet2d_e20",
+     "minuend": "mask/nnunet2d_e20",
+     "against": "mask/unet",
+     "err_mm": 12.761690511375027,
+     "diff": null,
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.76",
+      "difference": "",
+      "seeds": "",
+      "holm_p": "",
+      "tost": "",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/samus_unet@s0-2",
+     "slot": "mask",
+     "kind": "samus3",
+     "group": "Secondary",
+     "method": "SAMUS, boxes from the U-Net mask, seeds 0 to 2 against U-Net seeds 0 to 2",
+     "cites": [
+      "lin2024samus"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": false,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/samus_unet@s0-2",
+     "minuend": "mask/samus_unet@s0-2",
+     "against": "mask/unet",
+     "err_mm": 13.982829849048072,
+     "diff": {
+      "mean": 0.8493709841923195,
+      "ci": [
+       -0.043468582375704834,
+       1.7422105507603438
+      ],
+      "p_t": 0.058262946639697964,
+      "sd": 0.8507806792768338,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.9634625681485897,
+       1.4873785020502883,
+       0.09727188237808004
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       0.14948472057725326,
+       1.5492572478073856
+      ],
+      "tost_p": 0.34129815432322125,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -0.2828156876542529,
+       "s0513": -0.012532716226616003,
+       "s0519": 1.8569284260690306,
+       "s0591": 1.3207244603705934,
+       "s0649": 0.7720255390298192,
+       "s0762": 1.4418958835653424
+      },
+      "ps_ci": [
+       -0.1614825136485987,
+       1.7687255472048176
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "13.98",
+      "difference": "+0.85 [-0.04, +1.74], 4/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/ct",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Privileged, secondary",
+     "method": "CT label (authors')",
+     "cites": [],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/ct",
+     "minuend": "mask/ct",
+     "against": "mask/unet",
+     "err_mm": 11.650326129143414,
+     "diff": {
+      "mean": -1.4831327357123365,
+      "ci": [
+       -2.1076009663280244,
+       -0.8586645050966488
+      ],
+      "p_t": 0.0017077218673905417,
+      "sd": 0.5950514799340932,
+      "sign": 6,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -1.8715180180563957,
+       -1.4572635021894955,
+       -1.1206166868911194
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.97264591706912,
+       -0.993619554355553
+      ],
+      "tost_p": 0.9482947024626442,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -1.9993064387231065,
+       "s0513": -0.563424520345837,
+       "s0519": -1.7815997703830089,
+       "s0591": -2.1020398624483168,
+       "s0649": -1.0619134422464498,
+       "s0762": -1.3905123801272996
+      },
+      "ps_ci": [
+       -2.222214252792889,
+       -0.7832551211687667
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.65",
+      "difference": "-1.48 [-2.11, -0.86], 6/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/sam_priv",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Privileged, secondary",
+     "method": "SAM, boxes from the CT label",
+     "cites": [
+      "kirillov2023sam"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": false,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "mask/sam_priv",
+     "minuend": "mask/sam_priv",
+     "against": "mask/unet",
+     "err_mm": 12.599964942547112,
+     "diff": {
+      "mean": -0.7256883462146719,
+      "ci": [
+       -3.364900901206599,
+       1.9135242087772553
+      ],
+      "p_t": 0.5112491804939475,
+      "sd": 2.5148874830032595,
+      "sign": 3,
+      "n": 6,
+      "seeds": [
+       0
+      ],
+      "per_seed": [
+       -0.7256883462146719
+      ],
+      "k_seed": 1,
+      "n_seed": 1,
+      "tost_ci90": [
+       -2.7945355200686555,
+       1.3431588276393116
+      ],
+      "tost_p": 0.40000090159965684,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -3.982110547670292,
+       "s0513": 1.8662114891903219,
+       "s0519": -2.089552014249568,
+       "s0591": -2.504330740058702,
+       "s0649": 2.1854565923288423,
+       "s0762": 0.17019514317136597
+      }
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.60",
+      "difference": "-0.73 [-3.36, +1.91], 3/6",
+      "seeds": "n/a",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/medsam_priv",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Privileged, secondary",
+     "method": "MedSAM, boxes from the CT label",
+     "cites": [
+      "ma2024medsam"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": false,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "mask/medsam_priv",
+     "minuend": "mask/medsam_priv",
+     "against": "mask/unet",
+     "err_mm": 12.117845175645899,
+     "diff": {
+      "mean": -1.2078081131158882,
+      "ci": [
+       -3.764133872649449,
+       1.3485176464176725
+      ],
+      "p_t": 0.27876527367651416,
+      "sd": 2.435905225962149,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0
+      ],
+      "per_seed": [
+       -1.2078081131158882
+      ],
+      "k_seed": 1,
+      "n_seed": 1,
+      "tost_ci90": [
+       -3.2116813188029236,
+       0.7960650925711472
+      ],
+      "tost_p": 0.578639679461143,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -3.210668025308916,
+       "s0513": 1.2464368335658396,
+       "s0519": -3.2837801658520096,
+       "s0591": -1.7587081895948238,
+       "s0649": 2.395276599526813,
+       "s0762": -2.6354057310322325
+      }
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.12",
+      "difference": "-1.21 [-3.76, +1.35], 4/6",
+      "seeds": "n/a",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/samus_priv",
+     "slot": "mask",
+     "kind": "row",
+     "group": "Privileged, secondary",
+     "method": "SAMUS, boxes from the CT label",
+     "cites": [
+      "lin2024samus"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": false,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "mask/samus_priv",
+     "minuend": "mask/samus_priv",
+     "against": "mask/unet",
+     "err_mm": 13.522671174942133,
+     "diff": {
+      "mean": 0.19701788618034696,
+      "ci": [
+       -1.8059543387423134,
+       2.1999901111030074
+      ],
+      "p_t": 0.8104507481156049,
+      "sd": 1.908618450504679,
+      "sign": 3,
+      "n": 6,
+      "seeds": [
+       0
+      ],
+      "per_seed": [
+       0.19701788618034696
+      ],
+      "k_seed": 1,
+      "n_seed": 1,
+      "tost_ci90": [
+       -1.373088098273772,
+       1.7671238706344659
+      ],
+      "tost_p": 0.17500304869303504,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -1.0003423649482546,
+       "s0513": -0.5667958451920807,
+       "s0519": 0.3468721670343786,
+       "s0591": -1.9308409197924128,
+       "s0649": 3.560923441932827,
+       "s0762": 0.7722908380476241
+      }
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "13.52",
+      "difference": "+0.20 [-1.81, +2.20], 3/6",
+      "seeds": "n/a",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "mask/samus_priv@s0-2",
+     "slot": "mask",
+     "kind": "samus3",
+     "group": "Privileged, secondary",
+     "method": "SAMUS, boxes from the CT label, seeds 0 to 2 against U-Net seeds 0 to 2",
+     "cites": [
+      "lin2024samus"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": false,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "mask/samus_priv@s0-2",
+     "minuend": "mask/samus_priv@s0-2",
+     "against": "mask/unet",
+     "err_mm": 13.483627536759904,
+     "diff": {
+      "mean": 0.3501686719041519,
+      "ci": [
+       -0.3735101256564537,
+       1.0738474694647575
+      ],
+      "p_t": 0.26869356490781837,
+      "sd": 0.6895885464994629,
+      "sign": 3,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.19701788618034696,
+       0.9243602258388949,
+       -0.07087209630678733
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.21711448696059044,
+       0.9174518307688942
+      ],
+      "tost_p": 0.03452814436696843,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": -0.49492109569640874,
+       "s0513": -0.19657109194521638,
+       "s0519": 0.5824806628842936,
+       "s0591": 1.1608410464384047,
+       "s0649": 1.0689053635235872,
+       "s0762": -0.019722853779748917
+      },
+      "ps_ci": [
+       -0.7338984618659208,
+       1.4990790945515635
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "13.48",
+      "difference": "+0.35 [-0.37, +1.07], 3/6",
+      "seeds": "2/3",
+      "holm_p": "",
+      "tost": "yes",
+      "decision": "secondary",
+      "notes": []
+     }
+    }
+   ],
+   "printed_condition": "SonoSPADE frames; mask from the plugged source; servo base fitted under that mask, residual off; seeds 0 to 2, and seed 0 for the SAM-type rows, paired with seed 0",
+   "printed_header": "Reference: the stage-matched U-Net, 13.13 mm. Families: mask source (m = 7), second mask source (m = 5) and pretrained backbone (m = 4), never pooled. Post hoc MDD: 2.14 mm, 3.25 mm at alpha = 0.05/7."
+  },
+  {
+   "key": "ctrl",
+   "title": "Controller",
+   "reference": "ctrl/reinforce",
+   "reference_err_mm": 11.686506490491249,
+   "decimals": 2,
+   "families": [
+    {
+     "key": "family",
+     "name": "controller",
+     "m": 10,
+     "test": "paired t, Holm",
+     "members": [
+      "ctrl/ppo_res",
+      "ctrl/sac_res",
+      "ctrl/td3_res",
+      "ctrl/a2c_res",
+      "ctrl/ppo_scratch",
+      "ctrl/dqn_scratch",
+      "ctrl/bc_res",
+      "ctrl/dagger_res",
+      "ctrl/bc_scratch",
+      "ctrl/dagger_scratch"
+     ]
+    }
+   ],
+   "mdd": {
+    "mdd_mm": 2.0889299551073535,
+    "mdd_holm_mm": 3.407337738473348,
+    "alpha_holm": 0.005,
+    "sd_mm": 1.4660826175283737,
+    "rows": [
+     "ctrl/servo_base",
+     "ctrl/ppo_res",
+     "ctrl/sac_res",
+     "ctrl/td3_res",
+     "ctrl/a2c_res",
+     "ctrl/ppo_scratch",
+     "ctrl/dqn_scratch",
+     "ctrl/bc_res",
+     "ctrl/dagger_res",
+     "ctrl/bc_scratch",
+     "ctrl/dagger_scratch"
+    ]
+   },
+   "rows": [
+    {
+     "id": "ctrl/reinforce",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Reference",
+     "method": "REINFORCE residual, imitation start (authors')",
+     "cites": [
+      "reinforce"
+     ],
+     "role": "ref",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/reinforce",
+     "minuend": "ctrl/reinforce",
+     "against": null,
+     "err_mm": 11.686506490491249,
+     "diff": null,
+     "holm_p": null,
+     "decision": "",
+     "decision_full": "",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.69",
+      "difference": "",
+      "seeds": "",
+      "holm_p": "",
+      "tost": "",
+      "decision": "",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/reinforce@seed0",
+     "slot": "ctrl",
+     "kind": "ref_seed0",
+     "group": "Reference",
+     "method": "Seed 0 only, for the seed-0 rows",
+     "cites": [],
+     "role": "ref",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "ctrl/reinforce",
+     "minuend": null,
+     "against": null,
+     "err_mm": 11.790836848148466,
+     "diff": null,
+     "holm_p": null,
+     "decision": "",
+     "decision_full": "",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.79",
+      "difference": "",
+      "seeds": "",
+      "holm_p": "",
+      "tost": "",
+      "decision": "",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/ppo_res",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Family (m = 10)",
+     "method": "PPO, residual",
+     "cites": [
+      "schulman2017ppo",
+      "sb3"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "controller",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/ppo_res",
+     "minuend": "ctrl/ppo_res",
+     "against": "ctrl/reinforce",
+     "err_mm": 11.500289557166985,
+     "diff": {
+      "mean": -0.18621693332426492,
+      "ci": [
+       -0.5288023824025645,
+       0.1563685157540346
+      ],
+      "p_t": 0.22117235173150646,
+      "sd": 0.32644731706677615,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.5838302907466343,
+       0.2042676235244878,
+       -0.17908813275065386
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.4547655717386141,
+       0.08233170509008425
+      ],
+      "tost_p": 0.0008532424972300302,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": 0.28652670564126836,
+       "s0513": -0.573993293838134,
+       "s0519": -0.37766451075748186,
+       "s0591": 0.04408407321255581,
+       "s0649": -0.423663163517606,
+       "s0762": -0.07259141068619179
+      },
+      "ps_ci": [
+       -0.5030375293552565,
+       0.17143338390101853
+      ]
+     },
+     "holm_p": 0.8846894069260258,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.50",
+      "difference": "-0.19 [-0.53, +0.16], 4/6",
+      "seeds": "2/3",
+      "holm_p": "0.885",
+      "tost": "yes",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/sac_res",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Family (m = 10)",
+     "method": "SAC, residual",
+     "cites": [
+      "haarnoja2018sac",
+      "sb3"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "controller",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/sac_res",
+     "minuend": "ctrl/sac_res",
+     "against": "ctrl/reinforce",
+     "err_mm": 12.060658547792713,
+     "diff": {
+      "mean": 0.3741520573014639,
+      "ci": [
+       -0.8624825325938998,
+       1.6107866471968275
+      ],
+      "p_t": 0.471896902003049,
+      "sd": 1.1783805913223355,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.2861285428321259,
+       1.9363671368224067,
+       -0.5277824220858909
+      ],
+      "k_seed": 1,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.5952310155230471,
+       1.3435351301259748
+      ],
+      "tost_p": 0.12500066890177433,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 1.4192070367857053,
+       "s0513": -0.5149950407842052,
+       "s0519": -1.208818834346955,
+       "s0591": 1.9477813031564626,
+       "s0649": 0.484355914405576,
+       "s0762": 0.11738196459219985
+      },
+      "ps_ci": [
+       -0.9196149829643187,
+       1.5824336434951018
+      ]
+     },
+     "holm_p": 0.9249640197897462,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.06",
+      "difference": "+0.37 [-0.86, +1.61], 4/6",
+      "seeds": "1/3",
+      "holm_p": "0.925",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/td3_res",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Family (m = 10)",
+     "method": "TD3, residual",
+     "cites": [
+      "fujimoto2018td3",
+      "sb3"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "controller",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/td3_res",
+     "minuend": "ctrl/td3_res",
+     "against": "ctrl/reinforce",
+     "err_mm": 20.2249416473227,
+     "diff": {
+      "mean": 8.538435156831452,
+      "ci": [
+       6.999875806965184,
+       10.076994506697721
+      ],
+      "p_t": 3.049509154974193e-05,
+      "sd": 1.4660826175283737,
+      "sign": 6,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       6.304949982666798,
+       8.409259846737683,
+       10.901095641089873
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       7.332376873743606,
+       9.7444934399193
+      ],
+      "tost_p": 0.9999719851787267,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 10.361690577803374,
+       "s0513": 6.010054341698291,
+       "s0519": 8.809861934774183,
+       "s0591": 8.647051332105837,
+       "s0649": 8.033251859018984,
+       "s0762": 9.368700895588038
+      },
+      "ps_ci": [
+       6.595593738469625,
+       10.091886742223183
+      ]
+     },
+     "holm_p": 0.0003049509154974193,
+     "decision": "higher",
+     "decision_full": "higher",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "20.22",
+      "difference": "+8.54 [+7.00, +10.08], 6/6",
+      "seeds": "3/3",
+      "holm_p": "<0.001",
+      "tost": "no",
+      "decision": "higher",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/a2c_res",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Family (m = 10)",
+     "method": "A2C, residual",
+     "cites": [
+      "mnih2016a3c",
+      "sb3"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "controller",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/a2c_res",
+     "minuend": "ctrl/a2c_res",
+     "against": "ctrl/reinforce",
+     "err_mm": 18.430037981402418,
+     "diff": {
+      "mean": 6.743531490911167,
+      "ci": [
+       5.413262535238327,
+       8.073800446584006
+      ],
+      "p_t": 4.7466567608586105e-05,
+      "sd": 1.2676041341655693,
+      "sign": 6,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       1.0535789443193992,
+       10.03603517803141,
+       9.140980350382689
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       5.7007495580183605,
+       7.786313423803973
+      ],
+      "tost_p": 0.9999482551743659,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 7.460795786507626,
+       "s0513": 5.984561358905429,
+       "s0519": 8.493956465268141,
+       "s0591": 7.559996661481955,
+       "s0649": 5.592107255027999,
+       "s0762": 5.369771418275853
+      },
+      "ps_ci": [
+       4.573678532817713,
+       9.003431325577893
+      ]
+     },
+     "holm_p": 0.000427199108477275,
+     "decision": "higher",
+     "decision_full": "higher",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "18.43",
+      "difference": "+6.74 [+5.41, +8.07], 6/6",
+      "seeds": "3/3",
+      "holm_p": "<0.001",
+      "tost": "no",
+      "decision": "higher",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/ppo_scratch",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Family (m = 10)",
+     "method": "PPO, full twist",
+     "cites": [
+      "schulman2017ppo",
+      "sb3"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "controller",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/ppo_scratch",
+     "minuend": "ctrl/ppo_scratch",
+     "against": "ctrl/reinforce",
+     "err_mm": 14.341528864392034,
+     "diff": {
+      "mean": 2.6550223739007865,
+      "ci": [
+       -0.39053179784121594,
+       5.7005765456427895
+      ],
+      "p_t": 0.0751244734406058,
+      "sd": 2.902087613532798,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       2.140372528017686,
+       2.686185080753628,
+       3.138509512931043
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       0.26764886390817333,
+       5.0423958838934
+      ],
+      "tost_p": 0.8893626124357863,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 0.9746690122167063,
+       "s0513": -2.209674261737753,
+       "s0519": 3.03548840770401,
+       "s0591": 5.868694311475691,
+       "s0649": 3.4998758224474518,
+       "s0762": 4.761080951298613
+      },
+      "ps_ci": [
+       0.2884769204116403,
+       4.67920957261328
+      ]
+     },
+     "holm_p": 0.375622367203029,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "14.34",
+      "difference": "+2.66 [-0.39, +5.70], 5/6",
+      "seeds": "3/3",
+      "holm_p": "0.376",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/dqn_scratch",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Family (m = 10)",
+     "method": "DQN, 13 discrete moves",
+     "cites": [
+      "mnih2015dqn",
+      "sb3"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "controller",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/dqn_scratch",
+     "minuend": "ctrl/dqn_scratch",
+     "against": "ctrl/reinforce",
+     "err_mm": 16.409069032519216,
+     "diff": {
+      "mean": 4.722562542027966,
+      "ci": [
+       1.6361339674000157,
+       7.808991116655918
+      ],
+      "p_t": 0.011034142993634725,
+      "sd": 2.941036550782537,
+      "sign": 6,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       5.36702599936011,
+       5.366298042503435,
+       3.4343635842203497
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       2.303148076207973,
+       7.141977007847959
+      ],
+      "tost_p": 0.9865794359875345,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 2.1117614887057226,
+       "s0513": 1.7117471745592852,
+       "s0519": 3.329971032492729,
+       "s0591": 7.933355700541425,
+       "s0649": 4.638608468146659,
+       "s0762": 8.609931387721975
+      },
+      "ps_ci": [
+       2.5293420758846956,
+       7.136251168422043
+      ]
+     },
+     "holm_p": 0.07723900095544307,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [
+      "a"
+     ],
+     "source": "Table 5",
+     "printed": {
+      "error": "16.41",
+      "difference": "+4.72 [+1.64, +7.81], 6/6",
+      "seeds": "3/3",
+      "holm_p": "0.077",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": [
+       "a"
+      ]
+     }
+    },
+    {
+     "id": "ctrl/bc_res",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Family (m = 10)",
+     "method": "BC, residual",
+     "cites": [
+      "pomerleau1991"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "controller",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/bc_res",
+     "minuend": "ctrl/bc_res",
+     "against": "ctrl/reinforce",
+     "err_mm": 11.250841370994458,
+     "diff": {
+      "mean": -0.4356651194967907,
+      "ci": [
+       -1.4234749594814724,
+       0.5521447204878909
+      ],
+      "p_t": 0.3083213399299154,
+      "sd": 0.9412771993169482,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.30166938584588604,
+       -0.6192137374050386,
+       -0.3861122352394529
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.2099974452096451,
+       0.3386672062160638
+      ],
+      "tost_p": 0.10094241505964753,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -0.5717534499440333,
+       "s0513": -0.7463390272546313,
+       "s0519": -1.2779777538604868,
+       "s0591": 1.0004510852147064,
+       "s0649": 0.3660983440153611,
+       "s0762": -1.3844699151516604
+      },
+      "ps_ci": [
+       -1.2489678050933906,
+       0.4702553963780136
+      ]
+     },
+     "holm_p": 0.9249640197897462,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.25",
+      "difference": "-0.44 [-1.42, +0.55], 4/6",
+      "seeds": "3/3",
+      "holm_p": "0.925",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/dagger_res",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Family (m = 10)",
+     "method": "DAgger, residual",
+     "cites": [
+      "ross2011dagger"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "controller",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/dagger_res",
+     "minuend": "ctrl/dagger_res",
+     "against": "ctrl/reinforce",
+     "err_mm": 10.848970895250753,
+     "diff": {
+      "mean": -0.8375355952404941,
+      "ci": [
+       -3.4179672092018105,
+       1.7428960187208222
+      ],
+      "p_t": 0.44211543167396455,
+      "sd": 2.4588755287719004,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -2.160998300166648,
+       1.160389768051659,
+       -1.5119982536064958
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -2.8603050920625006,
+       1.1852339015815123
+      ],
+      "tost_p": 0.43888267669163306,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 1.6618429934457222,
+       "s0513": -3.782546821053929,
+       "s0519": -1.0030198995885016,
+       "s0591": 2.4984087232033847,
+       "s0649": -2.670113197872716,
+       "s0762": -1.7297853695769252
+      },
+      "ps_ci": [
+       -2.797988179794753,
+       1.3296766088379701
+      ]
+     },
+     "holm_p": 0.9249640197897462,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "10.85",
+      "difference": "-0.84 [-3.42, +1.74], 4/6",
+      "seeds": "2/3",
+      "holm_p": "0.925",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/bc_scratch",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Family (m = 10)",
+     "method": "BC, full twist",
+     "cites": [
+      "pomerleau1991"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "controller",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/bc_scratch",
+     "minuend": "ctrl/bc_scratch",
+     "against": "ctrl/reinforce",
+     "err_mm": 19.60355865365851,
+     "diff": {
+      "mean": 7.917052163167263,
+      "ci": [
+       5.101340118588162,
+       10.732764207746364
+      ],
+      "p_t": 0.0007908321226357257,
+      "sd": 2.683072632122711,
+      "sign": 6,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.03041332810149555,
+       6.309495057776782,
+       17.411248103623514
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       5.709849149224374,
+       10.12425517711015
+      ],
+      "tost_p": 0.9992666437975233,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 8.963845215198043,
+       "s0513": 6.297950316660055,
+       "s0519": 5.857866160982731,
+       "s0591": 12.880899161670387,
+       "s0649": 6.168995554656208,
+       "s0762": 7.33275656983616
+      },
+      "ps_ci": [
+       4.073637713988152,
+       12.121186375020029
+      ]
+     },
+     "holm_p": 0.006326656981085805,
+     "decision": "higher",
+     "decision_full": "higher",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "19.60",
+      "difference": "+7.92 [+5.10, +10.73], 6/6",
+      "seeds": "3/3",
+      "holm_p": "0.006",
+      "tost": "no",
+      "decision": "higher",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/dagger_scratch",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Family (m = 10)",
+     "method": "DAgger, full twist",
+     "cites": [
+      "ross2011dagger"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "controller",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/dagger_scratch",
+     "minuend": "ctrl/dagger_scratch",
+     "against": "ctrl/reinforce",
+     "err_mm": 17.664210409571925,
+     "diff": {
+      "mean": 5.977703919080679,
+      "ci": [
+       0.532565848178697,
+       11.422841989982661
+      ],
+      "p_t": 0.037021412576442904,
+      "sd": 5.188634599299182,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       3.4792606791480707,
+       6.7211921634272,
+       7.732658914666764
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       1.7093252741235458,
+       10.246082564037813
+      ],
+      "tost_p": 0.9672163425363182,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 5.401718978265224,
+       "s0513": -0.4114270853399802,
+       "s0519": 4.178827038615873,
+       "s0591": 15.115420910026911,
+       "s0649": 3.966941254191406,
+       "s0762": 7.614742418724649
+      },
+      "ps_ci": [
+       2.401603263740402,
+       10.402529464873913
+      ]
+     },
+     "holm_p": 0.22212847545865744,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [
+      "a"
+     ],
+     "source": "Table 5",
+     "printed": {
+      "error": "17.66",
+      "difference": "+5.98 [+0.53, +11.42], 5/6",
+      "seeds": "3/3",
+      "holm_p": "0.222",
+      "tost": "no",
+      "decision": "no detectable difference",
+      "notes": [
+       "a"
+      ]
+     }
+    },
+    {
+     "id": "ctrl/servo_base",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "Servo base alone (authors')",
+     "cites": [],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/servo_base",
+     "minuend": "ctrl/servo_base",
+     "against": "ctrl/reinforce",
+     "err_mm": 11.650326129143414,
+     "diff": {
+      "mean": -0.036180361347833014,
+      "ci": [
+       -0.3642005076830401,
+       0.291839784987374
+      ],
+      "p_t": 0.7881333595675618,
+      "sd": 0.312568140307984,
+      "sign": 3,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.33670157744307555,
+       -0.004950441135993226,
+       0.23311093453556678
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.2933114330491947,
+       0.22095071035352867
+      ],
+      "tost_p": 0.0003223670423852641,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": 0.02169577484337637,
+       "s0513": -0.08931889004738025,
+       "s0519": -0.35397628957098526,
+       "s0591": 0.5064217794660237,
+       "s0649": 0.023065462513571333,
+       "s0762": -0.324970005291604
+      },
+      "ps_ci": [
+       -0.3118027794682154,
+       0.2537447457590411
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.65",
+      "difference": "-0.04 [-0.36, +0.29], 3/6",
+      "seeds": "2/3",
+      "holm_p": "",
+      "tost": "yes",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/reinforce_bneval",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "REINFORCE residual, BatchNorm in eval mode (authors')",
+     "cites": [],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/reinforce_bneval",
+     "minuend": "ctrl/reinforce_bneval",
+     "against": "ctrl/reinforce",
+     "err_mm": 11.698165739811293,
+     "diff": {
+      "mean": 0.011659249320045065,
+      "ci": [
+       -0.28091909758999106,
+       0.30423759623008123
+      ],
+      "p_t": 0.9223907334145777,
+      "sd": 0.2787958935138083,
+      "sign": 3,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.014446437255895894,
+       -0.07080833417805248,
+       0.12023251939407971
+      ],
+      "k_seed": 1,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.2176894194678503,
+       0.24100791810794042
+      ],
+      "tost_p": 0.0001674876366921242,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": -0.19748761637878331,
+       "s0513": 0.07218993707846622,
+       "s0519": -0.11637334057853366,
+       "s0591": 0.5298545014218625,
+       "s0649": -0.22560081653360875,
+       "s0762": 0.007372830910867378
+      },
+      "ps_ci": [
+       -0.2195688325405481,
+       0.2840444457164578
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.70",
+      "difference": "+0.01 [-0.28, +0.30], 3/6",
+      "seeds": "1/3",
+      "holm_p": "",
+      "tost": "yes",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/bc_res@bn_train",
+     "slot": "ctrl",
+     "kind": "bn_train",
+     "group": "Secondary",
+     "method": "BC, residual, BatchNorm in train mode",
+     "cites": [
+      "pomerleau1991"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/bc_res@bn_train",
+     "minuend": "ctrl/bc_res@bn_train",
+     "against": "ctrl/reinforce",
+     "err_mm": 12.668791412843888,
+     "diff": {
+      "mean": 0.9822849223526404,
+      "ci": [
+       -0.02074772590492091,
+       1.9853175706102018
+      ],
+      "p_t": 0.05334308280142696,
+      "sd": 0.9557829085707225,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.19469665303235306,
+       1.0275980787123487,
+       1.724560035313216
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       0.19601961920153455,
+       1.7685502255037462
+      ],
+      "tost_p": 0.4827728156445291,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -0.1460249469209387,
+       "s0513": 0.11800181886296635,
+       "s0519": 1.1323296938958407,
+       "s0591": 2.5591437590500465,
+       "s0649": 1.0748570708392347,
+       "s0762": 1.155402138388693
+      },
+      "ps_ci": [
+       0.10611863569786496,
+       1.8158603829899365
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.67",
+      "difference": "+0.98 [-0.02, +1.99], 5/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/dagger_res@bn_train",
+     "slot": "ctrl",
+     "kind": "bn_train",
+     "group": "Secondary",
+     "method": "DAgger, residual, BatchNorm in train mode",
+     "cites": [
+      "ross2011dagger"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/dagger_res@bn_train",
+     "minuend": "ctrl/dagger_res@bn_train",
+     "against": "ctrl/reinforce",
+     "err_mm": 12.888333501526338,
+     "diff": {
+      "mean": 1.2018270110350906,
+      "ci": [
+       0.5691074100909278,
+       1.8345466119792535
+      ],
+      "p_t": 0.004542212566297559,
+      "sd": 0.6029141539417084,
+      "sign": 6,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.8881576051072221,
+       0.6883397213900316,
+       2.0289837066080136
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       0.7058456791111238,
+       1.6978083429590574
+      ],
+      "tost_p": 0.7752306062784455,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 0.6472010527586924,
+       "s0513": 2.2123927284781395,
+       "s0519": 1.4802041381071351,
+       "s0591": 1.3166927460908298,
+       "s0649": 0.9140400097681134,
+       "s0762": 0.6404313910076329
+      },
+      "ps_ci": [
+       0.6256028987973989,
+       1.902629571682379
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.89",
+      "difference": "+1.20 [+0.57, +1.83], 6/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/bc_scratch@bn_train",
+     "slot": "ctrl",
+     "kind": "bn_train",
+     "group": "Secondary",
+     "method": "BC, full twist, BatchNorm in train mode",
+     "cites": [
+      "pomerleau1991"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/bc_scratch@bn_train",
+     "minuend": "ctrl/bc_scratch@bn_train",
+     "against": "ctrl/reinforce",
+     "err_mm": 15.754957938491245,
+     "diff": {
+      "mean": 4.068451447999995,
+      "ci": [
+       0.9436652761845816,
+       7.193237619815408
+      ],
+      "p_t": 0.02039829736429583,
+      "sd": 2.9775872412005455,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       3.019710825558759,
+       4.449873075354389,
+       4.735770443086835
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       1.6189689202548587,
+       6.517933975745131
+      ],
+      "tost_p": 0.973549819595657,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 1.6480278091595153,
+       "s0513": -0.7273338504170539,
+       "s0519": 5.101197060270808,
+       "s0591": 6.2337349262895305,
+       "s0649": 5.170838279479325,
+       "s0762": 6.984244463217845
+      },
+      "ps_ci": [
+       1.6373506178868025,
+       6.114384275316916
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "15.75",
+      "difference": "+4.07 [+0.94, +7.19], 5/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/dagger_scratch@bn_train",
+     "slot": "ctrl",
+     "kind": "bn_train",
+     "group": "Secondary",
+     "method": "DAgger, full twist, BatchNorm in train mode",
+     "cites": [
+      "ross2011dagger"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "ctrl/dagger_scratch@bn_train",
+     "minuend": "ctrl/dagger_scratch@bn_train",
+     "against": "ctrl/reinforce",
+     "err_mm": 15.153487666780569,
+     "diff": {
+      "mean": 3.4669811762893183,
+      "ci": [
+       0.8319312936527985,
+       6.102031058925839
+      ],
+      "p_t": 0.019627995329692224,
+      "sd": 2.510920901159498,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       3.3281826816124913,
+       3.967530470942888,
+       3.1052303763125764
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       1.401397071535956,
+       5.532565281042681
+      ],
+      "tost_p": 0.9694408341864139,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": 2.1254030959185837,
+       "s0513": -0.6721917654176295,
+       "s0519": 4.241680000914039,
+       "s0591": 6.778278702538925,
+       "s0649": 4.00078192483698,
+       "s0762": 4.327935098945014
+      },
+      "ps_ci": [
+       1.4927083274171107,
+       5.300777853148035
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "15.15",
+      "difference": "+3.47 [+0.83, +6.10], 5/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "ctrl/cem",
+     "slot": "ctrl",
+     "kind": "row",
+     "group": "Privileged, secondary",
+     "method": "CEM look-ahead",
+     "cites": [
+      "rubinstein1999cem"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": false,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "ctrl/cem",
+     "minuend": "ctrl/cem",
+     "against": "ctrl/reinforce",
+     "err_mm": 6.980615091303766,
+     "diff": {
+      "mean": -4.8102217568447,
+      "ci": [
+       -9.024939056921712,
+       -0.5955044567676886
+      ],
+      "p_t": 0.03248987781449817,
+      "sd": 4.016175113411201,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0
+      ],
+      "per_seed": [
+       -4.8102217568447
+      ],
+      "k_seed": 1,
+      "n_seed": 1,
+      "tost_ci90": [
+       -8.1140882674693,
+       -1.506355246220099
+      ],
+      "tost_p": 0.9661371829965539,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -4.672877303641547,
+       "s0513": -10.70575069584612,
+       "s0519": -3.4326841046497005,
+       "s0591": -4.1364012301700095,
+       "s0649": 1.3239777156406944,
+       "s0762": -7.237594922401516
+      }
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "6.98",
+      "difference": "-4.81 [-9.02, -0.60], 5/6",
+      "seeds": "n/a",
+      "holm_p": "",
+      "tost": "no",
+      "decision": "secondary",
+      "notes": []
+     }
+    }
+   ],
+   "printed_condition": "SonoSPADE frames; CT mask†; the plugged controller, residual or full twist as named; seeds 0 to 2, and seed 0 for CEM",
+   "printed_header": "Reference: the REINFORCE residual from the imitation start, 11.69 mm. Family: m = 10. Post hoc MDD: 2.09 mm, 3.41 mm at alpha = 0.05/10."
+  },
+  {
+   "key": "reward",
+   "title": "Reward",
+   "reference": "reward/paper",
+   "reference_err_mm": 11.970673995718515,
+   "decimals": 3,
+   "families": [
+    {
+     "key": "family",
+     "name": "reward",
+     "m": 2,
+     "test": "paired t, Holm",
+     "members": [
+      "reward/ssim",
+      "reward/nmi"
+     ]
+    },
+    {
+     "key": "LPIPS-R",
+     "name": "LPIPS reward",
+     "m": 1,
+     "test": "paired t, Holm",
+     "members": [
+      "reward/lpips"
+     ]
+    }
+   ],
+   "mdd": {
+    "mdd_mm": 0.0848537390996106,
+    "mdd_holm_mm": 0.0992661899195484,
+    "alpha_holm": 0.025,
+    "sd_mm": 0.05955326152610683,
+    "rows": [
+     "reward/seg_only",
+     "reward/ncc_only",
+     "reward/ncc_sector",
+     "reward/ssim",
+     "reward/nmi",
+     "reward/pose",
+     "reward/pose_area"
+    ]
+   },
+   "rows": [
+    {
+     "id": "reward/paper",
+     "slot": "reward",
+     "kind": "row",
+     "group": "Reference",
+     "method": "Match score S (authors')",
+     "cites": [],
+     "role": "ref",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "reward/paper",
+     "minuend": "reward/paper",
+     "against": null,
+     "err_mm": 11.970673995718515,
+     "diff": null,
+     "holm_p": null,
+     "decision": "",
+     "decision_full": "",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.97",
+      "difference": "",
+      "seeds": "",
+      "holm_p": "",
+      "tost": "",
+      "decision": "",
+      "notes": []
+     }
+    },
+    {
+     "id": "reward/ssim",
+     "slot": "reward",
+     "kind": "row",
+     "group": "Family (m = 2)",
+     "method": "SSIM appearance term",
+     "cites": [
+      "wang2004ssim"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "reward",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "reward/ssim",
+     "minuend": "reward/ssim",
+     "against": "reward/paper",
+     "err_mm": 11.923857868172655,
+     "diff": {
+      "mean": -0.046816127545857476,
+      "ci": [
+       -0.08467594722394563,
+       -0.008956307867769325
+      ],
+      "p_t": 0.02457423032116499,
+      "sd": 0.03607636165457527,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.028222777241744268,
+       0.0035381641189538016,
+       -0.11576376951478284
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.07649398763161842,
+       -0.017138267460096526
+      ],
+      "tost_p": 8.337112828566375e-09,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": -0.04197408659398505,
+       "s0513": -0.0460443823151131,
+       "s0519": -0.08123121870642258,
+       "s0591": 0.017486153720248865,
+       "s0649": -0.08090884420314914,
+       "s0762": -0.04822438717672384
+      },
+      "ps_ci": [
+       -0.09445376661783123,
+       -0.0033081230496720296
+      ]
+     },
+     "holm_p": 0.04914846064232998,
+     "decision": "lower",
+     "decision_full": "lower",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.92",
+      "difference": "-0.047 [-0.085, -0.009], 5/6",
+      "seeds": "2/3",
+      "holm_p": "0.049",
+      "tost": "yes",
+      "decision": "lower",
+      "notes": []
+     }
+    },
+    {
+     "id": "reward/nmi",
+     "slot": "reward",
+     "kind": "row",
+     "group": "Family (m = 2)",
+     "method": "NMI appearance term",
+     "cites": [
+      "studholme1999nmi"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "reward",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "reward/nmi",
+     "minuend": "reward/nmi",
+     "against": "reward/paper",
+     "err_mm": 11.97630170568574,
+     "diff": {
+      "mean": 0.005627709967228019,
+      "ci": [
+       -0.042098400525266755,
+       0.0533538204597228
+      ],
+      "p_t": 0.7740087402012445,
+      "sd": 0.0454778822808278,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.02365702247329941,
+       0.08874416650931138,
+       -0.04820401413432999
+      ],
+      "k_seed": 1,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.03178421755057768,
+       0.04303963748503372
+      ],
+      "tost_p": 2.1455123930004763e-08,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": -0.022991169179714888,
+       "s0513": 0.027361370400873497,
+       "s0519": -0.07285382805463136,
+       "s0591": 0.04790690258631258,
+       "s0649": 0.017826824702526167,
+       "s0762": 0.03651615934800212
+      },
+      "ps_ci": [
+       -0.053323830949867534,
+       0.05628974292158477
+      ]
+     },
+     "holm_p": 0.7740087402012445,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.98",
+      "difference": "+0.006 [-0.042, +0.053], 4/6",
+      "seeds": "1/3",
+      "holm_p": "0.774",
+      "tost": "yes",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "reward/lpips",
+     "slot": "reward",
+     "kind": "row",
+     "group": "LPIPS reward family (m = 1)",
+     "method": "LPIPS appearance term",
+     "cites": [
+      "zhang2018lpips"
+     ],
+     "role": "a2",
+     "family": "LPIPS-R",
+     "family_name": "LPIPS reward",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "reward/lpips",
+     "minuend": "reward/lpips",
+     "against": "reward/paper",
+     "err_mm": 11.904356745043033,
+     "diff": {
+      "mean": -0.06631725067547922,
+      "ci": [
+       -0.12179141579313658,
+       -0.01084308555782186
+      ],
+      "p_t": 0.027688104456059445,
+      "sd": 0.052860950218115065,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.07133452969442426,
+       0.028632798500529095,
+       -0.1562500208325416
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.10980278559705954,
+       -0.022831715753898904
+      ],
+      "tost_p": 6.224311156351633e-08,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": -0.05972687120364739,
+       "s0513": -0.08220599592148403,
+       "s0519": -0.14113157308241497,
+       "s0591": 0.02234120150854757,
+       "s0649": -0.058399965929686104,
+       "s0762": -0.0787802994241904
+      },
+      "ps_ci": [
+       -0.12641022523062884,
+       -0.010616671668927203
+      ]
+     },
+     "holm_p": 0.027688104456059445,
+     "decision": "lower",
+     "decision_full": "lower",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.90",
+      "difference": "-0.066 [-0.122, -0.011], 5/6",
+      "seeds": "2/3",
+      "holm_p": "0.028",
+      "tost": "yes",
+      "decision": "lower",
+      "notes": []
+     }
+    },
+    {
+     "id": "reward/seg_only",
+     "slot": "reward",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "Organ overlap only (authors')",
+     "cites": [],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "reward/seg_only",
+     "minuend": "reward/seg_only",
+     "against": "reward/paper",
+     "err_mm": 11.905589511804047,
+     "diff": {
+      "mean": -0.0650844839144679,
+      "ci": [
+       -0.12758179903201072,
+       -0.0025871687969250753
+      ],
+      "p_t": 0.0439781826838573,
+      "sd": 0.05955326152610683,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.014897702096352106,
+       -0.006028646524432209,
+       -0.204122507315323
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.11407538216926413,
+       -0.016093585659671672
+      ],
+      "tost_p": 1.1205211176813755e-07,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": -0.10298331988388121,
+       "s0513": -0.06246643109020056,
+       "s0519": -0.150492277525192,
+       "s0591": 0.02162734134400779,
+       "s0649": -0.06929914041697138,
+       "s0762": -0.02689307591457002
+      },
+      "ps_ci": [
+       -0.14465025834448764,
+       0.0019396092804516783
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.91",
+      "difference": "-0.065 [-0.128, -0.003], 5/6",
+      "seeds": "2/3",
+      "holm_p": "",
+      "tost": "yes",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "reward/ncc_only",
+     "slot": "reward",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "Appearance NCC only (authors')",
+     "cites": [],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "reward/ncc_only",
+     "minuend": "reward/ncc_only",
+     "against": "reward/paper",
+     "err_mm": 12.064533689716972,
+     "diff": {
+      "mean": 0.09385969399845706,
+      "ci": [
+       -0.003501028539237949,
+       0.19122041653615207
+      ],
+      "p_t": 0.055968201891270344,
+      "sd": 0.09277436255866534,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.11324155293087983,
+       -0.07344237059892962,
+       0.24177989966342128
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       0.017539787409081103,
+       0.17017960058783302
+      ],
+      "tost_p": 1.1884013108880588e-06,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": 0.08240491786721549,
+       "s0513": -0.013757825990822425,
+       "s0519": 0.25571992786407804,
+       "s0591": 0.1246761501068594,
+       "s0649": 0.08412663599953518,
+       "s0762": 0.02998835814387668
+      },
+      "ps_ci": [
+       -0.008596996439487723,
+       0.1989411412607896
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.06",
+      "difference": "+0.094 [-0.004, +0.191], 5/6",
+      "seeds": "2/3",
+      "holm_p": "",
+      "tost": "yes",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "reward/ncc_sector",
+     "slot": "reward",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "NCC over the whole sector (authors')",
+     "cites": [],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "reward/ncc_sector",
+     "minuend": "reward/ncc_sector",
+     "against": "reward/paper",
+     "err_mm": 11.993797853830714,
+     "diff": {
+      "mean": 0.02312385811219997,
+      "ci": [
+       -0.003623683939216249,
+       0.049871400163616186
+      ],
+      "p_t": 0.076903009759077,
+      "sd": 0.025487548768657525,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.008532738516441244,
+       0.012872032615881915,
+       0.04796680320427645
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       0.002156779626631654,
+       0.044090936597768284
+      ],
+      "tost_p": 1.2996032609966798e-09,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": 0.012571947250631155,
+       "s0513": 0.010980642093315396,
+       "s0519": 0.04541792552691781,
+       "s0591": 0.04773566494000647,
+       "s0649": 0.039244612149339275,
+       "s0762": -0.0172076432870103
+      },
+      "ps_ci": [
+       -0.0017977978047396535,
+       0.04564030050729181
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.99",
+      "difference": "+0.023 [-0.004, +0.050], 5/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "yes",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "reward/pose",
+     "slot": "reward",
+     "kind": "row",
+     "group": "Privileged, secondary",
+     "method": "Change in pose distance",
+     "cites": [
+      "sonogym",
+      "hase2020"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "reward/pose",
+     "minuend": "reward/pose",
+     "against": "reward/paper",
+     "err_mm": 11.92195646289648,
+     "diff": {
+      "mean": -0.04871753282203469,
+      "ci": [
+       -0.17990451714381772,
+       0.08246945149974833
+      ],
+      "p_t": 0.3836147439580696,
+      "sd": 0.1250071746513066,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.1839522284392799,
+       -0.05090817777792308,
+       0.08870780775109803
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.15155344167946955,
+       0.05411837603540017
+      ],
+      "tost_p": 4.0900003679424e-06,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": 0.1095478421611702,
+       "s0513": -0.18636017268688398,
+       "s0519": -0.01000137049802241,
+       "s0591": -0.03837789238060729,
+       "s0649": 0.03913619851237371,
+       "s0762": -0.20624980204023835
+      },
+      "ps_ci": [
+       -0.20287354491509854,
+       0.09847877733789386
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.92",
+      "difference": "-0.049 [-0.180, +0.082], 4/6",
+      "seeds": "2/3",
+      "holm_p": "",
+      "tost": "yes",
+      "decision": "secondary",
+      "notes": []
+     }
+    },
+    {
+     "id": "reward/pose_area",
+     "slot": "reward",
+     "kind": "row",
+     "group": "Privileged, secondary",
+     "method": "Pose distance plus organ area",
+     "cites": [
+      "bi2022vesnet"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "reward/pose_area",
+     "minuend": "reward/pose_area",
+     "against": "reward/paper",
+     "err_mm": 11.900379584846343,
+     "diff": {
+      "mean": -0.07029441087217118,
+      "ci": [
+       -0.15841247070895892,
+       0.017823648964616565
+      ],
+      "p_t": 0.09556616905771263,
+      "sd": 0.08396709287052767,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.02071779161089656,
+       -0.130980394872353,
+       -0.059185046133263995
+      ],
+      "k_seed": 3,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.1393691046530941,
+       -0.001219717091248268
+      ],
+      "tost_p": 6.373953968588356e-07,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": 0.06641999502253171,
+       "s0513": -0.17683507510433039,
+       "s0519": -0.1381558877745359,
+       "s0591": -0.06202105598262797,
+       "s0649": -0.048362603846502594,
+       "s0762": -0.06281183754756192
+      },
+      "ps_ci": [
+       -0.1865054115052035,
+       0.0422779413601016
+      ]
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.90",
+      "difference": "-0.070 [-0.158, +0.018], 5/6",
+      "seeds": "3/3",
+      "holm_p": "",
+      "tost": "yes",
+      "decision": "secondary",
+      "notes": []
+     }
+    }
+   ],
+   "printed_note": "(b) The reference is the match score S, retrained in the same way as the plugged rewards. It ends 0.28 mm above its 11.69 mm in the oracle-ladder table, more than the 0.17 mm spread across texture stages under CT masks.",
+   "printed_condition": "SonoSPADE frames; CT mask†; the REINFORCE residual from the imitation start, trained with the plugged potential; seeds 0 to 2",
+   "printed_header": "Reference: the match score S, retrained^b, 11.97 mm. Families: reward (m = 2) and LPIPS reward (m = 1), never pooled. Post hoc MDD: 0.085 mm, 0.099 mm at alpha = 0.05/2."
+  },
+  {
+   "key": "renderer",
+   "title": "Renderer",
+   "reference": "renderer/physics",
+   "reference_err_mm": 11.813770157327932,
+   "decimals": 2,
+   "families": [
+    {
+     "key": "family",
+     "name": "renderer",
+     "m": 2,
+     "test": "paired t, Holm",
+     "members": [
+      "renderer/lotus_orig",
+      "renderer/lotus_reimpl"
+     ]
+    }
+   ],
+   "mdd": {
+    "mdd_mm": 0.11183023847307517,
+    "mdd_holm_mm": 0.13082466145640495,
+    "alpha_holm": 0.025,
+    "sd_mm": 0.07848629310837879,
+    "rows": [
+     "renderer/lotus_orig",
+     "renderer/lotus_reimpl"
+    ]
+   },
+   "rows": [
+    {
+     "id": "renderer/physics",
+     "slot": "renderer",
+     "kind": "row",
+     "group": "Reference",
+     "method": "Physics renderer (authors')",
+     "cites": [],
+     "role": "ref",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "renderer/physics",
+     "minuend": "renderer/physics",
+     "against": null,
+     "err_mm": 11.813770157327932,
+     "diff": null,
+     "holm_p": null,
+     "decision": "",
+     "decision_full": "",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.81",
+      "difference": "",
+      "seeds": "",
+      "holm_p": "",
+      "tost": "",
+      "decision": "",
+      "notes": []
+     }
+    },
+    {
+     "id": "renderer/physics@seed0",
+     "slot": "renderer",
+     "kind": "ref_seed0",
+     "group": "Reference",
+     "method": "Seed 0 only, for the seed-0 rows",
+     "cites": [],
+     "role": "ref",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "renderer/physics",
+     "minuend": null,
+     "against": null,
+     "err_mm": 11.906243520023493,
+     "diff": null,
+     "holm_p": null,
+     "decision": "",
+     "decision_full": "",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.91",
+      "difference": "",
+      "seeds": "",
+      "holm_p": "",
+      "tost": "",
+      "decision": "",
+      "notes": []
+     }
+    },
+    {
+     "id": "renderer/lotus_orig",
+     "slot": "renderer",
+     "kind": "row",
+     "group": "Family (m = 2)",
+     "method": "LOTUS, original code, published default parameters",
+     "cites": [
+      "velikova2023lotus",
+      "salehi2015"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "renderer",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "renderer/lotus_orig",
+     "minuend": "renderer/lotus_orig",
+     "against": "renderer/physics",
+     "err_mm": 11.844485428938427,
+     "diff": {
+      "mean": 0.030715271610494217,
+      "ci": [
+       -0.03164557863857426,
+       0.09307612185956268
+      ],
+      "p_t": 0.26125403655469587,
+      "sd": 0.0594232250919641,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.08182159747406725,
+       0.07328388127699152,
+       -0.06295966391957582
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.018168653465146917,
+       0.07959919668613535
+      ],
+      "tost_p": 9.257838738999804e-08,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": 0.11310478885214792,
+       "s0513": -0.03418719313341079,
+       "s0519": 0.0900841087405766,
+       "s0591": 0.0251951066079652,
+       "s0649": -0.021621604961595153,
+       "s0762": 0.01171642355728153
+      },
+      "ps_ci": [
+       -0.04509597325822777,
+       0.124264315668992
+      ]
+     },
+     "holm_p": 0.5225080731093917,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.84",
+      "difference": "+0.03 [-0.03, +0.09], 4/6",
+      "seeds": "2/3",
+      "holm_p": "0.523",
+      "tost": "yes",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "renderer/lotus_reimpl",
+     "slot": "renderer",
+     "kind": "row",
+     "group": "Family (m = 2)",
+     "method": "LOTUS, authors' reimplementation",
+     "cites": [
+      "velikova2023lotus"
+     ],
+     "role": "family",
+     "family": "family",
+     "family_name": "renderer",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "renderer/lotus_reimpl",
+     "minuend": "renderer/lotus_reimpl",
+     "against": "renderer/physics",
+     "err_mm": 11.86132682260346,
+     "diff": {
+      "mean": 0.047556665275527855,
+      "ci": [
+       -0.05481511093791424,
+       0.14992844148896994
+      ],
+      "p_t": 0.2859728235652709,
+      "sd": 0.09754936112479347,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.03583133239543024,
+       0.13757708421947226,
+       -0.030738420788319232
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.032691346390300226,
+       0.12780467694135594
+      ],
+      "tost_p": 1.1904775508799842e-06,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": 0.09093102345701176,
+       "s0513": -0.030491891199750043,
+       "s0519": 0.21609293687032327,
+       "s0591": 0.04314009988567413,
+       "s0649": 0.02028004938278727,
+       "s0762": -0.054612226742879244
+      },
+      "ps_ci": [
+       -0.04240816514527937,
+       0.17217739236128657
+      ]
+     },
+     "holm_p": 0.5225080731093917,
+     "decision": "no detectable difference",
+     "decision_full": "no detectable difference; not powered for equivalence",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "11.86",
+      "difference": "+0.05 [-0.05, +0.15], 4/6",
+      "seeds": "2/3",
+      "holm_p": "0.523",
+      "tost": "yes",
+      "decision": "no detectable difference",
+      "notes": []
+     }
+    },
+    {
+     "id": "renderer/simus",
+     "slot": "renderer",
+     "kind": "row",
+     "group": "Secondary",
+     "method": "SIMUS via PyMUST",
+     "cites": [
+      "garcia2022simus",
+      "cigier2022simus"
+     ],
+     "role": "secondary",
+     "family": null,
+     "family_name": null,
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": false,
+     "designed_seeds": [
+      0
+     ],
+     "seeds": [
+      0
+     ],
+     "values_of": "renderer/simus",
+     "minuend": "renderer/simus",
+     "against": "renderer/physics",
+     "err_mm": 12.401111796146369,
+     "diff": {
+      "mean": 0.49486827612287626,
+      "ci": [
+       0.21329614570333633,
+       0.7764404065424162
+      ],
+      "p_t": 0.006295331888480921,
+      "sd": 0.2683081455547366,
+      "sign": 6,
+      "n": 6,
+      "seeds": [
+       0
+      ],
+      "per_seed": [
+       0.49486827612287626
+      ],
+      "k_seed": 1,
+      "n_seed": 1,
+      "tost_ci90": [
+       0.2741472488783343,
+       0.7155893033674182
+      ],
+      "tost_p": 0.0028897477525017695,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": 0.3856563320458779,
+       "s0513": 0.30022987861054595,
+       "s0519": 0.37976880808807145,
+       "s0591": 0.2927477120557498,
+       "s0649": 0.6276815793403863,
+       "s0762": 0.9831253465966263
+      }
+     },
+     "holm_p": null,
+     "decision": "secondary",
+     "decision_full": "secondary",
+     "notes": [],
+     "source": "Table 5",
+     "printed": {
+      "error": "12.40",
+      "difference": "+0.49 [+0.21, +0.78], 6/6",
+      "seeds": "n/a",
+      "holm_p": "",
+      "tost": "yes",
+      "decision": "secondary",
+      "notes": []
+     }
+    }
+   ],
+   "printed_condition": "frames from the plugged renderer, no texture stage; CT mask†; the physics-trained policy, residual on; seeds 0 to 2, and seed 0 for SIMUS",
+   "printed_header": "Reference: the physics renderer, 11.81 mm. Family: m = 2. Post hoc MDD: 0.11 mm, 0.13 mm at alpha = 0.05/2."
+  },
+  {
+   "key": "anatomy",
+   "title": "CT anatomy",
+   "reference": null,
+   "reference_err_mm": null,
+   "decimals": 2,
+   "families": [
+    {
+     "key": "CTA-D",
+     "name": "CT-anatomy difference",
+     "m": 5,
+     "test": "paired t, Holm",
+     "members": [
+      "anatomy/R1",
+      "anatomy/R2",
+      "anatomy/R3",
+      "anatomy/R4",
+      "anatomy/R5"
+     ]
+    },
+    {
+     "key": "CTA-E",
+     "name": "CT-anatomy equivalence",
+     "m": 5,
+     "test": "TOST with a +-1 mm margin, Holm over the TOST p values",
+     "members": [
+      "anatomy/R1",
+      "anatomy/R2",
+      "anatomy/R3",
+      "anatomy/R4",
+      "anatomy/R5"
+     ]
+    }
+   ],
+   "mdd": null,
+   "rows": [
+    {
+     "id": "anatomy/R1",
+     "slot": "anatomy",
+     "kind": "cta",
+     "group": "CT anatomy",
+     "method": "CT-mask servo base, physics",
+     "cites": [],
+     "method_cites": [
+      "totalseg"
+     ],
+     "role": "family",
+     "family": "CTA-D",
+     "family_name": "CT-anatomy difference",
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "anatomy/R1",
+     "minuend": "anatomy/R1",
+     "against": "anatomy/R1/reference",
+     "err_mm": 11.726798524018989,
+     "reference_err_mm": 11.650326129143414,
+     "diff": {
+      "mean": 0.07647239487557418,
+      "ci": [
+       -0.27095061912642415,
+       0.4238954088775725
+      ],
+      "p_t": 0.5959650044516925,
+      "sd": 0.33105699939486843,
+      "sign": 3,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.49250478810215714,
+       -0.3535884873275261,
+       1.075510460056406
+      ],
+      "k_seed": 1,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.19586835285630588,
+       0.3488131426074542
+      ],
+      "tost_p": 0.0005120751413237668,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": -0.09805495478078363,
+       "s0513": 0.5875251716107996,
+       "s0519": 0.011497813406869284,
+       "s0591": 0.36363604969314345,
+       "s0649": -0.28532677572922616,
+       "s0762": -0.12044293494735747
+      },
+      "p_tost_cta": 0.0005120751413237668,
+      "ci90_cta": [
+       -0.19586835285630588,
+       0.3488131426074542
+      ]
+     },
+     "holm_p": 1.0,
+     "holm_p_tost": 0.002560375706618834,
+     "equivalent": true,
+     "decision": "equivalent within ±1 mm",
+     "decision_full": "equivalent within ±1 mm",
+     "notes": [],
+     "source": "Table 5",
+     "level": "R1",
+     "printed": {
+      "error": "11.73",
+      "difference": "+0.08 [-0.27, +0.42], 3/6",
+      "seeds": "1/3",
+      "holm_p": "1.000",
+      "tost": "yes",
+      "decision": "equivalent within ±1 mm",
+      "notes": []
+     }
+    },
+    {
+     "id": "anatomy/R2",
+     "slot": "anatomy",
+     "kind": "cta",
+     "group": "CT anatomy",
+     "method": "Learned-mask servo base, physics",
+     "cites": [],
+     "method_cites": [
+      "totalseg"
+     ],
+     "role": "family",
+     "family": "CTA-D",
+     "family_name": "CT-anatomy difference",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "anatomy/R2",
+     "minuend": "anatomy/R2",
+     "against": "anatomy/R2/reference",
+     "err_mm": 16.57949079014047,
+     "reference_err_mm": 17.1965860773182,
+     "diff": {
+      "mean": -0.617095287177737,
+      "ci": [
+       -1.6681198196236973,
+       0.4339292452682232
+      ],
+      "p_t": 0.19160505904993,
+      "sd": 1.0015140447775657,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       0.19919753588383257,
+       -0.8279334606651814,
+       -1.2225499367518609
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.440980854669924,
+       0.20679028031445013
+      ],
+      "tost_p": 0.19600339224183672,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -2.163842061161601,
+       "s0513": -0.34567531272382723,
+       "s0519": -0.5533017593640821,
+       "s0591": -0.2321714913572599,
+       "s0649": 0.8099105823842727,
+       "s0762": -1.2174916808439242
+      },
+      "p_tost_cta": 0.19600339224183672,
+      "ci90_cta": [
+       -1.440980854669924,
+       0.20679028031445013
+      ]
+     },
+     "holm_p": 0.76642023619972,
+     "holm_p_tost": 0.19600339224183672,
+     "equivalent": false,
+     "decision": "no detectable change",
+     "decision_full": "no detectable change",
+     "notes": [
+      "e"
+     ],
+     "source": "Table 5",
+     "level": "R2",
+     "printed": {
+      "error": "16.58",
+      "difference": "-0.62 [-1.67, +0.43], 5/6",
+      "seeds": "2/3",
+      "holm_p": "0.766",
+      "tost": "no",
+      "decision": "no detectable change",
+      "notes": [
+       "e"
+      ]
+     }
+    },
+    {
+     "id": "anatomy/R3",
+     "slot": "anatomy",
+     "kind": "cta",
+     "group": "CT anatomy",
+     "method": "Learned-mask servo base, SonoSPADE",
+     "cites": [],
+     "method_cites": [
+      "totalseg"
+     ],
+     "role": "family",
+     "family": "CTA-D",
+     "family_name": "CT-anatomy difference",
+     "privileged": false,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "anatomy/R3",
+     "minuend": "anatomy/R3",
+     "against": "anatomy/R3/reference",
+     "err_mm": 12.621272882361827,
+     "reference_err_mm": 13.133458864855752,
+     "diff": {
+      "mean": -0.512185982493925,
+      "ci": [
+       -1.2861476870840085,
+       0.2617757220961586
+      ],
+      "p_t": 0.14965698984639322,
+      "sd": 0.7375027826068452,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -1.2009103236362824,
+       0.20568877995197088,
+       -0.5413364037974651
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -1.1188853111189754,
+       0.09451334613112539
+      ],
+      "tost_p": 0.08305846838303294,
+      "tost_in": false,
+      "per_patient": {
+       "s0358": -0.6172793832449148,
+       "s0513": 0.7895325305905541,
+       "s0519": -0.16200661046452147,
+       "s0591": -1.243492476648358,
+       "s0649": -1.0296682783130002,
+       "s0762": -0.8102016768833096
+      },
+      "p_tost_cta": 0.08305846838303294,
+      "ci90_cta": [
+       -1.1188853111189754,
+       0.09451334613112539
+      ]
+     },
+     "holm_p": 0.7482849492319661,
+     "holm_p_tost": 0.16611693676606587,
+     "equivalent": false,
+     "decision": "no detectable change",
+     "decision_full": "no detectable change",
+     "notes": [
+      "e"
+     ],
+     "source": "Table 5",
+     "level": "R3",
+     "printed": {
+      "error": "12.62",
+      "difference": "-0.51 [-1.29, +0.26], 5/6",
+      "seeds": "2/3",
+      "holm_p": "0.748",
+      "tost": "no",
+      "decision": "no detectable change",
+      "notes": [
+       "e"
+      ]
+     }
+    },
+    {
+     "id": "anatomy/R4",
+     "slot": "anatomy",
+     "kind": "cta",
+     "group": "CT anatomy",
+     "method": "CT-mask policy, physics, final weights",
+     "cites": [],
+     "method_cites": [
+      "totalseg"
+     ],
+     "role": "family",
+     "family": "CTA-D",
+     "family_name": "CT-anatomy difference",
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "anatomy/R4",
+     "minuend": "anatomy/R4",
+     "against": "anatomy/R4/reference",
+     "err_mm": 11.700836983719755,
+     "reference_err_mm": 11.813770157327932,
+     "diff": {
+      "mean": -0.1129331736081749,
+      "ci": [
+       -0.8123546933053124,
+       0.5864883460889626
+      ],
+      "p_t": 0.6953050734708281,
+      "sd": 0.666473953339779,
+      "sign": 5,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.2843900602801173,
+       -0.2638323805129839,
+       0.2094229199685763
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.6612013423167414,
+       0.43533499510039164
+      ],
+      "tost_p": 0.011219924092707499,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": -0.5694180729937628,
+       "s0513": 1.1961006310528663,
+       "s0519": -0.5536185470310127,
+       "s0591": -0.42495782072253263,
+       "s0649": -0.12790403173714537,
+       "s0762": -0.19780120021746228
+      },
+      "p_tost_cta": 0.011219924092707499,
+      "ci90_cta": [
+       -0.6612013423167414,
+       0.43533499510039164
+      ]
+     },
+     "holm_p": 1.0,
+     "holm_p_tost": 0.044879696370829995,
+     "equivalent": true,
+     "decision": "equivalent within ±1 mm",
+     "decision_full": "equivalent within ±1 mm",
+     "notes": [],
+     "source": "Table 5",
+     "level": "R4",
+     "printed": {
+      "error": "11.70",
+      "difference": "-0.11 [-0.81, +0.59], 5/6",
+      "seeds": "2/3",
+      "holm_p": "1.000",
+      "tost": "yes",
+      "decision": "equivalent within ±1 mm",
+      "notes": []
+     }
+    },
+    {
+     "id": "anatomy/R5",
+     "slot": "anatomy",
+     "kind": "cta",
+     "group": "CT anatomy",
+     "method": "CT-mask policy, SonoSPADE, final weights",
+     "cites": [],
+     "method_cites": [
+      "totalseg"
+     ],
+     "role": "family",
+     "family": "CTA-D",
+     "family_name": "CT-anatomy difference",
+     "privileged": true,
+     "label_access": false,
+     "fewer_seeds": false,
+     "demoted": false,
+     "learned": true,
+     "designed_seeds": [
+      0,
+      1,
+      2
+     ],
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "values_of": "anatomy/R5",
+     "minuend": "anatomy/R5",
+     "against": "anatomy/R5/reference",
+     "err_mm": 11.617634295740478,
+     "reference_err_mm": 11.686506490491249,
+     "diff": {
+      "mean": -0.06887219475077237,
+      "ci": [
+       -0.8171777144590019,
+       0.6794333249574572
+      ],
+      "p_t": 0.8223619036943546,
+      "sd": 0.7130551805753408,
+      "sign": 4,
+      "n": 6,
+      "seeds": [
+       0,
+       1,
+       2
+      ],
+      "per_seed": [
+       -0.2642284309110569,
+       -0.3108148319937089,
+       0.3684266786524463
+      ],
+      "k_seed": 2,
+      "n_seed": 3,
+      "tost_ci90": [
+       -0.655459946729863,
+       0.5177155572283183
+      ],
+      "tost_p": 0.012016190094031971,
+      "tost_in": true,
+      "per_patient": {
+       "s0358": -0.5897873091518235,
+       "s0513": 1.2916674941201798,
+       "s0519": -0.6115219978474986,
+       "s0591": -0.36180163431163237,
+       "s0649": 0.06969853108862978,
+       "s0762": -0.21148825240248925
+      },
+      "p_tost_cta": 0.012016190094031971,
+      "ci90_cta": [
+       -0.655459946729863,
+       0.5177155572283183
+      ]
+     },
+     "holm_p": 1.0,
+     "holm_p_tost": 0.044879696370829995,
+     "equivalent": true,
+     "decision": "equivalent within ±1 mm",
+     "decision_full": "equivalent within ±1 mm",
+     "notes": [],
+     "source": "Table 5",
+     "level": "R5",
+     "printed": {
+      "error": "11.62",
+      "difference": "-0.07 [-0.82, +0.68], 4/6",
+      "seeds": "2/3",
+      "holm_p": "1.000",
+      "tost": "yes",
+      "decision": "equivalent within ±1 mm",
+      "notes": []
+     }
+    }
+   ],
+   "note": "All 19 CTs are in TotalSegmentator's own training data, so these labels are in-sample predictions: the rows are a label-noise sensitivity check, not a test of an independent CT segmenter.",
+   "printed_condition": "five reference levels of the oracle ladder, each in its oracle-ladder condition with seeds 0 to 2. TotalSegmentator v2 labels (fast mode, 3.0 mm) replace the reference labels on the same episodes and classes"
+  }
+ ],
+ "submitted": [],
+ "combination": {
+  "name": "Combination",
+  "definition": "the authors' original pipeline with the SSIM appearance term in the REINFORCE reward, the only slot the pre-specified combination rule changed; chosen per slot on the 6 held-out patients and tested on 20 CTs of the replication cohort",
+  "benchmark_baseline_rule": "separately with physics and with SonoSPADE frames, the better of two pipelines on the 20 cohort CTs: the authors' original pipeline or, where it tests lower, the combination",
+  "cohort_n": 20,
+  "cohort": {
+   "static_start": "15.97",
+   "pose_oracle": "1.47",
+   "physics": {
+    "combination": "15.62",
+    "authors_original": "15.36",
+    "learned_mask_servo_base": "15.75"
+   },
+   "sonospade": {
+    "combination": "13.70",
+    "authors_original": "13.96",
+    "learned_mask_servo_base": "13.71"
+   }
+  },
+  "six": {
+   "physics": {
+    "combination": "16.62",
+    "authors_original": "16.73",
+    "learned_mask_servo_base": "17.20"
+   },
+   "sonospade": {
+    "combination": "13.10",
+    "authors_original": "13.11",
+    "learned_mask_servo_base": "13.13"
+   }
+  },
+  "contrasts": [
+   {
+    "id": "D-P",
+    "name": "Combination minus authors' original pipeline, physics frames",
+    "family": "difference family (m = 4), exact sign-flip test, Holm",
+    "difference_ci95_t": "+0.25 [+0.11, +0.40]",
+    "k": "15/20",
+    "p_signflip": "0.002",
+    "p_holm": "0.007",
+    "decision": "holds higher",
+    "equivalence": {
+     "family": "equivalence family (m = 4), TOST at ±1 mm, Holm",
+     "ci90": "[+0.13, +0.38]",
+     "p_tost": "9.5 × 10^-7",
+     "p_holm": "3.8 × 10^-6",
+     "decision": "equivalent within ±1 mm"
+    }
+   },
+   {
+    "id": "D-S",
+    "name": "Combination minus authors' original pipeline, SonoSPADE frames",
+    "family": "difference family (m = 4), exact sign-flip test, Holm",
+    "difference_ci95_t": "-0.26 [-0.39, -0.12]",
+    "k": "16/20",
+    "p_signflip": "5.6 × 10^-4",
+    "p_holm": "0.002",
+    "decision": "holds lower",
+    "equivalence": {
+     "family": "equivalence family (m = 4), TOST at ±1 mm, Holm",
+     "ci90": "[-0.37, -0.14]",
+     "p_tost": "9.5 × 10^-7",
+     "p_holm": "3.8 × 10^-6",
+     "decision": "equivalent within ±1 mm"
+    }
+   },
+   {
+    "id": "B-P",
+    "name": "Combination minus its learned-mask servo base, physics frames",
+    "family": "difference family (m = 4), exact sign-flip test, Holm",
+    "difference_ci95_t": "-0.14 [-0.44, +0.17]",
+    "k": "11/20",
+    "p_signflip": "0.352",
+    "p_holm": "0.704",
+    "decision": "no difference detected",
+    "equivalence": {
+     "family": "equivalence family (m = 4), TOST at ±1 mm, Holm",
+     "ci90": "[-0.39, +0.11]",
+     "p_tost": "1.0 × 10^-5",
+     "p_holm": "1.0 × 10^-5",
+     "decision": "equivalent within ±1 mm"
+    }
+   },
+   {
+    "id": "B-S",
+    "name": "Combination minus its learned-mask servo base, SonoSPADE frames",
+    "family": "difference family (m = 4), exact sign-flip test, Holm",
+    "difference_ci95_t": "-0.01 [-0.10, +0.09]",
+    "k": "10/20",
+    "p_signflip": "0.904",
+    "p_holm": "0.904",
+    "decision": "no difference detected",
+    "equivalence": {
+     "family": "equivalence family (m = 4), TOST at ±1 mm, Holm",
+     "ci90": "[-0.08, +0.07]",
+     "p_tost": "9.5 × 10^-7",
+     "p_holm": "3.8 × 10^-6",
+     "decision": "equivalent within ±1 mm"
+    }
+   }
+  ],
+  "benchmark_baseline": {
+   "physics": {
+    "pipeline": "authors_original",
+    "error_mm": "15.36",
+    "contrast": "D-P",
+    "decision": "holds higher"
+   },
+   "sonospade": {
+    "pipeline": "combination",
+    "error_mm": "13.70",
+    "contrast": "D-S",
+    "decision": "holds lower"
+   }
+  },
+  "source": "the combination table of the article, every value matched to its printed cell"
+ }
+}

@@ -1,0 +1,96 @@
+name: Leaderboard submission
+description: Add a plugged method to the USB Gym leaderboard. Paste the submission.json that `python -m usbg.leaderboard run` wrote, or, for a maintainer run, the gate record.
+title: "[leaderboard] "
+labels: ["leaderboard-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before opening this form, follow [SUBMITTING.md](https://github.com/tohnperfect/USBGym/blob/main/SUBMITTING.md):
+        pass the admission gate (`python -m usbg.leaderboard check --out gate.json`), then either run the unchanged
+        plug protocol (`python -m usbg.leaderboard run`) and check the file (`python -m usbg.leaderboard validate
+        submission.json`), or, for a slot the maintainers run (texture for now, mask, controller, reward, CT anatomy),
+        request a maintainer run with the gate record. Everything pasted here is public.
+        A workflow validates the pasted JSON (it reads the JSON only and never runs your code) and keeps one comment
+        up to date with the row it would add, or the errors. A maintainer reruns the plug-in from its code URL and
+        resolves the DOI at its registry before the row is added.
+  - type: input
+    id: name
+    attributes:
+      label: Method name
+      description: As it should appear on the leaderboard (plain text, one line, without | @ [ ] < > or backticks).
+    validations:
+      required: true
+  - type: dropdown
+    id: slot
+    attributes:
+      label: Slot
+      description: The one slot the method replaces.
+      options:
+        - texture
+        - mask
+        - ctrl
+        - reward
+        - renderer
+        - anatomy
+    validations:
+      required: true
+  - type: dropdown
+    id: request
+    attributes:
+      label: Request type
+      description: A scored submission carries the submission.json of your own run; a maintainer run carries the gate record of a slot whose condition needs an artifact that is not released.
+      options:
+        - Scored submission (I ran the protocol; submission.json pasted)
+        - Maintainer run (I passed the gate; gate record pasted)
+    validations:
+      required: true
+  - type: input
+    id: doi
+    attributes:
+      label: DOI
+      description: "The DOI of the method's publication, bare, without https://doi.org/ (pattern: 10.<4 to 9 digits>/<suffix>). A work whose venue assigns no DOI gives the DataCite DOI of its arXiv version, 10.48550/arXiv.<id>. It becomes the method's reference in the methods list."
+      placeholder: "10.1234/abcd.5678"
+    validations:
+      required: true
+  - type: input
+    id: code_url
+    attributes:
+      label: Code URL
+      description: A public https URL of the plug-in's code (the module given to --plugin).
+      placeholder: "https://github.com/<you>/<repo>"
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: The license of the code and, if any, of the weights.
+      placeholder: "MIT; weights CC BY 4.0"
+    validations:
+      required: true
+  - type: textarea
+    id: submission
+    attributes:
+      label: submission.json
+      description: For a scored submission, paste the whole file that `python -m usbg.leaderboard run` wrote. It records no local path.
+      render: json
+    validations:
+      required: false
+  - type: textarea
+    id: gate
+    attributes:
+      label: Gate record
+      description: For a maintainer run, paste the file that `python -m usbg.leaderboard check --out gate.json` wrote.
+      render: json
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The plug-in follows the plug protocol unchanged
+          required: true
+        - label: No setting was tuned on held-out patients
+          required: true

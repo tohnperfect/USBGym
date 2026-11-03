@@ -1,0 +1,30 @@
+
+\begin{table*}[tp]
+\caption{Domain-randomization (DR) knobs. When DR is on, each knob is drawn uniformly from its range once per episode and shared by the target and the observations. DR is off in training and evaluation for Tables~\ref{tab:ladder} and~\ref{tab:learnability}; Table~\ref{tab:contact-dr} reports the DR arms. Effect: mean absolute change of the in-sector pixel intensity (scale 0 to 1, $\times 100$) when the knob alone moves to the low (lo) or high (hi) end of its range, with the speckle seed fixed, over 60 frames (6 held-out patients $\times$ 10 jittered window poses), with each texture stage applied (physics: none). $^{\dagger}$Drawn independently per tissue label and measured one label at a time (mean over labels covering at least 1\% of the sector). The speckle and noise seed is also redrawn per episode. The reference rows give the change from a new seed alone, a 5~mm in-plane slide and a full DR draw (5 draws per frame, 300 in all). The two weakest knobs, impedance multiplier and overall gain, change the frame by at most 0.21 and 0.48.}
+\label{tab:dr}
+\centering
+\renewcommand{\baselinestretch}{1}\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llc@{\hspace{12pt}}rr@{\hspace{12pt}}rr@{\hspace{12pt}}rr@{\hspace{12pt}}rr@{}}
+\toprule
+ & & & \multicolumn{2}{c}{Physics} & \multicolumn{2}{c}{CUT} & \multicolumn{2}{c}{CycleGAN} & \multicolumn{2}{c}{SonoSPADE} \\
+\cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11}
+Knob & Default & Range & lo & hi & lo & hi & lo & hi & lo & hi \\
+\midrule
+Overall gain & 1 & [0.8, 1.25] & 0.44 & 0.38 & 0.38 & 0.32 & 0.48 & 0.43 & 0.21 & 0.18 \\
+Time-gain slope & 1 & [0.6, 1.4] & 18.96 & 17.70 & 14.50 & 14.33 & 15.93 & 14.60 & 9.76 & 10.34 \\
+Lateral PSF $\sigma$ at focus (px) & 1.1 & [0.8, 1.6] & 1.16 & 1.53 & 1.42 & 1.90 & 1.51 & 1.98 & 0.76 & 1.02 \\
+Focal depth (m) & 0.05 & [0.03, 0.08] & 2.70 & 2.69 & 2.95 & 3.07 & 2.71 & 2.93 & 1.39 & 1.45 \\
+Speckle strength & 0.9 & [0.6, 1.2] & 0.86 & 0.50 & 0.72 & 0.41 & 0.91 & 0.55 & 0.40 & 0.23 \\
+Electronic noise $\sigma$ & 0.004 & [0, 0.05] & 1.84 & 9.53 & 1.51 & 8.94 & 1.97 & 9.65 & 0.82 & 4.43 \\
+Dynamic range (dB) & 50 & [45, 60] & 3.70 & 6.31 & 2.46 & 4.04 & 2.84 & 4.42 & 1.31 & 2.08 \\
+Impedance multiplier$^{\dagger}$ & 1 & [0.9, 1.1] & 0.18 & 0.16 & 0.20 & 0.19 & 0.21 & 0.19 & 0.12 & 0.11 \\
+Attenuation multiplier$^{\dagger}$ & 1 & [0.7, 1.4] & 4.88 & 5.57 & 4.27 & 4.79 & 4.25 & 5.06 & 2.70 & 3.05 \\
+Backscatter multiplier$^{\dagger}$ & 1 & [0.7, 1.4] & 1.22 & 1.36 & 1.87 & 1.90 & 1.77 & 1.84 & 0.80 & 0.80 \\
+\midrule
+\textit{New speckle seed only} & & & \multicolumn{2}{c}{3.88} & \multicolumn{2}{c}{5.69} & \multicolumn{2}{c}{5.32} & \multicolumn{2}{c}{3.16} \\
+\textit{5 mm in-plane slide} & & & \multicolumn{2}{c}{7.21} & \multicolumn{2}{c}{7.68} & \multicolumn{2}{c}{8.00} & \multicolumn{2}{c}{6.40} \\
+\textit{Full DR draw} & & & \multicolumn{2}{c}{14.76} & \multicolumn{2}{c}{13.61} & \multicolumn{2}{c}{13.83} & \multicolumn{2}{c}{7.78} \\
+\bottomrule
+\end{tabular}
+\end{table*}

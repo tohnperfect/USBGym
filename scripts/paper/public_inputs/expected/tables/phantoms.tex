@@ -1,0 +1,97 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Canonical digital phantoms, renderers only (descriptive; no family, no decision). Each metric: mean (SD) over the 10 speckle seeds on each renderer's native output. Bands fixed before any phantom was rendered; not scorable: a wire was not measurable in every seed. Speckle SNR: mean over SD of the amplitude, after each renderer's display map is inverted (the original LOTUS map is linear and is used as returned), in phantom H at 30 to 90~mm depth on the central 80 lines, each depth row divided by its mean, on the 512 by 160 frame before resizing and the sector warp. Rayleigh reference line of the speckle SNR, that of a Rayleigh envelope: 1.91. The band counts in the renderer headers also include design-check bands that the renderer meets by its construction; those bands are not listed. The continuation gives the wire widths and the clipped fractions.}
+\label{tab:phantoms}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.3\textwidth} l >{\raggedright\arraybackslash}X l@{}}
+\toprule
+Metric & Mean (SD) & Band fixed before rendering & Outcome \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Physics renderer: meets 5 of 8 bands, 2 not scorable}} \\
+\quad Speckle SNR, phantom H & 3.57 (0.06) & speckle SNR in phantom H from 2.6 to 4.0 & inside \\
+\quad CNR of the anechoic disc, phantom C & 2.41 (0.16) & no band &  \\
+\quad CNR over the speckle SNR & 0.67 & CNR of the anechoic disc in phantom C over the speckle SNR of phantom H, at least 0.90 & outside \\
+\quad Slope, soft tissue, phantom L (dB/cm) & 0.58 (0.05) & no band &  \\
+\quad Slope, muscle, phantom L (dB/cm) & $-8.51$ (0.06) & no band &  \\
+\quad Shadow depth below the bone slab, phantom B (mm) & 85.00 (0.00) & shadow below the 5~mm bone slab of phantom B, at least 10~mm & inside \\
+\quad Shadow depth below the air slab, phantom A (mm) & 85.00 (0.00) & shadow below the air slab of phantom A to the image bottom, at least 80~mm & inside \\
+\quad PSF width, wire phantom W &  & lateral PSF width in lines at the 50~mm wire no larger than at the 10 and 110~mm wires (wire phantom W) & not scorable \\
+\quad PSF width, wire phantom W &  & axial PSF width in mm within a factor of 1.5 across the six wires (wire phantom W) & not scorable \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Original LOTUS code: meets 2 of 4 bands, 2 not scorable}} \\
+\quad Speckle SNR, phantom H & 4.71 (0.04) & no band &  \\
+\quad CNR of the anechoic disc, phantom C & 4.69 (0.17) & no band &  \\
+\quad CNR over the speckle SNR & 1.00 & CNR of the anechoic disc in phantom C over the speckle SNR of phantom H, at least 0.90 & inside \\
+\quad Attenuation slope, phantom H (dB/cm) & $-0.37$ (0.01) & no band &  \\
+\quad Slope, soft tissue, phantom L (dB/cm) & 0.26 (0.01) & no band &  \\
+\quad Slope, muscle, phantom L (dB/cm) & $-2.31$ (0.04) & no band &  \\
+\quad Shadow depth below the bone slab, phantom B (mm) & 0.00 (0.00) & no band &  \\
+\quad Shadow depth below the air slab, phantom A (mm) & 0.00 (0.00) & no band &  \\
+\quad PSF width, wire phantom W &  & lateral PSF width in lines within 10\% of its mean across depth (wire phantom W) & not scorable \\
+\quad PSF width, wire phantom W &  & axial PSF width in samples within 10\% of its mean across depth (wire phantom W) & not scorable \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{SIMUS: meets 5 of 8 bands, 1 not scorable}} \\
+\quad Speckle SNR, phantom H & 1.55 (0.01) & speckle SNR in phantom H below 1.6 & inside \\
+\quad CNR of the anechoic disc, phantom C & 1.24 (0.05) & no band &  \\
+\quad CNR over the speckle SNR & 0.80 & CNR of the anechoic disc in phantom C over the speckle SNR of phantom H, at least 0.90 & outside \\
+\quad Slope, soft tissue, phantom L (dB/cm) & $-0.09$ (0.08) & no band &  \\
+\quad Slope, muscle, phantom L (dB/cm) & $-3.86$ (0.07) & no band &  \\
+\quad Shadow depth below the bone slab, phantom B (mm) & 0.00 (0.00) & shadow below the 5~mm bone slab of phantom B, at least 10~mm & outside \\
+\quad Shadow depth below the air slab, phantom A (mm) & 85.00 (0.00) & shadow below the air slab of phantom A to the image bottom, at least 80~mm & inside \\
+\quad PSF width, wire phantom W &  & axial PSF width in mm within a factor of 1.5 across the six wires (wire phantom W) & not scorable \\
+\quad PSF width, wire phantom W & 0.74 and 1.95 & lateral PSF width in mm at the 110~mm wire at least that at the 30~mm wire (wire phantom W) & inside \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\ContinuedFloat
+\caption[]{Continued.}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X c c c c c@{}}
+\toprule
+Wire depth (mm) & Measurable seeds & Lateral width (lines) & Lateral width (mm) & Axial width (samples) & Axial width (mm) \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Physics renderer: wire phantom W, FWHM, mean (SD) over 10 seeds}} \\
+\quad 10 & 4/10 & 7.90 (5.19) & 2.61 (1.75) & 3.03 (0.63) & 0.71 (0.15) \\
+\quad 30 & 3/10 & 8.26 (5.50) & 3.81 (2.52) & 4.47 (1.64) & 1.05 (0.39) \\
+\quad 50 & 0/10 & 5.47 (3.42) & 3.23 (2.02) & 3.95 (2.36) & 0.93 (0.55) \\
+\quad 70 & 0/10 & 4.96 (1.89) & 3.58 (1.35) & 3.20 (0.82) & 0.75 (0.19) \\
+\quad 90 & 3/10 & 9.56 (2.90) & 8.16 (2.43) & 3.92 (1.01) & 0.92 (0.24) \\
+\quad 110 & 2/10 & 8.19 (2.73) & 8.08 (2.70) & 2.94 (0.58) & 0.69 (0.14) \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Original LOTUS code: wire phantom W, FWHM, mean (SD) over 10 seeds}} \\
+\quad 10 & 0/10 & 1.43 (0.36) & 0.47 (0.12) & 3.90 (1.39) & 0.92 (0.33) \\
+\quad 30 & 0/10 & 1.36 (0.64) & 0.63 (0.29) & 4.02 (1.80) & 0.95 (0.42) \\
+\quad 50 & 0/10 & 1.82 (0.70) & 1.08 (0.41) & 4.70 (1.65) & 1.10 (0.39) \\
+\quad 70 & 0/10 & 1.66 (0.55) & 1.20 (0.40) & 5.57 (2.88) & 1.31 (0.68) \\
+\quad 90 & 0/10 & 1.63 (0.70) & 1.39 (0.60) & 3.86 (1.29) & 0.91 (0.30) \\
+\quad 110 & 0/10 & 1.82 (1.12) & 1.79 (1.09) & 4.37 (2.32) & 1.03 (0.54) \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{SIMUS: wire phantom W, FWHM, mean (SD) over 10 seeds}} \\
+\quad 10 & 10/10 & 1.20 (0.52) & 0.39 (0.16) & 2.91 (0.78) & 0.68 (0.18) \\
+\quad 30 & 10/10 & 1.57 (0.54) & 0.74 (0.25) & 3.22 (1.10) & 0.76 (0.26) \\
+\quad 50 & 10/10 & 1.79 (0.29) & 1.06 (0.16) & 4.06 (1.39) & 0.95 (0.33) \\
+\quad 70 & 10/10 & 2.06 (0.48) & 1.49 (0.34) & 3.41 (1.28) & 0.80 (0.30) \\
+\quad 90 & 9/10 & 1.96 (0.53) & 1.68 (0.45) & 3.37 (1.07) & 0.79 (0.25) \\
+\quad 110 & 10/10 & 1.98 (0.16) & 1.95 (0.16) & 3.21 (1.63) & 0.75 (0.38) \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Clipped fractions of pixels at 0 and at 1, per phantom region (label)}} \\
+Phantom, region & \multicolumn{2}{c}{Physics renderer} & \multicolumn{2}{c}{Original LOTUS code} & SIMUS \\
+\quad H, soft tissue & \multicolumn{2}{c}{0.000 / 0.010} & \multicolumn{2}{c}{0.000 / 0.000} & 0.000 / 0.000 \\
+\quad L, muscle & \multicolumn{2}{c}{0.203 / 0.001} & \multicolumn{2}{c}{0.000 / 0.000} & 0.001 / 0.000 \\
+\quad L, soft tissue & \multicolumn{2}{c}{0.000 / 0.019} & \multicolumn{2}{c}{0.000 / 0.000} & 0.000 / 0.001 \\
+\quad C, gallbladder disc & \multicolumn{2}{c}{0.028 / 0.000} & \multicolumn{2}{c}{0.305 / 0.000} & 0.000 / 0.000 \\
+\quad C, soft tissue & \multicolumn{2}{c}{0.000 / 0.010} & \multicolumn{2}{c}{0.000 / 0.000} & 0.000 / 0.001 \\
+\quad W, bone & \multicolumn{2}{c}{0.000 / 0.250} & \multicolumn{2}{c}{0.000 / 0.000} & 0.000 / 0.000 \\
+\quad W, soft tissue & \multicolumn{2}{c}{0.000 / 0.010} & \multicolumn{2}{c}{0.000 / 0.000} & 0.000 / 0.000 \\
+\quad B, bone & \multicolumn{2}{c}{0.077 / 0.085} & \multicolumn{2}{c}{0.000 / 0.020} & 0.000 / 0.003 \\
+\quad B, soft tissue & \multicolumn{2}{c}{0.104 / 0.009} & \multicolumn{2}{c}{0.000 / 0.000} & 0.000 / 0.000 \\
+\quad A, air (lung) & \multicolumn{2}{c}{0.435 / 0.000} & \multicolumn{2}{c}{0.000 / 0.137} & 0.000 / 0.000 \\
+\quad A, soft tissue & \multicolumn{2}{c}{0.118 / 0.010} & \multicolumn{2}{c}{0.000 / 0.000} & 0.000 / 0.000 \\
+\bottomrule
+\end{tabularx}
+\end{table}

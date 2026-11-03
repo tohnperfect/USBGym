@@ -1,0 +1,39 @@
+
+\begin{table*}[t]
+\caption{Post hoc reanalysis of the offline registration of Table~\ref{tab:registration}. Each real target is run with all 3 seeds and with 3 of the 6 held-out CTs (the same 3 for every seed). Keep-best gain: the pre-specified metric, keep-best minus static organ-restricted IoU. Final-step gain: final minus static IoU, with no selection. Targets: the pre-specified bootstrap over targets. Targets $\times$ seeds and targets $\times$ CTs $\times$ seeds: crossed bootstrap CIs that resample each factor independently (the latter weights the observed cells, since each target meets 3 of the 6 CTs). With 3 seeds and 6 CTs these CIs are still optimistic. Holm: target-level paired $t$-test $p$, Holm-adjusted over the 16 cells. Subjects are not logged, so targets are resampled by frame, not clustered by subject. IoU: static / final / keep-best.}
+\label{tab:registration-crossed}
+\centering
+\renewcommand{\baselinestretch}{1}\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}l cccc c cc c@{}}
+\toprule
+ & \multicolumn{5}{c}{Keep-best gain} & \multicolumn{2}{c}{Final-step gain} & \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}
+Stage & Mean & Targets & Targets $\times$ seeds & Targets $\times$ CTs $\times$ seeds & Holm & Mean & Targets $\times$ CTs $\times$ seeds & IoU \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Vitale holdout~\cite{vitale}, liver, $n = 12$ targets}} \\
+\quad Physics & $+0.028$ & $[+0.007, +0.051]$ & $[+0.000, +0.058]$ & $[-0.016, +0.077]$ & $0.339$ & $+0.017$ & $[-0.050, +0.079]$ & 0.28 / 0.30 / 0.31 \\
+\quad CUT & $+0.020$ & $[+0.008, +0.033]$ & $[-0.005, +0.044]$ & $[-0.015, +0.053]$ & $0.132$ & $+0.016$ & $[-0.036, +0.074]$ & 0.28 / 0.30 / 0.30 \\
+\quad CycleGAN & $+0.030$ & $[+0.014, +0.048]$ & $[+0.010, +0.054]$ & $[-0.002, +0.068]$ & $0.102$ & $+0.028$ & $[-0.024, +0.078]$ & 0.28 / 0.31 / 0.31 \\
+\quad SonoSPADE & $+0.062$ & $[+0.029, +0.098]$ & $[+0.027, +0.104]$ & $[+0.015, +0.140]$ & $0.104$ & $+0.050$ & $[-0.042, +0.155]$ & 0.28 / 0.33 / 0.34 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\textit{Vitale holdout~\cite{vitale}, kidney, $n = 4$ targets}} \\
+\quad Physics & $+0.037$ & $[+0.000, +0.093]$ & $[-0.000, +0.116]$ & $[-0.003, +0.152]$ & $1.000$ & $+0.053$ & $[-0.023, +0.191]$ & 0.02 / 0.07 / 0.05 \\
+\quad CUT & $+0.017$ & $[+0.000, +0.052]$ & $[+0.000, +0.057]$ & $[-0.001, +0.076]$ & $1.000$ & $+0.040$ & $[-0.004, +0.117]$ & 0.02 / 0.06 / 0.03 \\
+\quad CycleGAN & $+0.022$ & $[+0.000, +0.064]$ & $[+0.000, +0.064]$ & $[-0.003, +0.094]$ & $1.000$ & $+0.029$ & $[+0.000, +0.087]$ & 0.02 / 0.05 / 0.04 \\
+\quad SonoSPADE & $+0.044$ & $[+0.000, +0.108]$ & $[+0.000, +0.117]$ & $[+0.000, +0.153]$ & $1.000$ & $+0.045$ & $[-0.026, +0.165]$ & 0.02 / 0.06 / 0.06 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\textit{AUL~\cite{aul}, liver, $n = 60$ targets}} \\
+\quad Physics & $0.000$ & $[-0.009, +0.010]$ & $[-0.022, +0.020]$ & $[-0.026, +0.025]$ & $1.000$ & $-0.002$ & $[-0.049, +0.038]$ & 0.34 / 0.33 / 0.34 \\
+\quad CUT & $+0.013$ & $[+0.004, +0.022]$ & $[+0.000, +0.027]$ & $[-0.005, +0.032]$ & $0.107$ & $+0.012$ & $[-0.011, +0.036]$ & 0.34 / 0.35 / 0.35 \\
+\quad CycleGAN & $+0.004$ & $[-0.005, +0.013]$ & $[-0.009, +0.018]$ & $[-0.014, +0.023]$ & $1.000$ & $-0.002$ & $[-0.030, +0.026]$ & 0.34 / 0.33 / 0.34 \\
+\quad SonoSPADE & $+0.018$ & $[+0.002, +0.034]$ & $[-0.003, +0.038]$ & $[-0.010, +0.045]$ & $0.300$ & $+0.011$ & $[-0.027, +0.048]$ & 0.34 / 0.35 / 0.35 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\textit{KidneyUS holdout~\cite{kidneyus}, kidney, $n = 56$ targets}} \\
+\quad Physics & $-0.014$ & $[-0.026, -0.001]$ & $[-0.039, +0.012]$ & $[-0.050, +0.022]$ & $0.339$ & $-0.056$ & $[-0.093, -0.019]$ & 0.16 / 0.10 / 0.14 \\
+\quad CUT & $-0.010$ & $[-0.024, +0.004]$ & $[-0.035, +0.014]$ & $[-0.042, +0.021]$ & $1.000$ & $-0.063$ & $[-0.108, -0.022]$ & 0.16 / 0.09 / 0.15 \\
+\quad CycleGAN & $-0.002$ & $[-0.018, +0.013]$ & $[-0.024, +0.021]$ & $[-0.033, +0.032]$ & $1.000$ & $-0.070$ & $[-0.114, -0.030]$ & 0.16 / 0.09 / 0.15 \\
+\quad SonoSPADE & $+0.028$ & $[+0.013, +0.044]$ & $[+0.010, +0.047]$ & $[-0.002, +0.059]$ & $0.014$ & $-0.029$ & $[-0.063, +0.006]$ & 0.16 / 0.13 / 0.19 \\
+\bottomrule
+\end{tabular}
+\end{table*}

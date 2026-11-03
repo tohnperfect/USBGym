@@ -1,0 +1,47 @@
+
+\begin{table*}[tbp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Contact off minus contact on, per axis, paired by patient (post hoc, 12 steps). Columns give the patient-level mean absolute error, the paired difference with its 95\% $t$ CI (df 5) and the patients of 6 sharing its sign. The last four columns split the episodes into the 15 windows where the plane is the skin tangent and the 45 where it is tilted from the skin; they are episode means. No multiplicity adjustment is made and no decision is drawn. $^{\dagger}$Privileged.}
+\label{tab:posthoc-contact}
+\centering
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}l l rr l rr rr@{}}
+\toprule
+ & & & & & \multicolumn{2}{c}{On} & \multicolumn{2}{c}{Off} \\
+\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+Rung & Axis & On & Off & Off minus on, 95\% $t$ CI, $k$/6 & Tangent & Tilted & Tangent & Tilted \\
+\midrule
+Scripted sweep & Lateral (mm) & 11.03 & 11.01 & $-0.03$ $[-0.04, -0.01]$, 5/6 & 10.86 & 11.09 & 10.84 & 11.06 \\
+ & Elevational (mm) & 9.71 & 9.68 & $-0.03$ $[-0.06, +0.01]$, 5/6 & 8.57 & 10.09 & 8.56 & 10.06 \\
+ & Axial (mm) & 1.10 & 2.71 & $+1.61$ $[+1.33, +1.88]$, 6/6 & 1.15 & 1.09 & 2.37 & 2.82 \\
+ & Out-of-plane tilt ($^{\circ}$) & 3.57 & 9.67 & $+6.10$ $[+4.78, +7.42]$, 6/6 & 3.75 & 3.52 & 9.91 & 9.60 \\
+ & In-plane tilt ($^{\circ}$) & 3.10 & 8.30 & $+5.20$ $[+3.88, +6.52]$, 6/6 & 3.31 & 3.03 & 7.94 & 8.42 \\
+ & Roll ($^{\circ}$) & 1.89 & 1.89 & $0.00$ $[-0.04, +0.03]$, 3/6 & 1.68 & 1.96 & 1.67 & 1.96 \\
+ & Final (mm) & 15.52 & 15.78 & $+0.26$ $[+0.16, +0.36]$, 6/6 & & & & \\
+\addlinespace[2pt]
+Pose oracle$^{\dagger}$ & Lateral (mm) & 1.08 & 0.85 & $-0.23$ $[-0.48, +0.02]$, 5/6 & 1.06 & 1.08 & 0.94 & 0.82 \\
+ & Elevational (mm) & 0.87 & 0.81 & $-0.05$ $[-0.35, +0.25]$, 4/6 & 0.92 & 0.85 & 0.97 & 0.76 \\
+ & Axial (mm) & 0.10 & 0.33 & $+0.24$ $[+0.14, +0.33]$, 6/6 & 0.09 & 0.10 & 0.41 & 0.31 \\
+ & Out-of-plane tilt ($^{\circ}$) & 0.13 & 0.93 & $+0.80$ $[+0.58, +1.01]$, 6/6 & 0.11 & 0.14 & 0.95 & 0.92 \\
+ & In-plane tilt ($^{\circ}$) & 0.17 & 0.92 & $+0.75$ $[+0.52, +0.98]$, 6/6 & 0.12 & 0.18 & 1.04 & 0.87 \\
+ & Roll ($^{\circ}$) & 0.93 & 0.31 & $-0.62$ $[-1.00, -0.23]$, 6/6 & 0.77 & 0.98 & 0.29 & 0.32 \\
+ & Final (mm) & 1.53 & 1.36 & $-0.17$ $[-0.29, -0.05]$, 5/6 & & & & \\
+\addlinespace[2pt]
+CT-mask servo base$^{\dagger}$ & Lateral (mm) & 6.78 & 8.79 & $+2.02$ $[+1.78, +2.25]$, 6/6 & 6.62 & 6.83 & 8.58 & 8.86 \\
+ & Elevational (mm) & 8.08 & 9.38 & $+1.30$ $[+0.58, +2.02]$, 5/6 & 8.02 & 8.10 & 9.15 & 9.46 \\
+ & Axial (mm) & 0.94 & 3.08 & $+2.14$ $[+1.88, +2.39]$, 6/6 & 1.09 & 0.89 & 3.17 & 3.05 \\
+ & Out-of-plane tilt ($^{\circ}$) & 3.10 & 7.85 & $+4.76$ $[+3.68, +5.83]$, 6/6 & 3.39 & 3.00 & 8.55 & 7.62 \\
+ & In-plane tilt ($^{\circ}$) & 3.28 & 7.02 & $+3.73$ $[+3.33, +4.14]$, 6/6 & 3.98 & 3.05 & 7.86 & 6.74 \\
+ & Roll ($^{\circ}$) & 4.14 & 4.43 & $+0.28$ $[-0.74, +1.31]$, 4/6 & 4.12 & 4.15 & 4.92 & 4.26 \\
+ & Final (mm) & 11.65 & 14.63 & $+2.98$ $[+2.51, +3.45]$, 6/6 & & & & \\
+\addlinespace[2pt]
+CT mask$^{\dagger}$, final, four stages & Lateral (mm) & 6.86 & 8.71 & $+1.85$ $[+1.53, +2.16]$, 6/6 & 6.76 & 6.89 & 8.68 & 8.72 \\
+ & Elevational (mm) & 8.16 & 9.50 & $+1.34$ $[+0.71, +1.97]$, 6/6 & 8.19 & 8.15 & 9.45 & 9.52 \\
+ & Axial (mm) & 0.90 & 2.83 & $+1.93$ $[+1.69, +2.16]$, 6/6 & 1.06 & 0.85 & 2.95 & 2.79 \\
+ & Out-of-plane tilt ($^{\circ}$) & 3.21 & 7.90 & $+4.69$ $[+3.70, +5.67]$, 6/6 & 3.53 & 3.11 & 8.72 & 7.63 \\
+ & In-plane tilt ($^{\circ}$) & 3.67 & 7.62 & $+3.95$ $[+3.50, +4.41]$, 6/6 & 4.45 & 3.41 & 8.36 & 7.38 \\
+ & Roll ($^{\circ}$) & 4.15 & 4.33 & $+0.18$ $[-0.58, +0.93]$, 5/6 & 4.21 & 4.13 & 4.84 & 4.16 \\
+ & Final (mm) & 11.71 & 14.58 & $+2.87$ $[+2.21, +3.52]$, 6/6 & & & & \\
+\bottomrule
+\end{tabular}
+\end{table*}

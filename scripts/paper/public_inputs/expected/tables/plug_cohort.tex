@@ -1,0 +1,61 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Plug-cohort rows: each plugged method rerun with its frozen artifacts on the 20 cohort CTs (exploratory; no decision). Mask-source rows are servo bases with the residual off, as on the six patients, and so are the texture rows. Renderer rows are policies trained and evaluated under each renderer, so their six-patient errors differ from Table~\ref{tab:pluggability} of the article. Errors: mean over patients or CTs of the seed-mean final translation error. The last column is a difference of two means, with no interval and no test. $^{\dagger}$Privileged: simulator state that no rig provides. $^{\ddagger}$Fewer seeds than designed: seed 0 only.}
+\label{tab:plug-cohort}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r r r@{}}
+\toprule
+Slot and row & \begin{tabular}[b]{@{}r@{}}Six patients\\(mm)\end{tabular} & \begin{tabular}[b]{@{}r@{}}20 CTs\\(mm)\end{tabular} & \begin{tabular}[b]{@{}r@{}}20 CTs, minus\\the reference (mm)\end{tabular} \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Texture stage: learned masks from each stage's matched U-Net; servo base, residual off}} \\
+\quad SonoSPADE (authors'), reference & 13.13 & 13.71 &  \\
+\quad None, physics frame (authors') & 17.20 & 15.75 & $+2.04$ \\
+\quad CUT (prior) & 16.84 & 16.31 & $+2.60$ \\
+\quad CycleGAN (prior) & 16.85 & 16.14 & $+2.43$ \\
+\quad FastCUT & 16.13 & 16.25 & $+2.54$ \\
+\quad DCLGAN & 16.94 & 16.44 & $+2.73$ \\
+\quad UNSB (Schr\"{o}dinger bridge) & 17.64 & 16.79 & $+3.08$ \\
+\quad Histogram matching & 16.95 & 16.02 & $+2.31$ \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Mask source: SonoSPADE frames; servo base fitted under each mask, residual off}} \\
+\quad U-Net, stage-matched (authors'), reference & 13.13 & 13.71 &  \\
+\quad LR-ASPP, MobileNetV3-L & 12.76 & 13.94 & $+0.23$ \\
+\quad DeepLabV3, MobileNetV3-L & 14.54 & 14.39 & $+0.68$ \\
+\quad DeepLabV3, ResNet-50 & 13.20 & 13.42 & $-0.29$ \\
+\quad FCN, ResNet-50 & 12.81 & 13.31 & $-0.40$ \\
+\quad nnU-Net 2D, 2 epochs & 14.88 & 14.64 & $+0.93$ \\
+\quad nnU-Net 2D, 20 epochs$^{\ddagger}$ & 12.76 & 12.99 & $-0.72$ \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Controller: SonoSPADE frames; CT mask$^{\dagger}$; each plugged controller}} \\
+\quad REINFORCE residual, imitation start (authors'), reference & 11.69 & 12.66 &  \\
+\quad Servo base alone (authors') & 11.65 & 12.64 & $-0.02$ \\
+\quad PPO, residual & 11.50 & 12.54 & $-0.12$ \\
+\quad SAC, residual & 12.06 & 13.31 & $+0.65$ \\
+\quad TD3, residual & 20.22 & 20.46 & $+7.80$ \\
+\quad A2C, residual & 18.43 & 18.90 & $+6.24$ \\
+\quad PPO, full twist & 14.34 & 14.72 & $+2.07$ \\
+\quad DQN, 13 discrete moves & 16.41 & 16.06 & $+3.40$ \\
+\quad BC, residual & 11.25 & 11.66 & $-1.00$ \\
+\quad DAgger, residual & 10.85 & 12.33 & $-0.33$ \\
+\quad BC, full twist & 19.60 & 21.37 & $+8.71$ \\
+\quad DAgger, full twist & 17.66 & 19.31 & $+6.66$ \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Reward: SonoSPADE frames; CT mask$^{\dagger}$; REINFORCE residual trained with each potential}} \\
+\quad Match score $S$ (authors'), reference & 11.971 & 12.667 &  \\
+\quad Organ overlap only (authors') & 11.906 & 12.660 & $-0.007$ \\
+\quad Appearance NCC only (authors') & 12.065 & 12.711 & $+0.045$ \\
+\quad NCC over the whole sector (authors') & 11.994 & 12.681 & $+0.014$ \\
+\quad SSIM appearance term & 11.924 & 12.665 & $-0.002$ \\
+\quad NMI appearance term & 11.976 & 12.668 & $+0.001$ \\
+\quad Change in pose distance$^{\dagger}$ & 11.922 & 12.669 & $+0.002$ \\
+\quad Pose distance plus organ area$^{\dagger}$ & 11.900 & 12.621 & $-0.046$ \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Renderer: CT mask$^{\dagger}$; policy trained and evaluated under each renderer}} \\
+\quad Physics renderer (authors'), reference & 11.81 & 12.80 &  \\
+\quad LOTUS, original code, published default parameters & 11.69 & 12.55 & $-0.25$ \\
+\quad LOTUS, authors' reimplementation & 11.77 & 12.60 & $-0.19$ \\
+\bottomrule
+\end{tabularx}
+\end{table}

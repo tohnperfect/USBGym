@@ -1,0 +1,109 @@
+{
+ "arrays": "outputs/v2/fig1/matched_layout_rows.npz",
+ "arrays_md5": "see MANIFEST.tsv",
+ "arrays_sidecar": "outputs/v2/fig1/matched_layout_rows.json",
+ "best_iou_summary": {
+  "coarse_median": 0.4665128141641617,
+  "mean": 0.5428493190855129,
+  "median": 0.5608829716021488,
+  "p25": 0.42473721131899944,
+  "p75": 0.8058337545977753
+ },
+ "columns": [
+  "Real frame",
+  "Annotation",
+  "Matched CT label",
+  "Physics",
+  "CUT",
+  "CycleGAN",
+  "SonoSPADE"
+ ],
+ "crop_rows_cols": [
+  [
+   0,
+   113
+  ],
+  [
+   15,
+   123
+  ]
+ ],
+ "crop_rule": "union over all panels of pixels > 4/255, padded by 2 px",
+ "image_dpi": 600,
+ "n_frames": 60,
+ "printed_size_in": [
+  5.3748443337484435,
+  6.412221266810308
+ ],
+ "real": {
+  "md5": "see EXCLUDED.tsv",
+  "n": 60,
+  "path": "data/eval/kaggle_vitale_test.npz"
+ },
+ "rows": [
+  {
+   "best_iou": 0.8736642127760627,
+   "case": "s0591",
+   "frame": 16,
+   "reason": "stratum liver (n=18)",
+   "session": "b12"
+  },
+  {
+   "best_iou": 0.7045653292472567,
+   "case": "s0358",
+   "frame": 45,
+   "reason": "stratum liver+gallbladder (n=11)",
+   "session": "h32"
+  },
+  {
+   "best_iou": 0.25,
+   "case": "s0358",
+   "frame": 30,
+   "reason": "stratum vessel (n=10)",
+   "session": "g3"
+  },
+  {
+   "best_iou": 0.5407367392530164,
+   "case": "s0513",
+   "frame": 23,
+   "reason": "stratum liver+vessel (n=5)",
+   "session": "b6"
+  },
+  {
+   "best_iou": 0.8076580587711487,
+   "case": "s0649",
+   "frame": 51,
+   "reason": "stratum kidney (n=5)",
+   "session": "h65"
+  },
+  {
+   "best_iou": 0.650591461802802,
+   "case": "s0591",
+   "frame": 47,
+   "reason": "stratum liver+kidney (n=3)",
+   "session": "h42"
+  },
+  {
+   "best_iou": 0.8589804668889948,
+   "case": "s0519",
+   "frame": 22,
+   "reason": "global IoU rank",
+   "session": "b4"
+  },
+  {
+   "best_iou": 0.8487998020292007,
+   "case": "s0519",
+   "frame": 13,
+   "reason": "global IoU rank",
+   "session": "a44"
+  }
+ ],
+ "source_json": "outputs/v2/fig1/matched_layout.json",
+ "source_md5": "see MANIFEST.tsv",
+ "stage_order": [
+  "physics",
+  "cut",
+  "cyclegan",
+  "sonospade"
+ ]
+}

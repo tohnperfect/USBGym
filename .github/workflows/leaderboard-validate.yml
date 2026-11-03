@@ -1,0 +1,76 @@
+# Validates a leaderboard issue (label leaderboard-submission) and keeps one comment on it up to date with the row it
+# would add, the maintainer-run queue answer, or the errors.
+#
+# Safety: the issue body is untrusted. It reaches the validator only through an environment variable that is
+# written to a file; no ${{ }} expression appears in a run line. The validator reads the pasted JSON and never
+# imports or runs submitted code, and every value it echoes is escaped. The job can read the repository and write
+# issue comments, nothing else.
+#
+# Triggers: opened, an edit of the body (a title-only edit does not rerun), and the leaderboard-submission label
+# being added. The form applies that label when the issue is opened, so an issue from the form starts two runs; the
+# concurrency group cancels one, and the comment is updated in place, so the issue keeps one comment.
+name: leaderboard validation
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: leaderboard-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: >-
+      github.repository == 'tohnperfect/USBGym' &&
+      contains(github.event.issue.labels.*.name, 'leaderboard-submission') &&
+      (github.event.action != 'labeled' || github.event.label.name == 'leaderboard-submission') &&
+      (github.event.action != 'edited' || github.event.changes.body != null)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install the checked-out package (validation needs numpy and scipy only)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "numpy>=2.0" "scipy>=1.13" -c .github/ci-constraints.txt
+          python -m pip install --no-deps -e .
+
+      - name: Write the issue body to a file
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: printf '%s' "$ISSUE_BODY" > "$RUNNER_TEMP/issue_body.md"
+
+      - name: Validate the pasted submission.json or gate record
+        run: |
+          python -m usbg.leaderboard validate --issue-body "$RUNNER_TEMP/issue_body.md" \
+            --comment-out "$RUNNER_TEMP/comment.md" || echo "validation reported errors (see the comment)"
+
+      - name: Comment the result (one comment per issue, updated in place)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          f="$RUNNER_TEMP/comment.md"
+          marker='<!-- usbg-leaderboard-validation -->'
+          if [ ! -s "$f" ]; then
+            printf '%s\n%s\n' "$marker" "**Leaderboard validation: internal error.** The validator wrote no result; a maintainer will look." > "$f"
+          fi
+          id=$(gh api "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/comments" --paginate \
+                 --jq ".[] | select(.user.login == \"github-actions[bot]\" and (.body | contains(\"$marker\"))) | .id" | head -n 1)
+          if [ -n "$id" ]; then
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$id" -F "body=@$f" > /dev/null
+          else
+            gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body-file "$f"
+          fi

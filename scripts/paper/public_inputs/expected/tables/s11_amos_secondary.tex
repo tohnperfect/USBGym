@@ -1,0 +1,28 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Secondary comparisons of the AMOS cohort (secondary; no family beyond C3, no decision). Top: REINFORCE final minus after imitation per policy arm, mean with its 90\% $t$ CI. Each arm prints its sign-flip TOST $p$ at $\pm 1$~mm (Monte Carlo, 1,000,000 sign vectors, seed 0); the last row averages the 8 arms. Bottom: the four contrasts without the 9 CTs whose aorta median is at least 300~HU.}
+\label{tab:s11-amos-secondary}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l c l@{}}
+\toprule
+Row & Estimate (mm), CI & $k$/$n$ & TOST $p$ or $n$ \\
+\midrule
+\quad RL change, CT masks, physics & $+0.18$, 90\% $[+0.09, +0.26]$ & 23/30 & $1.0 \times 10^{-6}$ \\
+\quad RL change, CT masks, CUT & $+0.01$, 90\% $[-0.08, +0.09]$ & 17/30 & $1.0 \times 10^{-6}$ \\
+\quad RL change, CT masks, CycleGAN & $+0.05$, 90\% $[-0.02, +0.12]$ & 18/30 & $1.0 \times 10^{-6}$ \\
+\quad RL change, CT masks, SonoSPADE & $+0.06$, 90\% $[-0.05, +0.16]$ & 15/30 & $1.0 \times 10^{-6}$ \\
+\quad RL change, learned masks, physics & $+0.13$, 90\% $[-0.04, +0.30]$ & 19/30 & $1.0 \times 10^{-6}$ \\
+\quad RL change, learned masks, CUT & $+0.52$, 90\% $[+0.20, +0.84]$ & 20/30 & $0.009$ \\
+\quad RL change, learned masks, CycleGAN & $+0.22$, 90\% $[+0.05, +0.39]$ & 21/30 & $1.0 \times 10^{-6}$ \\
+\quad RL change, learned masks, SonoSPADE & $+0.22$, 90\% $[+0.10, +0.35]$ & 23/30 & $1.0 \times 10^{-6}$ \\
+\quad Average over the 8 arms & $+0.17$, 95\% $[+0.07, +0.27]$ & 22/30 & $1.0 \times 10^{-6}$ \\
+\addlinespace
+\quad C1: learned minus CT masks, physics, final policy, without the opacified aortas & $+4.20$, 95\% $[+3.44, +4.95]$ & 20/21 & $n = 21$ \\
+\quad C2: SonoSPADE minus physics, learned-mask servo base, without the opacified aortas & $-2.47$, 95\% $[-3.26, -1.67]$ & 18/21 & $n = 21$ \\
+\quad Gap: CT-mask servo base minus pose oracle, without the opacified aortas & $+10.46$, 95\% $[+9.56, +11.36]$ & 21/21 & $n = 21$ \\
+\quad Bound: privileged look-ahead (seed 0) minus CT-mask servo base, without the opacified aortas & $-4.08$, 95\% $[-5.01, -3.14]$ & 21/21 & $n = 21$ \\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -1,0 +1,482 @@
+{
+ "about": "The row order of Table C.1 of the USB Gym article (Appendix C): per row, its slot, leaderboard row id, role, level (1: the reference's seed-0 line and the rows run at seed 0 only) and printed error (mm). LEADERBOARD.md lists the published rows in this order (tests/test_leaderboard_order.py).",
+ "n_rows": 68,
+ "rows": [
+  {
+   "slot": "texture",
+   "id": "texture/sonospade",
+   "role": "reference",
+   "level": 0,
+   "error": "13.13"
+  },
+  {
+   "slot": "texture",
+   "id": "texture/label_painted",
+   "role": "secondary",
+   "level": 0,
+   "error": "14.22"
+  },
+  {
+   "slot": "texture",
+   "id": "texture/fastcut",
+   "role": "family",
+   "level": 0,
+   "error": "16.13"
+  },
+  {
+   "slot": "texture",
+   "id": "texture/cut",
+   "role": "secondary",
+   "level": 0,
+   "error": "16.84"
+  },
+  {
+   "slot": "texture",
+   "id": "texture/cyclegan",
+   "role": "secondary",
+   "level": 0,
+   "error": "16.85"
+  },
+  {
+   "slot": "texture",
+   "id": "texture/dclgan",
+   "role": "family",
+   "level": 0,
+   "error": "16.94"
+  },
+  {
+   "slot": "texture",
+   "id": "texture/histmatch",
+   "role": "family",
+   "level": 0,
+   "error": "16.95"
+  },
+  {
+   "slot": "texture",
+   "id": "texture/physics",
+   "role": "secondary",
+   "level": 0,
+   "error": "17.20"
+  },
+  {
+   "slot": "texture",
+   "id": "texture/unsb",
+   "role": "family",
+   "level": 0,
+   "error": "17.64"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/unet",
+   "role": "reference",
+   "level": 0,
+   "error": "13.13"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/deeplabv3_r50_imnet",
+   "role": "second family",
+   "level": 0,
+   "error": "12.62"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/deeplabv3_mbv3_imnet",
+   "role": "second family",
+   "level": 0,
+   "error": "12.66"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/lraspp_mbv3",
+   "role": "family",
+   "level": 0,
+   "error": "12.76"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/fcn_r50_imnet",
+   "role": "second family",
+   "level": 0,
+   "error": "12.77"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/fcn_r50",
+   "role": "family",
+   "level": 0,
+   "error": "12.81"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/deeplabv3_r50",
+   "role": "family",
+   "level": 0,
+   "error": "13.20"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/lraspp_mbv3_imnet",
+   "role": "second family",
+   "level": 0,
+   "error": "13.25"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/samus_unet@s0-2",
+   "role": "secondary",
+   "level": 0,
+   "error": "13.98"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/deeplabv3_mbv3",
+   "role": "family",
+   "level": 0,
+   "error": "14.54"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/nnunet2d",
+   "role": "family",
+   "level": 0,
+   "error": "14.88"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/ct",
+   "role": "privileged",
+   "level": 0,
+   "error": "11.65"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/samus_priv@s0-2",
+   "role": "privileged",
+   "level": 0,
+   "error": "13.48"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/unet@seed0",
+   "role": "reference",
+   "level": 1,
+   "error": "13.33"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/nnunet2d_e20",
+   "role": "secondary",
+   "level": 1,
+   "error": "12.76"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/medsam_unet",
+   "role": "family",
+   "level": 1,
+   "error": "12.85"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/samus_unet",
+   "role": "second family",
+   "level": 1,
+   "error": "14.29"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/sam_unet",
+   "role": "family",
+   "level": 1,
+   "error": "14.32"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/medsam_priv",
+   "role": "privileged",
+   "level": 1,
+   "error": "12.12"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/sam_priv",
+   "role": "privileged",
+   "level": 1,
+   "error": "12.60"
+  },
+  {
+   "slot": "mask",
+   "id": "mask/samus_priv",
+   "role": "privileged",
+   "level": 1,
+   "error": "13.52"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/reinforce",
+   "role": "reference",
+   "level": 0,
+   "error": "11.69"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/dagger_res",
+   "role": "family",
+   "level": 0,
+   "error": "10.85"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/bc_res",
+   "role": "family",
+   "level": 0,
+   "error": "11.25"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/ppo_res",
+   "role": "family",
+   "level": 0,
+   "error": "11.50"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/servo_base",
+   "role": "secondary",
+   "level": 0,
+   "error": "11.65"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/reinforce_bneval",
+   "role": "secondary",
+   "level": 0,
+   "error": "11.70"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/sac_res",
+   "role": "family",
+   "level": 0,
+   "error": "12.06"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/bc_res@bn_train",
+   "role": "secondary",
+   "level": 0,
+   "error": "12.67"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/dagger_res@bn_train",
+   "role": "secondary",
+   "level": 0,
+   "error": "12.89"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/ppo_scratch",
+   "role": "family",
+   "level": 0,
+   "error": "14.34"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/dagger_scratch@bn_train",
+   "role": "secondary",
+   "level": 0,
+   "error": "15.15"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/bc_scratch@bn_train",
+   "role": "secondary",
+   "level": 0,
+   "error": "15.75"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/dqn_scratch",
+   "role": "family",
+   "level": 0,
+   "error": "16.41"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/dagger_scratch",
+   "role": "family",
+   "level": 0,
+   "error": "17.66"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/a2c_res",
+   "role": "family",
+   "level": 0,
+   "error": "18.43"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/bc_scratch",
+   "role": "family",
+   "level": 0,
+   "error": "19.60"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/td3_res",
+   "role": "family",
+   "level": 0,
+   "error": "20.22"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/reinforce@seed0",
+   "role": "reference",
+   "level": 1,
+   "error": "11.79"
+  },
+  {
+   "slot": "ctrl",
+   "id": "ctrl/cem",
+   "role": "privileged",
+   "level": 1,
+   "error": "6.98"
+  },
+  {
+   "slot": "reward",
+   "id": "reward/paper",
+   "role": "reference",
+   "level": 0,
+   "error": "11.97"
+  },
+  {
+   "slot": "reward",
+   "id": "reward/lpips",
+   "role": "second family",
+   "level": 0,
+   "error": "11.90"
+  },
+  {
+   "slot": "reward",
+   "id": "reward/seg_only",
+   "role": "secondary",
+   "level": 0,
+   "error": "11.91"
+  },
+  {
+   "slot": "reward",
+   "id": "reward/ssim",
+   "role": "family",
+   "level": 0,
+   "error": "11.92"
+  },
+  {
+   "slot": "reward",
+   "id": "reward/nmi",
+   "role": "family",
+   "level": 0,
+   "error": "11.98"
+  },
+  {
+   "slot": "reward",
+   "id": "reward/ncc_sector",
+   "role": "secondary",
+   "level": 0,
+   "error": "11.99"
+  },
+  {
+   "slot": "reward",
+   "id": "reward/ncc_only",
+   "role": "secondary",
+   "level": 0,
+   "error": "12.06"
+  },
+  {
+   "slot": "reward",
+   "id": "reward/pose_area",
+   "role": "privileged",
+   "level": 0,
+   "error": "11.90"
+  },
+  {
+   "slot": "reward",
+   "id": "reward/pose",
+   "role": "privileged",
+   "level": 0,
+   "error": "11.92"
+  },
+  {
+   "slot": "renderer",
+   "id": "renderer/physics",
+   "role": "reference",
+   "level": 0,
+   "error": "11.81"
+  },
+  {
+   "slot": "renderer",
+   "id": "renderer/lotus_orig",
+   "role": "family",
+   "level": 0,
+   "error": "11.84"
+  },
+  {
+   "slot": "renderer",
+   "id": "renderer/lotus_reimpl",
+   "role": "family",
+   "level": 0,
+   "error": "11.86"
+  },
+  {
+   "slot": "renderer",
+   "id": "renderer/physics@seed0",
+   "role": "reference",
+   "level": 1,
+   "error": "11.91"
+  },
+  {
+   "slot": "renderer",
+   "id": "renderer/simus",
+   "role": "secondary",
+   "level": 1,
+   "error": "12.40"
+  },
+  {
+   "slot": "anatomy",
+   "id": "anatomy/R1",
+   "role": "family",
+   "level": 0,
+   "error": "11.73"
+  },
+  {
+   "slot": "anatomy",
+   "id": "anatomy/R2",
+   "role": "family",
+   "level": 0,
+   "error": "16.58"
+  },
+  {
+   "slot": "anatomy",
+   "id": "anatomy/R3",
+   "role": "family",
+   "level": 0,
+   "error": "12.62"
+  },
+  {
+   "slot": "anatomy",
+   "id": "anatomy/R4",
+   "role": "family",
+   "level": 0,
+   "error": "11.70"
+  },
+  {
+   "slot": "anatomy",
+   "id": "anatomy/R5",
+   "role": "family",
+   "level": 0,
+   "error": "11.62"
+  }
+ ]
+}

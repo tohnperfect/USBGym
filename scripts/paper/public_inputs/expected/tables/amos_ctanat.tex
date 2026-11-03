@@ -1,0 +1,19 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{CT-anatomy context (descriptive): the five CT-anatomy rungs of the original six on TotalSegmentator labels beside the same rungs on the 30 AMOS CTs. The two columns share the label model and differ in CT source, patients, $n$, the labels of the calibration fit and the window source; they are never pooled, and no difference across them is printed. Error: final translation error, mean over seeds of case means.}
+\label{tab:amos-ctanat}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r l c@{}}
+\toprule
+Rung & \begin{tabular}[b]{@{}r@{}}Original six,\\TotalSegmentator labels (mm)\end{tabular} & \begin{tabular}[b]{@{}l@{}}AMOS (mm),\\95\% $t$ CI\end{tabular} & AMOS $n$ \\
+\midrule
+\quad CT-mask servo base, physics & 11.73 & 12.18 $[11.46, 12.89]$ & 30 \\
+\quad Learned-mask servo base, physics & 16.58 & 16.63 $[16.02, 17.24]$ & 30 \\
+\quad Learned-mask servo base, SonoSPADE & 12.62 & 13.91 $[13.16, 14.65]$ & 30 \\
+\quad CT-mask policy, physics, final weights & 11.70 & 12.36 $[11.65, 13.07]$ & 30 \\
+\quad CT-mask policy, SonoSPADE, final weights & 11.62 & 12.24 $[11.52, 12.96]$ & 30 \\
+\bottomrule
+\end{tabularx}
+\end{table}

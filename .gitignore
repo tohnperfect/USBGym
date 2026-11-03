@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing and typing caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local data: CT volumes, label caches, real frames, datasets (never committed)
+/data/
+*.nii
+*.nii.gz
+*.npz
+cache/
+*.cache
+
+# Model checkpoints, run outputs and generated media
+*.pt
+*.pth
+*.ckpt
+runs/
+outputs/
+*.png
+*.jpg
+*.jpeg
+*.mp4
+*.gif
+
+# Logs
+*.log
+wandb/
+
+# Leaderboard working files (SUBMITTING.md): the fetched release assets, gate records and result files
+/assets/
+/submission*.json
+/gate*.json

@@ -1,0 +1,37 @@
+
+\begin{table}[tp]
+\caption{Contact and domain-randomization (DR) contrasts on the final pose error (mm), 6 held-out patients, 3 seeds, the crossed episodes of Table~\ref{tab:ladder}. Contact rows: contact switched off at evaluation only, minus contact on, for every rung. The static start never moves, so its delta is 0 to numerical precision. The reference rungs and the CT-mask servo base do not depend on the texture stage and give one value (all). DR rows: the SonoSPADE CT-mask arm with DR in evaluation, in training, or in both, minus the same arm without DR (11.69~mm); these rows are descriptive. Each row gives the mean of per-patient paired differences, a 95\% patient-cluster bootstrap CI and the number of patients that share the sign of the mean. $^{\ast}$: a difference under the CI-and-sign rule. $^{\mathrm{H}}$: also passes Holm on the paired $t$-test over the 16 contact rows (post hoc; Supplementary Table~S2.18); 5 of the 14 starred rows do not.}
+\label{tab:contact-dr}
+\centering
+\renewcommand{\baselinestretch}{1}\small
+\begin{tabular}{@{}llrcc@{}}
+\toprule
+Rung & Stage & Mean & 95\% CI & $k$/6 \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Contact off minus on}} \\
+Static start & all & $0.00$ & $[0.00, 0.00]$ & n/a \\
+Scripted sweep & all & $+0.26$$^{\ast}$$^{\mathrm{H}}$ & $[+0.19, +0.33]$ & 6/6 \\
+Pose oracle (privileged) & all & $-0.17$$^{\ast}$ & $[-0.25, -0.08]$ & 5/6 \\
+\addlinespace
+Servo base, CT mask & all & $+2.98$$^{\ast}$$^{\mathrm{H}}$ & $[+2.63, +3.29]$ & 6/6 \\
+Servo base, learned & Physics & $+0.88$$^{\ast}$ & $[+0.22, +1.35]$ & 5/6 \\
+ & CUT & $+1.26$$^{\ast}$$^{\mathrm{H}}$ & $[+0.75, +1.70]$ & 6/6 \\
+ & CycleGAN & $+0.83$$^{\ast}$ & $[+0.33, +1.36]$ & 6/6 \\
+ & SonoSPADE & $+1.86$$^{\ast}$$^{\mathrm{H}}$ & $[+1.64, +2.07]$ & 6/6 \\
+\addlinespace
+Final servo, CT mask & Physics & $+2.96$$^{\ast}$$^{\mathrm{H}}$ & $[+2.55, +3.38]$ & 6/6 \\
+ & CUT & $+2.87$$^{\ast}$$^{\mathrm{H}}$ & $[+2.44, +3.25]$ & 6/6 \\
+ & CycleGAN & $+2.72$$^{\ast}$$^{\mathrm{H}}$ & $[+2.16, +3.28]$ & 6/6 \\
+ & SonoSPADE & $+2.92$$^{\ast}$$^{\mathrm{H}}$ & $[+2.39, +3.42]$ & 6/6 \\
+Final servo, learned & Physics & $+0.82$ & $[+0.08, +1.56]$ & 4/6 \\
+ & CUT & $+1.04$$^{\ast}$ & $[+0.65, +1.56]$ & 6/6 \\
+ & CycleGAN & $+0.92$$^{\ast}$ & $[+0.32, +1.68]$ & 6/6 \\
+ & SonoSPADE & $+1.97$$^{\ast}$$^{\mathrm{H}}$ & $[+1.50, +2.42]$ & 6/6 \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{DR minus no DR, SonoSPADE, CT mask (descriptive)}} \\
+\multicolumn{2}{@{}l}{DR in evaluation only} & $+0.04$ & $[-0.01, +0.12]$ & 3/6 \\
+\multicolumn{2}{@{}l}{DR in training only} & $+0.10$ & $[-0.06, +0.29]$ & 5/6 \\
+\multicolumn{2}{@{}l}{DR in training and evaluation} & $+0.15$ & $[-0.07, +0.37]$ & 4/6 \\
+\bottomrule
+\end{tabular}
+\end{table}

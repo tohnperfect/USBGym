@@ -1,0 +1,40 @@
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Controls and exploratory tests (exploratory, pre-specified rules). Each row gives the question that the analysis answers, its criterion fixed before the data and its outcome. Q8 to Q13 and Q2R are questions of the pre-specified exploratory analyses.}
+\label{tab:checks}
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.19\textwidth} >{\raggedright\arraybackslash\hsize=0.75\hsize}X >{\raggedright\arraybackslash\hsize=1.25\hsize}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Analysis & Question & Criterion fixed before the data & Outcome \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Controls}} \\
+Independent target speckle & Does the appearance score match the shared speckle field instead of the anatomy? & Report the change in final error when the target's speckle is independent of the observation's, with its paired $t$ interval. A change above 1~mm adds a caveat to that row. & All 4 rows change by less than 1~mm (from $-0.63$ to $+0.05$~mm). No row carries the caveat. \\[2pt]
+Positive control of the RL slot & Can a Stable-Baselines3 (SB3) learner learn an easy variant of the task in the reinforcement-learning slot? & Pass if SB3 PPO ends within 3~mm of the pose oracle in all 3 seeds at 57,600 steps. The test uses an easy privileged variant with pose observations and a pose reward, on training patients. & PASS in 3 of 3 seeds. The learner ends at 2.40 to 2.58~mm, against a pass bound of 4.43~mm (oracle 1.43~mm plus 3~mm). \\[2pt]
+Plugged methods on the 20-CT cohort & Does the ordering of methods recur beyond the six held-out patients? & Descriptive: Kendall $\tau_b$ against the original six with a bootstrap interval, the sign-keeping of pairwise differences, and the minimum detectable difference. No decision is attached. & Pairwise orderings of the original six kept on 20 new CTs: controller 63 of 66, reward 25 of 28, renderer 3 of 3, mask source 16 of 21, texture 17 of 28. Kendall $\tau_b$ ranges from 0.21 [0.00, 0.64] to 1.00 [0.33, 1.00]. Pre-specified MDDs: 0.13 to 3.51~mm at $n = 6$, 0.058 to 1.40~mm at 20 and 0.055 to 1.24~mm at 26 (\ref{app:decisions-cohort}). \\[2pt]
+\bottomrule
+\end{tabularx}
+\end{table*}
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\ContinuedFloat
+\caption[]{Continued.}
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.19\textwidth} >{\raggedright\arraybackslash\hsize=0.75\hsize}X >{\raggedright\arraybackslash\hsize=1.25\hsize}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Analysis & Question & Criterion fixed before the data & Outcome \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Exploratory tests}} \\
+BatchNorm in eval mode and 36-step experiments & Do the results depend on BatchNorm in train mode, and is the servo's error a horizon limit? & Eval minus train mode per arm, with its $t$ interval. A horizon effect if the CT-mask servo's 36-step minus 12-step change is at most $-1$~mm and below 0 under a paired $t$-test, with at least 5 of 6 patients. & BatchNorm in eval mode changes pre-specified outcomes, so both modes are reported. No horizon effect: at 36 steps the CT-mask servo base changes by $+6.69$~mm $[+4.96, +8.43]$, 6/6. \\[2pt]
+Q8, cause of the oracle-to-CT-mask gap (the gap between the pose oracle and the CT-mask servo) & Does the gap come from the controller or from the mask information? & Classify the gap as controller-limited, information-limited or mixed. The classes use the poses that score within 0.01 of the target, rescored on fresh speckle. They also use one-sided $t$ bounds on a privileged look-ahead that queries the simulator, with margins of 3~mm and 1~mm. & Mixed class: both single-cause classes fail on their bound clauses. Rescoring on fresh speckle covers all 7 conditions, and the class stays mixed, decided without the rescoring. The primary bound is the mean over sampling seeds 0 to 2. \\[2pt]
+Q9-A, hill-climb on the match score & Is the servo base's error the limit of pose-free control? & Paired $t$-test with Holm over 2 contrasts (CT and learned masks), and at least 5 of 6 patients sharing the sign. & Under CT masks the hill-climb ends 4.03~mm above the servo base, 5/6 (Holm $p$ 0.041); under learned masks no difference is detected. \\[2pt]
+Q10, label-information controls & Does a learned-mask lead come from label information given to a label-conditioned stage? & Paired $t$-tests with Holm in three families, one-sided for the closed loop. A stage that paints the labels onto the physics frame is tested for equivalence at 1~mm. & Rendered masks follow the offset and permuted labels; the closed loop does not detectably follow the offsets, and permuted organ identities raise the error. The label-painted stage lowers the error from physics, but its equivalence with SonoSPADE is not shown, so its class is unresolved. \\[2pt]
+Q11, texture budget and texture seeds & Does a stage lead come from an unequal training budget or from a single texture seed? & Paired $t$-test with Holm over 3 contrasts, and at least 5 of 6 patients sharing the sign. & SonoSPADE stays lower than budget-matched CUT, CycleGAN and physics in all 3 contrasts (Holm $p$ 0.014 each). \\[2pt]
+Q12, keep-best nulls on real frames & Does a keep-best gain on real frames come from selection by the score rather than from directed control? & Subject-level exact sign-flip test with Holm over 8 testable cells, plus a crossed bootstrap interval. & Selection by the score beats a random state of the same trajectory in 1 of 8 cells (SonoSPADE, kidney); the policy's keep-best gain exceeds matched undirected motion in 0 of 8. \\[2pt]
+Q13, positive control of REINFORCE & Can REINFORCE remove a planted deficit when one exists? & One-sided paired $t$-test with Holm over 3 variants, at least 5 of 6 patients, and every seed at 50\% recovery or more. & None of the 3 settings removes half of the planted deficit (Holm $p$ 1.000 each). The planted bias failed the reward-visibility rule, so the outcome is inconclusive. Nor does any setting remove half of the secondary deficit, which halves the servo base's command at execution (Holm $p$ 1.000 each). \\[2pt]
+Q2R, replication on 20 new CTs & Do the main contrasts recur beyond the six held-out patients? & Exact sign-flip test with Holm over 3 contrasts. The claim that RL changes the error by less than 1~mm in every arm uses an intersection-union equivalence test. & On 20 new CTs, both contrasts replicate, RL changes the error by less than 1~mm in every arm, and the ordering recurs. \\[2pt]
+\bottomrule
+\end{tabularx}
+\end{table*}

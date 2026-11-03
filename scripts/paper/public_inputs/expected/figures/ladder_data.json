@@ -1,0 +1,552 @@
+{
+ "aggregation": "scripts/collect_results_v2.py per_patient (mean of final_pos per patient)",
+ "checked_against_results_json": [
+  "table4.cell_means_mm.ctmask/cut/base",
+  "table4.cell_means_mm.ctmask/cut/final",
+  "table4.cell_means_mm.ctmask/cyclegan/base",
+  "table4.cell_means_mm.ctmask/cyclegan/final",
+  "table4.cell_means_mm.ctmask/physics/base",
+  "table4.cell_means_mm.ctmask/physics/final",
+  "table4.cell_means_mm.ctmask/sonospade/base",
+  "table4.cell_means_mm.ctmask/sonospade/final",
+  "table4.cell_means_mm.matched/cut/base",
+  "table4.cell_means_mm.matched/cut/final",
+  "table4.cell_means_mm.matched/cyclegan/base",
+  "table4.cell_means_mm.matched/cyclegan/final",
+  "table4.cell_means_mm.matched/physics/base",
+  "table4.cell_means_mm.matched/physics/final",
+  "table4.cell_means_mm.matched/sonospade/base",
+  "table4.cell_means_mm.matched/sonospade/final",
+  "table4.observability_gap.cut",
+  "table4.observability_gap.cyclegan",
+  "table4.observability_gap.physics",
+  "table4.observability_gap.sonospade",
+  "table4.perception_gap.cut",
+  "table4.perception_gap.cyclegan",
+  "table4.perception_gap.physics",
+  "table4.perception_gap.sonospade",
+  "table4.rungs_mm.pose_oracle",
+  "table4.rungs_mm.static"
+ ],
+ "data": {
+  "cut": {
+   "ct_base": {
+    "mean": 11.650326129143416,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 10.871615332501232,
+     "s0513": 13.532168191554014,
+     "s0519": 9.723286931964196,
+     "s0591": 11.114472307742911,
+     "s0649": 13.558540319350975,
+     "s0762": 11.10187369174716
+    },
+    "results_json": "table4.cell_means_mm.ctmask/cut/base",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "ct_final": {
+    "mean": 11.640729215801906,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 11.137828271400393,
+     "s0513": 13.333495698829829,
+     "s0519": 9.57355819448821,
+     "s0591": 11.120405255895154,
+     "s0649": 13.93965300996252,
+     "s0762": 10.739434864235337
+    },
+    "results_json": "table4.cell_means_mm.ctmask/cut/final",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "learned_base": {
+    "mean": 16.835036740402852,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 16.005190736393704,
+     "s0513": 13.709314385093531,
+     "s0519": 16.411136047940197,
+     "s0591": 17.099903622617553,
+     "s0649": 19.040035194817126,
+     "s0762": 18.744640455555018
+    },
+    "results_json": "table4.cell_means_mm.matched/cut/base",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "learned_final": {
+    "mean": 16.89751578573958,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 17.173254435585605,
+     "s0513": 13.722270488145536,
+     "s0519": 15.3922021249877,
+     "s0591": 17.015525103361238,
+     "s0649": 19.094863084039115,
+     "s0762": 18.98697947831828
+    },
+    "results_json": "table4.cell_means_mm.matched/cut/final",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "observability_gap": {
+    "ci": [
+     8.962604053922364,
+     11.274686163512674
+    ],
+    "mean": 10.111795412237319,
+    "n": 6,
+    "results_json": "table4.observability_gap.cut",
+    "sign": 6
+   },
+   "perception_gap": {
+    "ci": [
+     3.0653977950656905,
+     6.948013935209598
+    ],
+    "mean": 5.256786569937671,
+    "n": 6,
+    "results_json": "table4.perception_gap.cut",
+    "sign": 6
+   },
+   "pose_oracle": {
+    "mean": 1.5289338035645885,
+    "n_episodes": 60,
+    "per_patient": {
+     "s0358": 1.4786602542541605,
+     "s0513": 1.3827015904837734,
+     "s0519": 1.640835291797352,
+     "s0591": 1.4142382853683095,
+     "s0649": 1.813653777178596,
+     "s0762": 1.4435136223053386
+    },
+    "results_json": "table4.rungs_mm.pose_oracle",
+    "seeds": [
+     "0"
+    ]
+   },
+   "static": {
+    "mean": 16.02837129164416,
+    "n_episodes": 60,
+    "per_patient": {
+     "s0358": 12.43866520455678,
+     "s0513": 13.117035561486128,
+     "s0519": 15.464541127532348,
+     "s0591": 16.510538043544905,
+     "s0649": 19.44446355615352,
+     "s0762": 19.194984256591287
+    },
+    "results_json": "table4.rungs_mm.static",
+    "seeds": [
+     "0"
+    ]
+   }
+  },
+  "cyclegan": {
+   "ct_base": {
+    "mean": 11.650326129143416,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 10.871615332501232,
+     "s0513": 13.532168191554014,
+     "s0519": 9.723286931964196,
+     "s0591": 11.114472307742911,
+     "s0649": 13.558540319350975,
+     "s0762": 11.10187369174716
+    },
+    "results_json": "table4.cell_means_mm.ctmask/cyclegan/base",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "ct_final": {
+    "mean": 11.694980927818207,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 10.917751001877887,
+     "s0513": 13.736288616356696,
+     "s0519": 9.750957374727461,
+     "s0591": 10.717181930370455,
+     "s0649": 13.500891034183867,
+     "s0762": 11.546815609392882
+    },
+    "results_json": "table4.cell_means_mm.ctmask/cyclegan/final",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "learned_base": {
+    "mean": 16.853046296797107,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 16.814133520297652,
+     "s0513": 13.228561384450847,
+     "s0519": 16.252207695063117,
+     "s0591": 16.744276777791917,
+     "s0649": 19.416503481702343,
+     "s0762": 18.662594921476753
+    },
+    "results_json": "table4.cell_means_mm.matched/cyclegan/base",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "learned_final": {
+    "mean": 16.49543624805727,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 16.980956376667724,
+     "s0513": 12.140316190622446,
+     "s0519": 15.281026800319772,
+     "s0591": 16.822301518556557,
+     "s0649": 19.119282609652753,
+     "s0762": 18.628733992524353
+    },
+    "results_json": "table4.cell_means_mm.matched/cyclegan/final",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "observability_gap": {
+    "ci": [
+     9.061420698429297,
+     11.359040661118954
+    ],
+    "mean": 10.16604712425362,
+    "n": 6,
+    "results_json": "table4.observability_gap.cyclegan",
+    "sign": 6
+   },
+   "perception_gap": {
+    "ci": [
+     2.1517461852275837,
+     6.416747782035805
+    ],
+    "mean": 4.80045532023906,
+    "n": 6,
+    "results_json": "table4.perception_gap.cyclegan",
+    "sign": 5
+   },
+   "pose_oracle": {
+    "mean": 1.5289338035645885,
+    "n_episodes": 60,
+    "per_patient": {
+     "s0358": 1.4786602542541605,
+     "s0513": 1.3827015904837734,
+     "s0519": 1.640835291797352,
+     "s0591": 1.4142382853683095,
+     "s0649": 1.813653777178596,
+     "s0762": 1.4435136223053386
+    },
+    "results_json": "table4.rungs_mm.pose_oracle",
+    "seeds": [
+     "0"
+    ]
+   },
+   "static": {
+    "mean": 16.02837129164416,
+    "n_episodes": 60,
+    "per_patient": {
+     "s0358": 12.43866520455678,
+     "s0513": 13.117035561486128,
+     "s0519": 15.464541127532348,
+     "s0591": 16.510538043544905,
+     "s0649": 19.44446355615352,
+     "s0762": 19.194984256591287
+    },
+    "results_json": "table4.rungs_mm.static",
+    "seeds": [
+     "0"
+    ]
+   }
+  },
+  "physics": {
+   "ct_base": {
+    "mean": 11.650326129143416,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 10.871615332501232,
+     "s0513": 13.532168191554014,
+     "s0519": 9.723286931964196,
+     "s0591": 11.114472307742911,
+     "s0649": 13.558540319350975,
+     "s0762": 11.10187369174716
+    },
+    "results_json": "table4.cell_means_mm.ctmask/physics/base",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "ct_final": {
+    "mean": 11.813770157327932,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 10.932849597893995,
+     "s0513": 13.611559995888122,
+     "s0519": 10.02821788814138,
+     "s0591": 10.870221336931401,
+     "s0649": 13.886113202512053,
+     "s0762": 11.553658922600645
+    },
+    "results_json": "table4.cell_means_mm.ctmask/physics/final",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "learned_base": {
+    "mean": 17.196586077318205,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 17.154022705206547,
+     "s0513": 13.894627740608035,
+     "s0519": 17.367003121145963,
+     "s0591": 18.58665759306494,
+     "s0649": 18.136650440416656,
+     "s0762": 18.040554863467083
+    },
+    "results_json": "table4.cell_means_mm.matched/physics/base",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "learned_final": {
+    "mean": 16.732480335752026,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 17.363050784333282,
+     "s0513": 13.17832183186069,
+     "s0519": 16.46581713152257,
+     "s0591": 18.422421125096072,
+     "s0649": 17.067528659004513,
+     "s0762": 17.89774248269502
+    },
+    "results_json": "table4.cell_means_mm.matched/physics/final",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "observability_gap": {
+    "ci": [
+     9.208212038637685,
+     11.387527165567484
+    ],
+    "mean": 10.284836353763344,
+    "n": 6,
+    "results_json": "table4.observability_gap.physics",
+    "sign": 6
+   },
+   "perception_gap": {
+    "ci": [
+     2.45948324186209,
+     6.79231380160423
+    ],
+    "mean": 4.918710178424091,
+    "n": 6,
+    "results_json": "table4.perception_gap.physics",
+    "sign": 5
+   },
+   "pose_oracle": {
+    "mean": 1.5289338035645885,
+    "n_episodes": 60,
+    "per_patient": {
+     "s0358": 1.4786602542541605,
+     "s0513": 1.3827015904837734,
+     "s0519": 1.640835291797352,
+     "s0591": 1.4142382853683095,
+     "s0649": 1.813653777178596,
+     "s0762": 1.4435136223053386
+    },
+    "results_json": "table4.rungs_mm.pose_oracle",
+    "seeds": [
+     "0"
+    ]
+   },
+   "static": {
+    "mean": 16.02837129164416,
+    "n_episodes": 60,
+    "per_patient": {
+     "s0358": 12.43866520455678,
+     "s0513": 13.117035561486128,
+     "s0519": 15.464541127532348,
+     "s0591": 16.510538043544905,
+     "s0649": 19.44446355615352,
+     "s0762": 19.194984256591287
+    },
+    "results_json": "table4.rungs_mm.static",
+    "seeds": [
+     "0"
+    ]
+   }
+  },
+  "sonospade": {
+   "ct_base": {
+    "mean": 11.650326129143416,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 10.871615332501232,
+     "s0513": 13.532168191554014,
+     "s0519": 9.723286931964196,
+     "s0591": 11.114472307742911,
+     "s0649": 13.558540319350975,
+     "s0762": 11.10187369174716
+    },
+    "results_json": "table4.cell_means_mm.ctmask/sonospade/base",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "ct_final": {
+    "mean": 11.686506490491249,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 10.849919557657861,
+     "s0513": 13.621487081601392,
+     "s0519": 10.077263221535183,
+     "s0591": 10.60805052827689,
+     "s0649": 13.535474856837405,
+     "s0762": 11.426843697038764
+    },
+    "results_json": "table4.cell_means_mm.ctmask/sonospade/final",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "learned_base": {
+    "mean": 13.133458864855752,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 12.870921771224342,
+     "s0513": 14.095592711899853,
+     "s0519": 11.504886702347202,
+     "s0591": 13.216512170191232,
+     "s0649": 14.62045376159743,
+     "s0762": 12.49238607187446
+    },
+    "results_json": "table4.cell_means_mm.matched/sonospade/base",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "learned_final": {
+    "mean": 13.113265275735815,
+    "n_episodes": 180,
+    "per_patient": {
+     "s0358": 12.03808282646598,
+     "s0513": 13.958771714651851,
+     "s0519": 11.643674655230695,
+     "s0591": 13.510604568666825,
+     "s0649": 14.516874909252605,
+     "s0762": 13.011582980146942
+    },
+    "results_json": "table4.cell_means_mm.matched/sonospade/final",
+    "seeds": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "observability_gap": {
+    "ci": [
+     9.102511620571658,
+     11.26921997844228
+    ],
+    "mean": 10.157572686926661,
+    "n": 6,
+    "results_json": "table4.observability_gap.sonospade",
+    "sign": 6
+   },
+   "perception_gap": {
+    "ci": [
+     0.8574007780617109,
+     2.1084000154135922
+    ],
+    "mean": 1.426758785244567,
+    "n": 6,
+    "results_json": "table4.perception_gap.sonospade",
+    "sign": 6
+   },
+   "pose_oracle": {
+    "mean": 1.5289338035645885,
+    "n_episodes": 60,
+    "per_patient": {
+     "s0358": 1.4786602542541605,
+     "s0513": 1.3827015904837734,
+     "s0519": 1.640835291797352,
+     "s0591": 1.4142382853683095,
+     "s0649": 1.813653777178596,
+     "s0762": 1.4435136223053386
+    },
+    "results_json": "table4.rungs_mm.pose_oracle",
+    "seeds": [
+     "0"
+    ]
+   },
+   "static": {
+    "mean": 16.02837129164416,
+    "n_episodes": 60,
+    "per_patient": {
+     "s0358": 12.43866520455678,
+     "s0513": 13.117035561486128,
+     "s0519": 15.464541127532348,
+     "s0591": 16.510538043544905,
+     "s0649": 19.44446355615352,
+     "s0762": 19.194984256591287
+    },
+    "results_json": "table4.rungs_mm.static",
+    "seeds": [
+     "0"
+    ]
+   }
+  }
+ },
+ "filter": {
+  "contact": "on",
+  "eval_randomize": "off"
+ },
+ "patients": [
+  "s0358",
+  "s0513",
+  "s0519",
+  "s0591",
+  "s0649",
+  "s0762"
+ ],
+ "source_csv": "outputs/v2/table4/episodes_long.csv",
+ "source_json": "outputs/v2/RESULTS.json",
+ "tolerance": 1e-09
+}

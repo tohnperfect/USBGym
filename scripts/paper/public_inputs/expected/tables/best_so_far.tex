@@ -1,0 +1,32 @@
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize\setlength{\fboxsep}{0.6pt}
+\caption{Lowest measured error per kind of run-time input, post hoc. Post hoc: lowest point estimate on the same six held-out patients that measured it, so optimistic; not the pre-specified combination rule. The pre-specified combination selects by the slot decisions and tests its choice on 20 CTs that played no part in it, so the two can name different pipelines. Pipelines name the frames, the mask source and the controller. Error: final translation error over the 60 held-out episodes of Table~\ref{tab:ladder}, mean over seeds of patient means. Differences are paired by patient, with the 95\% $t$ CI and the patients of 6 sharing the sign. A random-action controller, from earlier runs with no pre-specified rule, ends at 17.45~mm (3 seeds; Supplementary Table~S3.2). Each post hoc lowest row is the lowest error among the 18, 17 and 43 measured candidates of the second, third and fourth blocks. No candidate combines the winners of two slots; the pre-specified combination is reported in Section~\ref{sec:plug-best}. The learned-mask controller arm with new learner seeds is not a candidate; its rows are in Table~\ref{tab:arm-a}. Both lowest rows without privileged input are BC residuals (exploratory, no pre-specified rule). None of these rows enters a decision, and none is read as a separation of two methods. Cohort: the same configuration on the 20-CT replication cohort, an unselected check; n/r, not run there. Every episode keeps the contact plane through the target window face and a start drawn around the target. No row is therefore free of target information. $^{\mathrm{L}}$Label-conditioned stage: its network also reads the CT label slice. $^{\dagger}$Privileged: simulator state that no rig provides. $^{\mathrm{E}}$Exploratory, no pre-specified rule.}
+\label{tab:best-so-far}
+\centering
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}X r l l r@{}}
+\toprule
+Pipeline & \begin{tabular}[b]{@{}r@{}}Error\\(mm)\end{tabular} & \begin{tabular}[b]{@{}l@{}}Minus static start (mm),\\95\% $t$ CI, $k$/6\end{tabular} & \begin{tabular}[b]{@{}l@{}}Minus pose oracle (mm),\\95\% $t$ CI, $k$/6\end{tabular} & \begin{tabular}[b]{@{}r@{}}20-CT\\cohort (mm)\end{tabular} \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Anchors (reference ladder, Table~\ref{tab:ladder})}} \\
+\quad Static start (no commanded motion) & 16.03 & n/a & $+14.50$ [$+11.48$, $+17.52$], 6/6 & 15.97 \\
+\quad Scripted sweep (no feedback) & 15.52 & $-0.51$ [$-0.81$, $-0.22$], 5/6 & $+13.99$ [$+11.12$, $+16.86$], 6/6 & 15.38 \\
+\quad Analytic pose oracle$^{\dagger}$ & 1.53 & $-14.50$ [$-17.52$, $-11.48$], 6/6 & n/a & 1.47 \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{No privileged input at run time: frames without a label-conditioned stage, learned mask}} \\
+\quad Reference: Physics; U-Net; servo base & 17.20 & $+1.17$ [$-1.21$, $+3.54$], 4/6 & $+15.67$ [$+13.94$, $+17.39$], 6/6 & 15.75 \\
+\quad Post hoc lowest: Physics; U-Net; servo base + BC residual$^{\mathrm{E}}$ & \verifyfill{14.22} & \verifyfill{$-1.81$ [$-5.71$, $+2.09$], 4/6} & \verifyfill{$+12.69$ [$+10.06$, $+15.32$], 6/6} & n/r \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{No privileged input at run time: label-conditioned frames$^{\mathrm{L}}$, learned mask}} \\
+\quad Reference: SonoSPADE$^{\mathrm{L}}$; U-Net; servo base & 13.13 & $-2.89$ [$-6.06$, $+0.27$], 4/6 & $+11.60$ [$+10.45$, $+12.76$], 6/6 & 13.71 \\
+\quad Post hoc lowest: SonoSPADE$^{\mathrm{L}}$; U-Net; servo base + BC residual$^{\mathrm{E}}$ & \verifyfill{11.44} & \verifyfill{$-4.59$ [$-8.84$, $-0.34$], 5/6} & \verifyfill{$+9.91$ [$+7.39$, $+12.43$], 6/6} & n/r \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Privileged mask at run time$^{\dagger}$}} \\
+\quad Reference: Any stage; CT mask$^{\dagger}$; servo base & 11.65 & $-4.38$ [$-7.69$, $-1.06$], 5/6 & $+10.12$ [$+8.51$, $+11.74$], 6/6 & 12.64 \\
+\quad Post hoc lowest: SonoSPADE$^{\mathrm{L}}$; CT mask$^{\dagger}$; servo base + DAgger residual & \verifyfill{10.85} & \verifyfill{$-5.18$ [$-8.99$, $-1.37$], 5/6} & \verifyfill{$+9.32$ [$+7.56$, $+11.08$], 6/6} & n/r \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textit{Privileged simulator look-ahead$^{\dagger}$, a reference never selected}} \\
+\quad SonoSPADE$^{\mathrm{L}}$; CT mask$^{\dagger}$; CEM look-ahead$^{\dagger}$, seed 0 & \verifyfill{6.98} & \verifyfill{$-9.05$ [$-12.16$, $-5.93$], 6/6} & \verifyfill{$+5.45$ [$+2.47$, $+8.44$], 6/6} & n/r \\
+\bottomrule
+\end{tabularx}
+\end{table}

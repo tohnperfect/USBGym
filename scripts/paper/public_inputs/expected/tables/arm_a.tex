@@ -1,0 +1,26 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Learned-mask controller experiment on the six held-out patients (exploratory, pre-specified rule). Families LM-D (difference) and LM-E (equivalence within $\pm 1$~mm), $m = 6$ each, Holm within each family. A difference holds if its Holm $p$ is below 0.05 and at least 5 of 6 patients share its sign (paired $t$, df 5); the exact sign-flip $p$ is printed and never decides. Absolute errors are the base's mean plus the paired difference. The servo base ends at 17.20~mm with physics frames and 13.13~mm with SonoSPADE frames, and the pose oracle at 1.53~mm. MDD from the observed SDs: 2.37 and 3.63~mm for the base contrasts, 2.69 and 4.12~mm for the learner pair, at $\alpha = 0.05$ and at Holm's first step. The separation criterion (a physics-frame difference of B1, B3 or P1 holds) is met. Crossed bootstrap: case by seed, a sensitivity check.}
+\label{tab:arm-a}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l l c c c c >{\raggedright\arraybackslash}p{0.13\textwidth} l@{}}
+\toprule
+Contrast & Family & Difference or 90\% CI (mm) & $k$/6 & Test $p$ & Sign-flip $p$ & Holm $p$ & Decision & Crossed bootstrap 95\% CI \\
+\midrule
+\quad B1: DAgger residual minus learned-mask servo base, physics frames; the DAgger residual ends at 14.02~mm & LM-D & $-3.17$ $[-5.04, -1.31]$ & 6/6 & $0.007$ (paired $t$) & $0.031$ & $0.043$ & holds lower & $[-4.56, -1.26]$ \\
+\quad\quad Equivalence within $\pm 1$~mm & LM-E & 90\% $[-4.63, -1.71]$ & & $0.985$ (TOST) & & $1.000$ & equivalence not shown & \\
+\quad B2: DAgger residual minus learned-mask servo base, SonoSPADE frames; the DAgger residual ends at 12.04~mm & LM-D & $-1.09$ $[-2.70, +0.51]$ & 5/6 & $0.141$ (paired $t$) & $0.156$ & $0.564$ & no detectable difference & $[-2.96, +0.28]$ \\
+\quad\quad Equivalence within $\pm 1$~mm & LM-E & 90\% $[-2.35, +0.17]$ & & $0.555$ (TOST) & & $1.000$ & equivalence not shown & \\
+\quad B3: BC residual minus learned-mask servo base, physics frames; the BC residual ends at 14.29~mm & LM-D & $-2.91$ $[-5.52, -0.30]$ & 6/6 & $0.035$ (paired $t$) & $0.031$ & $0.177$ & no detectable difference & $[-5.45, -0.55]$ \\
+\quad\quad Equivalence within $\pm 1$~mm & LM-E & 90\% $[-4.95, -0.86]$ & & $0.940$ (TOST) & & $1.000$ & equivalence not shown & \\
+\quad B4: BC residual minus learned-mask servo base, SonoSPADE frames; the BC residual ends at 12.33~mm & LM-D & $-0.80$ $[-2.36, +0.76]$ & 4/6 & $0.242$ (paired $t$) & $0.219$ & $0.727$ & no detectable difference & $[-2.80, +0.93]$ \\
+\quad\quad Equivalence within $\pm 1$~mm & LM-E & 90\% $[-2.03, +0.42]$ & & $0.380$ (TOST) & & $1.000$ & equivalence not shown & \\
+\quad P1: DAgger residual minus BC residual, physics frames & LM-D & $-0.27$ $[-2.47, +1.94]$ & 3/6 & $0.769$ (paired $t$) & $0.813$ & $1.000$ & no detectable difference & $[-2.16, +1.57]$ \\
+\quad\quad Equivalence within $\pm 1$~mm & LM-E & 90\% $[-1.99, +1.46]$ & & $0.215$ (TOST) & & $1.000$ & equivalence not shown & \\
+\quad P2: DAgger residual minus BC residual, SonoSPADE frames & LM-D & $-0.29$ $[-2.02, +1.45]$ & 3/6 & $0.689$ (paired $t$) & $0.844$ & $1.000$ & no detectable difference & $[-2.38, +1.62]$ \\
+\quad\quad Equivalence within $\pm 1$~mm & LM-E & 90\% $[-1.64, +1.07]$ & & $0.169$ (TOST) & & $1.000$ & equivalence not shown & \\
+\bottomrule
+\end{tabularx}
+\end{table}

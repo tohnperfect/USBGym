@@ -1,0 +1,48 @@
+
+\begin{table*}[t]
+\caption{Post hoc statistics sensitivity for every pre-specified ladder contrast (final translation error, mm; 6 held-out patients, 3 seeds). Mean: mean of per-patient paired differences. Bootstrap: the pre-specified 95\% patient-cluster percentile CI (10,000 resamples). $t$: 95\% CI and two-sided $p$ of the paired $t$-test (5 df). Patient $\times$ seed: 95\% crossed bootstrap CI that resamples patients and seeds independently, so seed variance enters. Exact: two-sided sign-flip $p$ over all $2^6$ sign patterns. Holm: adjusted within each family (block); over all 25 contrasts as one family, 0 survive on the exact $p$ and 4 on the $t$ $p$. Rule: the pre-specified CI-and-sign rule (yes = a difference). At $n = 6$ the smallest two-sided exact $p$ is $2/64 = 0.031$, above Holm's first threshold $0.05/m$ for every family of $m \geq 2$. No exact test on six patients therefore survives Holm in a family of two or more, and a 5/6 sign pattern has exact $p \geq 4/64$. Over 10,000 simulated null data sets of six differences, the rule declares a difference in 11.7\% (normal), 10.8\% ($t$, 3 df) and 16.3\% (skewed) of cases. Under the normal null, the $t$-test does so in 5.3\% and the exact test in 3.5\%.}
+\label{tab:stats-sensitivity}
+\centering
+\renewcommand{\baselinestretch}{1}\footnotesize
+\setlength{\tabcolsep}{2.8pt}
+\begin{tabular}{@{}l r c c c c c c c c c@{}}
+\toprule
+Contrast & Mean & Bootstrap CI & $t$ CI & Patient $\times$ seed CI & $k$/6 & Exact $p$ & Holm & $t$ $p$ & Holm & Rule \\
+\midrule
+\multicolumn{11}{@{}l}{\textit{CT-mask final minus pose oracle (oracle-to-CT-mask gap), $m = 4$}} \\
+\quad Physics & $+10.28$ & $[+9.21, +11.39]$ & $[+8.66, +11.91]$ & $[+9.03, +11.60]$ & 6/6 & $2/64$ & $0.125$ & $<0.001$ & $<0.001$ & yes \\
+\quad CUT & $+10.11$ & $[+8.96, +11.27]$ & $[+8.41, +11.82]$ & $[+8.83, +11.46]$ & 6/6 & $2/64$ & $0.125$ & $<0.001$ & $<0.001$ & yes \\
+\quad CycleGAN & $+10.17$ & $[+9.06, +11.36]$ & $[+8.50, +11.83]$ & $[+8.93, +11.44]$ & 6/6 & $2/64$ & $0.125$ & $<0.001$ & $<0.001$ & yes \\
+\quad SonoSPADE & $+10.16$ & $[+9.10, +11.27]$ & $[+8.58, +11.74]$ & $[+8.97, +11.40]$ & 6/6 & $2/64$ & $0.125$ & $<0.001$ & $<0.001$ & yes \\
+\addlinespace
+\multicolumn{11}{@{}l}{\textit{Learned-mask final minus CT-mask final (CT-to-learned-mask gap), $m = 4$}} \\
+\quad Physics & $+4.92$ & $[+2.46, +6.79]$ & $[+1.76, +8.07]$ & $[+2.44, +7.12]$ & 5/6 & $4/64$ & $0.125$ & $0.010$ & $0.029$ & yes \\
+\quad CUT & $+5.26$ & $[+3.07, +6.95]$ & $[+2.52, +7.99]$ & $[+2.77, +7.62]$ & 6/6 & $2/64$ & $0.125$ & $0.004$ & $0.017$ & yes \\
+\quad CycleGAN & $+4.80$ & $[+2.15, +6.42]$ & $[+1.46, +8.14]$ & $[+2.01, +6.92]$ & 5/6 & $4/64$ & $0.125$ & $0.014$ & $0.029$ & yes \\
+\quad SonoSPADE & $+1.43$ & $[+0.86, +2.11]$ & $[+0.53, +2.33]$ & $[+0.47, +2.37]$ & 6/6 & $2/64$ & $0.125$ & $0.010$ & $0.029$ & yes \\
+\addlinespace
+\multicolumn{11}{@{}l}{\textit{Final minus after imitation (RL contribution), $m = 8$}} \\
+\quad CT mask, Physics & $+0.04$ & $[-0.10, +0.17]$ & $[-0.16, +0.23]$ & $[-0.32, +0.46]$ & 3/6 & $46/64$ & $1.000$ & $0.665$ & $1.000$ & no \\
+\quad CT mask, CUT & $-0.08$ & $[-0.29, +0.10]$ & $[-0.37, +0.20]$ & $[-0.37, +0.21]$ & 4/6 & $36/64$ & $1.000$ & $0.483$ & $1.000$ & no \\
+\quad CT mask, CycleGAN & $0.00$ & $[-0.23, +0.21]$ & $[-0.31, +0.31]$ & $[-0.27, +0.33]$ & 3/6 & $62/64$ & $1.000$ & $0.991$ & $1.000$ & no \\
+\quad CT mask, SonoSPADE & $-0.06$ & $[-0.33, +0.22]$ & $[-0.44, +0.33]$ & $[-0.44, +0.40]$ & 3/6 & $40/64$ & $1.000$ & $0.728$ & $1.000$ & no \\
+\quad learned, Physics & $-0.29$ & $[-0.80, +0.17]$ & $[-1.00, +0.42]$ & $[-1.07, +0.21]$ & 3/6 & $24/64$ & $1.000$ & $0.340$ & $1.000$ & no \\
+\quad learned, CUT & $+0.47$ & $[+0.06, +0.90]$ & $[-0.14, +1.09]$ & $[-0.28, +1.29]$ & 4/6 & $8/64$ & $1.000$ & $0.104$ & $0.834$ & no \\
+\quad learned, CycleGAN & $+0.08$ & $[-0.37, +0.53]$ & $[-0.58, +0.73]$ & $[-0.74, +0.65]$ & 3/6 & $50/64$ & $1.000$ & $0.780$ & $1.000$ & no \\
+\quad learned, SonoSPADE & $+0.05$ & $[-0.24, +0.33]$ & $[-0.37, +0.46]$ & $[-0.44, +0.54]$ & 3/6 & $50/64$ & $1.000$ & $0.781$ & $1.000$ & no \\
+\addlinespace
+\multicolumn{11}{@{}l}{\textit{CT-mask final, first stage minus second, $m = 6$}} \\
+\quad Physics minus CUT & $+0.17$ & $[-0.11, +0.49]$ & $[-0.27, +0.61]$ & $[-0.12, +0.71]$ & 3/6 & $26/64$ & $1.000$ & $0.357$ & $1.000$ & no \\
+\quad Physics minus CycleGAN & $+0.12$ & $[-0.01, +0.26]$ & $[-0.08, +0.32]$ & $[-0.22, +0.41]$ & 5/6 & $10/64$ & $0.781$ & $0.186$ & $0.928$ & no \\
+\quad Physics minus SonoSPADE & $+0.13$ & $[+0.02, +0.25]$ & $[-0.04, +0.29]$ & $[-0.12, +0.31]$ & 4/6 & $8/64$ & $0.750$ & $0.100$ & $0.602$ & no \\
+\quad CUT minus CycleGAN & $-0.05$ & $[-0.43, +0.29]$ & $[-0.58, +0.47]$ & $[-0.49, +0.34]$ & 3/6 & $56/64$ & $1.000$ & $0.800$ & $1.000$ & no \\
+\quad CUT minus SonoSPADE & $-0.05$ & $[-0.42, +0.31]$ & $[-0.58, +0.49]$ & $[-0.60, +0.36]$ & 3/6 & $56/64$ & $1.000$ & $0.835$ & $1.000$ & no \\
+\quad CycleGAN minus SonoSPADE & $+0.01$ & $[-0.14, +0.11]$ & $[-0.17, +0.19]$ & $[-0.28, +0.24]$ & 4/6 & $62/64$ & $1.000$ & $0.910$ & $1.000$ & no \\
+\addlinespace
+\multicolumn{11}{@{}l}{\textit{Learned-mask final, SonoSPADE minus stage, $m = 3$}} \\
+\quad Physics & $-3.62$ & $[-5.03, -1.67]$ & $[-6.11, -1.13]$ & $[-5.40, -1.42]$ & 5/6 & $4/64$ & $0.188$ & $0.013$ & $0.027$ & yes \\
+\quad CUT & $-3.78$ & $[-5.14, -2.05]$ & $[-6.06, -1.51]$ & $[-6.02, -1.63]$ & 5/6 & $4/64$ & $0.188$ & $0.008$ & $0.024$ & yes \\
+\quad CycleGAN & $-3.38$ & $[-4.94, -1.19]$ & $[-6.20, -0.56]$ & $[-5.43, -0.94]$ & 5/6 & $4/64$ & $0.188$ & $0.027$ & $0.027$ & yes \\
+\bottomrule
+\end{tabular}
+\end{table*}

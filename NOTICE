@@ -1,0 +1,55 @@
+USB Gym
+Copyright 2026 The USB Gym Authors: Thanapong Intharah, Zhichao Gao, Yiliang Liu and Hao Dong
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE). Versions before 2.2.0
+were released under the MIT license.
+
+This product includes code written by the same authors and vendored here under the same license:
+- src/usbg/_par/: the cross-repository contract, the SE(3) math and the B-mode scan geometry of the
+  authors' probe-action recognizer code (the source commit is named in the header of each file).
+- segtrain/: the authors' organ-segmenter trainer (package us_seg).
+Commit hashes and internal documents named in the headers and comments of these files, and in the
+reference record tests/data/vendor_regression_ref.json, refer to the authors' development repositories,
+which are not public. The same holds for the table and figure build of the article (scripts/paper/,
+scripts/analysis/ and the scripts they import): the two commit identifiers that make_tables.py and
+plan_stats.py compare with the records of the results archive, and the pre-specified plan documents and records
+that its code and comments name, belong to the development repository.
+
+This product includes code adapted from LOTUS (https://github.com/danivelikova/lotus, commit 3d20ebb):
+src/usbg/render_lotus.py (render_bmode_lotus, _gauss2d_kernel) and the acoustic table ACOUSTIC_LOTUS in
+src/usbg/volume.py. LOTUS is distributed under the following license:
+
+  MIT License
+
+  Copyright (c) 2023 Yordanka Velikova
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+This product includes data derived from the TotalSegmentator dataset, small subset v2.0.1 (Wasserthal
+et al., 2023; https://doi.org/10.5281/zenodo.10047263), licensed under CC BY 4.0
+(https://creativecommons.org/licenses/by/4.0/): src/usbg/data/usbg-windows-v1.json and the episode
+setups in src/usbg/leaderboard/data/. Changes: probe windows screened from its label maps, and the
+held-out evaluation episodes set up on them. The release assets of the leaderboard (the
+physics-trained policies of seeds 0 to 2) were trained on physics renders of 13 of its CTs; the same
+attribution applies.
+
+Third-party components keep their own licenses:
+- third_party/lotus: the original LOTUS code (Velikova et al.), MIT license, as a git submodule.
+- The plugged methods use third-party packages and weights under their own licenses, listed in
+  README.md ("License").

@@ -1,0 +1,20 @@
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{REINFORCE control with the bias selected on training patients: the planted lateral deficit at iteration 0 ($D_p$) and the recovery statistic $x_p$ per setting, six held-out patients (exploratory; estimation only): 6 contrasts; none adjusted. Every run starts from the CT-mask policy$^{\dagger}$ of the physics stage after imitation. $^{\dagger}$Privileged.}
+\label{tab:est-r13-contrasts}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hsize=2.0000\hsize}X >{\raggedright\arraybackslash\hsize=0.5833\hsize}X >{\raggedright\arraybackslash\hsize=0.8333\hsize}X >{\raggedright\arraybackslash\hsize=0.5000\hsize}X >{\raggedright\arraybackslash\hsize=0.7500\hsize}X >{\raggedright\arraybackslash\hsize=0.8333\hsize}X >{\raggedright\arraybackslash\hsize=1.6667\hsize}X >{\raggedright\arraybackslash\hsize=0.8334\hsize}X @{}}
+\toprule
+Contrast & Mean (mm) & 95\% $t$ CI (mm) & $k/n$ & Sign-flip $p$ (unadjusted; descriptive) & Bootstrap CI over units (mm) & Per seed (mm) & Bootstrap CI over units and seeds (mm) \\
+\midrule
+default settings: deficit $D_p$ & $+7.60$ & $[+7.09$, $+8.12]$ & 6/6 & $0.031$ & $[+7.28$, $+7.99]$ & s0 $+7.62$, s1 $+7.52$, s2 $+7.68$ & $[+7.26$, $+8.01]$ \\
+default settings: recovery $x_p$ & $-3.06$ & $[-3.42$, $-2.70]$ & 6/6 & $0.031$ & $[-3.33$, $-2.83]$ & s0 $-3.34$, s1 $-2.63$, s2 $-3.20$ & $[-3.39$, $-2.75]$ \\
+learned-exploration settings: deficit $D_p$ & $+7.60$ & $[+7.09$, $+8.12]$ & 6/6 & $0.031$ & $[+7.28$, $+7.99]$ & s0 $+7.62$, s1 $+7.52$, s2 $+7.68$ & $[+7.26$, $+8.01]$ \\
+learned-exploration settings: recovery $x_p$ & $-3.10$ & $[-3.45$, $-2.75]$ & 6/6 & $0.031$ & $[-3.34$, $-2.87]$ & s0 $-3.42$, s1 $-2.57$, s2 $-3.31$ & $[-3.43$, $-2.76]$ \\
+pose-shaping$^{\dagger}$ settings: deficit $D_p$ & $+7.60$ & $[+7.09$, $+8.12]$ & 6/6 & $0.031$ & $[+7.28$, $+7.99]$ & s0 $+7.62$, s1 $+7.52$, s2 $+7.68$ & $[+7.26$, $+8.01]$ \\
+pose-shaping$^{\dagger}$ settings: recovery $x_p$ & $-1.60$ & $[-1.75$, $-1.44]$ & 6/6 & $0.031$ & $[-1.71$, $-1.49]$ & s0 $-2.18$, s1 $-0.99$, s2 $-1.62$ & $[-1.84$, $-1.34]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}

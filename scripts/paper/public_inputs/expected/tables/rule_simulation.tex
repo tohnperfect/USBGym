@@ -1,0 +1,21 @@
+
+\begin{table}[t]
+\caption{Post hoc simulation of the pre-specified CI-and-sign rule at $n = 6$ patients: the share of 10,000 simulated data sets of six paired differences in which each procedure declares a difference (two-sided, $\alpha = 0.05$). The rule is simulated as the analysis applies it: a 95\% percentile bootstrap with the same 10,000 fixed resamples, and at least 5 of 6 patients sharing the sign of the mean. Null rows give the type-I error; $\delta$ rows give the power for normal differences with mean $\delta$ standard deviations. The exact sign-flip test assumes a symmetric null, which the skewed row violates.}
+\label{tab:rule-simulation}
+\centering
+\renewcommand{\baselinestretch}{1}\small
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Scenario & Rule & CI excludes 0 & $k \geq 5$/6 & Exact sign-flip & Paired $t$ \\
+\midrule
+Null, normal & 0.117 & 0.147 & 0.222 & 0.035 & 0.053 \\
+Null, $t$ (3 df) & 0.108 & 0.138 & 0.209 & 0.031 & 0.036 \\
+Null, centered exponential (skewed) & 0.163 & 0.191 & 0.300 & 0.064 & 0.115 \\
+$\delta = 0.5$ SD & 0.303 & 0.356 & 0.414 & 0.113 & 0.179 \\
+$\delta = 1$ SD & 0.684 & 0.750 & 0.753 & 0.355 & 0.503 \\
+$\delta = 1.5$ SD & 0.930 & 0.960 & 0.947 & 0.666 & 0.839 \\
+$\delta = 2$ SD & 0.990 & 0.996 & 0.992 & 0.866 & 0.965 \\
+$\delta = 3$ SD & 1.000 & 1.000 & 1.000 & 0.991 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,20 @@
+{
+  "upload_type": "software",
+  "title": "USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching",
+  "version": "2.2.0",
+  "publication_date": "2026-11-03",
+  "creators": [
+    {"name": "Intharah, Thanapong", "affiliation": "Visual Intelligence Laboratory, Department of Statistics, Faculty of Science, Khon Kaen University, Khon Kaen 40002, Thailand"},
+    {"name": "Gao, Zhichao", "affiliation": "School of Computer Science, Peking University, Beijing 100871, China"},
+    {"name": "Liu, Yiliang", "affiliation": "School of Computer Science, Peking University, Beijing 100871, China"},
+    {"name": "Dong, Hao", "affiliation": "School of Computer Science, Peking University, Beijing 100871, China"}
+  ],
+  "license": "Apache-2.0",
+  "description": "<p>USB Gym (package usbg) is a CT-based Gymnasium testbed for closed-loop ultrasound probe view matching. For any probe pose over a patient's labeled CT it renders a B-mode frame and resolves probe-skin contact in MuJoCo; an agent moves the probe to reproduce a target view of the same patient. Renderer, texture stage, mask source, controller, reward and anatomy source are plug slots with small interfaces, and an oracle ladder of privileged and image-only controllers locates the remaining pose error. The release includes the plug adapters and their admission gate, the organ-segmenter trainer, the test suite and the data-preparation scripts for the public datasets. Every closed-loop result is in simulation.</p>",
+  "keywords": ["ultrasound", "simulation", "reinforcement learning", "gymnasium", "view matching", "robotic ultrasound", "medical imaging"],
+  "access_right": "open",
+  "related_identifiers": [
+    {"identifier": "https://github.com/tohnperfect/USBGym/tree/v2.2.0", "relation": "isSupplementTo", "scheme": "url"},
+    {"identifier": "10.5281/zenodo.23913142", "relation": "isSupplementedBy", "resource_type": "dataset", "scheme": "doi"}
+  ]
+}

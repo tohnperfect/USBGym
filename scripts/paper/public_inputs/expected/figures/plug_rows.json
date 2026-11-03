@@ -1,0 +1,5519 @@
+{
+ "blinded_amendment2": false,
+ "cta": {
+  "blinded": false,
+  "reference_rungs": []
+ },
+ "generated_by": "make_tables.py pluggability()",
+ "mdd_rule": "post hoc: two-sided paired t, alpha 0.05, power 0.8, n = 6; SD = median over the reference contrasts of the slot; second value at alpha = 0.05/m",
+ "oracle_mm": 1.5289338035645885,
+ "oracle_src": "outputs/v2/RESULTS.json table4.rungs_mm.pose_oracle",
+ "posthoc_rule": "mdd from reference contrasts, k_seeds, TOST at +/- 1 mm, patient-by-seed and crossed bootstrap CIs (post hoc)",
+ "provisional": true,
+ "slots": [
+  {
+   "audit": "passed",
+   "groups_pending": [],
+   "key": "texture",
+   "m": 4,
+   "mdd": {
+    "all_pairs": {
+     "alpha_holm": 0.0125,
+     "mdd_holm_mm": 2.8835131452282323,
+     "mdd_mm": 2.127861281950037,
+     "n_methods": 8,
+     "n_pairs": 28,
+     "pairs": [
+      {
+       "a": "sonospade",
+       "b": "physics",
+       "sd_mm": 2.266274954940435,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sonospade",
+       "b": "cut",
+       "sd_mm": 2.260007832569075,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sonospade",
+       "b": "cyclegan",
+       "sd_mm": 2.422578301629133,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sonospade",
+       "b": "fastcut",
+       "sd_mm": 2.6267016954022644,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sonospade",
+       "b": "dclgan",
+       "sd_mm": 2.3314455816951787,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sonospade",
+       "b": "unsb",
+       "sd_mm": 2.2721215893445783,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sonospade",
+       "b": "histmatch",
+       "sd_mm": 1.7135477529931131,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "physics",
+       "b": "cut",
+       "sd_mm": 1.0005806474146812,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "physics",
+       "b": "cyclegan",
+       "sd_mm": 1.1413277457047861,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "physics",
+       "b": "fastcut",
+       "sd_mm": 1.1005301504515905,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "physics",
+       "b": "dclgan",
+       "sd_mm": 0.970906071345699,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "physics",
+       "b": "unsb",
+       "sd_mm": 1.421171381985417,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "physics",
+       "b": "histmatch",
+       "sd_mm": 1.4963665255015577,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "cut",
+       "b": "cyclegan",
+       "sd_mm": 0.48657051397088247,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "cut",
+       "b": "fastcut",
+       "sd_mm": 1.0064504508657879,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "cut",
+       "b": "dclgan",
+       "sd_mm": 0.6534933258500277,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "cut",
+       "b": "unsb",
+       "sd_mm": 1.2638678224104027,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "cut",
+       "b": "histmatch",
+       "sd_mm": 1.539478064013131,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "cyclegan",
+       "b": "fastcut",
+       "sd_mm": 1.1292871864265552,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "cyclegan",
+       "b": "dclgan",
+       "sd_mm": 0.5374157428348141,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "cyclegan",
+       "b": "unsb",
+       "sd_mm": 1.4904453877952368,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "cyclegan",
+       "b": "histmatch",
+       "sd_mm": 1.9585427851600967,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "fastcut",
+       "b": "dclgan",
+       "sd_mm": 0.8065057274470382,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "fastcut",
+       "b": "unsb",
+       "sd_mm": 1.4319004241629025,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "fastcut",
+       "b": "histmatch",
+       "sd_mm": 1.7817351278890043,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "dclgan",
+       "b": "unsb",
+       "sd_mm": 1.613446591551794,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "dclgan",
+       "b": "histmatch",
+       "sd_mm": 1.786249676093497,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "unsb",
+       "b": "histmatch",
+       "sd_mm": 1.7971803950705676,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "rule": "all method pairs (amend1, cohort ordering)",
+     "sd_mm": 1.4934059566483973
+    },
+    "alpha_holm": 0.0125,
+    "family_only": {
+     "alpha_holm": 0.0125,
+     "mdd_holm_mm": 4.444352988394963,
+     "mdd_mm": 3.2796682973248785,
+     "n_methods": 4,
+     "n_pairs": 4,
+     "pairs": [
+      {
+       "a": "sonospade",
+       "b": "fastcut",
+       "sd_mm": 2.6267016954022644,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sonospade",
+       "b": "dclgan",
+       "sd_mm": 2.3314455816951787,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sonospade",
+       "b": "unsb",
+       "sd_mm": 2.2721215893445783,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sonospade",
+       "b": "histmatch",
+       "sd_mm": 1.7135477529931131,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "rule": "Holm-tested family contrasts only (sensitivity)",
+     "sd_mm": 2.3017835855198783
+    },
+    "mdd_holm_mm": 4.387080713897584,
+    "mdd_mm": 3.2374047634707472,
+    "n_methods": 8,
+    "n_pairs": 7,
+    "pairs": [
+     {
+      "a": "sonospade",
+      "b": "physics",
+      "sd_mm": 2.266274954940435,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "sonospade",
+      "b": "cut",
+      "sd_mm": 2.260007832569075,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "sonospade",
+      "b": "cyclegan",
+      "sd_mm": 2.422578301629133,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "sonospade",
+      "b": "fastcut",
+      "sd_mm": 2.6267016954022644,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "sonospade",
+      "b": "dclgan",
+      "sd_mm": 2.3314455816951787,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "sonospade",
+      "b": "unsb",
+      "sd_mm": 2.2721215893445783,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "sonospade",
+      "b": "histmatch",
+      "sd_mm": 1.7135477529931131,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     }
+    ],
+    "rule": "reference contrasts (post hoc rule)",
+    "sd_mm": 2.2721215893445783
+   },
+   "pending": [],
+   "reference": {
+    "err_mm": 13.133458864855752,
+    "id": "sonospade",
+    "label": "SonoSPADE (authors')",
+    "provisional": false
+   },
+   "rows": [
+    {
+     "ci90_t": null,
+     "ci95_t": null,
+     "contrast_seeds": null,
+     "crossed_boot_ci95": null,
+     "decision": "",
+     "diff_mm": null,
+     "err_mm": 13.133458864855752,
+     "family": null,
+     "id": "sonospade",
+     "k": null,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "SonoSPADE (authors')",
+     "label_access": true,
+     "n_seeds": null,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": null,
+     "p_t": null,
+     "p_tost_1mm": null,
+     "per_seed_diff_mm": null,
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": null,
+     "role": "ref",
+     "sd_mm": null,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": null
+    },
+    {
+     "ci90_t": [
+      2.1987986620234796,
+      5.927455762901424
+     ],
+     "ci95_t": [
+      1.6848175049442933,
+      6.44143691998061
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      1.9850262983529352,
+      5.745768923773394
+     ],
+     "decision": "secondary",
+     "diff_mm": 4.063127212462452,
+     "err_mm": 17.1965860773182,
+     "family": null,
+     "id": "physics",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "None, physics frame (authors')",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.0625,
+     "p_t": 0.007077223992465992,
+     "p_tost_1mm": 0.989388690703586,
+     "per_seed_diff_mm": [
+      3.700673902002268,
+      3.892198873769729,
+      4.596508861615356
+     ],
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": [
+      2.0867598776550813,
+      5.700310898592505
+     ],
+     "role": "secondary",
+     "sd_mm": 2.266274954940435,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      1.8424049109917164,
+      5.560750840102484
+     ],
+     "ci95_t": [
+      1.3298451096050363,
+      6.073310641489163
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      1.3739779586010292,
+      5.722555467973424
+     ],
+     "decision": "secondary",
+     "diff_mm": 3.7015778755471,
+     "err_mm": 16.835036740402852,
+     "family": null,
+     "id": "cut",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "CUT (prior)",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.0625,
+     "p_t": 0.010202064955509045,
+     "p_tost_1mm": 0.9836472697740923,
+     "per_seed_diff_mm": [
+      3.4417229126452233,
+      4.406454318613068,
+      3.2565563953830114
+     ],
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": [
+      1.5116888276949554,
+      5.733084097288271
+     ],
+     "role": "secondary",
+     "sd_mm": 2.260007832569075,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      1.726677488002157,
+      5.712497375880551
+     ],
+     "ci95_t": [
+      1.1772474217730577,
+      6.26192744210965
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      1.3458674746937913,
+      5.684331411243834
+     ],
+     "decision": "secondary",
+     "diff_mm": 3.719587431941354,
+     "err_mm": 16.853046296797103,
+     "family": null,
+     "id": "cyclegan",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "CycleGAN (prior)",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.0625,
+     "p_t": 0.013145252459364393,
+     "p_tost_1mm": 0.9798400588565117,
+     "per_seed_diff_mm": [
+      3.283309051361362,
+      4.524723387635359,
+      3.350729856827336
+     ],
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": [
+      1.4439606487580914,
+      5.599598905733201
+     ],
+     "role": "secondary",
+     "sd_mm": 2.422578301629133,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -1.3150655566030767,
+      3.4943595922322657
+     ],
+     "ci95_t": [
+      -1.9780264661225075,
+      4.1573205017516965
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.5266400032632246,
+      3.803823119128966
+     ],
+     "decision": "secondary",
+     "diff_mm": 1.0896470178145945,
+     "err_mm": 14.223105882670348,
+     "family": null,
+     "id": "label_painted",
+     "k": 3,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "Label-painted physics stage (authors', not learned)",
+     "label_access": true,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.375,
+     "p_t": 0.4030810830206757,
+     "p_tost_1mm": 0.5284840829214572,
+     "per_seed_diff_mm": [
+      1.6558010646432682,
+      2.1057902117637814,
+      -0.4926502229632688
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.2746971996121788,
+      3.462690298523498
+     ],
+     "role": "secondary",
+     "sd_mm": 2.923164953918619,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      0.8357342056150618,
+      5.157394252688745
+     ],
+     "ci95_t": [
+      0.24000985462156077,
+      5.753118603682246
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      0.7156501829388345,
+      5.153915525107712
+     ],
+     "decision": "higher",
+     "diff_mm": 2.9965642291519035,
+     "err_mm": 16.130023094007658,
+     "family": null,
+     "id": "fastcut",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "FastCUT",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.038245631636050256,
+     "p_signflip": 0.0625,
+     "p_t": 0.038245631636050256,
+     "p_tost_1mm": 0.9391605935197935,
+     "per_seed_diff_mm": [
+      3.2316945122796255,
+      3.6805099281453137,
+      2.0774882470307676
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      0.8141440578562307,
+      5.000753912066492
+     ],
+     "role": "family",
+     "sd_mm": 2.6267016954022644,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      1.8852574628050667,
+      5.721138499458328
+     ],
+     "ci95_t": [
+      1.3564958952227517,
+      6.249900067040643
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      1.6148502820553274,
+      6.177452784435469
+     ],
+     "decision": "higher",
+     "diff_mm": 3.803197981131697,
+     "err_mm": 16.936656845987446,
+     "family": null,
+     "id": "dclgan",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "DCLGAN",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.020733962845704106,
+     "p_signflip": 0.0625,
+     "p_t": 0.010366981422852053,
+     "p_tost_1mm": 0.9839671563197198,
+     "per_seed_diff_mm": [
+      5.022475762479313,
+      2.59205836728361,
+      3.795059813632166
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      1.714905679400373,
+      5.631262160482073
+     ],
+     "role": "family",
+     "sd_mm": 2.3314455816951787,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      2.6388008545281334,
+      6.3770773066854645
+     ],
+     "ci95_t": [
+      2.12349370657149,
+      6.892384454642108
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      2.714113940426608,
+      6.47965654610909
+     ],
+     "decision": "higher",
+     "diff_mm": 4.507939080606799,
+     "err_mm": 17.641397945462554,
+     "family": null,
+     "id": "unsb",
+     "k": 6,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "UNSB (Schr\u00f6dinger bridge)",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.013901375006973218,
+     "p_signflip": 0.03125,
+     "p_t": 0.0046337916689910726,
+     "p_tost_1mm": 0.9935668018045165,
+     "per_seed_diff_mm": [
+      4.858454242192774,
+      4.5603137988564155,
+      4.105049200771205
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      2.6821463375188093,
+      6.379866610173255
+     ],
+     "role": "family",
+     "sd_mm": 2.2721215893445783,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      2.411095111362246,
+      5.230361142151148
+     ],
+     "ci95_t": [
+      2.022470044102043,
+      5.618986209411351
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      2.113491038303049,
+      5.485985573369908
+     ],
+     "decision": "higher",
+     "diff_mm": 3.820728126756697,
+     "err_mm": 16.95418699161245,
+     "family": null,
+     "id": "histmatch",
+     "k": 6,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "Histogram matching",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.011198568085435253,
+     "p_signflip": 0.03125,
+     "p_t": 0.0027996420213588133,
+     "p_tost_1mm": 0.9950002163680325,
+     "per_seed_diff_mm": [
+      3.3787175011848785,
+      4.2693472655543045,
+      3.8141196135309077
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      2.146916799978976,
+      5.493135847134106
+     ],
+     "role": "family",
+     "sd_mm": 1.7135477529931131,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    }
+   ],
+   "title": "Texture stage"
+  },
+  {
+   "audit": "passed",
+   "groups_pending": [],
+   "key": "mask",
+   "m": 7,
+   "mdd": {
+    "all_pairs": {
+     "alpha_holm": 0.0071428571428571435,
+     "mdd_holm_mm": 3.249293498611796,
+     "mdd_mm": 2.1391827366107377,
+     "n_methods": 6,
+     "n_pairs": 15,
+     "pairs": [
+      {
+       "a": "unet",
+       "b": "lraspp_mbv3",
+       "sd_mm": 1.5556458110521356,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "unet",
+       "b": "deeplabv3_mbv3",
+       "sd_mm": 1.1983504729644796,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "unet",
+       "b": "deeplabv3_r50",
+       "sd_mm": 1.501351741447264,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "unet",
+       "b": "fcn_r50",
+       "sd_mm": 1.1955654006508551,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "unet",
+       "b": "nnunet2d",
+       "sd_mm": 1.8532958579052647,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "lraspp_mbv3",
+       "b": "deeplabv3_mbv3",
+       "sd_mm": 0.9265562545146401,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "lraspp_mbv3",
+       "b": "deeplabv3_r50",
+       "sd_mm": 2.554063774408404,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "lraspp_mbv3",
+       "b": "fcn_r50",
+       "sd_mm": 1.2408797259651505,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "lraspp_mbv3",
+       "b": "nnunet2d",
+       "sd_mm": 1.1103478007685765,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "deeplabv3_mbv3",
+       "b": "deeplabv3_r50",
+       "sd_mm": 2.2402931924407548,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "deeplabv3_mbv3",
+       "b": "fcn_r50",
+       "sd_mm": 1.078661719988403,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "deeplabv3_mbv3",
+       "b": "nnunet2d",
+       "sd_mm": 1.7831787518618718,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "deeplabv3_r50",
+       "b": "fcn_r50",
+       "sd_mm": 1.9160603958384026,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "deeplabv3_r50",
+       "b": "nnunet2d",
+       "sd_mm": 2.400297710552265,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "fcn_r50",
+       "b": "nnunet2d",
+       "sd_mm": 1.4338486840673317,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "rule": "all method pairs (amend1, cohort ordering)",
+     "sd_mm": 1.501351741447264
+    },
+    "alpha_holm": 0.0071428571428571435,
+    "family_only": {
+     "alpha_holm": 0.0071428571428571435,
+     "mdd_holm_mm": 3.366799185327305,
+     "mdd_mm": 2.2165429801783927,
+     "n_methods": 7,
+     "n_pairs": 7,
+     "pairs": [
+      {
+       "a": "unet",
+       "b": "lraspp_mbv3",
+       "sd_mm": 1.5556458110521356,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "unet",
+       "b": "deeplabv3_mbv3",
+       "sd_mm": 1.1983504729644796,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "unet",
+       "b": "deeplabv3_r50",
+       "sd_mm": 1.501351741447264,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "unet",
+       "b": "fcn_r50",
+       "sd_mm": 1.1955654006508551,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "unet",
+       "b": "nnunet2d",
+       "sd_mm": 1.8532958579052647,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "unet",
+       "b": "sam_unet",
+       "sd_mm": 1.5663579126027016,
+       "seeds": [
+        0
+       ]
+      },
+      {
+       "a": "unet",
+       "b": "medsam_unet",
+       "sd_mm": 2.1542743942502964,
+       "seeds": [
+        0
+       ]
+      }
+     ],
+     "rule": "Holm-tested family contrasts only (sensitivity)",
+     "sd_mm": 1.5556458110521356
+    },
+    "mdd_holm_mm": 3.249293498611796,
+    "mdd_mm": 2.1391827366107377,
+    "n_methods": 6,
+    "n_pairs": 5,
+    "pairs": [
+     {
+      "a": "unet",
+      "b": "lraspp_mbv3",
+      "sd_mm": 1.5556458110521356,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "unet",
+      "b": "deeplabv3_mbv3",
+      "sd_mm": 1.1983504729644796,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "unet",
+      "b": "deeplabv3_r50",
+      "sd_mm": 1.501351741447264,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "unet",
+      "b": "fcn_r50",
+      "sd_mm": 1.1955654006508551,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "unet",
+      "b": "nnunet2d",
+      "sd_mm": 1.8532958579052647,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     }
+    ],
+    "rule": "reference contrasts (post hoc rule)",
+    "sd_mm": 1.501351741447264
+   },
+   "pending": [],
+   "reference": {
+    "err_mm": 13.133458864855752,
+    "id": "unet",
+    "label": "U-Net, stage-matched (authors')",
+    "provisional": false
+   },
+   "rows": [
+    {
+     "ci90_t": null,
+     "ci95_t": null,
+     "contrast_seeds": null,
+     "crossed_boot_ci95": null,
+     "decision": "",
+     "diff_mm": null,
+     "err_mm": 13.133458864855752,
+     "family": null,
+     "id": "unet",
+     "k": null,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "U-Net, stage-matched (authors')",
+     "label_access": false,
+     "n_seeds": null,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": null,
+     "p_t": null,
+     "p_tost_1mm": null,
+     "per_seed_diff_mm": null,
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": null,
+     "role": "ref",
+     "sd_mm": null,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": null
+    },
+    {
+     "ci90_t": null,
+     "ci95_t": null,
+     "contrast_seeds": null,
+     "crossed_boot_ci95": null,
+     "decision": "",
+     "diff_mm": null,
+     "err_mm": 13.325653288761785,
+     "family": null,
+     "id": "unet@seed0",
+     "k": null,
+     "k_seeds": null,
+     "kind": "ref_seed0",
+     "label": "Seed 0 only, for the seed-0 rows",
+     "label_access": false,
+     "n_seeds": null,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": null,
+     "p_t": null,
+     "p_tost_1mm": null,
+     "per_seed_diff_mm": null,
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": null,
+     "role": "ref",
+     "sd_mm": null,
+     "seeds": null,
+     "tost_within_1mm": null
+    },
+    {
+     "ci90_t": [
+      -1.97264591706912,
+      -0.993619554355553
+     ],
+     "ci95_t": [
+      -2.1076009663280244,
+      -0.8586645050966488
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -2.3715393526148785,
+      -0.688667547200738
+     ],
+     "decision": "secondary",
+     "diff_mm": -1.4831327357123365,
+     "err_mm": 11.650326129143414,
+     "family": null,
+     "id": "ct",
+     "k": 6,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "CT label (authors')",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.03125,
+     "p_t": 0.0017077218673905417,
+     "p_tost_1mm": 0.9482947024626442,
+     "per_seed_diff_mm": [
+      -1.8715180180563957,
+      -1.4572635021894955,
+      -1.1206166868911194
+     ],
+     "privileged": true,
+     "provisional": false,
+     "ps_boot_ci95": [
+      -2.222214252792889,
+      -0.7832551211687667
+     ],
+     "role": "secondary",
+     "sd_mm": 0.5950514799340932,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -1.6575795528190558,
+      0.901893554001308
+     ],
+     "ci95_t": [
+      -2.0103931565818796,
+      1.2547071577641318
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.8728532665839448,
+      1.4242445864386386
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": -0.37784299940887384,
+     "err_mm": 12.75561586544688,
+     "family": null,
+     "id": "lraspp_mbv3",
+     "k": 4,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "LR-ASPP, MobileNetV3-L",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 0.5625,
+     "p_t": 0.5777813299276262,
+     "p_tost_1mm": 0.18612786374947313,
+     "per_seed_diff_mm": [
+      0.6049868181947607,
+      -0.2708588994578755,
+      -1.4676569169635076
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.7804817590791524,
+      1.0849901038727825
+     ],
+     "role": "family",
+     "sd_mm": 1.5556458110521356,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      0.42281799987050006,
+      2.394440194529087
+     ],
+     "ci95_t": [
+      0.1510374017846592,
+      2.6662207926149275
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.388326779725469,
+      2.818824392800213
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 1.4086290971997935,
+     "err_mm": 14.542087962055547,
+     "family": null,
+     "id": "deeplabv3_mbv3",
+     "k": 6,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "DeepLabV3, MobileNetV3-L",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": "Unadjusted CI excludes 0; not declared a difference after Holm (post hoc note).",
+     "p_holm": 0.24231178870611333,
+     "p_signflip": 0.03125,
+     "p_t": 0.03461596981515905,
+     "p_tost_1mm": 0.7791784398784826,
+     "per_seed_diff_mm": [
+      1.5945075608277433,
+      0.38411758999104845,
+      2.2472621407805873
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.07506848184978804,
+      2.705856189358545
+     ],
+     "role": "family",
+     "sd_mm": 1.1983504729644796,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -1.17024123296536,
+      1.299902921193526
+     ],
+     "ci95_t": [
+      -1.510741181380577,
+      1.640402869608743
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.4256421052609218,
+      1.5704318795677419
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 0.06483084411408295,
+     "err_mm": 13.198289708969833,
+     "family": null,
+     "id": "deeplabv3_r50",
+     "k": 3,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "DeepLabV3, ResNet-50",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 0.8125,
+     "p_t": 0.9198749246970906,
+     "p_tost_1mm": 0.09379634312773123,
+     "per_seed_diff_mm": [
+      0.34878716191047765,
+      0.06533930818933313,
+      -0.21963393775756343
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.3470425750347688,
+      1.5865570590514966
+     ],
+     "role": "family",
+     "sd_mm": 1.501351741447264,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -1.3045102179959116,
+      0.6625297525878708
+     ],
+     "ci95_t": [
+      -1.5756591739735497,
+      0.9336787085655089
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.5165639427472957,
+      1.1002980488139493
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": -0.32099023270402033,
+     "err_mm": 12.812468632151733,
+     "family": null,
+     "id": "fcn_r50",
+     "k": 4,
+     "k_seeds": 1,
+     "kind": "row",
+     "label": "FCN, ResNet-50",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 0.5,
+     "p_t": 0.5398296456854877,
+     "p_tost_1mm": 0.11145217299199299,
+     "per_seed_diff_mm": [
+      0.3004214740586428,
+      0.007023515628342025,
+      -1.2704156877990478
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.374622711556584,
+      0.8357326225660959
+     ],
+     "role": "family",
+     "sd_mm": 1.1955654006508551,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      0.21999137246380096,
+      3.269182180287811
+     ],
+     "ci95_t": [
+      -0.20032794818158273,
+      3.689501500933195
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      0.15852078862448601,
+      3.611215270045436
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 1.744586776375806,
+     "err_mm": 14.878045641231559,
+     "family": null,
+     "id": "nnunet2d",
+     "k": 4,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "nnU-Net 2D, 2 epochs",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.4156104395750731,
+     "p_signflip": 0.125,
+     "p_t": 0.06926840659584552,
+     "p_tost_1mm": 0.8148740592406724,
+     "per_seed_diff_mm": [
+      2.253030426236658,
+      1.8795781929386584,
+      1.1011517099520969
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      0.15142936861751002,
+      3.464544030234751
+     ],
+     "role": "family",
+     "sd_mm": 1.8532958579052647,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -0.2944852982731574,
+      2.282612216134984
+     ],
+     "ci95_t": [
+      -0.6497283593874412,
+      2.637855277249268
+     ],
+     "contrast_seeds": [
+      0
+     ],
+     "crossed_boot_ci95": null,
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 0.9940634589309134,
+     "err_mm": 14.3197167476927,
+     "family": null,
+     "id": "sam_unet",
+     "k": 5,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "SAM, boxes from the U-Net mask",
+     "label_access": false,
+     "n_seeds": 1,
+     "note": null,
+     "p_holm": 0.903877591924819,
+     "p_signflip": 0.0625,
+     "p_t": 0.1807755183849638,
+     "p_tost_1mm": 0.4964759304739142,
+     "per_seed_diff_mm": [
+      0.9940634589309134
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": null,
+     "role": "family",
+     "sd_mm": 1.5663579126027016,
+     "seeds": [
+      0
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -2.2464342065108327,
+      1.2979505998649774
+     ],
+     "ci95_t": [
+      -2.735014130764522,
+      1.7865305241186664
+     ],
+     "contrast_seeds": [
+      0
+     ],
+     "crossed_boot_ci95": null,
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": -0.4742418033229277,
+     "err_mm": 12.851411485438858,
+     "family": null,
+     "id": "medsam_unet",
+     "k": 5,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "MedSAM, boxes from the U-Net mask",
+     "label_access": false,
+     "n_seeds": 1,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 0.625,
+     "p_t": 0.612862976941407,
+     "p_tost_1mm": 0.2880065379625843,
+     "per_seed_diff_mm": [
+      -0.4742418033229277
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": null,
+     "role": "family",
+     "sd_mm": 2.1542743942502964,
+     "seeds": [
+      0
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": null,
+     "ci95_t": null,
+     "contrast_seeds": null,
+     "crossed_boot_ci95": null,
+     "decision": "secondary",
+     "diff_mm": null,
+     "err_mm": 12.761690511375027,
+     "family": null,
+     "id": "nnunet2d_e20",
+     "k": null,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "nnU-Net 2D, 20 epochs (optional)",
+     "label_access": false,
+     "n_seeds": null,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": null,
+     "p_t": null,
+     "p_tost_1mm": null,
+     "per_seed_diff_mm": null,
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": null,
+     "role": "secondary",
+     "sd_mm": null,
+     "seeds": [
+      0
+     ],
+     "tost_within_1mm": null
+    },
+    {
+     "ci90_t": [
+      -2.7945355200686555,
+      1.3431588276393116
+     ],
+     "ci95_t": [
+      -3.364900901206599,
+      1.9135242087772553
+     ],
+     "contrast_seeds": [
+      0
+     ],
+     "crossed_boot_ci95": null,
+     "decision": "secondary",
+     "diff_mm": -0.7256883462146719,
+     "err_mm": 12.599964942547112,
+     "family": null,
+     "id": "sam_priv",
+     "k": 3,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "SAM, boxes from the CT label",
+     "label_access": false,
+     "n_seeds": 1,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.5,
+     "p_t": 0.5112491804939475,
+     "p_tost_1mm": 0.40000090159965684,
+     "per_seed_diff_mm": [
+      -0.7256883462146719
+     ],
+     "privileged": true,
+     "provisional": true,
+     "ps_boot_ci95": null,
+     "role": "secondary",
+     "sd_mm": 2.5148874830032595,
+     "seeds": [
+      0
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -3.2116813188029236,
+      0.7960650925711472
+     ],
+     "ci95_t": [
+      -3.764133872649449,
+      1.3485176464176725
+     ],
+     "contrast_seeds": [
+      0
+     ],
+     "crossed_boot_ci95": null,
+     "decision": "secondary",
+     "diff_mm": -1.2078081131158882,
+     "err_mm": 12.117845175645899,
+     "family": null,
+     "id": "medsam_priv",
+     "k": 4,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "MedSAM, boxes from the CT label",
+     "label_access": false,
+     "n_seeds": 1,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.28125,
+     "p_t": 0.27876527367651416,
+     "p_tost_1mm": 0.578639679461143,
+     "per_seed_diff_mm": [
+      -1.2078081131158882
+     ],
+     "privileged": true,
+     "provisional": true,
+     "ps_boot_ci95": null,
+     "role": "secondary",
+     "sd_mm": 2.435905225962149,
+     "seeds": [
+      0
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -0.08250463010256548,
+      2.009429766399745
+     ],
+     "ci95_t": [
+      -0.37086980623926047,
+      2.2977949425364397
+     ],
+     "contrast_seeds": [
+      0
+     ],
+     "crossed_boot_ci95": null,
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 0.9634625681485897,
+     "err_mm": 14.289115856910376,
+     "family": "MASK-P",
+     "id": "samus_unet",
+     "k": 5,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "SAMUS, boxes from the U-Net mask",
+     "label_access": false,
+     "n_seeds": 1,
+     "note": null,
+     "p_holm": 0.6129155472028337,
+     "p_signflip": 0.125,
+     "p_t": 0.12258310944056675,
+     "p_tost_1mm": 0.47330627194080116,
+     "per_seed_diff_mm": [
+      0.9634625681485897
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": null,
+     "role": "a2",
+     "sd_mm": 1.2714761378983692,
+     "seeds": [
+      0
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      0.14948472057725326,
+      1.5492572478073856
+     ],
+     "ci95_t": [
+      -0.043468582375704834,
+      1.7422105507603438
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.30942778322307046,
+      1.9343231891610952
+     ],
+     "decision": "secondary",
+     "diff_mm": 0.8493709841923195,
+     "err_mm": 13.982829849048072,
+     "family": null,
+     "id": "samus_unet@s0-2",
+     "k": 4,
+     "k_seeds": 3,
+     "kind": "samus3",
+     "label": "SAMUS, boxes from the U-Net mask , seeds 0 to 2 against U-Net seeds 0 to 2",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.125,
+     "p_t": 0.058262946639697964,
+     "p_tost_1mm": 0.34129815432322125,
+     "per_seed_diff_mm": [
+      0.9634625681485897,
+      1.4873785020502883,
+      0.09727188237808004
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.1614825136485987,
+      1.7687255472048176
+     ],
+     "role": "secondary",
+     "sd_mm": 0.8507806792768338,
+     "seeds": null,
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -1.373088098273772,
+      1.7671238706344659
+     ],
+     "ci95_t": [
+      -1.8059543387423134,
+      2.1999901111030074
+     ],
+     "contrast_seeds": [
+      0
+     ],
+     "crossed_boot_ci95": null,
+     "decision": "secondary",
+     "diff_mm": 0.19701788618034696,
+     "err_mm": 13.522671174942133,
+     "family": null,
+     "id": "samus_priv",
+     "k": 3,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "SAMUS, boxes from the CT label",
+     "label_access": false,
+     "n_seeds": 1,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.8125,
+     "p_t": 0.8104507481156049,
+     "p_tost_1mm": 0.17500304869303504,
+     "per_seed_diff_mm": [
+      0.19701788618034696
+     ],
+     "privileged": true,
+     "provisional": true,
+     "ps_boot_ci95": null,
+     "role": "secondary",
+     "sd_mm": 1.908618450504679,
+     "seeds": [
+      0
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -0.21711448696059044,
+      0.9174518307688942
+     ],
+     "ci95_t": [
+      -0.3735101256564537,
+      1.0738474694647575
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.8560398118667111,
+      1.6205211249050124
+     ],
+     "decision": "secondary",
+     "diff_mm": 0.3501686719041519,
+     "err_mm": 13.483627536759904,
+     "family": null,
+     "id": "samus_priv@s0-2",
+     "k": 3,
+     "k_seeds": 2,
+     "kind": "samus3",
+     "label": "SAMUS, boxes from the CT label , seeds 0 to 2 against U-Net seeds 0 to 2",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.3125,
+     "p_t": 0.26869356490781837,
+     "p_tost_1mm": 0.03452814436696843,
+     "per_seed_diff_mm": [
+      0.19701788618034696,
+      0.9243602258388949,
+      -0.07087209630678733
+     ],
+     "privileged": true,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.7338984618659208,
+      1.4990790945515635
+     ],
+     "role": "secondary",
+     "sd_mm": 0.6895885464994629,
+     "seeds": null,
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -0.9298075985945785,
+      1.1587562728467433
+     ],
+     "ci95_t": [
+      -1.217708160709672,
+      1.4466568349618367
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.4174741060208815,
+      1.2971615713910287
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 0.11447433712608242,
+     "err_mm": 13.247933201981835,
+     "family": "MASK-P",
+     "id": "lraspp_mbv3_imnet",
+     "k": 4,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "LR-ASPP, MobileNetV3-L, ImageNet backbone",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 0.84375,
+     "p_t": 0.8339150130105286,
+     "p_tost_1mm": 0.07410147156837256,
+     "per_seed_diff_mm": [
+      0.6464774583368816,
+      0.43928031783475,
+      -0.7423347647933859
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.1839977304082108,
+      1.2332753309281417
+     ],
+     "role": "a2",
+     "sd_mm": 1.2694275353253628,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -1.3992473823943112,
+      2.3838820554642237
+     ],
+     "ci95_t": [
+      -1.9207373433223411,
+      2.9053720163922536
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.4559156969869724,
+      2.292585225450725
+     ],
+     "decision": "does not detectably change, equivalence not tested",
+     "diff_mm": 0.49231733653495624,
+     "err_mm": null,
+     "family": "IMN-T",
+     "id": "lraspp_mbv3_imnet@IMN-T",
+     "k": 3,
+     "k_seeds": 3,
+     "kind": "imnt",
+     "label": "LR-ASPP, MobileNetV3-L, ImageNet backbone , minus the same network trained from scratch",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 0.625,
+     "p_t": 0.6223726352290785,
+     "p_tost_1mm": 0.3059209236829463,
+     "per_seed_diff_mm": [
+      0.04149064014212082,
+      0.7101392172926255,
+      0.7253221521701217
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.3088910957651831,
+      2.432337337450752
+     ],
+     "role": "a2",
+     "sd_mm": 2.2993831999992578,
+     "seeds": null,
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -1.7024523356006076,
+      0.7533134145307792
+     ],
+     "ci95_t": [
+      -2.040970275872124,
+      1.0918313548022955
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.9844113910560566,
+      1.4960269729422502
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": -0.4745694605349143,
+     "err_mm": 12.658889404320837,
+     "family": "MASK-P",
+     "id": "deeplabv3_mbv3_imnet",
+     "k": 3,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "DeepLabV3, MobileNetV3-L, ImageNet backbone",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 0.5,
+     "p_t": 0.47132715161630984,
+     "p_tost_1mm": 0.21397415035942452,
+     "per_seed_diff_mm": [
+      0.39959781306830305,
+      -1.072988484219214,
+      -0.7503177104538338
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.9142213605169711,
+      1.2409345800924458
+     ],
+     "role": "a2",
+     "sd_mm": 1.4926125583961154,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -3.8980127395846047,
+      0.13161562411518912
+     ],
+     "ci95_t": [
+      -4.4534816370828105,
+      0.687084521613395
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -4.105390968867777,
+      0.3665584328462958
+     ],
+     "decision": "does not detectably change, equivalence not tested",
+     "diff_mm": -1.8831985577347077,
+     "err_mm": null,
+     "family": "IMN-T",
+     "id": "deeplabv3_mbv3_imnet@IMN-T",
+     "k": 4,
+     "k_seeds": 3,
+     "kind": "imnt",
+     "label": "DeepLabV3, MobileNetV3-L, ImageNet backbone , minus the same network trained from scratch",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.4734244712234842,
+     "p_signflip": 0.15625,
+     "p_t": 0.11835611780587105,
+     "p_tost_1mm": 0.7912428502404965,
+     "per_seed_diff_mm": [
+      -1.1949097477594401,
+      -1.4571060742102624,
+      -2.997579851234421
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -3.937965345413684,
+      0.1768677197813914
+     ],
+     "role": "a2",
+     "sd_mm": 2.4492050599719084,
+     "seeds": null,
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -1.6191884423971423,
+      0.5836252684995227
+     ],
+     "ci95_t": [
+      -1.92283790903487,
+      0.8872747351372503
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.7880003144920236,
+      0.7754242948128263
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": -0.5177815869488098,
+     "err_mm": 12.61567727790694,
+     "family": "MASK-P",
+     "id": "deeplabv3_r50_imnet",
+     "k": 4,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "DeepLabV3, ResNet-50, ImageNet backbone",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 0.375,
+     "p_t": 0.3869884110530756,
+     "p_tost_1mm": 0.20902064560503353,
+     "per_seed_diff_mm": [
+      0.12092160126674785,
+      -0.750283281852305,
+      -0.9239830802608756
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.638509708202891,
+      0.7244413752194057
+     ],
+     "role": "a2",
+     "sd_mm": 1.3388685010024275,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -1.9505642411294075,
+      0.7853393790036219
+     ],
+     "ci95_t": [
+      -2.3276981180959986,
+      1.162473255970213
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.967586209867284,
+      0.820457285729469
+     ],
+     "decision": "does not detectably change, equivalence not tested",
+     "diff_mm": -0.5826124310628927,
+     "err_mm": null,
+     "family": "IMN-T",
+     "id": "deeplabv3_r50_imnet@IMN-T",
+     "k": 4,
+     "k_seeds": 3,
+     "kind": "imnt",
+     "label": "DeepLabV3, ResNet-50, ImageNet backbone , minus the same network trained from scratch",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 0.3125,
+     "p_t": 0.42998534787132947,
+     "p_tost_1mm": 0.282783628418538,
+     "per_seed_diff_mm": [
+      -0.2278655606437298,
+      -0.8156225900416381,
+      -0.7043491425033123
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.9308650885231142,
+      0.727978263203444
+     ],
+     "role": "a2",
+     "sd_mm": 1.6628801430891667,
+     "seeds": null,
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -0.9889671101744228,
+      0.2649675012999682
+     ],
+     "ci95_t": [
+      -1.1618172127905884,
+      0.43781760391613384
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.4233885796408356,
+      1.035983528624269
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": -0.3619998044372273,
+     "err_mm": 12.771459060418527,
+     "family": "MASK-P",
+     "id": "fcn_r50_imnet",
+     "k": 4,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "FCN, ResNet-50, ImageNet backbone",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 0.25,
+     "p_t": 0.29714415700443647,
+     "p_tost_1mm": 0.047790527564018956,
+     "per_seed_diff_mm": [
+      -1.0461950016784778,
+      -0.38879423048812445,
+      0.34898981885492003
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.2456824706434373,
+      0.76112289919802
+     ],
+     "role": "a2",
+     "sd_mm": 0.7621405048075512,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -1.1824306886781533,
+      1.1004115452117391
+     ],
+     "ci95_t": [
+      -1.497111781913487,
+      1.4150926384470728
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.6605456783877681,
+      2.008796584760795
+     ],
+     "decision": "does not detectably change, equivalence not tested",
+     "diff_mm": -0.041009571733207,
+     "err_mm": null,
+     "family": "IMN-T",
+     "id": "fcn_r50_imnet@IMN-T",
+     "k": 2,
+     "k_seeds": 2,
+     "kind": "imnt",
+     "label": "FCN, ResNet-50, ImageNet backbone , minus the same network trained from scratch",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 1.0,
+     "p_signflip": 1.0,
+     "p_t": 0.9450922396535488,
+     "p_tost_1mm": 0.0756188998134904,
+     "per_seed_diff_mm": [
+      -1.3466164757371206,
+      -0.3958177461164665,
+      1.6194055066539679
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.338517525887712,
+      1.2454652076702681
+     ],
+     "role": "a2",
+     "sd_mm": 1.387509776516264,
+     "seeds": null,
+     "tost_within_1mm": false
+    }
+   ],
+   "title": "Mask source"
+  },
+  {
+   "audit": "passed",
+   "groups_pending": [],
+   "key": "ctrl",
+   "m": 10,
+   "mdd": {
+    "all_pairs": {
+     "alpha_holm": 0.005,
+     "mdd_holm_mm": 5.727866917717118,
+     "mdd_mm": 3.5115722894698025,
+     "n_methods": 12,
+     "n_pairs": 66,
+     "pairs": [
+      {
+       "a": "reinforce",
+       "b": "servo_base",
+       "sd_mm": 0.312568140307984,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "ppo_res",
+       "sd_mm": 0.32644731706677615,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "sac_res",
+       "sd_mm": 1.1783805913223355,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "td3_res",
+       "sd_mm": 1.4660826175283737,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "a2c_res",
+       "sd_mm": 1.2676041341655693,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "ppo_scratch",
+       "sd_mm": 2.902087613532798,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "dqn_scratch",
+       "sd_mm": 2.941036550782537,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "bc_res",
+       "sd_mm": 0.9412771993169482,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "dagger_res",
+       "sd_mm": 2.4588755287719004,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "bc_scratch",
+       "sd_mm": 2.683072632122711,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "dagger_scratch",
+       "sd_mm": 5.188634599299182,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "servo_base",
+       "b": "ppo_res",
+       "sd_mm": 0.3598770814575364,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "servo_base",
+       "b": "sac_res",
+       "sd_mm": 0.9317444873948293,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "servo_base",
+       "b": "td3_res",
+       "sd_mm": 1.5066373680732081,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "servo_base",
+       "b": "a2c_res",
+       "sd_mm": 1.2592388560256282,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "servo_base",
+       "b": "ppo_scratch",
+       "sd_mm": 2.8336264458725955,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "servo_base",
+       "b": "dqn_scratch",
+       "sd_mm": 2.884611759466041,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "servo_base",
+       "b": "bc_res",
+       "sd_mm": 0.6579337791706977,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "servo_base",
+       "b": "dagger_res",
+       "sd_mm": 2.28442471007253,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "servo_base",
+       "b": "bc_scratch",
+       "sd_mm": 2.4233740573287714,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "servo_base",
+       "b": "dagger_scratch",
+       "sd_mm": 4.992192499764651,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_res",
+       "b": "sac_res",
+       "sd_mm": 0.956852577422479,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_res",
+       "b": "td3_res",
+       "sd_mm": 1.2016976082387592,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_res",
+       "b": "a2c_res",
+       "sd_mm": 1.2132356989487976,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_res",
+       "b": "ppo_scratch",
+       "sd_mm": 2.7945443709917814,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_res",
+       "b": "dqn_scratch",
+       "sd_mm": 2.8628433497249204,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_res",
+       "b": "bc_res",
+       "sd_mm": 0.9447699972376019,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_res",
+       "b": "dagger_res",
+       "sd_mm": 2.183969919961247,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_res",
+       "b": "bc_scratch",
+       "sd_mm": 2.4702079775454906,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_res",
+       "b": "dagger_scratch",
+       "sd_mm": 4.9901385943803325,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sac_res",
+       "b": "td3_res",
+       "sd_mm": 1.4448588422071589,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sac_res",
+       "b": "a2c_res",
+       "sd_mm": 1.711641917669356,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sac_res",
+       "b": "ppo_scratch",
+       "sd_mm": 2.679564841127168,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sac_res",
+       "b": "dqn_scratch",
+       "sd_mm": 2.749359722077632,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sac_res",
+       "b": "bc_res",
+       "sd_mm": 0.8067691070422554,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sac_res",
+       "b": "dagger_res",
+       "sd_mm": 1.7683264030300985,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sac_res",
+       "b": "bc_scratch",
+       "sd_mm": 1.7784037285801353,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "sac_res",
+       "b": "dagger_scratch",
+       "sd_mm": 4.4322599692816524,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "td3_res",
+       "b": "a2c_res",
+       "sd_mm": 1.5695778749354024,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "td3_res",
+       "b": "ppo_scratch",
+       "sd_mm": 2.4834312370190763,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "td3_res",
+       "b": "dqn_scratch",
+       "sd_mm": 2.891690587751624,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "td3_res",
+       "b": "bc_res",
+       "sd_mm": 1.8239038063052395,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "td3_res",
+       "b": "dagger_res",
+       "sd_mm": 1.7869693342561845,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "td3_res",
+       "b": "bc_scratch",
+       "sd_mm": 2.606930078064031,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "td3_res",
+       "b": "dagger_scratch",
+       "sd_mm": 4.677397067463312,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "a2c_res",
+       "b": "ppo_scratch",
+       "sd_mm": 3.043787468473472,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "a2c_res",
+       "b": "dqn_scratch",
+       "sd_mm": 3.480722772788997,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "a2c_res",
+       "b": "bc_res",
+       "sd_mm": 1.5511908391516205,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "a2c_res",
+       "b": "dagger_res",
+       "sd_mm": 1.9323049777220656,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "a2c_res",
+       "b": "bc_scratch",
+       "sd_mm": 2.590040615087259,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "a2c_res",
+       "b": "dagger_scratch",
+       "sd_mm": 5.000307013172303,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_scratch",
+       "b": "dqn_scratch",
+       "sd_mm": 1.5153943175530504,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_scratch",
+       "b": "bc_res",
+       "sd_mm": 2.7244381630840397,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_scratch",
+       "b": "dagger_res",
+       "sd_mm": 2.7432409140426857,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_scratch",
+       "b": "bc_scratch",
+       "sd_mm": 2.861727311454332,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ppo_scratch",
+       "b": "dagger_scratch",
+       "sd_mm": 3.217511408114376,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "dqn_scratch",
+       "b": "bc_res",
+       "sd_mm": 2.864972011707921,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "dqn_scratch",
+       "b": "dagger_res",
+       "sd_mm": 3.2723740453302104,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "dqn_scratch",
+       "b": "bc_scratch",
+       "sd_mm": 2.8843518248811457,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "dqn_scratch",
+       "b": "dagger_scratch",
+       "sd_mm": 3.4532177772453987,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "bc_res",
+       "b": "dagger_res",
+       "sd_mm": 2.2314037626748733,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "bc_res",
+       "b": "bc_scratch",
+       "sd_mm": 2.175835781531387,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "bc_res",
+       "b": "dagger_scratch",
+       "sd_mm": 4.732181490645032,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "dagger_res",
+       "b": "bc_scratch",
+       "sd_mm": 1.4287192345322215,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "dagger_res",
+       "b": "dagger_scratch",
+       "sd_mm": 3.579871741512462,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "bc_scratch",
+       "b": "dagger_scratch",
+       "sd_mm": 3.0944750042212097,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "rule": "all method pairs (amend1, cohort ordering)",
+     "sd_mm": 2.4645417531586955
+    },
+    "alpha_holm": 0.005,
+    "family_only": {
+     "alpha_holm": 0.005,
+     "mdd_holm_mm": 4.561017862814438,
+     "mdd_mm": 2.796214396897928,
+     "n_methods": 10,
+     "n_pairs": 10,
+     "pairs": [
+      {
+       "a": "reinforce",
+       "b": "ppo_res",
+       "sd_mm": 0.32644731706677615,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "sac_res",
+       "sd_mm": 1.1783805913223355,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "td3_res",
+       "sd_mm": 1.4660826175283737,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "a2c_res",
+       "sd_mm": 1.2676041341655693,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "ppo_scratch",
+       "sd_mm": 2.902087613532798,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "dqn_scratch",
+       "sd_mm": 2.941036550782537,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "bc_res",
+       "sd_mm": 0.9412771993169482,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "dagger_res",
+       "sd_mm": 2.4588755287719004,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "bc_scratch",
+       "sd_mm": 2.683072632122711,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "reinforce",
+       "b": "dagger_scratch",
+       "sd_mm": 5.188634599299182,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "rule": "Holm-tested family contrasts only (sensitivity)",
+     "sd_mm": 1.9624790731501371
+    },
+    "mdd_holm_mm": 3.407337738473348,
+    "mdd_mm": 2.0889299551073535,
+    "n_methods": 12,
+    "n_pairs": 11,
+    "pairs": [
+     {
+      "a": "reinforce",
+      "b": "servo_base",
+      "sd_mm": 0.312568140307984,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "reinforce",
+      "b": "ppo_res",
+      "sd_mm": 0.32644731706677615,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "reinforce",
+      "b": "sac_res",
+      "sd_mm": 1.1783805913223355,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "reinforce",
+      "b": "td3_res",
+      "sd_mm": 1.4660826175283737,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "reinforce",
+      "b": "a2c_res",
+      "sd_mm": 1.2676041341655693,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "reinforce",
+      "b": "ppo_scratch",
+      "sd_mm": 2.902087613532798,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "reinforce",
+      "b": "dqn_scratch",
+      "sd_mm": 2.941036550782537,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "reinforce",
+      "b": "bc_res",
+      "sd_mm": 0.9412771993169482,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "reinforce",
+      "b": "dagger_res",
+      "sd_mm": 2.4588755287719004,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "reinforce",
+      "b": "bc_scratch",
+      "sd_mm": 2.683072632122711,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "reinforce",
+      "b": "dagger_scratch",
+      "sd_mm": 5.188634599299182,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     }
+    ],
+    "rule": "reference contrasts (post hoc rule)",
+    "sd_mm": 1.4660826175283737
+   },
+   "pending": [],
+   "reference": {
+    "err_mm": 11.686506490491249,
+    "id": "reinforce",
+    "label": "REINFORCE residual, imitation start (authors')",
+    "provisional": false
+   },
+   "rows": [
+    {
+     "ci90_t": null,
+     "ci95_t": null,
+     "contrast_seeds": null,
+     "crossed_boot_ci95": null,
+     "decision": "",
+     "diff_mm": null,
+     "err_mm": 11.686506490491249,
+     "family": null,
+     "id": "reinforce",
+     "k": null,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "REINFORCE residual, imitation start (authors')",
+     "label_access": false,
+     "n_seeds": null,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": null,
+     "p_t": null,
+     "p_tost_1mm": null,
+     "per_seed_diff_mm": null,
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": null,
+     "role": "ref",
+     "sd_mm": null,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": null
+    },
+    {
+     "ci90_t": null,
+     "ci95_t": null,
+     "contrast_seeds": null,
+     "crossed_boot_ci95": null,
+     "decision": "",
+     "diff_mm": null,
+     "err_mm": 11.790836848148466,
+     "family": null,
+     "id": "reinforce@seed0",
+     "k": null,
+     "k_seeds": null,
+     "kind": "ref_seed0",
+     "label": "Seed 0 only, for the seed-0 rows",
+     "label_access": false,
+     "n_seeds": null,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": null,
+     "p_t": null,
+     "p_tost_1mm": null,
+     "per_seed_diff_mm": null,
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": null,
+     "role": "ref",
+     "sd_mm": null,
+     "seeds": null,
+     "tost_within_1mm": null
+    },
+    {
+     "ci90_t": [
+      -0.2933114330491947,
+      0.22095071035352867
+     ],
+     "ci95_t": [
+      -0.3642005076830401,
+      0.291839784987374
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.43916887283627265,
+      0.2925464365356696
+     ],
+     "decision": "secondary",
+     "diff_mm": -0.036180361347833014,
+     "err_mm": 11.650326129143414,
+     "family": null,
+     "id": "servo_base",
+     "k": 3,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "Servo base alone (authors')",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.875,
+     "p_t": 0.7881333595675618,
+     "p_tost_1mm": 0.0003223670423852641,
+     "per_seed_diff_mm": [
+      -0.33670157744307555,
+      -0.004950441135993226,
+      0.23311093453556678
+     ],
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": [
+      -0.3118027794682154,
+      0.2537447457590411
+     ],
+     "role": "secondary",
+     "sd_mm": 0.312568140307984,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -0.2176894194678503,
+      0.24100791810794042
+     ],
+     "ci95_t": [
+      -0.28091909758999106,
+      0.30423759623008123
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.24167031878716116,
+      0.2892449710489755
+     ],
+     "decision": "secondary",
+     "diff_mm": 0.011659249320045065,
+     "err_mm": 11.698165739811293,
+     "family": null,
+     "id": "reinforce_bneval",
+     "k": 3,
+     "k_seeds": 1,
+     "kind": "row",
+     "label": "REINFORCE residual, BatchNorm in eval mode (authors')",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.96875,
+     "p_t": 0.9223907334145777,
+     "p_tost_1mm": 0.0001674876366921242,
+     "per_seed_diff_mm": [
+      -0.014446437255895894,
+      -0.07080833417805248,
+      0.12023251939407971
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.2195688325405481,
+      0.2840444457164578
+     ],
+     "role": "secondary",
+     "sd_mm": 0.2787958935138083,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -0.4547655717386141,
+      0.08233170509008425
+     ],
+     "ci95_t": [
+      -0.5288023824025645,
+      0.1563685157540346
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.5884049198487805,
+      0.3293102686951333
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": -0.18621693332426492,
+     "err_mm": 11.500289557166985,
+     "family": null,
+     "id": "ppo_res",
+     "k": 4,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "PPO, residual",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.8846894069260258,
+     "p_signflip": 0.1875,
+     "p_t": 0.22117235173150646,
+     "p_tost_1mm": 0.0008532424972300302,
+     "per_seed_diff_mm": [
+      -0.5838302907466343,
+      0.2042676235244878,
+      -0.17908813275065386
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.5030375293552565,
+      0.17143338390101853
+     ],
+     "role": "family",
+     "sd_mm": 0.32644731706677615,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -0.5952310155230471,
+      1.3435351301259748
+     ],
+     "ci95_t": [
+      -0.8624825325938998,
+      1.6107866471968275
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.3642764832647665,
+      2.0233493294450655
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 0.3741520573014639,
+     "err_mm": 12.060658547792713,
+     "family": null,
+     "id": "sac_res",
+     "k": 4,
+     "k_seeds": 1,
+     "kind": "row",
+     "label": "SAC, residual",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.9249640197897462,
+     "p_signflip": 0.4375,
+     "p_t": 0.471896902003049,
+     "p_tost_1mm": 0.12500066890177433,
+     "per_seed_diff_mm": [
+      -0.2861285428321259,
+      1.9363671368224067,
+      -0.5277824220858909
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.9196149829643187,
+      1.5824336434951018
+     ],
+     "role": "family",
+     "sd_mm": 1.1783805913223355,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      7.332376873743606,
+      9.7444934399193
+     ],
+     "ci95_t": [
+      6.999875806965184,
+      10.076994506697721
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      5.6297176467466015,
+      10.8034188513517
+     ],
+     "decision": "higher",
+     "diff_mm": 8.538435156831452,
+     "err_mm": 20.2249416473227,
+     "family": null,
+     "id": "td3_res",
+     "k": 6,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "TD3, residual",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.0003049509154974193,
+     "p_signflip": 0.03125,
+     "p_t": 3.049509154974193e-05,
+     "p_tost_1mm": 0.9999719851787267,
+     "per_seed_diff_mm": [
+      6.304949982666798,
+      8.409259846737683,
+      10.901095641089873
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      6.595593738469625,
+      10.091886742223183
+     ],
+     "role": "family",
+     "sd_mm": 1.4660826175283737,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      5.7007495580183605,
+      7.786313423803973
+     ],
+     "ci95_t": [
+      5.413262535238327,
+      8.073800446584006
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      1.2333220825925248,
+      10.627065179812185
+     ],
+     "decision": "higher",
+     "diff_mm": 6.743531490911167,
+     "err_mm": 18.430037981402418,
+     "family": null,
+     "id": "a2c_res",
+     "k": 6,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "A2C, residual",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.000427199108477275,
+     "p_signflip": 0.03125,
+     "p_t": 4.7466567608586105e-05,
+     "p_tost_1mm": 0.9999482551743659,
+     "per_seed_diff_mm": [
+      1.0535789443193992,
+      10.03603517803141,
+      9.140980350382689
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      4.573678532817713,
+      9.003431325577893
+     ],
+     "role": "family",
+     "sd_mm": 1.2676041341655693,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      0.26764886390817333,
+      5.0423958838934
+     ],
+     "ci95_t": [
+      -0.39053179784121594,
+      5.7005765456427895
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      0.17177522015630123,
+      4.685555368899501
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 2.6550223739007865,
+     "err_mm": 14.341528864392034,
+     "family": null,
+     "id": "ppo_scratch",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "PPO, full twist",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.375622367203029,
+     "p_signflip": 0.09375,
+     "p_t": 0.0751244734406058,
+     "p_tost_1mm": 0.8893626124357863,
+     "per_seed_diff_mm": [
+      2.140372528017686,
+      2.686185080753628,
+      3.138509512931043
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      0.2884769204116403,
+      4.67920957261328
+     ],
+     "role": "family",
+     "sd_mm": 2.902087613532798,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      2.303148076207973,
+      7.141977007847959
+     ],
+     "ci95_t": [
+      1.6361339674000157,
+      7.808991116655918
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      2.3881848691042857,
+      7.338702479699928
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 4.722562542027966,
+     "err_mm": 16.409069032519216,
+     "family": null,
+     "id": "dqn_scratch",
+     "k": 6,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "DQN, 13 discrete moves",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": "Unadjusted CI excludes 0; not declared a difference after Holm (post hoc note).",
+     "p_holm": 0.07723900095544307,
+     "p_signflip": 0.03125,
+     "p_t": 0.011034142993634725,
+     "p_tost_1mm": 0.9865794359875345,
+     "per_seed_diff_mm": [
+      5.36702599936011,
+      5.366298042503435,
+      3.4343635842203497
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      2.5293420758846956,
+      7.136251168422043
+     ],
+     "role": "family",
+     "sd_mm": 2.941036550782537,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -1.2099974452096451,
+      0.3386672062160638
+     ],
+     "ci95_t": [
+      -1.4234749594814724,
+      0.5521447204878909
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -1.308670096702931,
+      0.5150473659622997
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": -0.4356651194967907,
+     "err_mm": 11.250841370994458,
+     "family": null,
+     "id": "bc_res",
+     "k": 4,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "BC, residual",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.9249640197897462,
+     "p_signflip": 0.3125,
+     "p_t": 0.3083213399299154,
+     "p_tost_1mm": 0.10094241505964753,
+     "per_seed_diff_mm": [
+      -0.30166938584588604,
+      -0.6192137374050386,
+      -0.3861122352394529
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -1.2489678050933906,
+      0.4702553963780136
+     ],
+     "role": "family",
+     "sd_mm": 0.9412771993169482,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      0.19601961920153455,
+      1.7685502255037462
+     ],
+     "ci95_t": [
+      -0.02074772590492091,
+      1.9853175706102018
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.2445635988740949,
+      1.8572738965012832
+     ],
+     "decision": "secondary",
+     "diff_mm": 0.9822849223526404,
+     "err_mm": 12.668791412843888,
+     "family": null,
+     "id": "bc_res@bn_train",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "bn_train",
+     "label": "BC, residual , BatchNorm in train mode",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.09375,
+     "p_t": 0.05334308280142696,
+     "p_tost_1mm": 0.4827728156445291,
+     "per_seed_diff_mm": [
+      0.19469665303235306,
+      1.0275980787123487,
+      1.724560035313216
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      0.10611863569786496,
+      1.8158603829899365
+     ],
+     "role": "secondary",
+     "sd_mm": 0.9557829085707225,
+     "seeds": null,
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -2.8603050920625006,
+      1.1852339015815123
+     ],
+     "ci95_t": [
+      -3.4179672092018105,
+      1.7428960187208222
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -2.9979458402261185,
+      2.035135956966919
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": -0.8375355952404941,
+     "err_mm": 10.848970895250753,
+     "family": null,
+     "id": "dagger_res",
+     "k": 4,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "DAgger, residual",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.9249640197897462,
+     "p_signflip": 0.40625,
+     "p_t": 0.44211543167396455,
+     "p_tost_1mm": 0.43888267669163306,
+     "per_seed_diff_mm": [
+      -2.160998300166648,
+      1.160389768051659,
+      -1.5119982536064958
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -2.797988179794753,
+      1.3296766088379701
+     ],
+     "role": "family",
+     "sd_mm": 2.4588755287719004,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      0.7058456791111238,
+      1.6978083429590574
+     ],
+     "ci95_t": [
+      0.5691074100909278,
+      1.8345466119792535
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      0.4184929713821982,
+      2.1835829103693754
+     ],
+     "decision": "secondary",
+     "diff_mm": 1.2018270110350906,
+     "err_mm": 12.888333501526338,
+     "family": null,
+     "id": "dagger_res@bn_train",
+     "k": 6,
+     "k_seeds": 3,
+     "kind": "bn_train",
+     "label": "DAgger, residual , BatchNorm in train mode",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.03125,
+     "p_t": 0.004542212566297559,
+     "p_tost_1mm": 0.7752306062784455,
+     "per_seed_diff_mm": [
+      0.8881576051072221,
+      0.6883397213900316,
+      2.0289837066080136
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      0.6256028987973989,
+      1.902629571682379
+     ],
+     "role": "secondary",
+     "sd_mm": 0.6029141539417084,
+     "seeds": null,
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      5.709849149224374,
+      10.12425517711015
+     ],
+     "ci95_t": [
+      5.101340118588162,
+      10.732764207746364
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      0.2701610918526744,
+      16.934653556950106
+     ],
+     "decision": "higher",
+     "diff_mm": 7.917052163167263,
+     "err_mm": 19.60355865365851,
+     "family": null,
+     "id": "bc_scratch",
+     "k": 6,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "BC, full twist",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.006326656981085805,
+     "p_signflip": 0.03125,
+     "p_t": 0.0007908321226357257,
+     "p_tost_1mm": 0.9992666437975233,
+     "per_seed_diff_mm": [
+      0.03041332810149555,
+      6.309495057776782,
+      17.411248103623514
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      4.073637713988152,
+      12.121186375020029
+     ],
+     "role": "family",
+     "sd_mm": 2.683072632122711,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      1.6189689202548587,
+      6.517933975745131
+     ],
+     "ci95_t": [
+      0.9436652761845816,
+      7.193237619815408
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      1.4488888953160888,
+      6.166881794099025
+     ],
+     "decision": "secondary",
+     "diff_mm": 4.068451447999995,
+     "err_mm": 15.754957938491245,
+     "family": null,
+     "id": "bc_scratch@bn_train",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "bn_train",
+     "label": "BC, full twist , BatchNorm in train mode",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.0625,
+     "p_t": 0.02039829736429583,
+     "p_tost_1mm": 0.973549819595657,
+     "per_seed_diff_mm": [
+      3.019710825558759,
+      4.449873075354389,
+      4.735770443086835
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      1.6373506178868025,
+      6.114384275316916
+     ],
+     "role": "secondary",
+     "sd_mm": 2.9775872412005455,
+     "seeds": null,
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      1.7093252741235458,
+      10.246082564037813
+     ],
+     "ci95_t": [
+      0.532565848178697,
+      11.422841989982661
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      2.0221260583239333,
+      10.798483803053747
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 5.977703919080679,
+     "err_mm": 17.664210409571925,
+     "family": null,
+     "id": "dagger_scratch",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "DAgger, full twist",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": "Unadjusted CI excludes 0; not declared a difference after Holm (post hoc note).",
+     "p_holm": 0.22212847545865744,
+     "p_signflip": 0.0625,
+     "p_t": 0.037021412576442904,
+     "p_tost_1mm": 0.9672163425363182,
+     "per_seed_diff_mm": [
+      3.4792606791480707,
+      6.7211921634272,
+      7.732658914666764
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      2.401603263740402,
+      10.402529464873913
+     ],
+     "role": "family",
+     "sd_mm": 5.188634599299182,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      1.401397071535956,
+      5.532565281042681
+     ],
+     "ci95_t": [
+      0.8319312936527985,
+      6.102031058925839
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      1.4749522562315274,
+      5.389005519927303
+     ],
+     "decision": "secondary",
+     "diff_mm": 3.4669811762893183,
+     "err_mm": 15.153487666780569,
+     "family": null,
+     "id": "dagger_scratch@bn_train",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "bn_train",
+     "label": "DAgger, full twist , BatchNorm in train mode",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.0625,
+     "p_t": 0.019627995329692224,
+     "p_tost_1mm": 0.9694408341864139,
+     "per_seed_diff_mm": [
+      3.3281826816124913,
+      3.967530470942888,
+      3.1052303763125764
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      1.4927083274171107,
+      5.300777853148035
+     ],
+     "role": "secondary",
+     "sd_mm": 2.510920901159498,
+     "seeds": null,
+     "tost_within_1mm": false
+    },
+    {
+     "ci90_t": [
+      -8.1140882674693,
+      -1.506355246220099
+     ],
+     "ci95_t": [
+      -9.024939056921712,
+      -0.5955044567676886
+     ],
+     "contrast_seeds": [
+      0
+     ],
+     "crossed_boot_ci95": null,
+     "decision": "secondary",
+     "diff_mm": -4.8102217568447,
+     "err_mm": 6.980615091303766,
+     "family": null,
+     "id": "cem",
+     "k": 5,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "CEM look-ahead",
+     "label_access": false,
+     "n_seeds": 1,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.0625,
+     "p_t": 0.03248987781449817,
+     "p_tost_1mm": 0.9661371829965539,
+     "per_seed_diff_mm": [
+      -4.8102217568447
+     ],
+     "privileged": true,
+     "provisional": true,
+     "ps_boot_ci95": null,
+     "role": "secondary",
+     "sd_mm": 4.016175113411201,
+     "seeds": [
+      0
+     ],
+     "tost_within_1mm": false
+    }
+   ],
+   "title": "Controller"
+  },
+  {
+   "audit": "passed",
+   "groups_pending": [],
+   "key": "reward",
+   "m": 2,
+   "mdd": {
+    "all_pairs": {
+     "alpha_holm": 0.025,
+     "mdd_holm_mm": 0.15307774353244818,
+     "mdd_mm": 0.13085239719774422,
+     "n_methods": 8,
+     "n_pairs": 28,
+     "pairs": [
+      {
+       "a": "paper",
+       "b": "seg_only",
+       "sd_mm": 0.05955326152610683,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "paper",
+       "b": "ncc_only",
+       "sd_mm": 0.09277436255866534,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "paper",
+       "b": "ncc_sector",
+       "sd_mm": 0.025487548768657525,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "paper",
+       "b": "ssim",
+       "sd_mm": 0.03607636165457527,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "paper",
+       "b": "nmi",
+       "sd_mm": 0.0454778822808278,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "paper",
+       "b": "pose",
+       "sd_mm": 0.1250071746513066,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "paper",
+       "b": "pose_area",
+       "sd_mm": 0.08396709287052767,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "seg_only",
+       "b": "ncc_only",
+       "sd_mm": 0.13233608423774795,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "seg_only",
+       "b": "ncc_sector",
+       "sd_mm": 0.0678251115007757,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "seg_only",
+       "b": "ssim",
+       "sd_mm": 0.038453782471759325,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "seg_only",
+       "b": "nmi",
+       "sd_mm": 0.023649528551290464,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "seg_only",
+       "b": "pose",
+       "sd_mm": 0.15885671058257217,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "seg_only",
+       "b": "pose_area",
+       "sd_mm": 0.10049133961659931,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ncc_only",
+       "b": "ncc_sector",
+       "sd_mm": 0.07727342852210603,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ncc_only",
+       "b": "ssim",
+       "sd_mm": 0.10597561193395985,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ncc_only",
+       "b": "nmi",
+       "sd_mm": 0.12990945542966365,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ncc_only",
+       "b": "pose",
+       "sd_mm": 0.11277034339265786,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ncc_only",
+       "b": "pose_area",
+       "sd_mm": 0.12753788924352674,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ncc_sector",
+       "b": "ssim",
+       "sd_mm": 0.04296846237161697,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ncc_sector",
+       "b": "nmi",
+       "sd_mm": 0.05836022261254388,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ncc_sector",
+       "b": "pose",
+       "sd_mm": 0.11278687984825861,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ncc_sector",
+       "b": "pose_area",
+       "sd_mm": 0.0908990291934026,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ssim",
+       "b": "nmi",
+       "sd_mm": 0.037873247291536315,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ssim",
+       "b": "pose",
+       "sd_mm": 0.13431533852475624,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "ssim",
+       "b": "pose_area",
+       "sd_mm": 0.08530178114786735,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "nmi",
+       "b": "pose",
+       "sd_mm": 0.15251750962325683,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "nmi",
+       "b": "pose_area",
+       "sd_mm": 0.09560454020827218,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "pose",
+       "b": "pose_area",
+       "sd_mm": 0.09420237602094364,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "rule": "all method pairs (amend1, cohort ordering)",
+     "sd_mm": 0.09183669587603396
+    },
+    "alpha_holm": 0.025,
+    "family_only": {
+     "alpha_holm": 0.025,
+     "mdd_holm_mm": 0.06796923342047335,
+     "mdd_mm": 0.05810078541480921,
+     "n_methods": 2,
+     "n_pairs": 2,
+     "pairs": [
+      {
+       "a": "paper",
+       "b": "ssim",
+       "sd_mm": 0.03607636165457527,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "paper",
+       "b": "nmi",
+       "sd_mm": 0.0454778822808278,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "rule": "Holm-tested family contrasts only (sensitivity)",
+     "sd_mm": 0.040777121967701536
+    },
+    "mdd_holm_mm": 0.0992661899195484,
+    "mdd_mm": 0.0848537390996106,
+    "n_methods": 8,
+    "n_pairs": 7,
+    "pairs": [
+     {
+      "a": "paper",
+      "b": "seg_only",
+      "sd_mm": 0.05955326152610683,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "paper",
+      "b": "ncc_only",
+      "sd_mm": 0.09277436255866534,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "paper",
+      "b": "ncc_sector",
+      "sd_mm": 0.025487548768657525,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "paper",
+      "b": "ssim",
+      "sd_mm": 0.03607636165457527,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "paper",
+      "b": "nmi",
+      "sd_mm": 0.0454778822808278,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "paper",
+      "b": "pose",
+      "sd_mm": 0.1250071746513066,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "paper",
+      "b": "pose_area",
+      "sd_mm": 0.08396709287052767,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     }
+    ],
+    "rule": "reference contrasts (post hoc rule)",
+    "sd_mm": 0.05955326152610683
+   },
+   "pending": [],
+   "reference": {
+    "err_mm": 11.970673995718515,
+    "id": "paper",
+    "label": "Paper score $S$ (authors')",
+    "provisional": true
+   },
+   "rows": [
+    {
+     "ci90_t": null,
+     "ci95_t": null,
+     "contrast_seeds": null,
+     "crossed_boot_ci95": null,
+     "decision": "",
+     "diff_mm": null,
+     "err_mm": 11.970673995718515,
+     "family": null,
+     "id": "paper",
+     "k": null,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "Paper score $S$ (authors')",
+     "label_access": false,
+     "n_seeds": null,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": null,
+     "p_t": null,
+     "p_tost_1mm": null,
+     "per_seed_diff_mm": null,
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": null,
+     "role": "ref",
+     "sd_mm": null,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": null
+    },
+    {
+     "ci90_t": [
+      -0.11407538216926413,
+      -0.016093585659671672
+     ],
+     "ci95_t": [
+      -0.12758179903201072,
+      -0.0025871687969250753
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.204122507315323,
+      0.04355462700012572
+     ],
+     "decision": "secondary",
+     "diff_mm": -0.0650844839144679,
+     "err_mm": 11.905589511804047,
+     "family": null,
+     "id": "seg_only",
+     "k": 5,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "Organ overlap only (authors')",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.0625,
+     "p_t": 0.0439781826838573,
+     "p_tost_1mm": 1.1205211176813755e-07,
+     "per_seed_diff_mm": [
+      0.014897702096352106,
+      -0.006028646524432209,
+      -0.204122507315323
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.14465025834448764,
+      0.0019396092804516783
+     ],
+     "role": "secondary",
+     "sd_mm": 0.05955326152610683,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      0.017539787409081103,
+      0.17017960058783302
+     ],
+     "ci95_t": [
+      -0.003501028539237949,
+      0.19122041653615207
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.08147770855777993,
+      0.2591296368790849
+     ],
+     "decision": "secondary",
+     "diff_mm": 0.09385969399845706,
+     "err_mm": 12.064533689716972,
+     "family": null,
+     "id": "ncc_only",
+     "k": 5,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "Appearance NCC only (authors')",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.0625,
+     "p_t": 0.055968201891270344,
+     "p_tost_1mm": 1.1884013108880588e-06,
+     "per_seed_diff_mm": [
+      0.11324155293087983,
+      -0.07344237059892962,
+      0.24177989966342128
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.008596996439487723,
+      0.1989411412607896
+     ],
+     "role": "secondary",
+     "sd_mm": 0.09277436255866534,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      0.002156779626631654,
+      0.044090936597768284
+     ],
+     "ci95_t": [
+      -0.003623683939216249,
+      0.049871400163616186
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.008764084337640692,
+      0.05202189544998055
+     ],
+     "decision": "secondary",
+     "diff_mm": 0.02312385811219997,
+     "err_mm": 11.993797853830714,
+     "family": null,
+     "id": "ncc_sector",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "NCC over the whole sector (authors')",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.125,
+     "p_t": 0.076903009759077,
+     "p_tost_1mm": 1.2996032609966798e-09,
+     "per_seed_diff_mm": [
+      0.008532738516441244,
+      0.012872032615881915,
+      0.04796680320427645
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.0017977978047396535,
+      0.04564030050729181
+     ],
+     "role": "secondary",
+     "sd_mm": 0.025487548768657525,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -0.07649398763161842,
+      -0.017138267460096526
+     ],
+     "ci95_t": [
+      -0.08467594722394563,
+      -0.008956307867769325
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.11890884683369285,
+      0.01991010167748551
+     ],
+     "decision": "lower",
+     "diff_mm": -0.046816127545857476,
+     "err_mm": 11.923857868172655,
+     "family": null,
+     "id": "ssim",
+     "k": 5,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "SSIM appearance term",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.04914846064232998,
+     "p_signflip": 0.0625,
+     "p_t": 0.02457423032116499,
+     "p_tost_1mm": 8.337112828566375e-09,
+     "per_seed_diff_mm": [
+      -0.028222777241744268,
+      0.0035381641189538016,
+      -0.11576376951478284
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.09445376661783123,
+      -0.0033081230496720296
+     ],
+     "role": "family",
+     "sd_mm": 0.03607636165457527,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -0.03178421755057768,
+      0.04303963748503372
+     ],
+     "ci95_t": [
+      -0.042098400525266755,
+      0.0533538204597228
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.07314667819526537,
+      0.08762189285469635
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 0.005627709967228019,
+     "err_mm": 11.97630170568574,
+     "family": null,
+     "id": "nmi",
+     "k": 4,
+     "k_seeds": 1,
+     "kind": "row",
+     "label": "NMI appearance term",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.7740087402012445,
+     "p_signflip": 0.78125,
+     "p_t": 0.7740087402012445,
+     "p_tost_1mm": 2.1455123930004763e-08,
+     "per_seed_diff_mm": [
+      -0.02365702247329941,
+      0.08874416650931138,
+      -0.04820401413432999
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.053323830949867534,
+      0.05628974292158477
+     ],
+     "role": "family",
+     "sd_mm": 0.0454778822808278,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -0.15155344167946955,
+      0.05411837603540017
+     ],
+     "ci95_t": [
+      -0.17990451714381772,
+      0.08246945149974833
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.25991683353161427,
+      0.13924498484529885
+     ],
+     "decision": "secondary",
+     "diff_mm": -0.04871753282203469,
+     "err_mm": 11.92195646289648,
+     "family": null,
+     "id": "pose",
+     "k": 4,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "Change in pose distance",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.375,
+     "p_t": 0.3836147439580696,
+     "p_tost_1mm": 4.0900003679424e-06,
+     "per_seed_diff_mm": [
+      -0.1839522284392799,
+      -0.05090817777792308,
+      0.08870780775109803
+     ],
+     "privileged": true,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.20287354491509854,
+      0.09847877733789386
+     ],
+     "role": "secondary",
+     "sd_mm": 0.1250071746513066,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -0.1393691046530941,
+      -0.001219717091248268
+     ],
+     "ci95_t": [
+      -0.15841247070895892,
+      0.017823648964616565
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.2104302182850054,
+      0.05291085335310955
+     ],
+     "decision": "secondary",
+     "diff_mm": -0.07029441087217118,
+     "err_mm": 11.900379584846343,
+     "family": null,
+     "id": "pose_area",
+     "k": 5,
+     "k_seeds": 3,
+     "kind": "row",
+     "label": "Pose distance plus organ area",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.15625,
+     "p_t": 0.09556616905771263,
+     "p_tost_1mm": 6.373953968588356e-07,
+     "per_seed_diff_mm": [
+      -0.02071779161089656,
+      -0.130980394872353,
+      -0.059185046133263995
+     ],
+     "privileged": true,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.1865054115052035,
+      0.0422779413601016
+     ],
+     "role": "secondary",
+     "sd_mm": 0.08396709287052767,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -0.10980278559705954,
+      -0.022831715753898904
+     ],
+     "ci95_t": [
+      -0.12179141579313658,
+      -0.01084308555782186
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.16585578201136522,
+      0.026218202497114082
+     ],
+     "decision": "lower",
+     "diff_mm": -0.06631725067547922,
+     "err_mm": 11.904356745043033,
+     "family": "LPIPS-R",
+     "id": "lpips",
+     "k": 5,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "LPIPS appearance term",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.027688104456059445,
+     "p_signflip": 0.0625,
+     "p_t": 0.027688104456059445,
+     "p_tost_1mm": 6.224311156351633e-08,
+     "per_seed_diff_mm": [
+      -0.07133452969442426,
+      0.028632798500529095,
+      -0.1562500208325416
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.12641022523062884,
+      -0.010616671668927203
+     ],
+     "role": "a2",
+     "sd_mm": 0.052860950218115065,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    }
+   ],
+   "title": "Reward"
+  },
+  {
+   "audit": "passed",
+   "groups_pending": [],
+   "key": "renderer",
+   "m": 2,
+   "mdd": {
+    "all_pairs": {
+     "alpha_holm": 0.025,
+     "mdd_holm_mm": 0.10843228099179923,
+     "mdd_mm": 0.0926890060826428,
+     "n_methods": 3,
+     "n_pairs": 3,
+     "pairs": [
+      {
+       "a": "physics",
+       "b": "lotus_orig",
+       "sd_mm": 0.0594232250919641,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "physics",
+       "b": "lotus_reimpl",
+       "sd_mm": 0.09754936112479347,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "lotus_orig",
+       "b": "lotus_reimpl",
+       "sd_mm": 0.06505232036215437,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "rule": "all method pairs (amend1, cohort ordering)",
+     "sd_mm": 0.06505232036215437
+    },
+    "alpha_holm": 0.025,
+    "family_only": {
+     "alpha_holm": 0.025,
+     "mdd_holm_mm": 0.13082466145640495,
+     "mdd_mm": 0.11183023847307517,
+     "n_methods": 2,
+     "n_pairs": 2,
+     "pairs": [
+      {
+       "a": "physics",
+       "b": "lotus_orig",
+       "sd_mm": 0.0594232250919641,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      },
+      {
+       "a": "physics",
+       "b": "lotus_reimpl",
+       "sd_mm": 0.09754936112479347,
+       "seeds": [
+        0,
+        1,
+        2
+       ]
+      }
+     ],
+     "rule": "Holm-tested family contrasts only (sensitivity)",
+     "sd_mm": 0.07848629310837879
+    },
+    "mdd_holm_mm": 0.13082466145640495,
+    "mdd_mm": 0.11183023847307517,
+    "n_methods": 3,
+    "n_pairs": 2,
+    "pairs": [
+     {
+      "a": "physics",
+      "b": "lotus_orig",
+      "sd_mm": 0.0594232250919641,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "a": "physics",
+      "b": "lotus_reimpl",
+      "sd_mm": 0.09754936112479347,
+      "seeds": [
+       0,
+       1,
+       2
+      ]
+     }
+    ],
+    "rule": "reference contrasts (post hoc rule)",
+    "sd_mm": 0.07848629310837879
+   },
+   "pending": [],
+   "reference": {
+    "err_mm": 11.813770157327932,
+    "id": "physics",
+    "label": "Physics renderer (authors')",
+    "provisional": false
+   },
+   "rows": [
+    {
+     "ci90_t": null,
+     "ci95_t": null,
+     "contrast_seeds": null,
+     "crossed_boot_ci95": null,
+     "decision": "",
+     "diff_mm": null,
+     "err_mm": 11.813770157327932,
+     "family": null,
+     "id": "physics",
+     "k": null,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "Physics renderer (authors')",
+     "label_access": false,
+     "n_seeds": null,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": null,
+     "p_t": null,
+     "p_tost_1mm": null,
+     "per_seed_diff_mm": null,
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": null,
+     "role": "ref",
+     "sd_mm": null,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": null
+    },
+    {
+     "ci90_t": null,
+     "ci95_t": null,
+     "contrast_seeds": null,
+     "crossed_boot_ci95": null,
+     "decision": "",
+     "diff_mm": null,
+     "err_mm": 11.906243520023493,
+     "family": null,
+     "id": "physics@seed0",
+     "k": null,
+     "k_seeds": null,
+     "kind": "ref_seed0",
+     "label": "Seed 0 only, for the seed-0 rows",
+     "label_access": false,
+     "n_seeds": null,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": null,
+     "p_t": null,
+     "p_tost_1mm": null,
+     "per_seed_diff_mm": null,
+     "privileged": false,
+     "provisional": false,
+     "ps_boot_ci95": null,
+     "role": "ref",
+     "sd_mm": null,
+     "seeds": null,
+     "tost_within_1mm": null
+    },
+    {
+     "ci90_t": [
+      -0.018168653465146917,
+      0.07959919668613535
+     ],
+     "ci95_t": [
+      -0.03164557863857426,
+      0.09307612185956268
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.0684550998971708,
+      0.15191713935366208
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 0.030715271610494217,
+     "err_mm": 11.844485428938427,
+     "family": null,
+     "id": "lotus_orig",
+     "k": 4,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "LOTUS, original code, published default parameters",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.5225080731093917,
+     "p_signflip": 0.3125,
+     "p_t": 0.26125403655469587,
+     "p_tost_1mm": 9.257838738999804e-08,
+     "per_seed_diff_mm": [
+      0.08182159747406725,
+      0.07328388127699152,
+      -0.06295966391957582
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.04509597325822777,
+      0.124264315668992
+     ],
+     "role": "family",
+     "sd_mm": 0.0594232250919641,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      -0.032691346390300226,
+      0.12780467694135594
+     ],
+     "ci95_t": [
+      -0.05481511093791424,
+      0.14992844148896994
+     ],
+     "contrast_seeds": [
+      0,
+      1,
+      2
+     ],
+     "crossed_boot_ci95": [
+      -0.05274809245294401,
+      0.21508988443110763
+     ],
+     "decision": "no detectable difference, equivalence not tested",
+     "diff_mm": 0.047556665275527855,
+     "err_mm": 11.86132682260346,
+     "family": null,
+     "id": "lotus_reimpl",
+     "k": 4,
+     "k_seeds": 2,
+     "kind": "row",
+     "label": "LOTUS, in-repository reimplementation",
+     "label_access": false,
+     "n_seeds": 3,
+     "note": null,
+     "p_holm": 0.5225080731093917,
+     "p_signflip": 0.3125,
+     "p_t": 0.2859728235652709,
+     "p_tost_1mm": 1.1904775508799842e-06,
+     "per_seed_diff_mm": [
+      0.03583133239543024,
+      0.13757708421947226,
+      -0.030738420788319232
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": [
+      -0.04240816514527937,
+      0.17217739236128657
+     ],
+     "role": "family",
+     "sd_mm": 0.09754936112479347,
+     "seeds": [
+      0,
+      1,
+      2
+     ],
+     "tost_within_1mm": true
+    },
+    {
+     "ci90_t": [
+      0.2741472488783343,
+      0.7155893033674182
+     ],
+     "ci95_t": [
+      0.21329614570333633,
+      0.7764404065424162
+     ],
+     "contrast_seeds": [
+      0
+     ],
+     "crossed_boot_ci95": null,
+     "decision": "secondary",
+     "diff_mm": 0.49486827612287626,
+     "err_mm": 12.401111796146369,
+     "family": null,
+     "id": "simus",
+     "k": 6,
+     "k_seeds": null,
+     "kind": "row",
+     "label": "SIMUS via PyMUST, CPU only",
+     "label_access": false,
+     "n_seeds": 1,
+     "note": null,
+     "p_holm": null,
+     "p_signflip": 0.03125,
+     "p_t": 0.006295331888480921,
+     "p_tost_1mm": 0.0028897477525017695,
+     "per_seed_diff_mm": [
+      0.49486827612287626
+     ],
+     "privileged": false,
+     "provisional": true,
+     "ps_boot_ci95": null,
+     "role": "secondary",
+     "sd_mm": 0.2683081455547366,
+     "seeds": [
+      0
+     ],
+     "tost_within_1mm": true
+    }
+   ],
+   "title": "Renderer"
+  }
+ ],
+ "static_mm": 16.028371291644163,
+ "static_src": "outputs/v2/RESULTS.json table4.rungs_mm.static",
+ "status": "exploratory, v2.1 pluggability",
+ "tost_margin_mm": 1.0,
+ "tost_margin_src": "the +/- 1 mm margin of the pre-specified RL, label-control and CT-anatomy tests"
+}

@@ -1,0 +1,20 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Yield of the AMOS external cohort (exploratory). Of 79 eligible AMOS CTs (slice spacing at most 2.5~mm), 77 passed the label check and 76 the window screen. The first 30 passes in the seeded order form the cohort. Rows: AMOS split (Tr, training; Va, validation) and native slice spacing. Windows: screened acoustic windows per CT. Every AMOS structure comes from TotalSegmentator v2 fast-mode predictions; the AMOS manual labels serve only to accept a case, which needs a liver Dice of at least 0.85 and a kidney Dice of at least 0.70, with 5~mL as the absent-kidney volume.}
+\label{tab:amos-yield}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}l c c c c c c c c @{}}
+\toprule
+Split, slice spacing & \begin{tabular}[b]{@{}c@{}}Screened\end{tabular} & \begin{tabular}[b]{@{}c@{}}Pass\end{tabular} & \begin{tabular}[b]{@{}c@{}}Rejected\end{tabular} & \begin{tabular}[b]{@{}c@{}}Label check\\failed\end{tabular} & \begin{tabular}[b]{@{}c@{}}Liver windows,\\median\end{tabular} & \begin{tabular}[b]{@{}c@{}}No liver\\window\end{tabular} & \begin{tabular}[b]{@{}c@{}}Kidney windows,\\median\end{tabular} & \begin{tabular}[b]{@{}c@{}}No kidney\\window\end{tabular} \\
+\midrule
+Tr, slice 2.5 mm & 4 & 4 & 0 & 0 & 10.5 & 0 & 30.0 & 0 \\
+Tr, slice 2.0 mm & 34 & 32 & 2 & 1 & 19.0 & 0 & 35.0 & 1 \\
+Va, slice 2.0 mm & 33 & 33 & 0 & 0 & 22.0 & 0 & 38.0 & 0 \\
+Tr, slice 1.25 mm & 3 & 2 & 1 & 1 & 17.5 & 0 & 36.0 & 0 \\
+Va, slice 2.5 mm & 3 & 3 & 0 & 0 & 21.0 & 0 & 36.0 & 0 \\
+Va, slice 1.25 mm & 2 & 2 & 0 & 0 & 22.0 & 0 & 39.0 & 0 \\
+\bottomrule
+\end{tabularx}
+\end{table}

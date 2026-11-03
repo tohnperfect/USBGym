@@ -1,0 +1,82 @@
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Pose-free rungs at 12 steps minus the servo base of the same stage, masks and seeds, six held-out patients (exploratory; estimation only): 23 contrasts shown; none adjusted. Under CT masks, the MLP base is read for physics only: its fit for each other stage starts from other random weights, so its 3 rows for those stages are not shown. $^{\dagger}$Privileged.}
+\label{tab:est-p9-rung12}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hsize=1.4667\hsize}X >{\raggedright\arraybackslash\hsize=1.0267\hsize}X >{\raggedright\arraybackslash\hsize=0.7822\hsize}X >{\raggedright\arraybackslash\hsize=0.6844\hsize}X >{\raggedright\arraybackslash\hsize=0.6844\hsize}X >{\raggedright\arraybackslash\hsize=0.9778\hsize}X >{\raggedright\arraybackslash\hsize=0.5867\hsize}X >{\raggedright\arraybackslash\hsize=0.8800\hsize}X >{\raggedright\arraybackslash\hsize=0.9778\hsize}X >{\raggedright\arraybackslash\hsize=1.9556\hsize}X >{\raggedright\arraybackslash\hsize=0.9777\hsize}X @{}}
+\toprule
+Rung & Stage & Masks & Final error (mm) & Mean (mm) & 95\% $t$ CI (mm) & $k/n$ & Sign-flip $p$ (unadjusted; descriptive) & Bootstrap CI over units (mm) & Per seed (mm) & Bootstrap CI over units and seeds (mm) \\
+\midrule
+$S$-guarded servo & physics & CT$^{\dagger}$ & 12.06 & $+0.41$ & $[-0.29$, $+1.11]$ & 5/6 & $0.219$ & $[-0.12$, $+0.86]$ & s0 $+0.39$, s1 $+0.49$, s2 $+0.34$ & $[-0.12$, $+0.88]$ \\
+$S$-guarded servo & CUT & CT$^{\dagger}$ & 12.15 & $+0.50$ & $[-0.14$, $+1.13]$ & 5/6 & $0.094$ & $[+0.04$, $+0.91]$ & s0 $+0.30$, s1 $+0.68$, s2 $+0.50$ & $[+0.01$, $+0.96]$ \\
+$S$-guarded servo & CycleGAN & CT$^{\dagger}$ & 12.08 & $+0.43$ & $[-0.20$, $+1.07]$ & 5/6 & $0.156$ & $[-0.02$, $+0.85]$ & s0 $+0.25$, s1 $+0.57$, s2 $+0.47$ & $[-0.05$, $+0.87]$ \\
+$S$-guarded servo & SonoSPADE & CT$^{\dagger}$ & 12.28 & $+0.63$ & $[-0.23$, $+1.49]$ & 5/6 & $0.156$ & $[+0.00$, $+1.18]$ & s0 $+0.77$, s1 $+0.74$, s2 $+0.39$ & $[-0.03$, $+1.24]$ \\
+$S$-guarded servo & physics & learned & 15.60 & $-1.60$ & $[-3.37$, $+0.17]$ & 5/6 & $0.094$ & $[-2.87$, $-0.44]$ & s0 $-1.45$, s1 $-1.09$, s2 $-2.25$ & $[-3.00$, $-0.26]$ \\
+$S$-guarded servo & CUT & learned & 15.77 & $-1.07$ & $[-2.34$, $+0.20]$ & 5/6 & $0.094$ & $[-2.02$, $-0.28]$ & s0 $-0.98$, s1 $-1.48$, s2 $-0.75$ & $[-2.26$, $-0.03]$ \\
+$S$-guarded servo & CycleGAN & learned & 15.58 & $-1.27$ & $[-2.34$, $-0.20]$ & 6/6 & $0.031$ & $[-2.08$, $-0.65]$ & s0 $-1.21$, s1 $-1.36$, s2 $-1.24$ & $[-2.12$, $-0.58]$ \\
+$S$-guarded servo & SonoSPADE & learned & 13.38 & $+0.25$ & $[-0.19$, $+0.69]$ & 5/6 & $0.250$ & $[-0.08$, $+0.53]$ & s0 $+0.42$, s1 $+0.32$, s2 $+0.01$ & $[-0.16$, $+0.59]$ \\
+MLP base & physics & CT$^{\dagger}$ & 16.52 & $+4.87$ & $[+4.21$, $+5.53]$ & 6/6 & $0.031$ & $[+4.38$, $+5.30]$ & s0 $+6.21$, s1 $+3.46$, s2 $+4.95$ & $[+3.84$, $+5.98]$ \\
+MLP base & physics & learned & 18.78 & $+1.58$ & $[+0.51$, $+2.66]$ & 6/6 & $0.031$ & $[+0.82$, $+2.32]$ & s0 $+2.02$, s1 $+2.53$, s2 $+0.20$ & $[+0.25$, $+3.13]$ \\
+MLP base & CUT & learned & 18.65 & $+1.82$ & $[+1.01$, $+2.62]$ & 6/6 & $0.031$ & $[+1.26$, $+2.37]$ & s0 $-0.13$, s1 $+3.28$, s2 $+2.31$ & $[+0.58$, $+3.04]$ \\
+MLP base & CycleGAN & learned & 18.47 & $+1.62$ & $[+0.47$, $+2.76]$ & 5/6 & $0.063$ & $[+0.71$, $+2.30]$ & s0 $+2.26$, s1 $+0.34$, s2 $+2.25$ & $[+0.44$, $+2.84]$ \\
+MLP base & SonoSPADE & learned & 17.70 & $+4.56$ & $[+2.10$, $+7.02]$ & 6/6 & $0.031$ & $[+2.75$, $+6.17]$ & s0 $+5.04$, s1 $+4.90$, s2 $+3.76$ & $[+2.46$, $+6.54]$ \\
+CNN base & physics & CT$^{\dagger}$ & 15.37 & $+3.72$ & $[+0.58$, $+6.86]$ & 5/6 & $0.063$ & $[+1.34$, $+5.68]$ & s0 $+3.95$, s1 $+4.28$, s2 $+2.93$ & $[+1.32$, $+5.83]$ \\
+CNN base & CUT & CT$^{\dagger}$ & 15.53 & $+3.88$ & $[+0.40$, $+7.36]$ & 5/6 & $0.063$ & $[+1.18$, $+5.99]$ & s0 $+4.34$, s1 $+3.92$, s2 $+3.38$ & $[+1.19$, $+6.10]$ \\
+CNN base & CycleGAN & CT$^{\dagger}$ & 15.42 & $+3.76$ & $[+0.68$, $+6.85]$ & 5/6 & $0.063$ & $[+1.36$, $+5.60]$ & s0 $+4.10$, s1 $+3.98$, s2 $+3.22$ & $[+1.35$, $+5.70]$ \\
+CNN base & SonoSPADE & CT$^{\dagger}$ & 15.10 & $+3.45$ & $[-0.17$, $+7.07]$ & 5/6 & $0.094$ & $[+0.64$, $+5.64]$ & s0 $+3.85$, s1 $+3.99$, s2 $+2.52$ & $[+0.65$, $+5.77]$ \\
+hill-climb & CUT & CT$^{\dagger}$ & 15.67 & $+4.02$ & $[+1.09$, $+6.95]$ & 6/6 & $0.031$ & $[+1.97$, $+5.92]$ & s0 $+4.50$, s1 $+4.05$, s2 $+3.52$ & $[+1.88$, $+5.99]$ \\
+hill-climb & CycleGAN & CT$^{\dagger}$ & 15.80 & $+4.15$ & $[+1.23$, $+7.08]$ & 6/6 & $0.031$ & $[+2.15$, $+6.05]$ & s0 $+4.38$, s1 $+4.34$, s2 $+3.74$ & $[+2.01$, $+6.12]$ \\
+hill-climb & SonoSPADE & CT$^{\dagger}$ & 15.77 & $+4.12$ & $[+1.34$, $+6.90]$ & 6/6 & $0.031$ & $[+2.23$, $+5.93]$ & s0 $+4.40$, s1 $+4.39$, s2 $+3.59$ & $[+2.04$, $+6.04]$ \\
+hill-climb & CUT & learned & 16.18 & $-0.65$ & $[-2.19$, $+0.89]$ & 4/6 & $0.375$ & $[-1.82$, $+0.27]$ & s0 $-0.54$, s1 $-1.41$, s2 $-0.02$ & $[-2.06$, $+0.57]$ \\
+hill-climb & CycleGAN & learned & 16.17 & $-0.68$ & $[-2.42$, $+1.05]$ & 3/6 & $0.438$ & $[-2.07$, $+0.17]$ & s0 $-0.22$, s1 $-1.83$, s2 $-0.01$ & $[-2.22$, $+0.44]$ \\
+hill-climb & SonoSPADE & learned & 15.90 & $+2.77$ & $[+0.02$, $+5.51]$ & 4/6 & $0.125$ & $[+0.88$, $+4.55]$ & s0 $+2.79$, s1 $+2.83$, s2 $+2.68$ & $[+0.57$, $+4.76]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Pose-free rungs at 36 steps minus the 36-step servo base, physics frames, six held-out patients (exploratory; estimation only): 7 contrasts; none adjusted. $^{\dagger}$Privileged.}
+\label{tab:est-p9-rung36}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hsize=1.4706\hsize}X >{\raggedright\arraybackslash\hsize=0.7843\hsize}X >{\raggedright\arraybackslash\hsize=0.6863\hsize}X >{\raggedright\arraybackslash\hsize=0.6863\hsize}X >{\raggedright\arraybackslash\hsize=0.9804\hsize}X >{\raggedright\arraybackslash\hsize=0.5882\hsize}X >{\raggedright\arraybackslash\hsize=0.8824\hsize}X >{\raggedright\arraybackslash\hsize=0.9804\hsize}X >{\raggedright\arraybackslash\hsize=1.9608\hsize}X >{\raggedright\arraybackslash\hsize=0.9803\hsize}X @{}}
+\toprule
+Rung & Masks & Final error (mm) & Mean (mm) & 95\% $t$ CI (mm) & $k/n$ & Sign-flip $p$ (unadjusted; descriptive) & Bootstrap CI over units (mm) & Per seed (mm) & Bootstrap CI over units and seeds (mm) \\
+\midrule
+$S$-guarded servo & CT$^{\dagger}$ & 15.23 & $-3.12$ & $[-4.47$, $-1.77]$ & 6/6 & $0.031$ & $[-4.02$, $-2.19]$ & s0 $-4.13$, s1 $-2.76$, s2 $-2.46$ & $[-4.40$, $-1.84]$ \\
+$S$-guarded servo & learned & 15.59 & $-17.08$ & $[-21.19$, $-12.97]$ & 6/6 & $0.031$ & $[-19.94$, $-14.08]$ & s0 $-17.61$, s1 $-13.94$, s2 $-19.68$ & $[-20.51$, $-13.52]$ \\
+hill-climb & CT$^{\dagger}$ & 15.59 & $-2.75$ & $[-7.27$, $+1.77]$ & 4/6 & $0.219$ & $[-6.05$, $+0.17]$ & s0 $-5.87$, s1 $-0.17$, s2 $-2.21$ & $[-6.57$, $+0.74]$ \\
+hill-climb & learned & 16.36 & $-16.32$ & $[-20.76$, $-11.87]$ & 6/6 & $0.031$ & $[-19.28$, $-13.08]$ & s0 $-16.40$, s1 $-13.59$, s2 $-18.96$ & $[-19.93$, $-12.51]$ \\
+MLP base & CT$^{\dagger}$ & 26.45 & $+8.11$ & $[+5.36$, $+10.85]$ & 6/6 & $0.031$ & $[+6.18$, $+9.97]$ & s0 $+5.90$, s1 $+7.16$, s2 $+11.26$ & $[+5.45$, $+10.95]$ \\
+MLP base & learned & 36.27 & $+3.60$ & $[-0.50$, $+7.69]$ & 5/6 & $0.063$ & $[+0.67$, $+6.64]$ & s0 $+3.51$, s1 $+6.64$, s2 $+0.64$ & $[-0.97$, $+8.62]$ \\
+CNN base & CT$^{\dagger}$ & 21.25 & $+2.91$ & $[-0.19$, $+6.00]$ & 5/6 & $0.094$ & $[+0.71$, $+5.01]$ & s0 $-0.35$, s1 $+5.60$, s2 $+3.47$ & $[+0.16$, $+5.86]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Pose-free rungs on 20 new CTs minus the servo base of the same stage, masks and seeds (exploratory; estimation only): 12 contrasts; none adjusted. $^{\dagger}$Privileged.}
+\label{tab:est-p9-cohort}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\hsize=1.4667\hsize}X >{\raggedright\arraybackslash\hsize=1.0267\hsize}X >{\raggedright\arraybackslash\hsize=0.7822\hsize}X >{\raggedright\arraybackslash\hsize=0.6844\hsize}X >{\raggedright\arraybackslash\hsize=0.6844\hsize}X >{\raggedright\arraybackslash\hsize=0.9778\hsize}X >{\raggedright\arraybackslash\hsize=0.5867\hsize}X >{\raggedright\arraybackslash\hsize=0.8800\hsize}X >{\raggedright\arraybackslash\hsize=0.9778\hsize}X >{\raggedright\arraybackslash\hsize=1.9556\hsize}X >{\raggedright\arraybackslash\hsize=0.9777\hsize}X @{}}
+\toprule
+Rung & Stage & Masks & Final error (mm) & Mean (mm) & 95\% $t$ CI (mm) & $k/n$ & Sign-flip $p$ (unadjusted; descriptive) & Bootstrap CI over units (mm) & Per seed (mm) & Bootstrap CI over units and seeds (mm) \\
+\midrule
+$S$-guarded servo & physics & CT$^{\dagger}$ & 12.70 & $+0.06$ & $[-0.08$, $+0.21]$ & 10/20 & $0.375$ & $[-0.07$, $+0.19]$ & s0 $+0.02$, s1 $+0.15$, s2 $+0.02$ & $[-0.10$, $+0.22]$ \\
+$S$-guarded servo & CUT & CT$^{\dagger}$ & 12.71 & $+0.07$ & $[-0.14$, $+0.27]$ & 13/20 & $0.502$ & $[-0.12$, $+0.25]$ & s0 $-0.01$, s1 $+0.24$, s2 $-0.03$ & $[-0.15$, $+0.28]$ \\
+$S$-guarded servo & CycleGAN & CT$^{\dagger}$ & 12.72 & $+0.08$ & $[-0.11$, $+0.26]$ & 11/20 & $0.398$ & $[-0.10$, $+0.24]$ & s0 $-0.01$, s1 $+0.17$, s2 $+0.06$ & $[-0.12$, $+0.27]$ \\
+$S$-guarded servo & SonoSPADE & CT$^{\dagger}$ & 12.55 & $-0.09$ & $[-0.40$, $+0.21]$ & 8/20 & $0.547$ & $[-0.37$, $+0.18]$ & s0 $-0.11$, s1 $+0.14$, s2 $-0.31$ & $[-0.40$, $+0.20]$ \\
+$S$-guarded servo & physics & learned & 14.78 & $-0.98$ & $[-1.48$, $-0.47]$ & 16/20 & $5.7 \times 10^{-4}$ & $[-1.45$, $-0.54]$ & s0 $-0.79$, s1 $-1.06$, s2 $-1.08$ & $[-1.57$, $-0.41]$ \\
+$S$-guarded servo & CUT & learned & 15.17 & $-1.14$ & $[-1.72$, $-0.55]$ & 19/20 & $4.2 \times 10^{-4}$ & $[-1.68$, $-0.61]$ & s0 $-1.66$, s1 $-0.88$, s2 $-0.87$ & $[-1.76$, $-0.54]$ \\
+$S$-guarded servo & CycleGAN & learned & 15.29 & $-0.85$ & $[-1.29$, $-0.41]$ & 17/20 & $8.9 \times 10^{-4}$ & $[-1.25$, $-0.45]$ & s0 $-1.04$, s1 $-0.68$, s2 $-0.84$ & $[-1.34$, $-0.39]$ \\
+$S$-guarded servo & SonoSPADE & learned & 13.76 & $+0.05$ & $[-0.18$, $+0.27]$ & 13/20 & $0.679$ & $[-0.17$, $+0.24]$ & s0 $+0.03$, s1 $+0.05$, s2 $+0.06$ & $[-0.21$, $+0.27]$ \\
+CNN base & physics & CT$^{\dagger}$ & 15.68 & $+3.04$ & $[+2.13$, $+3.95]$ & 19/20 & $5.7 \times 10^{-6}$ & $[+2.22$, $+3.88]$ & s0 $+3.80$, s1 $+3.49$, s2 $+1.84$ & $[+2.14$, $+3.95]$ \\
+CNN base & CUT & CT$^{\dagger}$ & 15.47 & $+2.83$ & $[+1.97$, $+3.70]$ & 19/20 & $1.1 \times 10^{-5}$ & $[+2.05$, $+3.61]$ & s0 $+3.27$, s1 $+3.22$, s2 $+2.01$ & $[+1.98$, $+3.66]$ \\
+CNN base & CycleGAN & CT$^{\dagger}$ & 15.54 & $+2.90$ & $[+2.00$, $+3.80]$ & 19/20 & $9.5 \times 10^{-6}$ & $[+2.08$, $+3.72]$ & s0 $+3.39$, s1 $+3.37$, s2 $+1.93$ & $[+2.01$, $+3.79]$ \\
+CNN base & SonoSPADE & CT$^{\dagger}$ & 15.56 & $+2.92$ & $[+2.04$, $+3.80]$ & 19/20 & $5.7 \times 10^{-6}$ & $[+2.13$, $+3.72]$ & s0 $+3.72$, s1 $+3.49$, s2 $+1.56$ & $[+2.01$, $+3.80]$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}

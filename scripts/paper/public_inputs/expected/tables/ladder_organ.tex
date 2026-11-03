@@ -1,0 +1,38 @@
+
+\begin{table*}[t]
+\caption{Post hoc, not pre-specified: the oracle ladder of Table~\ref{tab:ladder} by target organ. Each cell gives liver / kidney: the mean over the 6 held-out patients of per-patient means over that organ's episodes (5 acoustic windows per patient and organ, 3 seeds per policy row). Contact on, evaluation DR off.}
+\label{tab:ladder-organ}
+\centering
+\renewcommand{\baselinestretch}{1}\small
+\begin{tabular}{@{}l cccc@{}}
+\toprule
+ & Physics & CUT & CycleGAN & SonoSPADE \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Final translation error (mm), liver / kidney}} \\
+Static start (no commanded motion) & \multicolumn{4}{c}{16.28 / 15.78} \\
+Scripted sweep (no feedback) & \multicolumn{4}{c}{15.87 / 15.16} \\
+Analytic pose oracle (privileged) & \multicolumn{4}{c}{1.47 / 1.59} \\
+\multicolumn{5}{@{}l}{CT mask} \\
+\quad Servo base & 11.59 / 11.71 & 11.59 / 11.71 & 11.59 / 11.71 & 11.59 / 11.71 \\
+\quad After imitation & 11.86 / 11.70 & 11.65 / 11.80 & 11.74 / 11.65 & 11.84 / 11.64 \\
+\quad Final & 11.95 / 11.68 & 11.66 / 11.63 & 11.88 / 11.51 & 11.85 / 11.53 \\
+\multicolumn{5}{@{}l}{Learned mask (texture-matched segmenter)} \\
+\quad Servo base & 17.27 / 17.13 & 16.85 / 16.82 & 16.12 / 17.59 & 13.08 / 13.19 \\
+\quad After imitation & 16.85 / 17.20 & 16.57 / 16.27 & 15.89 / 16.95 & 13.13 / 13.00 \\
+\quad Final & 16.65 / 16.81 & 16.94 / 16.86 & 15.95 / 17.04 & 13.32 / 12.91 \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Final rotation error (deg), liver / kidney}} \\
+Static start (no commanded motion) & \multicolumn{4}{c}{13.88 / 13.52} \\
+Scripted sweep (no feedback) & \multicolumn{4}{c}{5.50 / 5.75} \\
+Analytic pose oracle (privileged) & \multicolumn{4}{c}{1.02 / 1.01} \\
+\multicolumn{5}{@{}l}{CT mask} \\
+\quad Servo base & 7.11 / 7.02 & 7.11 / 7.02 & 7.11 / 7.02 & 7.11 / 7.02 \\
+\quad After imitation & 6.72 / 6.74 & 6.95 / 6.82 & 6.78 / 6.79 & 6.69 / 6.62 \\
+\quad Final & 7.63 / 7.57 & 8.01 / 7.57 & 7.28 / 7.42 & 6.93 / 6.89 \\
+\multicolumn{5}{@{}l}{Learned mask (texture-matched segmenter)} \\
+\quad Servo base & 7.88 / 7.79 & 6.96 / 8.48 & 7.12 / 7.37 & 7.13 / 7.36 \\
+\quad After imitation & 7.34 / 7.42 & 5.94 / 7.45 & 6.54 / 7.08 & 6.57 / 7.16 \\
+\quad Final & 8.27 / 7.58 & 8.31 / 8.27 & 7.42 / 6.78 & 8.38 / 8.13 \\
+\bottomrule
+\end{tabular}
+\end{table*}

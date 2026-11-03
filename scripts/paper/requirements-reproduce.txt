@@ -1,0 +1,19 @@
+# The versions of the run that wrote public_inputs/expected/ (Python 3.13.13, macOS arm64). Printed numbers come from
+# bootstraps, quantiles and renders, so another numerical stack can change a last digit; reproduce.py prints the
+# versions it runs with. Install the testbed package first (pip install -e . at the repository root). The build never
+# imports stable-baselines3: the versions of gymnasium and stable-baselines3 that the article prints come from
+# public_inputs/plan_constants.json.
+numpy==2.1.3
+scipy==1.18.0
+torch==2.12.1
+matplotlib==3.11.0
+mujoco==3.3.7
+gymnasium==1.0.0
+trimesh==4.12.2
+networkx==3.6.1
+scikit-image==0.26.0
+pillow==12.2.0
+fast-simplification==0.1.13
+fonttools==4.63.0
+contourpy==1.3.3
+pytest==9.1.1

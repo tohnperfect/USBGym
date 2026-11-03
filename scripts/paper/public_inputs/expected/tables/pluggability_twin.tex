@@ -1,0 +1,121 @@
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Supplementary twin of Table~\ref{tab:pluggability} of the article, with the columns that Table~\ref{tab:pluggability} leaves out: Label, Cost, the paired $t$ $p$, the exact sign-flip $p$, the 90\% $t$ interval of the post hoc TOST, and Score. Exploratory, pre-specified rules. Reference components are marked (authors') or (prior). Values taken from the primary results stay primary. Each slot swaps one component of our reference pipeline. Every run uses the crossed held-out episodes of Table~\ref{tab:ladder} of the article, contact on. Error: final translation error, the mean over seeds of patient-level means. Difference: from the slot's reference component, paired by seed, with its 95\% paired $t$ interval and the patients, of 6, that share its sign. The methods of a family are tested with the two-sided paired $t$-test and Holm's adjustment over all $m$ members. A member without a complete result enters at $p = 1$. The printed Holm $p$ is then an upper bound. $^{\ast}$Holm $p < 0.05$ and at least 5 of 6 patients share the sign. Secondary comparisons are never tested. TOST: post hoc and unadjusted, two one-sided paired $t$-tests at $\pm 1$~mm, the pre-specified margin for the RL change, the label-painted stage and CTA-E; an interval inside $[-1, +1]$~mm shows equivalence within 1~mm. MASK-P (second mask source), IMN-T (pretrained backbone), LPIPS-R (LPIPS reward), CTA-D and CTA-E (CT-anatomy difference and equivalence): later pre-specified families (exploratory, Holm within each, never pooled with the slot families). IMN-T: minus the same network trained from scratch. CTA-E: TOST at $\pm 1$~mm, Holm on the larger $p$, 90\% $t$ interval; there $^{\ast}$ needs no sign count. $^{\dagger}$Privileged: uses simulator state that no physical rig provides. $^{\ddagger}$Fewer seeds than designed, or a learned method below three seeds. Such a row gets no difference. SAM, MedSAM, SAMUS, the look-ahead and SIMUS run seed 0 by design and pair with seed 0 of the reference. BC and DAgger learn from the pose oracle and use BatchNorm in eval mode. Cost: the measurement, unit and device named in each slot header; medians over seeds, except the reward slot's mean per frame pair. Every cost is a benchmark or a timing inside the closed loop. KID and learnability as in the realism and learnability tables of \ref{app:eval} of the article. MedSAM and SAMUS real-frame Dice are not reported, because their pretraining data may include the real test frames.}
+\label{tab:pluggability-twin}
+\centering
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l r r l r r r l r@{}}
+\toprule
+Slot and method & Label & Cost & \begin{tabular}[b]{@{}r@{}}Error\\(mm)\end{tabular} & \begin{tabular}[b]{@{}l@{}}Difference (mm),\\95\% $t$ CI, $k$/6\end{tabular} & $t$ $p$ & Holm $p$ & \begin{tabular}[b]{@{}r@{}}Sign-\\flip $p$\end{tabular} & \begin{tabular}[b]{@{}l@{}}TOST, 90\%\\$t$ CI (mm)\end{tabular} & Score \\
+\midrule
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\textit{Texture stage}: learned-mask servo base; score KID; cost ms per frame, translator call only, MPS benchmark; family $m = 4$} \\
+\quad SonoSPADE (authors')~\cite{sonospade} & reference & 11.4~ms & 13.13 &  &  &  &  &  & 0.1509 \\
+\quad None, physics frame (authors') & secondary & none & 17.20 & $+4.06$ $[+1.68, +6.44]$, 5/6 & $0.007$ & n/a & $4/64$ & $[+2.20, +5.93]$ & 0.2199 \\
+\quad CUT (prior)~\cite{cut} & secondary & 2.6~ms & 16.84 & $+3.70$ $[+1.33, +6.07]$, 5/6 & $0.010$ & n/a & $4/64$ & $[+1.84, +5.56]$ & 0.0740 \\
+\quad CycleGAN (prior)~\cite{cyclegan} & secondary & 2.6~ms & 16.85 & $+3.72$ $[+1.18, +6.26]$, 5/6 & $0.013$ & n/a & $4/64$ & $[+1.73, +5.71]$ & 0.0485 \\
+\quad Label-painted physics stage (authors', not learned) & secondary & not timed & 14.22 & $+1.09$ $[-1.98, +4.16]$, 3/6 & $0.403$ & n/a & $24/64$ & $[-1.32, +3.49]$ & 0.2048 \\
+\quad FastCUT~\cite{cut} & family & 2.8~ms & 16.13 & $+3.00$$^{\ast}$ $[+0.24, +5.75]$, 5/6 & $0.038$ & $0.038$ & $4/64$ & $[+0.84, +5.16]$ & 0.1952 \\
+\quad DCLGAN~\cite{han2021dclgan} & family & 2.6~ms & 16.94 & $+3.80$$^{\ast}$ $[+1.36, +6.25]$, 5/6 & $0.010$ & $0.021$ & $4/64$ & $[+1.89, +5.72]$ & 0.0380 \\
+\quad UNSB (Schr\"{o}dinger bridge)~\cite{kim2024unsb} & family & 34.8~ms & 17.64 & $+4.51$$^{\ast}$ $[+2.12, +6.89]$, 6/6 & $0.005$ & $0.014$ & $2/64$ & $[+2.64, +6.38]$ & 0.0894 \\
+\quad Histogram matching~\cite{gonzalez2018} & family &  & 16.95 & $+3.82$$^{\ast}$ $[+2.02, +5.62]$, 6/6 & $0.003$ & $0.011$ & $2/64$ & $[+2.41, +5.23]$ & 0.1965 \\
+\addlinespace[2pt]
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\textit{Mask source}: servo base per mask, SonoSPADE stage; score liver Dice, Vitale holdout; cost ms per step, mask call timed inside the closed loop, MPS; family $m = 7$} \\
+\quad U-Net, stage-matched (authors')~\cite{ronneberger2015unet} & reference & 3.7~ms & 13.13 &  &  &  &  &  & 0.49 \\
+\quad\quad Seed 0 only, paired with the seed-0 rows & reference & & 13.33 & & & & & & 0.40 \\
+\quad CT label (authors') & secondary$^{\dagger}$ & none & 11.65 & $-1.48$ $[-2.11, -0.86]$, 6/6 & $0.002$ & n/a & $2/64$ & $[-1.97, -0.99]$ & n/a \\
+\quad LR-ASPP, MobileNetV3-L~\cite{howard2019mobilenetv3} & family & 6.0~ms & 12.76 & $-0.38$ $[-2.01, +1.25]$, 4/6 & $0.578$ & $1.000$ & $36/64$ & $[-1.66, +0.90]$ & 0.45 \\
+\quad DeepLabV3, MobileNetV3-L~\cite{chen2017deeplabv3,howard2019mobilenetv3} & family & 7.5~ms & 14.54 & $+1.41$ $[+0.15, +2.67]$, 6/6 & $0.035$ & $0.242$ & $2/64$ & $[+0.42, +2.39]$ & 0.42 \\
+\quad DeepLabV3, ResNet-50~\cite{chen2017deeplabv3,he2016resnet} & family & 10.9~ms & 13.20 & $+0.06$ $[-1.51, +1.64]$, 3/6 & $0.920$ & $1.000$ & $52/64$ & $[-1.17, +1.30]$ & 0.48 \\
+\quad FCN, ResNet-50~\cite{long2015fcn,he2016resnet} & family & 7.8~ms & 12.81 & $-0.32$ $[-1.58, +0.93]$, 4/6 & $0.540$ & $1.000$ & $32/64$ & $[-1.30, +0.66]$ & 0.53 \\
+\quad nnU-Net 2D, 2 epochs~\cite{isensee2021nnunet} & family & 55.3~ms & 14.88 & $+1.74$ $[-0.20, +3.69]$, 4/6 & $0.069$ & $0.416$ & $8/64$ & $[+0.22, +3.27]$ & 0.49 \\
+\quad SAM, boxes from the U-Net mask~\cite{kirillov2023sam} & family & 1.7~s & 14.32 & $+0.99$ $[-0.65, +2.64]$, 5/6 & $0.181$ & $0.904$ & $4/64$ & $[-0.29, +2.28]$ & 0.44 \\
+\quad MedSAM, boxes from the U-Net mask~\cite{ma2024medsam} & family & 1.7~s & 12.85 & $-0.47$ $[-2.74, +1.79]$, 5/6 & $0.613$ & $1.000$ & $40/64$ & $[-2.25, +1.30]$ & withheld \\
+\quad nnU-Net 2D, 20 epochs~\cite{isensee2021nnunet} & secondary$^{\ddagger}$ & 65.1~ms & 12.76 &  &  &  &  &  & 0.50 \\
+\quad SAM, boxes from the CT label~\cite{kirillov2023sam} & secondary$^{\dagger}$ & 1.6~s & 12.60 & $-0.73$ $[-3.36, +1.91]$, 3/6 & $0.511$ & n/a & $32/64$ & $[-2.79, +1.34]$ & 0.90 \\
+\quad MedSAM, boxes from the CT label~\cite{ma2024medsam} & secondary$^{\dagger}$ & 1.2~s & 12.12 & $-1.21$ $[-3.76, +1.35]$, 4/6 & $0.279$ & n/a & $18/64$ & $[-3.21, +0.80]$ & withheld \\
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\quad\textit{MASK-P ($m = 5$):} SAMUS~\cite{lin2024samus}, boxes from the U-Net mask; boxes from the CT label$^{\dagger}$, secondary.} \\
+\quad SAMUS, boxes from the U-Net mask~\cite{lin2024samus} & MASK-P & 202~ms & 14.29 & $+0.96$ $[-0.37, +2.30]$, 5/6 & $0.123$ & $0.613$ & $8/64$ & $[-0.08, +2.01]$ & withheld \\
+\quad\quad Seeds 0 to 2, against U-Net seeds 0 to 2 & secondary & & 13.98 & $+0.85$ $[-0.04, +1.74]$, 4/6 & $0.058$ & n/a & $8/64$ & $[+0.15, +1.55]$ & \\
+\quad SAMUS, boxes from the CT label~\cite{lin2024samus} & secondary$^{\dagger}$ & 193~ms & 13.52 & $+0.20$ $[-1.81, +2.20]$, 3/6 & $0.810$ & n/a & $52/64$ & $[-1.37, +1.77]$ & withheld \\
+\quad\quad Seeds 0 to 2, against U-Net seeds 0 to 2 & secondary$^{\dagger}$ & & 13.48 & $+0.35$ $[-0.37, +1.07]$, 3/6 & $0.269$ & n/a & $20/64$ & $[-0.22, +0.92]$ & \\
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\quad\textit{MASK-P ($m = 5$) and IMN-T ($m = 4$):} the four torchvision networks with ImageNet-pretrained backbones.} \\
+\quad LR-ASPP, MobileNetV3-L, ImageNet backbone~\cite{howard2019mobilenetv3} & MASK-P & 5.9~ms & 13.25 & $+0.11$ $[-1.22, +1.45]$, 4/6 & $0.834$ & $1.000$ & $54/64$ & $[-0.93, +1.16]$ & 0.53 \\
+\quad\quad Minus the same network trained from scratch & IMN-T & & & $+0.49$ $[-1.92, +2.91]$, 3/6 & $0.622$ & $1.000$ & $40/64$ & $[-1.40, +2.38]$ & \\
+\quad DeepLabV3, MobileNetV3-L, ImageNet backbone~\cite{chen2017deeplabv3,howard2019mobilenetv3} & MASK-P & 7.8~ms & 12.66 & $-0.47$ $[-2.04, +1.09]$, 3/6 & $0.471$ & $1.000$ & $32/64$ & $[-1.70, +0.75]$ & 0.58 \\
+\quad\quad Minus the same network trained from scratch & IMN-T & & & $-1.88$ $[-4.45, +0.69]$, 4/6 & $0.118$ & $0.473$ & $10/64$ & $[-3.90, +0.13]$ & \\
+\quad DeepLabV3, ResNet-50, ImageNet backbone~\cite{chen2017deeplabv3,he2016resnet} & MASK-P & 10.9~ms & 12.62 & $-0.52$ $[-1.92, +0.89]$, 4/6 & $0.387$ & $1.000$ & $24/64$ & $[-1.62, +0.58]$ & 0.63 \\
+\quad\quad Minus the same network trained from scratch & IMN-T & & & $-0.58$ $[-2.33, +1.16]$, 4/6 & $0.430$ & $1.000$ & $20/64$ & $[-1.95, +0.79]$ & \\
+\quad FCN, ResNet-50, ImageNet backbone~\cite{long2015fcn,he2016resnet} & MASK-P & 8.1~ms & 12.77 & $-0.36$ $[-1.16, +0.44]$, 4/6 & $0.297$ & $1.000$ & $16/64$ & $[-0.99, +0.26]$ & 0.47 \\
+\quad\quad Minus the same network trained from scratch & IMN-T & & & $-0.04$ $[-1.50, +1.42]$, 2/6 & $0.945$ & $1.000$ & $64/64$ & $[-1.18, +1.10]$ & \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\ContinuedFloat
+\caption[]{Continued.}
+\centering
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l r r l r r r l r@{}}
+\toprule
+Slot and method & Label & Cost & \begin{tabular}[b]{@{}r@{}}Error\\(mm)\end{tabular} & \begin{tabular}[b]{@{}l@{}}Difference (mm),\\95\% $t$ CI, $k$/6\end{tabular} & $t$ $p$ & Holm $p$ & \begin{tabular}[b]{@{}r@{}}Sign-\\flip $p$\end{tabular} & \begin{tabular}[b]{@{}l@{}}TOST, 90\%\\$t$ CI (mm)\end{tabular} & Score \\
+\midrule
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\textit{Controller}: SonoSPADE, CT mask$^{\dagger}$; score success at 10~mm and 10$^\circ$; cost training wall-clock hours on MPS (h), or evaluation seconds per episode (/ep); family $m = 10$} \\
+\quad REINFORCE residual, imitation start (authors')~\cite{reinforce} & reference & 1.27~h & 11.69 &  &  &  &  &  & 37\% \\
+\quad\quad Seed 0 only, paired with the seed-0 rows & reference & & 11.79 & & & & & & 32\% \\
+\quad Servo base alone (authors') & secondary & n/a & 11.65 & $-0.04$ $[-0.36, +0.29]$, 3/6 & $0.788$ & n/a & $56/64$ & $[-0.29, +0.22]$ & 36\% \\
+\quad REINFORCE residual, BatchNorm in eval mode (authors') & secondary &  & 11.70 & $+0.01$ $[-0.28, +0.30]$, 3/6 & $0.922$ & n/a & $62/64$ & $[-0.22, +0.24]$ & 42\% \\
+\quad PPO, residual~\cite{schulman2017ppo,sb3} & family & 0.71~h & 11.50 & $-0.19$ $[-0.53, +0.16]$, 4/6 & $0.221$ & $0.885$ & $12/64$ & $[-0.45, +0.08]$ & 38\% \\
+\quad SAC, residual~\cite{haarnoja2018sac,sb3} & family & 1.19~h & 12.06 & $+0.37$ $[-0.86, +1.61]$, 4/6 & $0.472$ & $0.925$ & $28/64$ & $[-0.60, +1.34]$ & 37\% \\
+\quad TD3, residual~\cite{fujimoto2018td3,sb3} & family & 1.08~h & 20.22 & $+8.54$$^{\ast}$ $[+7.00, +10.08]$, 6/6 & $<0.001$ & $<0.001$ & $2/64$ & $[+7.33, +9.74]$ & 3\% \\
+\quad A2C, residual~\cite{mnih2016a3c,sb3} & family & 0.55~h & 18.43 & $+6.74$$^{\ast}$ $[+5.41, +8.07]$, 6/6 & $<0.001$ & $<0.001$ & $2/64$ & $[+5.70, +7.79]$ & 8\% \\
+\quad PPO, full twist~\cite{schulman2017ppo,sb3} & family & 0.63~h & 14.34 & $+2.66$ $[-0.39, +5.70]$, 5/6 & $0.075$ & $0.376$ & $6/64$ & $[+0.27, +5.04]$ & 23\% \\
+\quad DQN, 13 discrete moves~\cite{mnih2015dqn,sb3} & family & 0.95~h & 16.41 & $+4.72$ $[+1.64, +7.81]$, 6/6 & $0.011$ & $0.077$ & $2/64$ & $[+2.30, +7.14]$ & 16\% \\
+\quad BC, residual~\cite{pomerleau1991} & family & 0.42~h & 11.25 & $-0.44$ $[-1.42, +0.55]$, 4/6 & $0.308$ & $0.925$ & $20/64$ & $[-1.21, +0.34]$ & 42\% \\
+\quad\quad BatchNorm in train mode & secondary & & 12.67 & $+0.98$ $[-0.02, +1.99]$, 5/6 & $0.053$ & n/a & $6/64$ & $[+0.20, +1.77]$ & 33\% \\
+\quad DAgger, residual~\cite{ross2011dagger} & family & 0.48~h & 10.85 & $-0.84$ $[-3.42, +1.74]$, 4/6 & $0.442$ & $0.925$ & $26/64$ & $[-2.86, +1.19]$ & 43\% \\
+\quad\quad BatchNorm in train mode & secondary & & 12.89 & $+1.20$ $[+0.57, +1.83]$, 6/6 & $0.005$ & n/a & $2/64$ & $[+0.71, +1.70]$ & 29\% \\
+\quad BC, full twist~\cite{pomerleau1991} & family & 0.39~h & 19.60 & $+7.92$$^{\ast}$ $[+5.10, +10.73]$, 6/6 & $<0.001$ & $0.006$ & $2/64$ & $[+5.71, +10.12]$ & 29\% \\
+\quad\quad BatchNorm in train mode & secondary & & 15.75 & $+4.07$ $[+0.94, +7.19]$, 5/6 & $0.020$ & n/a & $4/64$ & $[+1.62, +6.52]$ & 8\% \\
+\quad DAgger, full twist~\cite{ross2011dagger} & family & 0.42~h & 17.66 & $+5.98$ $[+0.53, +11.42]$, 5/6 & $0.037$ & $0.222$ & $4/64$ & $[+1.71, +10.25]$ & 11\% \\
+\quad\quad BatchNorm in train mode & secondary & & 15.15 & $+3.47$ $[+0.83, +6.10]$, 5/6 & $0.020$ & n/a & $4/64$ & $[+1.40, +5.53]$ & 19\% \\
+\quad CEM look-ahead~\cite{rubinstein1999cem} & secondary$^{\dagger}$ & 60~s/ep & 6.98 & $-4.81$ $[-9.02, -0.60]$, 5/6 & $0.032$ & n/a & $4/64$ & $[-8.11, -1.51]$ & 70\% \\
+\addlinespace[2pt]
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\textit{Reward}: REINFORCE, imitation start, SonoSPADE, CT mask$^{\dagger}$; score learnability; cost mean ms per frame pair over the held-out landscape, CPU; family $m = 2$} \\
+\quad Match score $S$ (authors') & reference & 0.07~ms & 11.97 &  &  &  &  &  & 0.61 \\
+\quad Organ overlap only (authors') & secondary & n/a & 11.91 & $-0.065$ $[-0.128, -0.003]$, 5/6 & $0.044$ & n/a & $4/64$ & $[-0.114, -0.016]$ & n/a \\
+\quad Appearance NCC only (authors') & secondary & 0.07~ms & 12.06 & $+0.094$ $[-0.004, +0.191]$, 5/6 & $0.056$ & n/a & $4/64$ & $[+0.018, +0.170]$ & 0.61 \\
+\quad NCC over the whole sector (authors') & secondary & 0.03~ms & 11.99 & $+0.023$ $[-0.004, +0.050]$, 5/6 & $0.077$ & n/a & $8/64$ & $[+0.002, +0.044]$ & 0.61 \\
+\quad SSIM appearance term~\cite{wang2004ssim} & family & 0.69~ms & 11.92 & $-0.047$$^{\ast}$ $[-0.085, -0.009]$, 5/6 & $0.025$ & $0.049$ & $4/64$ & $[-0.076, -0.017]$ & 0.62 \\
+\quad NMI appearance term~\cite{studholme1999nmi} & family & 0.31~ms & 11.98 & $+0.006$ $[-0.042, +0.053]$, 4/6 & $0.774$ & $0.774$ & $50/64$ & $[-0.032, +0.043]$ & 0.63 \\
+\quad Change in pose distance~\cite{sonogym,hase2020} & secondary$^{\dagger}$ & n/a & 11.92 & $-0.049$ $[-0.180, +0.082]$, 4/6 & $0.384$ & n/a & $24/64$ & $[-0.152, +0.054]$ & 0.84 \\
+\quad Pose distance plus organ area~\cite{bi2022vesnet} & secondary$^{\dagger}$ & n/a & 11.90 & $-0.070$ $[-0.158, +0.018]$, 5/6 & $0.096$ & n/a & $10/64$ & $[-0.139, -0.001]$ & 0.79 \\
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\quad\textit{LPIPS-R ($m = 1$):} LPIPS appearance term~\cite{zhang2018lpips}.} \\
+\quad LPIPS appearance term~\cite{zhang2018lpips} & LPIPS-R & 4.20~ms & 11.90 & $-0.066$$^{\ast}$ $[-0.122, -0.011]$, 5/6 & $0.028$ & $0.028$ & $4/64$ & $[-0.110, -0.023]$ & 0.63 \\
+\addlinespace[2pt]
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\textit{Renderer}: physics-trained policy, CT mask$^{\dagger}$, under each renderer; score KID; cost ms per frame (slice, render, resize and sector warp), CPU benchmark; plugged rows timed under load, so upper bounds (physics took 33.0~ms under the same load), the physics row from the earlier benchmark; family $m = 2$} \\
+\quad Physics renderer (authors') & reference & 13.5~ms & 11.81 &  &  &  &  &  & 0.2199 \\
+\quad\quad Seed 0 only, paired with the seed-0 rows & reference & & 11.91 & & & & & &  \\
+\quad LOTUS, original code, published default parameters~\cite{velikova2023lotus,salehi2015} & family & 19.3~ms & 11.84 & $+0.03$ $[-0.03, +0.09]$, 4/6 & $0.261$ & $0.523$ & $20/64$ & $[-0.02, +0.08]$ & 0.2212 \\
+\quad LOTUS, authors' reimplementation~\cite{velikova2023lotus} & family & 17.3~ms & 11.86 & $+0.05$ $[-0.05, +0.15]$, 4/6 & $0.286$ & $0.523$ & $20/64$ & $[-0.03, +0.13]$ & 0.2288 \\
+\quad SIMUS via PyMUST~\cite{garcia2022simus,cigier2022simus} & secondary & 11.1~s & 12.40 & $+0.49$ $[+0.21, +0.78]$, 6/6 & $0.006$ & n/a & $2/64$ & $[+0.27, +0.72]$ & 0.2444 \\
+\addlinespace[2pt]
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\textit{CT anatomy} (label volume): TotalSegmentator v2~\cite{totalseg} labels (task total, fast mode, 3.0~mm) minus the reference labels, same rung and episodes, seeds 0 to 2. Holm $p$: CTA-D, paired $t$; equivalence: CTA-E, TOST at $\pm 1$~mm. Families: CTA-D ($m = 5$) and CTA-E ($m = 5$).} \\
+\quad R1: CT-mask servo base, physics & CTA-D/E$^{\dagger}$ &  & 11.73 & $+0.08$ $[-0.27, +0.42]$, 3/6 &  & $1.000$ &  &  &  \\
+\quad\quad Equivalence within $\pm 1$~mm (TOST) & CTA-E &  &  & 90\% $[-0.20, +0.35]$$^{\ast}$, 3/6 &  & $0.003$ &  &  &  \\
+\quad R2: Learned-mask servo base, physics & CTA-D/E &  & 16.58 & $-0.62$ $[-1.67, +0.43]$, 5/6 &  & $0.766$ &  &  &  \\
+\quad\quad Equivalence within $\pm 1$~mm (TOST) & CTA-E &  &  & 90\% $[-1.44, +0.21]$, 5/6 &  & $0.196$ &  &  &  \\
+\quad R3: Learned-mask servo base, SonoSPADE & CTA-D/E &  & 12.62 & $-0.51$ $[-1.29, +0.26]$, 5/6 &  & $0.748$ &  &  &  \\
+\quad\quad Equivalence within $\pm 1$~mm (TOST) & CTA-E &  &  & 90\% $[-1.12, +0.09]$, 5/6 &  & $0.166$ &  &  &  \\
+\quad R4: CT-mask policy, physics, final weights & CTA-D/E$^{\dagger}$ &  & 11.70 & $-0.11$ $[-0.81, +0.59]$, 5/6 &  & $1.000$ &  &  &  \\
+\quad\quad Equivalence within $\pm 1$~mm (TOST) & CTA-E &  &  & 90\% $[-0.66, +0.44]$$^{\ast}$, 5/6 &  & $0.045$ &  &  &  \\
+\quad R5: CT-mask policy, SonoSPADE, final weights & CTA-D/E$^{\dagger}$ &  & 11.62 & $-0.07$ $[-0.82, +0.68]$, 4/6 &  & $1.000$ &  &  &  \\
+\quad\quad Equivalence within $\pm 1$~mm (TOST) & CTA-E &  &  & 90\% $[-0.66, +0.52]$$^{\ast}$, 4/6 &  & $0.045$ &  &  &  \\
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\quad\textit{All 19 CTs are in TotalSegmentator's own training data, so these labels are in-sample predictions: the rows are a label-noise sensitivity check, not a test of an independent CT segmenter.}} \\
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\quad\textit{Not run.} The CUT and CycleGAN stages and the replication cohort.} \\
+\multicolumn{10}{@{}>{\raggedright\arraybackslash}p{0.97\textwidth}@{}}{\quad\textit{Not reported.} TotalSegmentator's 1.5~mm default mode.} \\
+\bottomrule
+\end{tabularx}
+\end{table*}

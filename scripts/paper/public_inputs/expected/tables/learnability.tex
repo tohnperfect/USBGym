@@ -1,0 +1,39 @@
+
+\begin{table*}[tp]
+\caption{Appearance-term learnability on the 6 held-out patients. Each target view (5 per patient and organ, 60 in all) is compared with 40 nearby probe poses; the per-view score is the Spearman correlation between the sector-interior appearance match and closeness to the target pose. (a) SonoSPADE against each other stage: mean per-view Spearman of both stages, the mean over patients of the per-patient difference in mean Fisher-$z$ ($\Delta z$), its 95\% patient-cluster bootstrap CI, and the number of patients that share its sign. Rule: a difference under the CI-and-sign rule. The pooled rows are the pre-specified primary contrast. (b) Exploratory renderer-term ablation, not pre-specified: mean per-view Spearman with one renderer term switched off. Interface reflection off: no transmission loss or specular echo at tissue interfaces, attenuation kept. Diffuse scattering off: scattering strength 0. Depth variation of the PSF off: a depth-invariant lateral width. Flat means the appearance term is constant over poses, so the correlation is undefined. DR is off throughout.}
+\label{tab:learnability}
+\centering
+\renewcommand{\baselinestretch}{1}\small
+\textit{(a) SonoSPADE against each other texture stage}\\[2pt]
+\begin{tabular}{@{}lrlcccc@{}}
+\toprule
+Scope & Views & Other stage & Spearman, SonoSPADE / other & $\Delta z$ & 95\% CI & $k$/6, rule \\
+\midrule
+Pooled & 60 & Physics & $0.613$ / $0.542$ & $+0.107$ & $[+0.075, +0.138]$ & 6/6, yes \\
+ &  & CUT & $0.613$ / $0.544$ & $+0.105$ & $[+0.074, +0.144]$ & 6/6, yes \\
+ &  & CycleGAN & $0.613$ / $0.548$ & $+0.098$ & $[+0.065, +0.127]$ & 6/6, yes \\
+\addlinespace
+Liver & 30 & Physics & $0.585$ / $0.502$ & $+0.127$ & $[+0.080, +0.170]$ & 6/6, yes \\
+ &  & CUT & $0.585$ / $0.512$ & $+0.110$ & $[+0.067, +0.150]$ & 6/6, yes \\
+ &  & CycleGAN & $0.585$ / $0.514$ & $+0.108$ & $[+0.051, +0.160]$ & 5/6, yes \\
+\addlinespace
+Kidney & 30 & Physics & $0.642$ / $0.582$ & $+0.088$ & $[+0.062, +0.117]$ & 6/6, yes \\
+ &  & CUT & $0.642$ / $0.576$ & $+0.099$ & $[+0.052, +0.156]$ & 6/6, yes \\
+ &  & CycleGAN & $0.642$ / $0.583$ & $+0.088$ & $[+0.065, +0.113]$ & 6/6, yes \\
+\bottomrule
+\end{tabular}
+
+\vspace{6pt}
+\textit{(b) Renderer-term ablation, mean per-view Spearman}\\[2pt]
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Term switched off & Physics & CUT & CycleGAN & SonoSPADE \\
+\midrule
+None (full renderer) & 0.542 & 0.544 & 0.548 & 0.613 \\
+Interface reflection & 0.535 & 0.545 & 0.551 & 0.613 \\
+Diffuse scattering & 0.476 & 0.540 & 0.508 & 0.647 \\
+Depth variation of the PSF & 0.535 & 0.547 & 0.548 & 0.614 \\
+All three & flat & flat & flat & 0.641 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,40 @@
+\begin{table*}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{DR landscape over segmenter seeds 0 to 2 (post hoc). Mean per-view Spearman correlation of each term with closeness to the target over the 60 held-out views. Arms: DR off (off), one draw shared by target and samples (shared), independent draws (cross) or a new speckle seed only (cross-seed). Combined: the match score at weights 0.6/0.4. CT-mask terms do not depend on the segmenter seed and print once. Learned-mask terms: the value of each segmenter seed, and their mean with the 95\% $t$ interval over the three seeds (2 df). Seed 0 is the run of \ref{app:dr}. The lower block gives the share of the off arm's combined correlation that the cross arm keeps; the pre-specified rule asks for at least 80\%. $^{\dagger}$Privileged.}
+\label{tab:posthoc-dr-landscape}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l l c c c l l l l@{}}
+\toprule
+ & & \multicolumn{3}{c}{CT mask$^{\dagger}$} & \multicolumn{2}{c}{Segmentation term, learned mask} & \multicolumn{2}{c}{Combined, learned mask} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+Arm & Stage & Appearance & Segmentation & Combined & Seeds 0, 1, 2 & Mean [95\% CI] & Seeds 0, 1, 2 & Mean [95\% CI] \\
+\midrule
+Off & Physics & 0.542 & 0.623 & 0.642 & 0.470, 0.471, 0.499 & 0.480 $[0.439, 0.521]$ & 0.546, 0.542, 0.561 & 0.550 $[0.525, 0.574]$ \\
+ & CUT & 0.544 & 0.623 & 0.650 & 0.453, 0.496, 0.526 & 0.492 $[0.401, 0.583]$ & 0.550, 0.564, 0.573 & 0.562 $[0.534, 0.591]$ \\
+ & CycleGAN & 0.548 & 0.623 & 0.650 & 0.482, 0.484, 0.518 & 0.495 $[0.444, 0.545]$ & 0.551, 0.557, 0.555 & 0.554 $[0.548, 0.561]$ \\
+ & SonoSPADE & 0.613 & 0.623 & 0.650 & 0.604, 0.609, 0.612 & 0.608 $[0.598, 0.618]$ & 0.635, 0.637, 0.644 & 0.639 $[0.627, 0.650]$ \\
+\addlinespace
+Shared & Physics & 0.560 & 0.623 & 0.653 & 0.422, 0.471, 0.460 & 0.451 $[0.387, 0.515]$ & 0.506, 0.544, 0.529 & 0.526 $[0.479, 0.573]$ \\
+ & CUT & 0.571 & 0.623 & 0.660 & 0.451, 0.459, 0.443 & 0.451 $[0.432, 0.471]$ & 0.533, 0.539, 0.515 & 0.529 $[0.498, 0.559]$ \\
+ & CycleGAN & 0.569 & 0.623 & 0.661 & 0.407, 0.433, 0.461 & 0.434 $[0.366, 0.501]$ & 0.483, 0.531, 0.530 & 0.515 $[0.447, 0.582]$ \\
+ & SonoSPADE & 0.621 & 0.623 & 0.655 & 0.608, 0.619, 0.611 & 0.613 $[0.599, 0.626]$ & 0.645, 0.652, 0.644 & 0.647 $[0.637, 0.657]$ \\
+\addlinespace
+Cross & Physics & 0.327 & 0.623 & 0.612 & 0.173, 0.245, 0.250 & 0.223 $[0.116, 0.330]$ & 0.280, 0.320, 0.342 & 0.314 $[0.237, 0.391]$ \\
+ & CUT & 0.322 & 0.623 & 0.627 & 0.233, 0.262, 0.258 & 0.251 $[0.212, 0.290]$ & 0.309, 0.337, 0.327 & 0.325 $[0.289, 0.360]$ \\
+ & CycleGAN & 0.320 & 0.623 & 0.626 & 0.217, 0.209, 0.223 & 0.216 $[0.199, 0.234]$ & 0.295, 0.317, 0.300 & 0.304 $[0.276, 0.332]$ \\
+ & SonoSPADE & 0.508 & 0.623 & 0.630 & 0.594, 0.611, 0.595 & 0.600 $[0.576, 0.624]$ & 0.612, 0.619, 0.610 & 0.614 $[0.601, 0.626]$ \\
+\addlinespace
+Cross-seed & Physics & 0.541 & 0.623 & 0.641 & 0.449, 0.474, 0.479 & 0.467 $[0.426, 0.508]$ & 0.536, 0.545, 0.554 & 0.545 $[0.523, 0.568]$ \\
+ & CUT & 0.540 & 0.623 & 0.648 & 0.427, 0.489, 0.505 & 0.474 $[0.372, 0.576]$ & 0.524, 0.558, 0.555 & 0.545 $[0.499, 0.592]$ \\
+ & CycleGAN & 0.552 & 0.623 & 0.649 & 0.472, 0.475, 0.519 & 0.489 $[0.423, 0.554]$ & 0.546, 0.549, 0.557 & 0.551 $[0.537, 0.565]$ \\
+ & SonoSPADE & 0.613 & 0.623 & 0.647 & 0.603, 0.608, 0.607 & 0.606 $[0.600, 0.612]$ & 0.635, 0.640, 0.642 & 0.639 $[0.630, 0.647]$ \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Share of the off arm's combined correlation kept by the cross arm}} \\
+ & Physics & & & 95\% & \multicolumn{2}{l}{rule holds in 0 of 3 seeds, not on the seed means} & 51\%, 59\%, 61\% & 57\% \\
+ & CUT & & & 96\% & \multicolumn{2}{l}{rule holds in 0 of 3 seeds, not on the seed means} & 56\%, 60\%, 57\% & 58\% \\
+ & CycleGAN & & & 96\% & \multicolumn{2}{l}{rule holds in 0 of 3 seeds, not on the seed means} & 54\%, 57\%, 54\% & 55\% \\
+ & SonoSPADE & & & 97\% & \multicolumn{2}{l}{rule holds in 3 of 3 seeds, and on the seed means} & 96\%, 97\%, 95\% & 96\% \\
+\bottomrule
+\end{tabular}
+\end{table*}

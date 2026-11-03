@@ -1,0 +1,51 @@
+
+\begin{table*}[t]
+\caption{Post hoc, not pre-specified: rotation error, success and final match score on the crossed episodes of Table~\ref{tab:ladder}. All rows use the 6 held-out patients, contact on and evaluation DR off, with 240 episodes per reference row and 3 seeds per policy row. Rotation error: the geodesic angle between the final and target probe orientations, the norm of the SO(3) logarithm of the relative rotation. Success: the share of episodes that end within both bounds, $\leq$5~mm and $\leq$5$^{\circ}$ / $\leq$10~mm and $\leq$10$^{\circ}$. Final match score $S$: the combined score of the arm at the last step. Each cell is the mean over patients of per-patient means; rotation contrasts are in Tables~\ref{tab:imitation-base} and~\ref{tab:rl-tost}. The translation error of Table~\ref{tab:ladder} is the norm of the translational part of the SE(3) logarithm; it exceeds the probe-face displacement by at most 1.3\% at the largest logged angle.}
+\label{tab:ladder-rotation-success}
+\centering
+\renewcommand{\baselinestretch}{1}\small
+\begin{tabular}{@{}l cccc@{}}
+\toprule
+ & Physics & CUT & CycleGAN & SonoSPADE \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Final rotation error (deg)}} \\
+Static start (no commanded motion) & \multicolumn{4}{c}{13.70} \\
+Scripted sweep (no feedback) & \multicolumn{4}{c}{5.63} \\
+Analytic pose oracle (privileged) & \multicolumn{4}{c}{1.02} \\
+\multicolumn{5}{@{}l}{CT mask} \\
+\quad Servo base & 7.06 & 7.06 & 7.06 & 7.06 \\
+\quad After imitation & 6.73 & 6.89 & 6.79 & 6.66 \\
+\quad Final & 7.60 & 7.79 & 7.35 & 6.91 \\
+\multicolumn{5}{@{}l}{Learned mask (texture-matched segmenter)} \\
+\quad Servo base & 7.84 & 7.72 & 7.24 & 7.24 \\
+\quad After imitation & 7.38 & 6.70 & 6.81 & 6.86 \\
+\quad Final & 7.93 & 8.29 & 7.10 & 8.26 \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Success (\%), $\leq$5~mm and $\leq$5$^{\circ}$ / $\leq$10~mm and $\leq$10$^{\circ}$}} \\
+Static start (no commanded motion) & \multicolumn{4}{c}{0.0 / 3.3} \\
+Scripted sweep (no feedback) & \multicolumn{4}{c}{3.3 / 16.7} \\
+Analytic pose oracle (privileged) & \multicolumn{4}{c}{100.0 / 100.0} \\
+\multicolumn{5}{@{}l}{CT mask} \\
+\quad Servo base & 10.6 / 36.1 & 10.6 / 36.1 & 10.6 / 36.1 & 10.6 / 36.1 \\
+\quad After imitation & 10.6 / 31.7 & 11.7 / 30.0 & 9.4 / 31.1 & 10.6 / 32.8 \\
+\quad Final & 8.3 / 32.8 & 8.9 / 33.9 & 9.4 / 38.3 & 10.0 / 36.7 \\
+\multicolumn{5}{@{}l}{Learned mask (texture-matched segmenter)} \\
+\quad Servo base & 1.7 / 17.2 & 3.9 / 15.0 & 3.9 / 15.0 & 4.4 / 30.0 \\
+\quad After imitation & 1.1 / 17.2 & 5.0 / 18.9 & 3.9 / 17.8 & 5.0 / 32.2 \\
+\quad Final & 1.1 / 21.1 & 3.9 / 14.4 & 2.2 / 18.9 & 5.6 / 30.6 \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Final match score $S$}} \\
+Static start (no commanded motion) & \multicolumn{4}{c}{0.462} \\
+Scripted sweep (no feedback) & \multicolumn{4}{c}{0.515} \\
+Analytic pose oracle (privileged) & \multicolumn{4}{c}{0.872} \\
+\multicolumn{5}{@{}l}{CT mask} \\
+\quad Servo base & 0.611 & 0.617 & 0.615 & 0.622 \\
+\quad After imitation & 0.617 & 0.616 & 0.621 & 0.629 \\
+\quad Final & 0.610 & 0.616 & 0.612 & 0.624 \\
+\multicolumn{5}{@{}l}{Learned mask (texture-matched segmenter)} \\
+\quad Servo base & 0.465 & 0.475 & 0.479 & 0.555 \\
+\quad After imitation & 0.478 & 0.483 & 0.479 & 0.564 \\
+\quad Final & 0.472 & 0.472 & 0.483 & 0.555 \\
+\bottomrule
+\end{tabular}
+\end{table*}

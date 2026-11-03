@@ -1,0 +1,54 @@
+
+\begin{table}[tp]
+\renewcommand{\baselinestretch}{1}\scriptsize
+\caption{Secondary comparisons of the learned-mask controller experiment (secondary; no family, no decision). Learner minus the learned-mask servo base unless the row names another reference; mean over the six held-out patients with the 95\% $t$ CI and the patients of 6 sharing its sign. Units from the metric: mm, deg, the match score $S$, or a fraction of episodes.}
+\label{tab:s11-arm-a-secondary}
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X l l c@{}}
+\toprule
+Learner, frames & Row & Unit & Mean, 95\% $t$ CI & $k$/6 \\
+\midrule
+DAgger residual, physics frames & BatchNorm in train mode minus the reference & mm & $-0.74$ $[-1.22, -0.25]$ & 6/6 \\
+DAgger residual, physics frames & minus the learned-mask REINFORCE final of the primary results & mm & $-2.71$ $[-4.44, -0.98]$ & 6/6 \\
+DAgger residual, physics frames & minus its own CT-mask row & mm & $+2.52$ $[-0.49, +5.54]$ & 5/6 \\
+DAgger residual, physics frames & minus the earlier row of the same learner (learner-seed replication, descriptive) & mm & $-0.67$ $[-2.34, +1.01]$ & 4/6 \\
+DAgger residual, physics frames & rotation error minus the reference & deg & $+2.02$ $[+1.37, +2.67]$ & 6/6 \\
+DAgger residual, physics frames & final match score $S$ minus the reference & score & $+0.047$ $[+0.021, +0.073]$ & 6/6 \\
+DAgger residual, physics frames & success within 5~mm and 5$^\circ$ minus the reference & fraction & $+0.044$ $[+0.002, +0.087]$ & 4/6 \\
+DAgger residual, physics frames & success within 10~mm and 10$^\circ$ minus the reference & fraction & $+0.061$ $[-0.017, +0.139]$ & 5/6 \\
+DAgger residual, physics frames & keep-best success within 5~mm and 5$^\circ$ minus the reference & fraction & $+0.039$ $[-0.002, +0.080]$ & 4/6 \\
+DAgger residual, physics frames & keep-best success within 10~mm and 10$^\circ$ minus the reference & fraction & $+0.089$ $[-0.023, +0.201]$ & 5/6 \\
+DAgger residual, SonoSPADE frames & BatchNorm in train mode minus the reference & mm & $+0.26$ $[-0.42, +0.93]$ & 4/6 \\
+DAgger residual, SonoSPADE frames & minus the learned-mask REINFORCE final of the primary results & mm & $-1.07$ $[-2.68, +0.54]$ & 5/6 \\
+DAgger residual, SonoSPADE frames & minus its own CT-mask row & mm & $+1.19$ $[-0.26, +2.65]$ & 5/6 \\
+DAgger residual, SonoSPADE frames & minus the earlier row of the same learner (learner-seed replication, descriptive) & mm & $-0.42$ $[-1.32, +0.47]$ & 4/6 \\
+DAgger residual, SonoSPADE frames & rotation error minus the reference & deg & $+1.52$ $[-0.35, +3.39]$ & 5/6 \\
+DAgger residual, SonoSPADE frames & final match score $S$ minus the reference & score & $+0.022$ $[-0.009, +0.053]$ & 4/6 \\
+DAgger residual, SonoSPADE frames & success within 5~mm and 5$^\circ$ minus the reference & fraction & $+0.017$ $[-0.049, +0.082]$ & 3/6 \\
+DAgger residual, SonoSPADE frames & success within 10~mm and 10$^\circ$ minus the reference & fraction & $+0.017$ $[-0.032, +0.065]$ & 4/6 \\
+DAgger residual, SonoSPADE frames & keep-best success within 5~mm and 5$^\circ$ minus the reference & fraction & $+0.067$ $[+0.004, +0.129]$ & 5/6 \\
+DAgger residual, SonoSPADE frames & keep-best success within 10~mm and 10$^\circ$ minus the reference & fraction & $+0.078$ $[-0.041, +0.196]$ & 5/6 \\
+BC residual, physics frames & BatchNorm in train mode minus the reference & mm & $-0.97$ $[-1.80, -0.15]$ & 5/6 \\
+BC residual, physics frames & minus the learned-mask REINFORCE final of the primary results & mm & $-2.44$ $[-5.12, +0.23]$ & 5/6 \\
+BC residual, physics frames & minus its own CT-mask row & mm & $+3.22$ $[+0.82, +5.62]$ & 5/6 \\
+BC residual, physics frames & minus the earlier row of the same learner (learner-seed replication, descriptive) & mm & $+0.07$ $[-1.84, +1.99]$ & 3/6 \\
+BC residual, physics frames & rotation error minus the reference & deg & $+0.29$ $[-0.81, +1.40]$ & 4/6 \\
+BC residual, physics frames & final match score $S$ minus the reference & score & $+0.046$ $[+0.018, +0.074]$ & 6/6 \\
+BC residual, physics frames & success within 5~mm and 5$^\circ$ minus the reference & fraction & $+0.050$ $[-0.026, +0.126]$ & 4/6 \\
+BC residual, physics frames & success within 10~mm and 10$^\circ$ minus the reference & fraction & $+0.156$ $[+0.004, +0.307]$ & 6/6 \\
+BC residual, physics frames & keep-best success within 5~mm and 5$^\circ$ minus the reference & fraction & $+0.044$ $[-0.028, +0.117]$ & 4/6 \\
+BC residual, physics frames & keep-best success within 10~mm and 10$^\circ$ minus the reference & fraction & $+0.144$ $[+0.009, +0.280]$ & 5/6 \\
+BC residual, SonoSPADE frames & BatchNorm in train mode minus the reference & mm & $+0.55$ $[-0.33, +1.43]$ & 5/6 \\
+BC residual, SonoSPADE frames & minus the learned-mask REINFORCE final of the primary results & mm & $-0.78$ $[-2.27, +0.70]$ & 4/6 \\
+BC residual, SonoSPADE frames & minus its own CT-mask row & mm & $+1.08$ $[-0.81, +2.97]$ & 5/6 \\
+BC residual, SonoSPADE frames & minus the earlier row of the same learner (learner-seed replication, descriptive) & mm & $+0.89$ $[-1.26, +3.04]$ & 3/6 \\
+BC residual, SonoSPADE frames & rotation error minus the reference & deg & $+0.51$ $[-0.20, +1.23]$ & 4/6 \\
+BC residual, SonoSPADE frames & final match score $S$ minus the reference & score & $+0.022$ $[-0.001, +0.045]$ & 5/6 \\
+BC residual, SonoSPADE frames & success within 5~mm and 5$^\circ$ minus the reference & fraction & $+0.044$ $[-0.049, +0.137]$ & 3/6 \\
+BC residual, SonoSPADE frames & success within 10~mm and 10$^\circ$ minus the reference & fraction & $+0.078$ $[-0.047, +0.202]$ & 5/6 \\
+BC residual, SonoSPADE frames & keep-best success within 5~mm and 5$^\circ$ minus the reference & fraction & $+0.072$ $[-0.009, +0.153]$ & 4/6 \\
+BC residual, SonoSPADE frames & keep-best success within 10~mm and 10$^\circ$ minus the reference & fraction & $+0.094$ $[-0.021, +0.210]$ & 4/6 \\
+\bottomrule
+\end{tabularx}
+\end{table}

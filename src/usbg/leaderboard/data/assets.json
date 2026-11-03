@@ -1,0 +1,137 @@
+{
+ "schema": "usbg-leaderboard-assets-1",
+ "release": "v2.2.0",
+ "url_pattern": "https://github.com/tohnperfect/USBGym/releases/download/v2.2.0/{name}",
+ "assets": [
+  {
+   "slot": "renderer",
+   "seed": 0,
+   "license": "Apache-2.0 (the authors' trained weights). Trained only on physics renders of the 13 training CTs of the TotalSegmentator dataset (Wasserthal et al., 2023; CC BY 4.0), whose attribution applies.",
+   "provenance": {
+    "source": "outputs/v2/table4/ctmask/physics_deploy_s0.pt (md5 7bef7425baefe38985b9a3b67dae7dad)",
+    "train_cases": "the 13 training patients",
+    "held_out_in_lineage": false,
+    "private_ancestor": false,
+    "real_data": "none",
+    "leakage_gate": "passed (no finding)"
+   },
+   "name": "usbg_physics_policy_s0.pt",
+   "sha256": "5e80093f9c26ee91527be2db923a712ad1e9cff5dd751b257c33e7a84fe1b097",
+   "size": 1057277,
+   "description": "physics-trained CT-mask reference policy, seed 0 (weights and servo base)"
+  },
+  {
+   "slot": "renderer",
+   "seed": 0,
+   "license": "Apache-2.0 (the authors' trained weights). Trained only on physics renders of the 13 training CTs of the TotalSegmentator dataset (Wasserthal et al., 2023; CC BY 4.0), whose attribution applies.",
+   "provenance": {
+    "source": "outputs/v2/table4/ctmask/physics_deploy_s0.pt (md5 7bef7425baefe38985b9a3b67dae7dad)",
+    "train_cases": "the 13 training patients",
+    "held_out_in_lineage": false,
+    "private_ancestor": false,
+    "real_data": "none",
+    "leakage_gate": "passed (no finding)"
+   },
+   "name": "usbg_physics_policy_s0.json",
+   "sha256": "ee9301ab8607efadcf45c37f36f5ced91e1a62e9a7bde44830613227e5ef11d6",
+   "size": 1933,
+   "description": "run record of that policy, seed 0 (the fields the policy rung reads)"
+  },
+  {
+   "slot": "renderer",
+   "seed": 1,
+   "license": "Apache-2.0 (the authors' trained weights). Trained only on physics renders of the 13 training CTs of the TotalSegmentator dataset (Wasserthal et al., 2023; CC BY 4.0), whose attribution applies.",
+   "provenance": {
+    "source": "outputs/v2/table4/ctmask/physics_deploy_s1.pt (md5 52272aa6f21a99dbc1f5585db3e26d0e)",
+    "train_cases": "the 13 training patients",
+    "held_out_in_lineage": false,
+    "private_ancestor": false,
+    "real_data": "none",
+    "leakage_gate": "passed (no finding)"
+   },
+   "name": "usbg_physics_policy_s1.pt",
+   "sha256": "2f7db7f6ce5ba89616602884edc35e6bc80fe47cebe83ed5ac4cc242ea89dc51",
+   "size": 1057277,
+   "description": "physics-trained CT-mask reference policy, seed 1 (weights and servo base)"
+  },
+  {
+   "slot": "renderer",
+   "seed": 1,
+   "license": "Apache-2.0 (the authors' trained weights). Trained only on physics renders of the 13 training CTs of the TotalSegmentator dataset (Wasserthal et al., 2023; CC BY 4.0), whose attribution applies.",
+   "provenance": {
+    "source": "outputs/v2/table4/ctmask/physics_deploy_s1.pt (md5 52272aa6f21a99dbc1f5585db3e26d0e)",
+    "train_cases": "the 13 training patients",
+    "held_out_in_lineage": false,
+    "private_ancestor": false,
+    "real_data": "none",
+    "leakage_gate": "passed (no finding)"
+   },
+   "name": "usbg_physics_policy_s1.json",
+   "sha256": "ab7a07af4e6a5ea9a00c99d27125ea52017d90f929ce4abcac61f3b3d3f7c0cf",
+   "size": 1933,
+   "description": "run record of that policy, seed 1 (the fields the policy rung reads)"
+  },
+  {
+   "slot": "renderer",
+   "seed": 2,
+   "license": "Apache-2.0 (the authors' trained weights). Trained only on physics renders of the 13 training CTs of the TotalSegmentator dataset (Wasserthal et al., 2023; CC BY 4.0), whose attribution applies.",
+   "provenance": {
+    "source": "outputs/v2/table4/ctmask/physics_deploy_s2.pt (md5 947ec39e4ae28e90bed6af1094f34e9f)",
+    "train_cases": "the 13 training patients",
+    "held_out_in_lineage": false,
+    "private_ancestor": false,
+    "real_data": "none",
+    "leakage_gate": "passed (no finding)"
+   },
+   "name": "usbg_physics_policy_s2.pt",
+   "sha256": "61635fce1b5c5224dc90c36322a93c355d97bf21ff78d81aea7e3b1df45005b7",
+   "size": 1057277,
+   "description": "physics-trained CT-mask reference policy, seed 2 (weights and servo base)"
+  },
+  {
+   "slot": "renderer",
+   "seed": 2,
+   "license": "Apache-2.0 (the authors' trained weights). Trained only on physics renders of the 13 training CTs of the TotalSegmentator dataset (Wasserthal et al., 2023; CC BY 4.0), whose attribution applies.",
+   "provenance": {
+    "source": "outputs/v2/table4/ctmask/physics_deploy_s2.pt (md5 947ec39e4ae28e90bed6af1094f34e9f)",
+    "train_cases": "the 13 training patients",
+    "held_out_in_lineage": false,
+    "private_ancestor": false,
+    "real_data": "none",
+    "leakage_gate": "passed (no finding)"
+   },
+   "name": "usbg_physics_policy_s2.json",
+   "sha256": "243bd1478ba135fee6fb923f272955633c3fce072bd05bad8fa72101536920fe",
+   "size": 1933,
+   "description": "run record of that policy, seed 2 (the fields the policy rung reads)"
+  }
+ ],
+ "not_released": [
+  {
+   "artifact": "SonoSPADE stage checkpoint (sonospade_curvi.pt, md5 70440a5c6167e69489835ef553bfe37c)",
+   "slots": [
+    "mask",
+    "ctrl",
+    "reward",
+    "anatomy"
+   ],
+   "why": "trained on 404 frames of the Vitale et al. Kaggle set, whose redistribution terms for derived weights are not established (its provenance record asks to verify the terms before publication); the slots that need it are run by the maintainers"
+  },
+  {
+   "artifact": "U-Nets matched to each stage (us_seg_<stage>_s<seed>.pt)",
+   "slots": [
+    "mask",
+    "anatomy"
+   ],
+   "why": "trained with KidneyUS frames (CC BY-NC-SA, access after registration with its maintainers), so they inherit its terms; the texture slot trains its own matched U-Net with the reference recipe"
+  },
+  {
+   "artifact": "SonoSPADE-frame reference policies and imitation checkpoints (sonospade_deploy_s<seed>*.pt)",
+   "slots": [
+    "ctrl",
+    "reward"
+   ],
+   "why": "their training frames come from the SonoSPADE stage above"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+# Local data, nnU-Net trees, checkpoints and outputs of the segmenter trainer (never committed)
+/data/
+/outputs/
+nnUNet_raw/
+nnUNet_preprocessed/
+nnUNet_results/
+*.pt
+*.pth
+*.onnx
+*.log
