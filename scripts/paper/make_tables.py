@@ -370,10 +370,15 @@ def ladder(R, D, out):
            "final translation error by less than 0.5~mm. "
            # the L marker of SonoSPADE, with the footnote in the words of Table 5
            "$^{\\mathrm{L}}$Reads the CT label slice. "
-           "$^{\\dagger}$Privileged: simulator state that no rig provides.")
+           "$^{\\dagger}$Privileged: simulator state that no rig provides. "
+           # SonoSPADE, the standard engine's texture stage, is the main benchmark column
+           "Shaded: SonoSPADE, the texture stage of the standard engine and the main benchmark; physics, CUT and "
+           "CycleGAN are the ladder's other texture settings.")
     cap_src = (f"% src: patients, seeds, episodes: outputs/v2/table4/episodes_long.csv via episode_design() "
                f"({len(D['patients'])} patients, seeds {','.join(D['seeds'])}, {D['n_eps']} episodes per seed); "
                f"resamples collect_results_v2.NBOOT ({nb}); {_T('ladder src notes')}check still runs: {rr['src']}")
+    if STAGES[-1] != "sonospade":
+        raise SystemExit("tab:ladder: the shaded last column must be SonoSPADE, the standard engine's stage")
     L = [GEN.format(src="outputs/v2/RESULTS.json (table4: cell_means_mm, rungs_mm, observability_gap, "
                         "perception_gap, rl_contribution, learned_vs), outputs/v2/table4/episodes_long.csv, the post "
                         "hoc block from outputs/v2/posthoc/posthoc_v2.json (certified by RESULTS.json posthoc); the "
@@ -383,7 +388,8 @@ def ladder(R, D, out):
          "\\label{tab:ladder}",
          "\\centering",
          "\\renewcommand{\\baselinestretch}{1}\\footnotesize",  # footnotesize (length)
-         "\\begin{tabular}{@{}l cccc@{}}",
+         # the SonoSPADE column (the last stage) shaded as the standard engine's (colortbl)
+         "\\begin{tabular}{@{}l ccc>{\\columncolor{black!8}}c@{}}",
          "\\toprule",
          # SonoSPADE, the only label-conditioned stage, carries the L marker of Tables 5 and A.9
          " & " + " & ".join(NAME[s] + ("$^{\\mathrm{L}}$" if s == "sonospade" else "") for s in STAGES) + " \\\\",
@@ -3455,7 +3461,7 @@ def pluggability(R, out, plug_root=PLUG_ROOT, seg_plug_root=SEG_PLUG_ROOT):
         + f"; CT-anatomy rows with results: {n_cta_done} of {n_cta}")
     log(f"cited keys not yet in refs.tex: {len(new)} of {len(keys)}")
     twin = write(out, "pluggability_twin.tex", "\n".join(L))
-    return [_plug_body(R, out, prov), twin]
+    return _plug_body(R, out, prov) + [twin]
 
 
 # =================================================================================== Table 5 (tab:pluggability), body
@@ -3671,7 +3677,9 @@ def _plug_body(R, out, prov):
     NC = 7
     mcN = f"\\multicolumn{{{NC}}}{{@{{}}>{{\\raggedright\\arraybackslash}}p{{0.985\\textwidth}}@{{}}}}"
     L, J, notes_used, split_at = [], {"slots": []}, [], None
+    starts = {}   # where each slot block opens in L: the guide slots print as Table 5, the engine slots in their appendix table
     for SR in PLUG_REC:
+        starts[SR["key"]] = len(L)
         if SR["key"] == T5_SPLIT_BEFORE:      # Table 5 is two floats, the second a continuation
             split_at = len(L)
         dd = SR["dd"]
@@ -3851,6 +3859,7 @@ def _plug_body(R, out, prov):
     cs["t5_caveat"] = ("The trained artifacts never saw "
                        "the new labels, so a change mixes label noise with the shift between training and evaluation "
                        "labels.")
+    starts["cta"] = len(L)
     L += ["\\addlinespace[4pt]",
           # the CT-anatomy slot header: families by plain names (Appendix B gives their codes)
           f"{mcN}{{\\textbf{{CT anatomy}} (label volume). {cs['t5_head']} Families: CT-anatomy difference, paired $t$, "
@@ -3897,7 +3906,8 @@ def _plug_body(R, out, prov):
                 "reference_rungs": [{"row": rid, "label": lab, "privileged": pv, "err_mm": e}
                                     for rid, lab, pv, e, _ in cs.get("refs", [])]}
     # the note a stands in the caption, beside the superscript e (part 2 of the float is a page tall)
-    cap = ("Published methods in the plug slots (exploratory, pre-specified rule). "
+    cap = ("Published methods in the three slots of the guide: mask source, controller and reward (exploratory, "
+           "pre-specified rule). "
            "Every row: 12 steps, the 60 held-out episodes of Table~\\ref{tab:ladder}, contact on. "
            "Error: final translation error, mean over seeds of patient means. "
            "Difference: from the slot's reference component, paired by seed, with 95\\% paired $t$ CI and patients of 6 "
@@ -3915,7 +3925,7 @@ def _plug_body(R, out, prov):
            + (f". $^{{\\mathrm{{a}}}}${NOTE_A} " if notes_used else ". ")
            + "Slot headers give the condition, the reference error and the post hoc minimum detectable difference "
            "(MDD) from the median SD of the slot's contrasts with its reference, over the rows carried to the cohort "
-           "analysis, so not SAM, MedSAM, CEM, SIMUS, the CT label or the painted stage, also at the first Holm level. "
+           "analysis, so not SAM, MedSAM, CEM or the CT label, also at the first Holm level. "
            # which test the MDD describes
            "The MDD is that of the paired $t$-test alone; the 5 of 6 sign condition makes the decision rule slightly "
            "less sensitive. "
@@ -3954,11 +3964,24 @@ def _plug_body(R, out, prov):
          f"% oracle {rg['pose_oracle']:.4f} mm and static {rg['static']:.4f} mm: RESULTS.json table4.rungs_mm",
          ]
 
-    def head(first):
-        # [tp]: with [p] only, part 1 (about 0.6 page) sat below \floatpagefraction and blocked the float queue
+    # the renderer and texture stage (with the CT anatomy) form the standard simulation engine,
+    # still pluggable; Table 5 prints the guide's slots and pluggability_engine.tex (tab:pluggability-engine) the engine's
+    if list(starts) != ["texture", "mask", "ctrl", "reward", "renderer", "cta"]:
+        raise SystemExit(f"Table 5: slot order {list(starts)}, the guide/engine split expects texture, mask, ctrl, "
+                         "reward, renderer, CT anatomy")
+    G = L[starts["mask"]:starts["renderer"]]
+    E = L[starts["texture"]:starts["mask"]] + L[starts["renderer"]:]
+    split_g = starts[T5_SPLIT_BEFORE] - starts["mask"]
+    cap_e = ("Published methods in the three slots of the standard engine: texture stage, renderer and CT anatomy "
+             "(exploratory, pre-specified rule). The engine is the physics renderer with the SonoSPADE texture stage "
+             "and the reference CT labels; every slot stays pluggable. Columns, slot headers, marks and notes as in "
+             "Table~\\ref{tab:pluggability}; the MDD leaves out SIMUS and the painted stage.")
+
+    def head(first, cap_, label):
+        # [tp]: with [p] only, part 1 (about 0.6 page) sat below \\floatpagefraction and blocked the float queue
         return (["\\begin{table*}[tp]",
                  "\\renewcommand{\\baselinestretch}{1}\\scriptsize\\setlength{\\fboxsep}{0.6pt}"]
-                + (["\\caption{" + cap + "} " + cap_src, "\\label{tab:pluggability}"] if first else
+                + (["\\caption{" + cap_ + "} " + cap_src, "\\label{" + label + "}"] if first else
                    ["\\ContinuedFloat", "\\caption[]{Continued.}"])
                 + ["\\centering", "\\setlength{\\tabcolsep}{2.4pt}",
                    "\\begin{tabularx}{\\textwidth}{@{}>{\\raggedright\\arraybackslash}X r l c r c "
@@ -3970,21 +3993,25 @@ def _plug_body(R, out, prov):
                    "seeds and TOST at +/- 1 mm, post hoc",
                    "\\midrule"])
     foot = ["\\bottomrule", "\\end{tabularx}", "\\end{table*}", ""]
-    parts = [L] if split_at is None else [L[:split_at], L[split_at:]]
-    for i, part in enumerate(parts):
-        body_ = [x for x in part if x != ""]
-        while body_ and body_[0].startswith("\\addlinespace"):
-            body_ = body_[1:]
-        T += head(i == 0) + body_ + foot
-    for x in T:   # every row of Table 5 has the cells of its header
-        if x.startswith(("\\quad", "Slot and method")) and x.partition(" % src:")[0].count("&") != NC - 1:
-            raise SystemExit(f"Table 5: {x.partition(' % src:')[0].count('&') + 1} cells in: {x[:140]}")
+    TE = list(T)
+    for T_, rows_, cap_, label, cut in ((T, G, cap, "tab:pluggability", split_g),
+                                        (TE, E, cap_e, "tab:pluggability-engine", None)):
+        parts = [rows_] if cut is None else [rows_[:cut], rows_[cut:]]
+        for i, part in enumerate(parts):
+            body_ = [x for x in part if x != ""]
+            while body_ and body_[0].startswith("\\addlinespace"):
+                body_ = body_[1:]
+            T_ += head(i == 0, cap_, label) + body_ + foot
     import re
-    keys = sorted({k.strip() for m_ in re.findall(r"\\cite\{([^}]*)\}", "\n".join(T)) for k in m_.split(",")})
-    new = _new_bib_keys(keys)
-    T.insert(0, "%% NEW BIB KEYS: " + (" ".join(new) or "none"))
-    # Table 5 prints no code other than the family codes of Appendix B (T5_ALLOWED_CODES)
-    _no_plan_codes("pluggability.tex", T, allow=T5_ALLOWED_CODES)
+    for name, T_ in (("pluggability.tex", T), ("pluggability_engine.tex", TE)):
+        for x in T_:   # every row of Table 5 and the engine table has the cells of its header
+            if x.startswith(("\\quad", "Slot and method")) and x.partition(" % src:")[0].count("&") != NC - 1:
+                raise SystemExit(f"{name}: {x.partition(' % src:')[0].count('&') + 1} cells in: {x[:140]}")
+        keys = sorted({k.strip() for m_ in re.findall(r"\\cite\{([^}]*)\}", "\n".join(T_)) for k in m_.split(",")})
+        new = _new_bib_keys(keys)
+        T_.insert(0, "%% NEW BIB KEYS: " + (" ".join(new) or "none"))
+        # Table 5 and the engine table print no code other than the family codes of Appendix B (T5_ALLOWED_CODES)
+        _no_plan_codes(name, T_, allow=T5_ALLOWED_CODES)
     J.update({"generated_by": _T("plug_rows generated_by"), "status": PLUG_STATUS,
               "provisional": PLUG_ROWS_PROVISIONAL, "blinded_amendment2": BLIND_A2,
               "oracle_mm": rg["pose_oracle"], "static_mm": rg["static"],
@@ -3997,9 +4024,8 @@ def _plug_body(R, out, prov):
         # public mode: keys in sorted order, as every figure data file of the public build
         # (script_dirs.public_json_view)
         json.dump(J, fh, indent=1, default=float, sort_keys=SD.public())
-    log(f"wrote {rel(os.path.join(FIG_OUT, 'plug_rows.json'))}; Table 5 cites {len(keys)} keys, {len(new)} not in "
-        f"{rel(REFS_TEX)}")
-    return write(out, "pluggability.tex", "\n".join(T))
+    log(f"wrote {rel(os.path.join(FIG_OUT, 'plug_rows.json'))}")
+    return [write(out, "pluggability.tex", "\n".join(T)), write(out, "pluggability_engine.tex", "\n".join(TE))]
 
 
 # =================================================================================== tab:patient-seed (App C.8)
@@ -4220,8 +4246,10 @@ def leaderboard_tab(out):
                for SR in PLUG_REC) + (len(CTA_ROWS) if cs.get("blinded") else 0)
     a2_names = list(dict.fromkeys(a2_names))
     cap = ("Leaderboard of the methods plugged into each slot (exploratory). "
-           "Each row is the row of Table~\\ref{tab:pluggability} for the same method, run in its slot's condition "
-           "(slot headers, as in Table~\\ref{tab:pluggability}), with "
+           # the engine slots (texture stage, renderer, CT anatomy) print in their own table
+           "Each row is the row of Table~\\ref{tab:pluggability} (the guide's slots) or "
+           "Table~\\ref{tab:pluggability-engine} (the engine's slots) for the same method, run in its slot's condition "
+           "(slot headers, as in those tables), with "
            f"{steps[0]} steps, the {T5_CAP['episodes']} held-out episodes of Table~\\ref{{tab:ladder}} and contact on. "
            "In each slot the reference comes first, then the rows whose difference is taken from it, by mean error, "
            "lowest first" + (", with the privileged rows last" if n_priv else "") + ". "
@@ -4230,14 +4258,16 @@ def leaderboard_tab(out):
            + "The order is by mean error only and is not a ranking: each row was tested against its slot's reference, "
            "not against the other rows, and where the decision is no detectable difference, the methods are not "
            "distinguished from the reference or from each other. "
-           + ("The CT-anatomy rows keep the order of Table~\\ref{tab:pluggability}, since each is scored against its "
+           + ("The CT-anatomy rows keep the order of Table~\\ref{tab:pluggability-engine}, since each is scored against its "
               "own reference level. " if cta else "")
-           + "Role: the row's group in Table~\\ref{tab:pluggability}"
+           # the authors' rows are components of the USB Gym release, cited as the software record (usbgym)
+           + "Authors': our published component~\\cite{usbgym}. "
+           + "Role: the row's group in those tables"
            + (f"; second family: the {' or the '.join(x if x[:2].isupper() else x[:1].lower() + x[1:] for x in a2_names)}"
               if a2_names else "")
            + ("; privileged: its group of privileged rows, which are secondary" if n_priv else "") + ". "
            + "Error, difference with its 95\\% paired $t$ CI and $k$/6, and decision"
-           + (f", with the marks {_and(marks)}," if marks else "") + " as in Table~\\ref{tab:pluggability}. "
+           + (f", with the marks {_and(marks)}," if marks else "") + " as in those tables. "
            + ("" if not left_out else
               "The pretrained-backbone differences of Table~\\ref{tab:pluggability}, which have no error of their own, "
               "are left out." if all(r["kind"] == "imnt" for _, r in left_out) else

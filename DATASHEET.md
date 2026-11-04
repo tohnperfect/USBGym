@@ -1,9 +1,9 @@
-# Datasheet for USB Gym (UltraSound B-mode Gym), version 2.2.0
+# Datasheet for USB Gym (UltraSound B-mode Gym), version 2.2.1
 
 This datasheet follows the "Datasheets for Datasets" template (Gebru et al., 2021), adapted for a
 simulation testbed. USB Gym is software with a fixed evaluation protocol, not a static dataset. For
 any probe pose over a patient's labeled CT, it renders a B-mode image and computes a probe-skin
-contact force. This datasheet covers code version 2.2.0 and the data behind the v2 results.
+contact force. This datasheet covers code version 2.2.1 and the data behind the v2 results.
 `CHANGELOG.md` lists the changes from version 0.1.0 (v1), and `ERRATA.md` (D1 to D12) lists the v1
 defects and how each one was fixed.
 

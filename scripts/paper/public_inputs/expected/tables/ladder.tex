@@ -1,10 +1,10 @@
 
 \begin{table*}[tp]
-\caption{Oracle ladder: final translation error (mm), 6 held-out patients, contact on, evaluation domain randomization off; policy rows average 3 seeds, each meeting the same 60 crossed episodes. Pre-specified results, primary; the last block is post hoc. Errors: mean of per-patient means. Gaps: mean per-patient paired difference, patients of 6 sharing its sign, and 95\% patient-cluster bootstrap CI (10,000 resamples); $^{\ast}$a difference under the pre-specified CI-and-sign rule. Every contrast is conditional on the trained artifacts (texture networks, segmenters, bases and policies). Seeds index artifacts; the patient is the sampling unit. The servo base accounts for nearly all of the improvement; imitation and REINFORCE each change the final translation error by less than 0.5~mm. $^{\mathrm{L}}$Reads the CT label slice. $^{\dagger}$Privileged: simulator state that no rig provides.}
+\caption{Oracle ladder: final translation error (mm), 6 held-out patients, contact on, evaluation domain randomization off; policy rows average 3 seeds, each meeting the same 60 crossed episodes. Pre-specified results, primary; the last block is post hoc. Errors: mean of per-patient means. Gaps: mean per-patient paired difference, patients of 6 sharing its sign, and 95\% patient-cluster bootstrap CI (10,000 resamples); $^{\ast}$a difference under the pre-specified CI-and-sign rule. Every contrast is conditional on the trained artifacts (texture networks, segmenters, bases and policies). Seeds index artifacts; the patient is the sampling unit. The servo base accounts for nearly all of the improvement; imitation and REINFORCE each change the final translation error by less than 0.5~mm. $^{\mathrm{L}}$Reads the CT label slice. $^{\dagger}$Privileged: simulator state that no rig provides. Shaded: SonoSPADE, the texture stage of the standard engine and the main benchmark; physics, CUT and CycleGAN are the ladder's other texture settings.}
 \label{tab:ladder}
 \centering
 \renewcommand{\baselinestretch}{1}\footnotesize
-\begin{tabular}{@{}l cccc@{}}
+\begin{tabular}{@{}l ccc>{\columncolor{black!8}}c@{}}
 \toprule
  & Physics & CUT & CycleGAN & SonoSPADE$^{\mathrm{L}}$ \\
 \midrule

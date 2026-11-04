@@ -3,6 +3,20 @@
 Changes to USB Gym (package `usbg`). Defect IDs (D1 to D12) refer to [ERRATA.md](ERRATA.md), which
 states for each defect what 0.1.0 did, what changed and where the change is checked.
 
+## 2.2.1 (2026-11-04)
+
+### Table build
+- Table 5 of the article prints the three slots of the guide (mask source, controller and reward); the
+  three slots of the standard simulation engine (texture stage, renderer and CT anatomy) print in a new
+  table, `tables/pluggability_engine.tex` (Table B.1 of the article). `scripts/paper/make_tables.py`
+  writes both from the same rows, and the expected printed text of the public build now holds 61 tables
+  (was 60).
+- Table 4 (`tables/ladder.tex`) shades the SonoSPADE column, the texture stage of the standard engine,
+  and its caption says so; the article loads `colortbl` for it.
+- The caption of Table C.1 (`tables/leaderboard.tex`) names both tables and cites the software record.
+- No number changes. The results archive (DOI 10.5281/zenodo.23913142) is unchanged, and the release
+  assets stay attached to v2.2.0.
+
 ## 2.2.0 (2026-11-03)
 
 First release in this repository, `tohnperfect/USBGym`.

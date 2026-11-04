@@ -472,7 +472,8 @@ If you use USB Gym, cite the software (see [CITATION.cff](CITATION.cff)):
   title   = {{USB Gym}: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching},
   author  = {Intharah, Thanapong and Gao, Zhichao and Liu, Yiliang and Dong, Hao},
   year    = {2026},
-  version = {2.2.0},
+  version = {2.2.1},
+  doi     = {10.5281/zenodo.23942190},
   url     = {https://github.com/tohnperfect/USBGym},
   license = {Apache-2.0}
 }

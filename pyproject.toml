@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "usbg"
-version = "2.2.0"
+version = "2.2.1"
 description = "USB Gym: a Gymnasium testbed for closed-loop ultrasound view matching (CT-based B-mode rendering, MuJoCo probe-skin contact, screened acoustic windows, oracle ladder, plug slots)."
 readme = "README.md"
 authors = [
