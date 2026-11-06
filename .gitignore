@@ -51,6 +51,9 @@ outputs/
 *.jpeg
 *.mp4
 *.gif
+# except the README's cover image and animation
+!/media/*.png
+!/media/*.gif
 
 # Logs
 *.log

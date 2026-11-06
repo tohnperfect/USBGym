@@ -1,5 +1,16 @@
 # USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching
 
+<p align="center">
+  <img src="media/usbgym_cover.png" width="400"
+       alt="A probe on a patient's CT anatomy; its ultrasound fan moves toward an outlined target view">
+  <img src="media/usbgym_thumb.gif" width="400"
+       alt="A closed-loop episode: the probe moves until its live view matches the target view">
+</p>
+
+<p align="center"><sub>Right: one recorded closed-loop episode on a held-out patient (kidney view),
+chosen for display; the article reports results over all episodes. The robot arm is an illustration
+only: USB Gym moves the probe directly and includes no robot.</sub></p>
+
 Article: [arXiv:2611.08352](https://arxiv.org/abs/2611.08352) ([Citation](#citation)).
 
 USB Gym (UltraSound B-mode Gym, Python package `usbg`) is a CT-based testbed for closed-loop ultrasound

@@ -12,6 +12,11 @@ states for each defect what 0.1.0 did, what changed and where the change is chec
 - `.zenodo.json` links the preprint (relation isDocumentedBy), so the next Zenodo version lists it.
 - No code, table or number changes.
 
+### README
+- A cover image (`media/usbgym_cover.png`) and an animation of one recorded closed-loop episode
+  (`media/usbgym_thumb.gif`, chosen for display) under the title. The robot arm in both is an
+  illustration only; the caption says so.
+
 ## 2.2.1 (2026-11-04)
 
 ### Table build
