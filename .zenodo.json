@@ -15,6 +15,7 @@
   "access_right": "open",
   "related_identifiers": [
     {"identifier": "https://github.com/tohnperfect/USBGym/tree/v2.2.1", "relation": "isSupplementTo", "scheme": "url"},
-    {"identifier": "10.5281/zenodo.23913142", "relation": "isSupplementedBy", "resource_type": "dataset", "scheme": "doi"}
+    {"identifier": "10.5281/zenodo.23913142", "relation": "isSupplementedBy", "resource_type": "dataset", "scheme": "doi"},
+    {"identifier": "arXiv:2611.08352", "relation": "isDocumentedBy", "resource_type": "publication-preprint", "scheme": "arxiv"}
   ]
 }

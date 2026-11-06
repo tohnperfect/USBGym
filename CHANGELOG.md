@@ -3,6 +3,15 @@
 Changes to USB Gym (package `usbg`). Defect IDs (D1 to D12) refer to [ERRATA.md](ERRATA.md), which
 states for each defect what 0.1.0 did, what changed and where the change is checked.
 
+## Unreleased
+
+### Citation
+- The article is on arXiv as arXiv:2611.08352 (DOI 10.48550/arXiv.2611.08352). `CITATION.cff` gives it
+  as the preferred citation, and the README links it under the title and lists it in the Citation
+  section before the software record.
+- `.zenodo.json` links the preprint (relation isDocumentedBy), so the next Zenodo version lists it.
+- No code, table or number changes.
+
 ## 2.2.1 (2026-11-04)
 
 ### Table build

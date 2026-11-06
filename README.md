@@ -1,5 +1,7 @@
 # USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching
 
+Article: [arXiv:2611.08352](https://arxiv.org/abs/2611.08352) ([Citation](#citation)).
+
 USB Gym (UltraSound B-mode Gym, Python package `usbg`) is a CT-based testbed for closed-loop ultrasound
 probe view matching. For any probe pose over a patient's labeled CT it renders the B-mode frame the
 probe would see and resolves probe-skin contact in MuJoCo. In the view-matching task an agent sees the
@@ -465,7 +467,23 @@ the v1 seat for auditing only.
 
 ## Citation
 
-If you use USB Gym, cite the software (see [CITATION.cff](CITATION.cff)):
+If you use USB Gym, cite the article, an arXiv preprint (the preferred citation of
+[CITATION.cff](CITATION.cff)):
+
+```bibtex
+@misc{usbgym2026arxiv,
+  title         = {{USB Gym}: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching},
+  author        = {Intharah, Thanapong and Gao, Zhichao and Liu, Yiliang and Dong, Hao},
+  year          = {2026},
+  eprint        = {2611.08352},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  doi           = {10.48550/arXiv.2611.08352},
+  url           = {https://arxiv.org/abs/2611.08352}
+}
+```
+
+and the software release you used:
 
 ```bibtex
 @software{usbgym2026,

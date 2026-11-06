@@ -35,3 +35,19 @@ authors:
   - family-names: Dong
     given-names: Hao
     affiliation: "School of Computer Science, Peking University, Beijing 100871, China"
+preferred-citation:
+  type: generic
+  title: "USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching"
+  authors:
+    - family-names: Intharah
+      given-names: Thanapong
+    - family-names: Gao
+      given-names: Zhichao
+    - family-names: Liu
+      given-names: Yiliang
+    - family-names: Dong
+      given-names: Hao
+  year: 2026
+  doi: 10.48550/arXiv.2611.08352
+  url: "https://arxiv.org/abs/2611.08352"
+  notes: "arXiv preprint arXiv:2611.08352"
