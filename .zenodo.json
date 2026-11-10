@@ -1,8 +1,8 @@
 {
   "upload_type": "software",
   "title": "USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching",
-  "version": "2.2.1",
-  "publication_date": "2026-11-04",
+  "version": "2.3.0",
+  "publication_date": "2026-11-10",
   "creators": [
     {"name": "Intharah, Thanapong", "affiliation": "Visual Intelligence Laboratory, Department of Statistics, Faculty of Science, Khon Kaen University, Khon Kaen 40002, Thailand"},
     {"name": "Gao, Zhichao", "affiliation": "School of Computer Science, Peking University, Beijing 100871, China"},
@@ -14,7 +14,7 @@
   "keywords": ["ultrasound", "simulation", "reinforcement learning", "gymnasium", "view matching", "robotic ultrasound", "medical imaging"],
   "access_right": "open",
   "related_identifiers": [
-    {"identifier": "https://github.com/tohnperfect/USBGym/tree/v2.2.1", "relation": "isSupplementTo", "scheme": "url"},
+    {"identifier": "https://github.com/tohnperfect/USBGym/tree/v2.3.0", "relation": "isSupplementTo", "scheme": "url"},
     {"identifier": "10.5281/zenodo.23913142", "relation": "isSupplementedBy", "resource_type": "dataset", "scheme": "doi"},
     {"identifier": "arXiv:2611.08352", "relation": "isDocumentedBy", "resource_type": "publication-preprint", "scheme": "arxiv"}
   ]

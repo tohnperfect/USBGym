@@ -49,6 +49,15 @@ held-out evaluation episodes set up on them. The release assets of the leaderboa
 physics-trained policies of seeds 0 to 2) were trained on physics renders of 13 of its CTs; the same
 attribution applies.
 
+This product includes a mesh derived from "Body male realistic" by Dan Ulrich, one of the Blender Studio
+human base meshes, obtained from Wikimedia Commons
+(https://commons.wikimedia.org/wiki/File:Body_male_realistic_by_Dan_Ulrich_(CC0).stl) and dedicated to the
+public domain under CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/):
+src/usbg/data/avatar_torso.obj. Changes: torso cropped, decimated to about 18,000 triangles, turned 180
+degrees about the vertical axis so the chest faces +y, and only the largest connected piece kept. Source
+STL sha256 5d3394a1dc3c8c62323b7b47912eed03f3f9c308d29eb68f92cff70f9be1d477. CC0 asks for no
+attribution; the source is named here for provenance.
+
 Third-party components keep their own licenses:
 - third_party/lotus: the original LOTUS code (Velikova et al.), MIT license, as a git submodule.
 - The plugged methods use third-party packages and weights under their own licenses, listed in

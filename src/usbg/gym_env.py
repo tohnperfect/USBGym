@@ -53,7 +53,9 @@ Reward
 Info
     ``match``, ``seg_iou``, ``appearance``: S and its two terms for the current frame.
     ``contact_force``: probe-skin normal force (N). ``step``, ``patient``, ``target_organ``, ``window``,
-    ``n_windows``, ``start_clamped``, ``clamp_mm``, ``contact``. On steps also ``residual_twist``,
+    ``n_windows``, ``start_clamped``, ``clamp_mm``, ``contact``, ``contact_surface`` and
+    ``surface_gap_mm`` (signed height of the target window face above the contact surface: 0 for the box,
+    about 0 for the CT skin, the fit residual at that window for the avatar). On steps also ``residual_twist``,
     ``base_twist`` and ``executed_twist`` (SI units).
     ``privileged`` (only with ``privileged_info=True``): simulator state that no physical rig provides,
     for evaluation, imitation teachers and the privileged pose-oracle base only. A non-privileged
@@ -76,7 +78,11 @@ Configuration (constructor keywords)
                   ``servo_base`` as a (F, 6) matrix, a v2 checkpoint's ``ibvs`` dict or a path to a v2
                   policy ``.pt``, or leave it None to calibrate with :func:`calibrate_servo_base`) or
                   "pose_oracle" (the analytic twist from the true pose: privileged).
-    ``contact``   probe-skin contact on (default) or off. ``randomize`` "off" (one fixed render
+    ``contact``   probe-skin contact on (default) or off. ``contact_surface`` "box" (default: the flat
+                  surface through the target window face, as in the article), "ct_skin" (the patient's
+                  own CT skin) or "avatar" (the packaged generic torso fitted to the CT skin, which
+                  leaves a residual of tens of mm; see ``body_scene``). The two body surfaces need the
+                  ``body`` extra; a start is then lifted out of the body. ``randomize`` "off" (one fixed render
                   configuration with seed ``render_seed``) or "episode" (one domain-randomization draw
                   per episode, shared by target and observations). ``render_config`` replaces the
                   default ``render_lotus.RenderConfig`` (impedance, attenuation and backscatter scale
@@ -90,8 +96,8 @@ Configuration (constructor keywords)
 
 Reset options
     ``seed`` (``reset(seed=)``) seeds the setup draw. ``options`` may fix ``patient``, ``target``
-    (organ name), ``window`` (index, modulo the cell's window count) and ``contact`` (bool, this episode
-    only). ``options={"eval_episode": k}`` reproduces episode k of the paper's crossed evaluation
+    (organ name), ``window`` (index, modulo the cell's window count), ``contact`` (bool, this episode
+    only) and ``contact_surface`` (this episode only). ``options={"eval_episode": k}`` reproduces episode k of the paper's crossed evaluation
     design over this environment's patients: setup seed ``eval_seed + k`` (default 999), cell
     ``k % n_cells`` in patient-major order, window ``k // n_cells``.
 
@@ -369,6 +375,14 @@ def target_cells(lvs, targets, min_windows):
     return [(i, t) for i, lv in enumerate(lvs) for t in targets if n_target_windows(lv, t) >= min_windows]
 
 
+def _check_surface(surface):
+    """The contact surface name, or ValueError (body_scene.SURFACES)."""
+    from .body_scene import SURFACES
+    if surface not in SURFACES:
+        raise ValueError(f"contact_surface {surface!r}: expected one of {SURFACES}")
+    return surface
+
+
 def _require_anatomical():
     from .seatmode import seat_mode
     if seat_mode() != "anatomical":
@@ -444,9 +458,10 @@ class ViewMatchEnv(_Base):
                  n_steps=12, history=4, image_size=128, w_seg=0.6, w_app=0.4, effort=0.003,
                  lateral_m=0.02, axial_m=0.01, fan_deg=18.0, min_windows=2, eval_seed=999,
                  include_masks=False, frame_dtype="float32", privileged_info=True, device=None,
-                 render_mode=None):
+                 render_mode=None, contact_surface="box"):
         if not _HAVE_GYM:
             raise ImportError("gymnasium is required for ViewMatchEnv: `pip install gymnasium`")
+        _check_surface(contact_surface)
         super().__init__()
         _require_anatomical()
         if render_mode not in (None, "rgb_array"):
@@ -484,6 +499,7 @@ class ViewMatchEnv(_Base):
         self.residual_frac = float(residual_frac)
         self.a_bound = (self.residual_frac * MAX_TWIST if base is not None else MAX_TWIST).astype(np.float32)
         self.contact = bool(contact)
+        self.contact_surface = contact_surface
         self.randomize = randomize
         self.render_seed = int(render_seed)
         self._base_cfg = R.RenderConfig() if render_config is None else render_config
@@ -581,7 +597,7 @@ class ViewMatchEnv(_Base):
     def reset(self, *, seed=None, options=None):
         super().reset(seed=seed)
         opts = dict(options or {})
-        unknown = set(opts) - {"patient", "target", "window", "contact", "eval_episode"}
+        unknown = set(opts) - {"patient", "target", "window", "contact", "contact_surface", "eval_episode"}
         if unknown:
             raise ValueError(f"unknown reset options {sorted(unknown)}")
         if seed is not None:
@@ -605,14 +621,24 @@ class ViewMatchEnv(_Base):
         lv = self._lvs[i]
         Wfv, T_tgt, T_start, meta = _setup(lv, organ, rng, window, self.setup_kw)
         self._contact = bool(opts.get("contact", self.contact))
+        surface = _check_surface(opts.get("contact_surface", self.contact_surface))
+        body, gap_mm = None, 0.0
+        if surface != "box":
+            # a body surface: the pre-lift start (no new random draw) lifted out of the body instead of the box
+            from . import body_scene as BS
+            body = BS.place(BS.body_geometry(lv, surface), Wfv)
+            T_start, lift = body.clamp(meta["start_prelift"])
+            meta.update(start_clamped=bool(lift > 0), clamp_mm=float(lift * 1000.0))
+            gap_mm = body.gap_mm(T_tgt)
         self._lv, self._Wfv, self._T_tgt, self._cfg_ep = lv, Wfv, T_tgt, cfg
         self._probe = USProbeEnv(lv, Wfv, T_start, renderer="physics", device=self.device, translator=None,
                                  randomize=False, rng=np.random.default_rng(0), contact=self._contact,
-                                 observe=False)
+                                 observe=False, body=body)
         self._probe.reset()
         self._episode = {"patient": self.patients[i], "target_organ": organ, "window": meta.get("window"),
                          "n_windows": meta.get("n_windows"), "start_clamped": bool(meta.get("start_clamped")),
-                         "clamp_mm": float(meta.get("clamp_mm") or 0.0)}
+                         "clamp_mm": float(meta.get("clamp_mm") or 0.0), "contact_surface": surface,
+                         "surface_gap_mm": float(gap_mm)}
         self._tgt_img, self._tgt_mask, self._tgt_ct = self.pipeline.render(lv, T_tgt, Wfv, cfg)
         self._tgt_prep = _prep(self._tgt_img, self.image_size)
         self._img, self._mask, self._ct = self.pipeline.render(lv, self._probe.world_from_probe, Wfv, cfg)
@@ -659,7 +685,8 @@ class ViewMatchEnv(_Base):
         """Configuration and input fingerprints of this environment (seat, windows file, texture and
         segmenter md5, cohort, reward and controller settings) for a result file."""
         from . import provenance as PROV
-        return {"env_id": ENV_ID, "seat": PROV.seat_info(), "windows": PROV.windows_ref(),
+        extra = {} if self.contact_surface == "box" else {"contact_surface": self.contact_surface}
+        return {**extra, "env_id": ENV_ID, "seat": PROV.seat_info(), "windows": PROV.windows_ref(),
                 "pipeline": self.pipeline.info(), "patients": list(self.patients), "targets": list(self.targets),
                 "min_windows": self.min_windows, "base": self.base,
                 "servo_base_rich": None if self.servo is None else self.servo["rich"],

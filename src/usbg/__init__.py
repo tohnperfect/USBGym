@@ -30,4 +30,4 @@ import warnings
 # leaving all other warnings.
 warnings.filterwarnings("ignore", message=".*encountered in matmul", category=RuntimeWarning)
 
-__version__ = "2.2.1"
+__version__ = "2.3.0"

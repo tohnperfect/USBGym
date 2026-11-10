@@ -3,7 +3,24 @@
 Changes to USB Gym (package `usbg`). Defect IDs (D1 to D12) refer to [ERRATA.md](ERRATA.md), which
 states for each defect what 0.1.0 did, what changed and where the change is checked.
 
-## Unreleased
+## 2.3.0 (2026-11-10)
+
+### Body contact surface
+- New opt-in contact surfaces: the patient's own CT skin (`ct_skin`) or a generic adult torso fitted to
+  that skin (`avatar`), in place of the flat surface through the target window face. `ViewMatchEnv` takes
+  `contact_surface="box" | "ct_skin" | "avatar"` (also as a reset option), and `USProbeEnv` takes
+  `body=` (`usbg.body_scene.place`). A body collides through 12 convex slabs along its long axis; the press
+  cap and the start lift act along the nearest slab face. The info dict adds `contact_surface` and
+  `surface_gap_mm`. The default stays `"box"`, so episodes, results and the leaderboard are unchanged
+  (the model string of the default scene keeps its pinned sha256).
+- New module `usbg.body_scene` and script `scripts/make_body_scene.py`, which writes a self-contained
+  MuJoCo scene of the probe on a body at a screened window, its seat record and an optional image.
+- The avatar torso ships as package data (`src/usbg/data/avatar_torso.obj`, about 0.6 MB), derived from
+  a CC0 1.0 base mesh (NOTICE). Its fit to a CT leaves a residual of tens of millimetres (27 mm RMS on
+  s0011), reported by `surface_gap_mm`.
+- `usbg.body_surface.extract_skin_mesh(decimate_to=...)` decimates again with trimesh 4.5 and later (the
+  target face count is passed as `face_count`); before, the call failed silently and the mesh was kept.
+- CI installs the `body` extra, so the body-surface tests run there.
 
 ### Citation
 - The article is on arXiv as arXiv:2611.08352 (DOI 10.48550/arXiv.2611.08352). `CITATION.cff` gives it

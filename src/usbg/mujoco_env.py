@@ -15,6 +15,10 @@ seated under the probe by placement.seat_volume_under_probe (axis-aligned start)
 v2.1.2 (opt-in): USProbeEnv(contact_plane=(p, n)) re-poses that box after compiling the
 unchanged model XML: its top face then lies in the plane of point p and normal n, and the press cap acts along n
 (placement.clamp_start_outside_plane). Without the argument nothing changes.
+
+v2.3.0 (opt-in): USProbeEnv(body=...) replaces the box by a human body surface (body_scene.place: the patient's CT
+skin or the packaged avatar), collided through convex slabs; the press cap then acts along the normal of the slab
+facet nearest the probe face. Without the argument nothing changes.
 """
 from __future__ import annotations
 
@@ -39,23 +43,33 @@ def contact_default() -> bool:
     raise ValueError(f"{CONTACT_ENV}={v!r}; expected on|off")
 
 
+PATIENT_SOLREF = "0.02 1"            # contact softness of the patient surface (box or body slabs)
+PATIENT_SOLIMP = "0.8 0.9 0.001"
+
+
 def _mjcf(patient_half=(0.12, 0.15, 0.08), probe_half=(0.008, 0.008, 0.012),
-          weld_solref=(0.02, 1.0)) -> str:
-    """Build the model XML. Patient box top face at z=0; probe welded to a mocap target."""
+          weld_solref=(0.02, 1.0), assets_xml="", patient_xml=None) -> str:
+    """Build the model XML. Patient box top face at z=0; probe welded to a mocap target.
+
+    assets_xml / patient_xml (body_scene.BodySurface.mjcf): an <asset> block and the worldbody geoms that replace
+    the box (geoms named "patient", "patient_1", ... are the contact surface). With both at their defaults the
+    string is the box model, unchanged."""
     px, py, pz = patient_half
     bx, by, bz = probe_half
+    if patient_xml is None:
+        patient_xml = f"""    <!-- patient: static box, top (skin) at z=0, tissue below -->
+    <geom name="patient" type="box" pos="0 0 {-pz}" size="{px} {py} {pz}"
+          rgba="0.8 0.6 0.55 1" solref="{PATIENT_SOLREF}" solimp="{PATIENT_SOLIMP}"/>"""
     return f"""
 <mujoco model="us_probe_gym">
   <option timestep="0.002" gravity="0 0 0" integrator="implicitfast"/>
-  <compiler autolimits="true"/>
+  <compiler autolimits="true"/>{assets_xml}
   <default>
     <geom friction="1 0.05 0.001" solref="0.01 1" solimp="0.9 0.95 0.001"/>
   </default>
   <worldbody>
     <light pos="0 0 0.5" dir="0 0 -1"/>
-    <!-- patient: static box, top (skin) at z=0, tissue below -->
-    <geom name="patient" type="box" pos="0 0 {-pz}" size="{px} {py} {pz}"
-          rgba="0.8 0.6 0.55 1" solref="0.02 1" solimp="0.8 0.9 0.001"/>
+{patient_xml}
     <!-- mocap target the probe is welded to -->
     <body name="target" mocap="true" pos="0 0 0.02">
       <geom type="box" size="0.002 0.002 0.002" contype="0" conaffinity="0"
@@ -149,14 +163,25 @@ class USProbeEnv:
                           plane anchored at the target), as before. (p, n) = a world point and unit normal: the
                           compiled patient box is re-posed: its top face lies in the plane of point p and
                           outward normal n (top-face centre at p), and the press cap applies along n.
+      body              : v2.3.0 (opt-in). None (default) keeps the box. A body_scene.BodySurface (body_scene.place)
+                          replaces the box by that body's convex collision slabs, already in world coordinates;
+                          the press cap applies along BodySurface.surface_plane. Cannot be combined with
+                          contact_plane.
     """
 
     def __init__(self, lv, world_from_volume, T0, *, renderer="physics", device=None,
                  settle_steps=10, cfg=None, translator=None, randomize=False, rng=None,
-                 contact=None, observe=True, max_press_m=None, contact_plane=None):
+                 contact=None, observe=True, max_press_m=None, contact_plane=None, body=None):
         import mujoco
         self._mj = mujoco
-        self.model = mujoco.MjModel.from_xml_string(_mjcf())
+        if body is not None and contact_plane is not None:
+            raise ValueError("body and contact_plane cannot be combined: the body is its own contact surface")
+        self.body = body
+        if body is None:
+            self.model = mujoco.MjModel.from_xml_string(_mjcf())
+        else:
+            assets_xml, patient_xml = body.mjcf(visual=False)
+            self.model = mujoco.MjModel.from_xml_string(_mjcf(assets_xml=assets_xml, patient_xml=patient_xml))
         self.contact_plane = None
         if contact_plane is not None:
             self.contact_plane = _plane_tuple(contact_plane)
@@ -193,6 +218,10 @@ class USProbeEnv:
         self._probe_bid = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "probe")
         self._probe_gid = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_GEOM, "probe_tip")
         self._patient_gid = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_GEOM, "patient")
+        # every geom of the contact surface: the box alone, or the slabs of a body ("patient", "patient_1", ...)
+        self._patient_gids = frozenset(
+            g for g in range(self.model.ngeom)
+            if (mujoco.mj_id2name(self.model, mujoco.mjtObj.mjOBJ_GEOM, g) or "").split("_")[0] == "patient")
         self._target = None            # commanded target pose (world_from_probe)
         self.reset()
 
@@ -205,6 +234,8 @@ class USProbeEnv:
         $USBG_MAX_PRESS_MM, default 5 mm); the v1 canonical physics is unchanged."""
         if self.max_press_m is None:
             return T
+        if self.body is not None:                          # v2.3.0 opt-in: the cap along the nearest slab facet
+            return self.body.clamp(T, min_clear_m=-self.max_press_m)[0]
         if self.contact_plane is not None:                 # v2.1.2 opt-in: the cap along the plane normal
             from .placement import clamp_start_outside_plane
             p, n = self.contact_plane
@@ -238,7 +269,8 @@ class USProbeEnv:
         f6 = np.zeros(6)
         for i in range(self.data.ncon):
             c = self.data.contact[i]
-            if self._probe_gid in (c.geom1, c.geom2) and self._patient_gid in (c.geom1, c.geom2):
+            if self._probe_gid in (c.geom1, c.geom2) and (c.geom1 in self._patient_gids
+                                                          or c.geom2 in self._patient_gids):
                 mujoco.mj_contactForce(self.model, self.data, i, f6)
                 total += abs(f6[0])                    # normal component
         return float(total)

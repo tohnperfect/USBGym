@@ -67,7 +67,7 @@ jobs:
           fi
 
       - name: Install usbg
-        run: python -m pip install -e ".[dev]" -c .github/ci-constraints.txt   # the pinned stack (file header)
+        run: python -m pip install -e ".[dev,body]" -c .github/ci-constraints.txt   # the pinned stack (file header); body: the body contact surface tests
 
       - name: Versions
         run: |
@@ -100,7 +100,7 @@ jobs:
                         "train_texture_gan", "make_dataset", "bench_render", "bench_latency",
                         "bench_closed_loop", "check_leakage", "plug_texture", "plug_texture_exec",
                         "plug_reward_train", "plug_render_run", "plug_ctrl_jobs", "plug_reward_jobs",
-                        "plug_render_jobs")
+                        "plug_render_jobs", "make_body_scene")
           for s in v2_scripts:
               importlib.import_module(s)
           print(f"imported {len(mods)} usbg modules and {len(v2_scripts)} scripts; usbg {usbg.__version__}")

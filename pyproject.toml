@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "usbg"
-version = "2.2.1"
+version = "2.3.0"
 description = "USB Gym: a Gymnasium testbed for closed-loop ultrasound view matching (CT-based B-mode rendering, MuJoCo probe-skin contact, screened acoustic windows, oracle ladder, plug slots)."
 readme = "README.md"
 authors = [
@@ -61,9 +61,10 @@ where = ["src"]
 include = ["usbg", "usbg.*"]
 
 [tool.setuptools.package-data]
-# the screened-windows file of the reported runs (derived from the public TotalSegmentator CTs) and the leaderboard
-# data (the rows of Table 5 with their per-episode values, the methods list and the release-asset manifest)
-usbg = ["data/*.json", "leaderboard/data/*.json"]
+# the screened-windows file of the reported runs (derived from the public TotalSegmentator CTs), the avatar torso of
+# the body contact surface (data/avatar_torso.obj, CC0 1.0, see NOTICE) and the leaderboard data (the rows of
+# Table 5 with their per-episode values, the methods list and the release-asset manifest)
+usbg = ["data/*.json", "data/*.obj", "leaderboard/data/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

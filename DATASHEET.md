@@ -1,9 +1,9 @@
-# Datasheet for USB Gym (UltraSound B-mode Gym), version 2.2.1
+# Datasheet for USB Gym (UltraSound B-mode Gym), version 2.3.0
 
 This datasheet follows the "Datasheets for Datasets" template (Gebru et al., 2021), adapted for a
 simulation testbed. USB Gym is software with a fixed evaluation protocol, not a static dataset. For
 any probe pose over a patient's labeled CT, it renders a B-mode image and computes a probe-skin
-contact force. This datasheet covers code version 2.2.1 and the data behind the v2 results.
+contact force. This datasheet covers code version 2.3.0 and the data behind the v2 results.
 `CHANGELOG.md` lists the changes from version 0.1.0 (v1), and `ERRATA.md` (D1 to D12) lists the v1
 defects and how each one was fixed.
 
@@ -78,6 +78,11 @@ defects and how each one was fixed.
   contact plane passes through the window face, perpendicular to the beam, so it is tangent to the
   skin only when the beam follows the skin normal. The renderer is a simplified ray model, and a
   simulated frame is not a real ultrasound frame. No realism claim is made for any texture stage.
+- **Body contact surface (opt-in, version 2.3.0 and later).** The contact surface can instead be the
+  patient's CT skin (marching cubes on the body mask of the label volume) or a generic adult torso fitted
+  to it. The torso, `src/usbg/data/avatar_torso.obj` (package data), is derived from a CC0 1.0 base mesh
+  (`NOTICE`). It is not a patient: its fit to a CT leaves a residual of tens of millimetres, which the
+  environment reports. No reported result uses either surface.
 
 ## Collection and preprocessing
 
@@ -117,7 +122,8 @@ defects and how each one was fixed.
   `outputs/` (result JSONs, provenance blocks). Rebuild them from the public sources with the scripts
   named above.
 - **Third-party data.** This repository does not redistribute these datasets; obtain each one from
-  its source. The repository ships no images or videos.
+  its source. The repository ships no images or videos from them; the README's cover image and
+  animation (`media/`) show the testbed's own simulation.
 
   | Source | Use in v2 | License and access |
   | :-- | :-- | :-- |
@@ -137,7 +143,9 @@ defects and how each one was fixed.
   fetch` and the runner check.
 - **Derived protocol files.** `src/usbg/data/usbg-windows-v1.json` (the screened windows of the reported
   runs) and the episode setups in `src/usbg/leaderboard/data/` are derived from the TotalSegmentator
-  label maps (CC BY 4.0; attribution and changes in `NOTICE`). The fixed KidneyUS test assignment of the
+  label maps (CC BY 4.0; attribution and changes in `NOTICE`). The avatar torso
+  `src/usbg/data/avatar_torso.obj` is derived from a CC0 1.0 mesh (source and changes in `NOTICE`). The
+  fixed KidneyUS test assignment of the
   reported runs (`segtrain/data/real/kidneyus_split.npz`) is not yet published.
 - **Private data: not used and not distributed.** The v1 benchmark default and the v1 supporting
   tasks used a CUT stage trained on a private clinical pool (ledger D5). In v2 nothing uses that

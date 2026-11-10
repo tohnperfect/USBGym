@@ -28,7 +28,8 @@ Scope: all closed-loop results come from simulation; no physical probe, phantom 
 tissue model is rigid, and USB Gym claims no clinical validity.
 
 Contents: [Install](#install) | [Quickstart](#quickstart) | [Data preparation](#data-preparation) |
-[Slots](#slots) | [Plugging in a component](#plugging-in-a-component) | [Leaderboard](#leaderboard) |
+[Slots](#slots) | [Body contact surface](#body-contact-surface) |
+[Plugging in a component](#plugging-in-a-component) | [Leaderboard](#leaderboard) |
 [Segmenter trainer](#segmenter-trainer) | [Running the pipeline](#running-the-pipeline) |
 [Tests and CI](#tests-and-ci) | [Layout](#layout) | [Citation](#citation) | [License](#license) |
 [Errata](#errata)
@@ -62,6 +63,8 @@ Notes:
   nnU-Net v2, SAM, MedSAM or SAMUS for the mask-source slot, TotalSegmentator for the anatomy slot); each
   adapter's docstring names what it imports. Their weights are downloaded under their own terms (see
   [License](#license)).
+- The extra `body` installs scikit-image, trimesh and fast-simplification, which the opt-in body contact
+  surfaces need (`pip install -e ".[body]"`; see [Body contact surface](#body-contact-surface)).
 - The shell runners call `.venv/bin/python`, so keep the virtual environment at `.venv/` in the
   repository root (a POSIX layout; on Windows run the Python scripts directly).
 - `third_party/lotus` is the original LOTUS code as a git submodule (`--recurse-submodules` above, or
@@ -171,7 +174,7 @@ in the second column. Privileged components read simulator state that no physica
 | Renderer (slot) | a label slice to a frame in [0, 1]; physics-renderer parameters | physics renderer | `usbg.render_lotus`, `usbg.plug.renderers` |
 | Texture stage (slot) | a frame to a frame; a label-conditioned stage also reads the label slice | SonoSPADE | `usbg.texture_gan`, `usbg.plug_texture` |
 | Mask source (slot) | a frame to an organ mask | U-Net of the same stage and seed; CT label (privileged) | `usbg.us_segmenter`, `usbg.plug.masks` |
-| Contact | probe contact in MuJoCo, on or off | on; plane through the target window face (privileged); press capped at 5 mm | `usbg.mujoco_env`, `usbg.placement` |
+| Contact | probe contact in MuJoCo, on or off; the contact surface | on; plane through the target window face (privileged); press capped at 5 mm. Opt-in: the patient's CT skin or a fitted avatar torso ([Body contact surface](#body-contact-surface)) | `usbg.mujoco_env`, `usbg.placement`, `usbg.body_scene` |
 | Controller (slot) | any map from the observation to a normalized twist | REINFORCE residual over the image-servo base | `scripts/train_view_match_rl.py`, `usbg.plug.controllers` |
 | Reward (slot) | a frame pair to a score; the weights of the match score S | S with weights 0.6 and 0.4, action cost 0.003 | `usbg.view_match`, `usbg.plug.rewards` |
 
@@ -181,6 +184,39 @@ interior to [0, 1]. The step reward is the gain in `S` minus the action cost.
 
 The typed protocols `Renderer`, `TextureTranslator`, `MaskSource` and `Reward` in
 [`usbg.interfaces`](src/usbg/interfaces.py) need no subclassing.
+
+## Body contact surface
+
+By default the probe presses a flat surface through the target window face, as in the article. Two
+opt-in body surfaces replace it, for contact on a curved body and for viewing the scene:
+
+- `ct_skin`: the patient's own skin, the outer surface of the CT label volume. It comes from the voxel
+  grid of the imaged anatomy, so the contact surface and the image agree.
+- `avatar`: a generic adult torso shipped with the package (`src/usbg/data/avatar_torso.obj`, CC0 1.0;
+  see [NOTICE](NOTICE)), fitted to the patient's CT skin by a similarity transform. The fit leaves a
+  residual of tens of millimetres (27 mm RMS on s0011), so under the probe the avatar skin can lie above
+  or below the CT skin, and contact then happens on a surface that is not the imaged one.
+  `info["surface_gap_mm"]` gives that offset at the target window: -15.9 mm at the first liver window of
+  s0011, where the window face lies inside the avatar.
+
+Both need the `body` extra. MuJoCo collides a body through 12 convex slabs stacked along its long axis,
+and the 5 mm press cap acts along the nearest slab face. A body never moves or scales the CT.
+
+```bash
+# per surface: a self-contained scene file (inline meshes), its seat record and an image
+python scripts/make_body_scene.py --case s0011 --organ liver --window 0 --surface both --png
+python -m mujoco.viewer --mjcf=outputs/body_scene/s0011_liver_w0_ct_skin.xml   # slabs: geom group 3
+```
+
+```python
+env = gym.make("USBGym/ViewMatch-v0", device="cpu", contact_surface="ct_skin")  # or "avatar"
+obs, info = env.reset(options={"contact_surface": "avatar"})                    # this episode only
+```
+
+The scene file needs the label cache of the case ([Data preparation](#data-preparation)). The article's
+results and the leaderboard use the default surface; a run on a body surface is a different
+configuration and reports `contact_surface` in its provenance. The robot arm of the cover image is not
+part of the package.
 
 ## Plugging in a component
 
@@ -450,6 +486,7 @@ src/usbg/              the package
   volume.py, slicer.py, seatmode.py, windows.py, placement.py    CT anatomy, slicing, seat and windows
   render_lotus.py      physics renderer, RenderConfig, domain randomization; LOTUS reimplementation
   mujoco_env.py        probe pose and contact, force-capped press
+  body_scene.py, body_surface.py, register_body.py              opt-in body contact surface, scene file
   view_match.py        sector mapping, texture-stage call, match score S, mask source
   gym_env.py           the Gymnasium environment USBGym/ViewMatch-v0
   goal_rl.py, policy.py                                         start sampling, residual policy
@@ -460,6 +497,7 @@ src/usbg/              the package
   provenance.py, benchmark.py, interfaces.py                    sidecars, patient split, protocols
   _par/                vendored contract, SE(3) math and scan geometry
   data/usbg-windows-v1.json                                     the windows file of the reported runs
+  data/avatar_torso.obj                                         the avatar torso (CC0 1.0)
 scripts/               data preparation, training, evaluation, plug scripts and job builders
   paper/               the table and figure build of the article (public mode, results archive)
   analysis/            the statistics and table steps the build imports
@@ -501,7 +539,7 @@ and the software release you used:
   title   = {{USB Gym}: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching},
   author  = {Intharah, Thanapong and Gao, Zhichao and Liu, Yiliang and Dong, Hao},
   year    = {2026},
-  version = {2.2.1},
+  version = {2.3.0},
   doi     = {10.5281/zenodo.23942190},
   url     = {https://github.com/tohnperfect/USBGym},
   license = {Apache-2.0}
@@ -535,7 +573,9 @@ USB Gym is licensed under the Apache License 2.0 ([LICENSE](LICENSE), [NOTICE](N
 vendored segmenter trainer in `segtrain/` and the vendored code in `src/usbg/_par/`. The LOTUS forward
 model in `src/usbg/render_lotus.py` and its acoustic table in `src/usbg/volume.py` are adapted from the
 MIT-licensed LOTUS code, whose copyright and permission notice is in NOTICE. The windows file and the
-leaderboard's episode setups are derived from the TotalSegmentator dataset (CC BY 4.0; NOTICE). Third-party
+leaderboard's episode setups are derived from the TotalSegmentator dataset (CC BY 4.0; NOTICE). The avatar
+torso `src/usbg/data/avatar_torso.obj` is derived from a Blender Studio base mesh dedicated to the public
+domain (CC0 1.0; NOTICE names the source). Third-party
 code, weights and data keep their own licenses: LOTUS (MIT, submodule), and the packages and weights used by
 the plugged methods, including SAM and MedSAM (Apache-2.0), SAMUS (MIT), LPIPS (BSD-2-Clause),
 scikit-image (BSD-3-Clause), torchvision (BSD-3-Clause; pretrained weights may carry terms from their

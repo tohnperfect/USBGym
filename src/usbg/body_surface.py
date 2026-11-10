@@ -89,7 +89,10 @@ def _postprocess(verts, faces, *, smooth_iters: int = 0, decimate_to: int | None
         trimesh.smoothing.filter_taubin(mesh, iterations=int(smooth_iters))
     if decimate_to and len(mesh.faces) > decimate_to:
         try:
-            mesh = mesh.simplify_quadric_decimation(int(decimate_to))
+            try:
+                mesh = mesh.simplify_quadric_decimation(face_count=int(decimate_to))   # trimesh >= 4.5
+            except TypeError:
+                mesh = mesh.simplify_quadric_decimation(int(decimate_to))              # older trimesh
         except Exception:
             pass                                            # no backend (open3d/fast-simplification)
     return np.asarray(mesh.vertices, dtype=np.float64), np.asarray(mesh.faces, dtype=np.int64)
