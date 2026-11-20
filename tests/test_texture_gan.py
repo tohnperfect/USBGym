@@ -288,3 +288,63 @@ def test_render_dual_input_translator_receives_label():
 
 if __name__ == "__main__":
     raise SystemExit(pytest.main([__file__, "-v"]))
+
+
+# ONNX Runtime CPU path of the SonoSPADE translator (opt-in, the onnx extra)
+def _tiny_sonospade_ckpt(tmp_path):
+    tr = TG.build_trainer("sonospade", "cpu", s_us=_tiny_s_us("cpu"), n_classes=13,
+                          ngf=12, n_blocks=2, d_depth=2)
+    ckpt = str(tmp_path / "sono.pt")
+    tr.save(ckpt)
+    return ckpt
+
+
+def test_onnx_sonospade_translator_matches_pytorch(tmp_path, monkeypatch):
+    pytest.importorskip("onnx")
+    pytest.importorskip("onnxruntime")
+    from usbg import render_lotus as R
+    monkeypatch.setenv("USBG_ONNX_CACHE", str(tmp_path / "onnx_cache"))
+    ckpt = _tiny_sonospade_ckpt(tmp_path)
+    ref = TG.SonoSPADETranslator(ckpt, device="cpu")
+    ort_tr = TG.load_translator(ckpt, "cpu", runtime="onnxruntime", threads=2)
+    assert isinstance(ort_tr, TG.OnnxSonoSPADETranslator) and ort_tr.wants_label is True
+    rng = np.random.default_rng(0)
+    for shape in ((128, 128), (64, 96)):                            # each frame size gets its own export
+        img = rng.random(shape).astype(np.float32)
+        lab = rng.integers(0, 13, shape)
+        a, b = ref.translate_aligned(img, lab), ort_tr.translate_aligned(img, lab)
+        assert a.shape == b.shape == shape and b.dtype == np.float32
+        assert float(np.abs(a - b).max()) <= 1 / 255
+    lab = rng.integers(0, 13, (96, 128))                            # the dual-input render post-stage
+    a = R.render(lab, "physics", device="cpu", texture=ref)
+    b = R.render(lab, "physics", device="cpu", texture=ort_tr)
+    assert a.shape == b.shape and float(np.abs(a - b).max()) <= 1 / 255
+    again = TG.load_translator(ckpt, "cpu", runtime="onnxruntime")  # the export is cached by checkpoint content
+    assert again.onnx_path == ort_tr.onnx_path and str(tmp_path / "onnx_cache") in again.onnx_path
+    assert set(ort_tr.onnx_paths) == {(128, 128), (64, 96), (128, 96)}   # one export per frame size seen
+
+
+def test_onnx_runtime_rejects_gpu_devices_and_other_checkpoints(tmp_path, monkeypatch):
+    pytest.importorskip("onnx")
+    pytest.importorskip("onnxruntime")
+    monkeypatch.setenv("USBG_ONNX_CACHE", str(tmp_path / "onnx_cache"))
+    ckpt = _tiny_sonospade_ckpt(tmp_path)
+    with pytest.raises(ValueError, match="CPU"):
+        TG.load_translator(ckpt, "mps", runtime="onnxruntime")
+    cyc = TG.build_trainer("cyclegan", "cpu")
+    cpath = str(tmp_path / "cyc.pt")
+    cyc.save(cpath)
+    with pytest.raises(ValueError, match="SonoSPADE"):
+        TG.load_translator(cpath, "cpu", runtime="onnxruntime")
+
+
+def test_translator_runtime_names_and_pipeline_default_unchanged():
+    with pytest.raises(ValueError, match="runtime"):
+        TG.load_translator("unused.pt", "cpu", runtime="tensorrt")
+    from usbg.gym_env import ViewPipeline
+    with pytest.raises(ValueError, match="sonospade"):
+        ViewPipeline("physics", "ct", device="cpu", texture_runtime="onnxruntime")
+    with pytest.raises(ValueError, match="texture_runtime"):
+        ViewPipeline("physics", "ct", device="cpu", texture_runtime="tensorrt")
+    info = ViewPipeline("physics", "ct", device="cpu").info()      # the default provenance record is unchanged
+    assert "texture_runtime" not in info

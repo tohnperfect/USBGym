@@ -90,6 +90,9 @@ Configuration (constructor keywords)
                   its seed is replaced by ``render_seed``, and "episode" randomizes around it.
                   ``device`` "cpu", "mps" or None (``render_lotus.get_device()``: MPS if present, else
                   the CPU; never CUDA).
+                  ``texture_runtime`` "pytorch" (default) or "onnxruntime" (the ``onnx`` extra): the
+                  SonoSPADE generator runs through ONNX Runtime on the CPU, about three times faster
+                  than PyTorch there, with the same output; the physics render keeps ``device``.
     Reward weights ``w_seg``, ``w_app``, ``effort``; horizon ``n_steps``; ``history``; ``image_size``;
     start perturbation ``lateral_m``, ``axial_m``, ``fan_deg``; ``min_windows`` (a (patient, organ)
     cell needs this many screened windows to be drawn, default 2 as in the v2 runs).
@@ -270,10 +273,18 @@ class ViewPipeline:
     through the identical pipeline (the same-pipeline rule)."""
 
     def __init__(self, texture="physics", mask="ct", *, texture_ckpt=None, tex_manifest=None,
-                 seg_ckpt=None, device=None, image_size=128):
+                 seg_ckpt=None, device=None, image_size=128, texture_runtime="pytorch", texture_threads=4):
         from . import provenance as PROV
+        from .texture_gan import TRANSLATOR_RUNTIMES
         self.device = device or R.get_device()
         self.image_size = int(image_size)
+        # texture_runtime="onnxruntime" (opt-in, the onnx extra): the SonoSPADE generator runs through ONNX
+        # Runtime on the CPU with texture_threads threads; the physics render keeps `device`
+        if texture_runtime not in TRANSLATOR_RUNTIMES:
+            raise ValueError(f"texture_runtime {texture_runtime!r}: expected one of {TRANSLATOR_RUNTIMES}")
+        if texture_runtime != "pytorch" and (callable(texture) or str(texture) != "sonospade"):
+            raise ValueError(f"texture_runtime {texture_runtime!r} applies to the 'sonospade' texture only")
+        self.texture_runtime = texture_runtime
         # texture stage
         if callable(texture):
             name = getattr(texture, "__name__", None) or type(texture).__name__
@@ -290,7 +301,11 @@ class ViewPipeline:
             self.translator = None
             if ckpt is not None:
                 from .texture_gan import load_translator
-                self.translator = load_translator(ckpt, self.device)
+                if texture_runtime == "pytorch":
+                    self.translator = load_translator(ckpt, self.device)
+                else:
+                    self.translator = load_translator(ckpt, "cpu", runtime=texture_runtime,
+                                                      threads=texture_threads)
         # mask source
         self.seg_ckpt = None
         if isinstance(mask, str):
@@ -328,9 +343,12 @@ class ViewPipeline:
 
     def info(self):
         from . import provenance as PROV
-        return {"texture": self.texture_name, "texture_ckpt": self.texture_ckpt,
-                "texture_md5": PROV.md5(self.texture_ckpt), "mask": self.mask_name,
-                "seg_ckpt": self.seg_ckpt, "seg_md5": PROV.md5(self.seg_ckpt), "device": self.device}
+        out = {"texture": self.texture_name, "texture_ckpt": self.texture_ckpt,
+               "texture_md5": PROV.md5(self.texture_ckpt), "mask": self.mask_name,
+               "seg_ckpt": self.seg_ckpt, "seg_md5": PROV.md5(self.seg_ckpt), "device": self.device}
+        if self.texture_runtime != "pytorch":                   # the default record is unchanged
+            out["texture_runtime"] = self.texture_runtime
+        return out
 
 
 # ===================================================================================== patients and cells
@@ -458,7 +476,7 @@ class ViewMatchEnv(_Base):
                  n_steps=12, history=4, image_size=128, w_seg=0.6, w_app=0.4, effort=0.003,
                  lateral_m=0.02, axial_m=0.01, fan_deg=18.0, min_windows=2, eval_seed=999,
                  include_masks=False, frame_dtype="float32", privileged_info=True, device=None,
-                 render_mode=None, contact_surface="box"):
+                 render_mode=None, contact_surface="box", texture_runtime="pytorch"):
         if not _HAVE_GYM:
             raise ImportError("gymnasium is required for ViewMatchEnv: `pip install gymnasium`")
         _check_surface(contact_surface)
@@ -474,7 +492,8 @@ class ViewMatchEnv(_Base):
             raise ValueError(f"frame_dtype {frame_dtype!r}: expected 'float32' or 'uint8'")
         self.render_mode = render_mode
         self.pipeline = ViewPipeline(texture, mask, texture_ckpt=texture_ckpt, tex_manifest=tex_manifest,
-                                     seg_ckpt=seg_ckpt, device=device, image_size=image_size)
+                                     seg_ckpt=seg_ckpt, device=device, image_size=image_size,
+                                     texture_runtime=texture_runtime)
         self.device = self.pipeline.device
         self.patients = _patient_list(patients)
         self.targets = list(targets)

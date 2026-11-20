@@ -45,7 +45,7 @@ python3 -m venv .venv && source .venv/bin/activate          # Windows: .venv\Scr
 python -m pip install --upgrade pip
 # CPU-only PyTorch on Linux and Windows (on macOS, or for a CUDA build, the default PyPI wheels are fine)
 python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-python -m pip install -e ".[dev]"     # usbg, pytest and scikit-image; extras: plug, analysis, body
+python -m pip install -e ".[dev]"     # usbg, pytest and scikit-image; extras: plug, analysis, body, onnx
 
 # no data needed: the contract check, the fast test suite and a rendering example
 python -m usbg.contracts_bridge
@@ -65,6 +65,10 @@ Notes:
   [License](#license)).
 - The extra `body` installs scikit-image, trimesh and fast-simplification, which the opt-in body contact
   surfaces need (`pip install -e ".[body]"`; see [Body contact surface](#body-contact-surface)).
+- The extra `onnx` installs onnx and ONNX Runtime for the opt-in CPU path of the SonoSPADE texture
+  (`ViewMatchEnv(texture="sonospade", texture_runtime="onnxruntime")`, or `ViewPipeline(...,
+  texture_runtime="onnxruntime")`): the same weights, exported once and cached, run by ONNX Runtime on the CPU,
+  where a whole frame runs about twice as fast as with PyTorch.
 - The shell runners call `.venv/bin/python`, so keep the virtual environment at `.venv/` in the
   repository root (a POSIX layout; on Windows run the Python scripts directly).
 - `third_party/lotus` is the original LOTUS code as a git submodule (`--recurse-submodules` above, or
@@ -539,7 +543,7 @@ and the software release you used:
   title   = {{USB Gym}: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching},
   author  = {Intharah, Thanapong and Gao, Zhichao and Liu, Yiliang and Dong, Hao},
   year    = {2026},
-  version = {2.3.0},
+  version = {2.4.0},
   doi     = {10.5281/zenodo.23942190},
   url     = {https://github.com/tohnperfect/USBGym},
   license = {Apache-2.0}

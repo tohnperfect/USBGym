@@ -791,6 +791,90 @@ class SonoSPADETranslator:
     __call__ = translate
 
 
+def _onnx_export(G, n_classes, ckpt_path, cache_dir=None, size=(128, 128)):
+    """Export a SonoSPADE generator to ONNX for one frame size, once per checkpoint content, and return the file.
+
+    The file is keyed by the checkpoint's md5, the torch version, the opset and the size, and kept in
+    ``cache_dir``, ``$USBG_ONNX_CACHE`` or ``<tempdir>/usbg_onnx`` (never under ``data/``). The shapes are fixed:
+    ONNX Runtime runs a fixed-shape graph about a fifth faster than one with dynamic height and width."""
+    import os
+    import tempfile
+    import warnings
+    import torch
+    from . import provenance as PROV
+    d = cache_dir or os.environ.get("USBG_ONNX_CACHE") or os.path.join(tempfile.gettempdir(), "usbg_onnx")
+    os.makedirs(d, exist_ok=True)
+    h, w = (int(v) for v in size)
+    key = f"{PROV.md5(ckpt_path)}_torch{torch.__version__.split('+')[0]}_opset17_{h}x{w}"
+    path = os.path.join(d, f"sonospade_{key}.onnx")
+    if not os.path.exists(path):
+        tmp = f"{path}.{os.getpid()}.tmp"
+        img = torch.zeros(1, 1, h, w)
+        seg = torch.zeros(1, n_classes, h, w)
+        with warnings.catch_warnings():                        # tracer notes about InstanceNorm in eval mode
+            warnings.simplefilter("ignore")
+            torch.onnx.export(G.eval(), (img, seg), tmp, input_names=["img", "seg"], output_names=["out"],
+                              opset_version=17, dynamo=False)
+        os.replace(tmp, path)                                  # atomic: a concurrent reader never sees half a file
+    return path
+
+
+class OnnxSonoSPADETranslator(SonoSPADETranslator):
+    """:class:`SonoSPADETranslator` with the generator run by ONNX Runtime on the CPU (opt-in:
+    ``load_translator(ckpt, runtime="onnxruntime")`` or ``ViewPipeline(..., texture_runtime="onnxruntime")``).
+
+    Same weights (exported with ``torch.onnx``, opset 17, once per checkpoint and frame size, cached), same
+    preprocessing (one-hot labels, input in [-1, 1]) and postprocessing (clipped to [0, 1]); the output agrees
+    with the PyTorch translator within float32 rounding. At batch 1 PyTorch eager is overhead-bound on a CPU,
+    and ONNX Runtime runs the same generator about three times faster there. Needs the ``onnx`` extra
+    (``pip install -e ".[onnx]"``)."""
+
+    def __init__(self, ckpt_path, device=None, threads=4, cache_dir=None):
+        if device not in (None, "cpu"):
+            raise ValueError(f"runtime 'onnxruntime' runs the generator on the CPU, not on {device!r}")
+        try:
+            import onnx  # noqa: F401  (torch.onnx.export writes the model through it)
+            import onnxruntime as ort
+        except ImportError as e:
+            raise ImportError("runtime='onnxruntime' needs the onnx extra: pip install -e \".[onnx]\"") from e
+        super().__init__(ckpt_path, device="cpu")
+        self._ort, self._ckpt, self._cache = ort, ckpt_path, cache_dir
+        self._so = ort.SessionOptions()
+        self._so.intra_op_num_threads, self._so.inter_op_num_threads = int(threads), 1
+        self._so.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
+        self._sessions, self.onnx_paths = {}, {}
+        self.threads = int(threads)
+        self._session(128, 128)                                        # the environment's frame size, up front
+        self.onnx_path = self.onnx_paths[(128, 128)]
+
+    def _session(self, h, w):
+        """The ONNX Runtime session for frames of h x w (exported and opened on first use)."""
+        s = self._sessions.get((h, w))
+        if s is None:
+            path = _onnx_export(self.G, self.n_classes, self._ckpt, self._cache, (h, w))
+            s = self._ort.InferenceSession(path, self._so, providers=["CPUExecutionProvider"])
+            self._sessions[(h, w)], self.onnx_paths[(h, w)] = s, path
+        return s
+
+    def translate_aligned(self, img01: np.ndarray, aligned_label: np.ndarray) -> np.ndarray:
+        """As :meth:`SonoSPADETranslator.translate_aligned`, with the generator run by ONNX Runtime."""
+        img = np.asarray(img01, np.float32)
+        h, w = img.shape
+        lab = np.asarray(aligned_label)
+        if lab.shape != (h, w):                                         # nearest-resize class ids
+            from PIL import Image
+            lab = np.asarray(Image.fromarray(lab.astype(np.uint8)).resize((w, h), Image.NEAREST))
+        seg = onehot_labels(lab, self.n_classes).numpy()
+        out = self._session(h, w).run(None, {"img": (img * 2 - 1)[None, None], "seg": seg})[0][0, 0]
+        out = np.clip((out + 1) / 2, 0, 1).astype(np.float32)
+        if out.shape != img.shape:                                      # guard non-multiple-of-4 sizes
+            from PIL import Image
+            out = np.asarray(Image.fromarray((out * 255).astype(np.uint8)).resize(
+                (w, h), Image.BILINEAR), np.float32) / 255.0
+        return out
+
+
+TRANSLATOR_RUNTIMES = ("pytorch", "onnxruntime")
 _TRANSLATOR_LOADERS: dict = {}  # arch tag -> callable(ckpt_path, device) -> inference translator
 
 
@@ -804,13 +888,23 @@ def register_translator(arch: str):
     return _deco
 
 
-def load_translator(ckpt_path, device=None):
+def load_translator(ckpt_path, device=None, runtime="pytorch", threads=4):
     """Return the right inference translator for a checkpoint, so any consumer (render_lotus,
     make_dataset, the env) is a drop-in regardless of variant. A checkpoint may set ``state['arch']``
     to select a registered loader (see ``register_translator``); otherwise a SonoSPADE checkpoint
-    (key 'G_spade', dual input, wants_label) or a grayscale one (key 'G_s2r') is detected by key."""
+    (key 'G_spade', dual input, wants_label) or a grayscale one (key 'G_s2r') is detected by key.
+
+    ``runtime="onnxruntime"`` (SonoSPADE checkpoints only) runs the generator through ONNX Runtime on the
+    CPU with ``threads`` threads (:class:`OnnxSonoSPADETranslator`); the default ``"pytorch"`` is unchanged."""
     import torch
     from .render_lotus import get_device
+    if runtime not in TRANSLATOR_RUNTIMES:
+        raise ValueError(f"runtime {runtime!r}: expected one of {TRANSLATOR_RUNTIMES}")
+    if runtime == "onnxruntime":
+        state = torch.load(ckpt_path, map_location="cpu", weights_only=False)
+        if not (isinstance(state, dict) and "G_spade" in state):
+            raise ValueError("runtime 'onnxruntime' supports SonoSPADE checkpoints (key 'G_spade') only")
+        return OnnxSonoSPADETranslator(ckpt_path, device=device, threads=threads)
     dev = device or get_device()
     state = torch.load(ckpt_path, map_location=dev, weights_only=False)
     arch = state.get("arch") if isinstance(state, dict) else None

@@ -67,7 +67,7 @@ jobs:
           fi
 
       - name: Install usbg
-        run: python -m pip install -e ".[dev,body]" -c .github/ci-constraints.txt   # the pinned stack (file header); body: the body contact surface tests
+        run: python -m pip install -e ".[dev,body,onnx]" -c .github/ci-constraints.txt   # the pinned stack (file header); body: the body contact surface tests; onnx: the ONNX Runtime translator tests
 
       - name: Versions
         run: |

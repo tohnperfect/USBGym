@@ -3,6 +3,25 @@
 Changes to USB Gym (package `usbg`). Defect IDs (D1 to D12) refer to [ERRATA.md](ERRATA.md), which
 states for each defect what 0.1.0 did, what changed and where the change is checked.
 
+## 2.4.0 (2026-11-20)
+
+### Texture: ONNX Runtime CPU path
+- New opt-in runtime for the SonoSPADE translator: `load_translator(ckpt, runtime="onnxruntime", threads=4)`,
+  `ViewPipeline(..., texture_runtime="onnxruntime", texture_threads=4)` or
+  `ViewMatchEnv(texture="sonospade", texture_runtime="onnxruntime")`. The generator's weights are exported with
+  `torch.onnx` (opset 17) once per checkpoint and frame size, cached by the checkpoint's md5 in
+  `$USBG_ONNX_CACHE` or the system temporary directory, and run by ONNX Runtime on the CPU with the translator's
+  own pre- and postprocessing (`texture_gan.OnnxSonoSPADETranslator`). The physics render keeps `device`.
+- Same output: on 120 frames of a released checkpoint along probe paths over one CT, the frames differ from the
+  PyTorch translator's by at most 7.9e-6.
+- On a laptop CPU (Apple M5 Pro, 4 ONNX Runtime threads), a whole 128x128 frame through `ViewPipeline.render`
+  (label slice, physics render, sector warp, translator) took 35.0 ms (28.6 frames per second) against 72.8 ms
+  (13.7) with PyTorch: real time without a GPU. PyTorch eager is overhead-bound at batch 1 on a CPU.
+- New extra `onnx` (onnx, onnxruntime). CI installs it, so its tests run on Linux, Windows and macOS. The default
+  runtime stays `"pytorch"`: episodes, results, the leaderboard and the provenance record are unchanged (a
+  pipeline reports `texture_runtime` only when it is not the default). The plug environment's copy of the
+  pipeline (`usbg.plug.viewmatch_env`) is unchanged.
+
 ## 2.3.0 (2026-11-10)
 
 ### Body contact surface

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "usbg"
-version = "2.3.0"
+version = "2.4.0"
 description = "USB Gym: a Gymnasium testbed for closed-loop ultrasound view matching (CT-based B-mode rendering, MuJoCo probe-skin contact, screened acoustic windows, oracle ladder, plug slots)."
 readme = "README.md"
 authors = [
@@ -55,6 +55,9 @@ analysis = ["pandas>=2.0"]
 # smoothing / surface sampling, and quadric decimation. Imported lazily, so only needed to build
 # CT-derived body surfaces.
 body = ["scikit-image>=0.22", "trimesh>=4.0", "fast-simplification>=0.1"]
+# The opt-in ONNX Runtime CPU path of the SonoSPADE translator (usbg.texture_gan.OnnxSonoSPADETranslator,
+# ViewPipeline/ViewMatchEnv texture_runtime="onnxruntime"): onnx for the export, onnxruntime to run it.
+onnx = ["onnx>=1.16", "onnxruntime>=1.18"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
